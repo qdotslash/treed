@@ -4,6 +4,7 @@ test/*
 html/*
 diff/*
 resources/*
+.vscode/*
 
 # Compiled source #
 ###################
