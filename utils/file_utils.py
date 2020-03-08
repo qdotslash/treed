@@ -1,4 +1,4 @@
-from pathlib import Path
+from pathlib import Path, PosixPath
 import os
 import sys
 
@@ -64,19 +64,26 @@ def validate_path(filename=None):
         return False
     #
     # validate filename with Path expand user or resolve
-    #
-    if filename.startswith('~'):
-        try:
-            q = Path(filename).expanduser()
-        except:
-            print('Could not expanduser on filename, returning False: ' + filename)
-            return False
+    # test if it is a string, assume it t pahtlib.PosixPath otherwise
+    # could fail here but for starters
+    if isinstance(filename, str):
+
+        if filename.startswith('~'):
+            try:
+                q = Path(filename).expanduser()
+            except:
+                print('Could not expanduser on filename, returning False: ' + filename)
+                return False
+        else:
+            try:
+                q = Path(filename).resolve()
+            except:
+                print('Could not resolve filename, returning False: ' + filename)
+                return False
+    elif isinstance(filename, PosixPath):
+        q = filename.resolve()
     else:
-        try:
-            q = Path(filename).resolve()
-        except:
-            print('Could not resolve filename, returning False: ' + filename)
-            return False
+        print('Unknown variable type passed in filename, returing False: ' + filename)
     #
     # validate filename path and file exists and overwrite permission
     #
