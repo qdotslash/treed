@@ -44,6 +44,8 @@ def get_file_list(root_path_str, file_stem_str='*', file_ext_str='*', recursive_
         for t in tmp_list:
             if str(t).startswith('.') and xclude_hidden_paths:
                 continue
+            if t.is_dir():
+                continue
             if rtn_abs_path_bool:
                 t = t.resolve()
             if rtn_uri:

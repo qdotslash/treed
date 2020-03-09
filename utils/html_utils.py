@@ -1,5 +1,8 @@
 from bs4 import BeautifulSoup
 from utils import file_utils
+from pprint import PrettyPrinter as pp
+from pprint import pprint, pformat
+from difflib import SequenceMatcher
 
 #
 # Simple pretty print html code
@@ -22,10 +25,10 @@ def make_a_soup(filename=None, html_doc_string=None, html_parser='html5lib'):
                 with valid_path.open('r') as fi:
                     return BeautifulSoup(fi, html_parser)
             else:
-                print('Not a valid file: ' + filename + ' POSIX filename: ' + str(valid_path))
+                print('Not a valid file: ' + str(filename) + ' POSIX filename: ' + str(valid_path))
                 return False
         else:
-            print('Not a valid path: ' + filename + ' POSIX filename: ' + str(valid_path))
+            print('Not a valid path: ' + str(filename) + ' POSIX filename: ' + str(valid_path))
             return False
     elif html_doc_string:
         if len(html_doc_string) < 1:
@@ -39,24 +42,52 @@ def make_a_soup(filename=None, html_doc_string=None, html_parser='html5lib'):
 #
 # recursive dif
 #
-def rec_soup(ss, ind, tabs):
+def rec_soup(ss, ind, ind_max, ind_limit, tabs, ss_list):
+    
     ind += 1
+    if ind > ind_max:
+        ind_max = ind
+    if ind_limit and ind > ind_limit:
+        return ss_list, ind_max
     tabs += '\t'
     for x in range(0, len(ss.contents)):
         if ss.contents[x].name:
-            print(tabs + ss.contents[x].name + '(' + str(len(ss.contents[x])) + ')')
-            if len(ss.contents[x]) > 1:
-                rec_soup(ss.contents[x], ind, tabs)
-
+            # ss_list.append(tabs + ss.contents[x].name + '(' + str(len(ss.contents[x])) + ')')
+            ss_list.append(tabs + ss.contents[x].name)
+            # print(tabs + ss.contents[x].name + '(' + str(len(ss.contents[x])) + ')')
+            if len(ss.contents[x]) > 0:
+                ss_list, ind_max = rec_soup(ss.contents[x], ind, ind_max, ind_limit, tabs, ss_list)
+    return ss_list, ind_max
 #
 # find differences in soups to identify common parts such as headers, footers, sidebars
 #
 def diff_a_soup(s1, s2):
     # print(s1.prettify())
-    print('length of s1.body: ' + str(len(s1.body.contents)))
+    sx_ind_limit = None
     ind = 0
     tabs = ''
-    rec_soup(s1.body, ind, tabs)
+    s1_list = []
+    s1_ind_max = 0
+    s1_list, s1_ind_max = rec_soup(s1.body, ind, s1_ind_max, sx_ind_limit, tabs, s1_list)
+    s1_list_len = len(s1_list)
+    ind = 0
+    tabs = ''
+    s2_list = []
+    s2_ind_max = 0
+    s2_list, s2_ind_max = rec_soup(s2.body, ind, s2_ind_max, sx_ind_limit, tabs, s2_list)
+    s2_list_len = len(s2_list)
+    if s1_list_len <= s2_list_len:
+        seq = SequenceMatcher(None, s1_list, s2_list)
+    else:
+        seq = SequenceMatcher(None, s2_list, s1_list)
+    match_block = seq.get_matching_blocks()
+    print('Length of s1: ' + str(s1_list_len))
+    print('s1 ind max: ' + str(s1_ind_max))
+    print('Length of s2: ' + str(s2_list_len))
+    print('s2 ind max: ' + str(s2_ind_max))
+    print('Number of matched blocks: ' + str(len(match_block)))
+    # pprint(match_block)
+    return s1_list, s2_list, match_block
 
 
 # if __name__ == "__main__":
