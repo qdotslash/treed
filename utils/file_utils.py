@@ -1,6 +1,21 @@
-from pathlib import Path, PosixPath
+from pathlib import Path, PosixPath, PurePath
 import os
 import sys
+
+
+def make_pure(p):
+    return PurePath(p)
+
+
+def return_parent_child_path(parent_str, child_str):
+    if child_str.startswith('/'):
+        print('child_str starts with slash, is root, returning False')
+        return False
+    q = make_pure(p=child_str)
+    #
+    # use slash operator to join parent_string to PurePath q
+    #
+    return parent_str / q
 
 
 def get_file_list(root_path_str, file_stem_str='*', file_ext_str='*', recursive_bool=False, xclude_hidden_paths=True, rtn_abs_path_bool=True, rtn_uri=False):
@@ -127,23 +142,80 @@ def write_file(fn=None, overwrite=True, file_encoding='utf-8', content='NO CONTE
         elif len(content) == 0:
             print('CONTENT length is 0 (zero) for filename, returning False: ' + str(q))
             return False
+        if isinstance(content, str):
+            try:
+                with q.open(mode='w', encoding=file_encoding) as fo:
+                    fo.write(content)
+                return True
+            except:
+                print('Could not write file, returning False: ' + str(q))
+                return False        
+        elif isinstance(content, list):
+            try:
+                with q.open(mode='w', encoding=file_encoding) as fo:
+                    for item in content:
+                        fo.write("%s\n" % item)
+                return True
+            except:
+                print('Could not write file, returning False: ' + str(q))
+                return False        
 
-        try:
-            with q.open(mode='w', encoding=file_encoding) as fo:
-                fo.write(content)
-            return True
-        except:
-            print('Could not write file, returning False: ' + str(q))
-            return False        
     else:
         return False
 
 
+def delete_folder(pth) :
+    for sub in pth.iterdir() :
+        if sub.is_dir() :
+            delete_folder(sub)
+        else :
+            sub.unlink()
+    pth.rmdir()
+
+
+def return_list(fn=None):
+    if not fn:
+        print('filename(fn) was not provided, returning False')
+        return False
+    
+    q = validate_path(filename=fn)
+    if q:
+        if q.is_file():
+            print('File exists & reading: ' + str(q))
+        else:
+            print('File does not exists, returning False: ' + str(q))
+            return False
+    else:
+        print('File PATH does not exists, returning False: ' + str(q))
+        return False
+    try:
+        with q.open('r') as fi:
+            tmp = fi.read()
+    except:
+        print('Failed to read file, returning False: ' + str(q))
+        return False
+    
+    if tmp:
+        if tmp.startswith('[') and tmp.endswith(']'):
+            tmp = tmp[1:-1]
+        tmp_list = tmp.split(',\n')
+        tmp_list2 = []
+        for l in tmp_list:
+            tmp_list2.append(l.strip())
+        return tmp_list2
+    else:
+        print('Failed to parse LIST file, returning False: ' + str(q))
+        return False
+
+
 if __name__ == "__main__":
-    p = './html'
-    path_gen = get_file_list(root_path_str=p, file_stem_str='*main*', recursive_bool=True)
-    for p in path_gen:
-        print(p)
+    # p = './html'
+    # path_gen = get_file_list(root_path_str=p, file_stem_str='*main*', recursive_bool=True)
+    # for p in path_gen:
+    #     print(p)
     # fn_str = '~/treed/html/digitalocean/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04'
     # success = write_file(fn=fn_str, overwrite=False, content="blah")
+    i = 'input'
+    c = 'html'
+    print(return_parent_child_path(parent_str=i, child_str=c))
 
