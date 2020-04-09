@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ </head>
+ <body class="feature-filter-bar feature-upvotes tutorials-controller tutorial-single" data-completed-tutorial-id="" data-env="production" data-facebook-app-id="694818843983011" data-flagged="" data-js="tutorial" data-prefix="/community" data-tutorial-id="2614" data-upvote="null" data-user-id="">
+  <div class="outside_viewport">
+   <div class="modal fade mini-modal" id="contents-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Contents
+       </h1>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="translation-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Language
+       </h1>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="share-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Share
+       </h1>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container tutorial-header">
+    <div class="featured-items-right-bar">
+     <h3>
+      Related
+     </h3>
+     <a href="https://www.digitalocean.com/products/managed-databases-mysql/">
+      <div class="featured-item-highlight">
+       <span class="featured-item-highlight-image">
+        <img alt="Product" height="45" src="https://images.prismic.io/digitalocean%2F1428caea-c011-469a-959e-fec58da0a926_databases.svg?auto=compress,format" width="45"/>
+       </span>
+       Now Available: Managed MySQL Databases
+      </div>
+     </a>
+     <a href="https://www.digitalocean.com/products/managed-databases/">
+      <div class="featured-item-regular">
+       Managed MySQL, Redis, Postgres on DigitalOcean
+       <span class="featured-item-category">
+        <img alt="Digitalocean%2f1428caea c011 469a 959e fec58da0a926 databases" height="14" src="https://images.prismic.io/digitalocean%2F1428caea-c011-469a-959e-fec58da0a926_databases.svg?auto=compress,format" width="14"/>
+        Product
+       </span>
+      </div>
+     </a>
+     <a href="/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04-quickstart">
+      <div class="featured-item-regular">
+       How To Set Up Apache Virtual Hosts on Ubuntu 18.04 [Quickstart]
+       <span class="featured-item-category">
+        <img alt="Tutorial" height="14" src="/assets/community/tutorials/featured-item-tutorial-icon-2150ccbef202144a53cea261312af267.png" width="14"/>
+        Tutorial
+       </span>
+      </div>
+     </a>
+     <a href="/community/tutorials/how-to-use-database-migrations-and-seeders-to-abstract-database-setup-in-laravel">
+      <div class="featured-item-regular">
+       How To Use Database Migrations and Seeders to Abstract Database Setup in Laravel
+       <span class="featured-item-category">
+        <img alt="Tutorial" height="14" src="/assets/community/tutorials/featured-item-tutorial-icon-2150ccbef202144a53cea261312af267.png" width="14"/>
+        Tutorial
+       </span>
+      </div>
+     </a>
+    </div>
+    <img alt="How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04" class="tutorial-image" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/LAMP_tw_updated_logo.png?1564576130" title="How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04"/>
+    <h1 class="content-title Tutorial-header">
+     How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04
+    </h1>
+   </div>
+   <div class="tutorial-authors">
+    <div class="component-collaborators-container">
+     <ul class="component-collaborators-content">
+      <li class="collaborator-byline-avatar">
+       <a href="/community/users/mdrake">
+        <div class="mod-avatar mod-avatar-large">
+         <img alt="3072b0699d3add2e0d0f31b97397dd68302c8842" class="avatar avatar-large" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/users/avatars/large/3072b0699d3add2e0d0f31b97397dd68302c8842.jpg?1509387385"/>
+        </div>
+       </a>
+      </li>
+      <li class="collaborators-byline-data">
+       <p class="names">
+        By
+       </p>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="container versioned-tutorial-group-navigation" data-versioned-tutorial-group-navigation="">
+    <div class="versioned-tutorial-group-navigation__header" data-versioned-tutorial-group-navigation-header="">
+     <h5 class="versioned-tutorial-group-navigation__heading">
+      Not using
+      <strong>
+       Ubuntu 18.04
+      </strong>
+      ? Choose a different version:
+     </h5>
+    </div>
+   </div>
+   <div class="content-body tutorial-content" data-growable-markdown="">
+    <p>
+     <em>
+      A previous version of this tutorial was written by  .
+     </em>
+    </p>
+    <h3 id="introduction">
+     Introduction
+    </h3>
+    <p>
+     A “LAMP” stack is a group of open-source software that is typically installed together to enable a server to host dynamic websites and web apps. This term is actually an acronym which represents the
+     <strong>
+      L
+     </strong>
+     inux operating system, with the
+     <strong>
+      A
+     </strong>
+     pache web server. The site data is stored in a
+     <strong>
+      M
+     </strong>
+     ySQL database, and dynamic content is processed by
+     <strong>
+      P
+     </strong>
+     HP.
+    </p>
+    <p>
+     In this guide, we will install a LAMP stack on an Ubuntu 18.04 server.
+    </p>
+    <h2 id="prerequisites">
+     Prerequisites
+    </h2>
+    <p>
+     In order to complete this tutorial, you will need to have an Ubuntu 18.04 server with a non-root
+     <code>
+      sudo
+     </code>
+     -enabled user account and a basic firewall. This can be configured using our  .
+    </p>
+    <h2 id="step-1-—-installing-apache-and-updating-the-firewall">
+     Step 1 — Installing Apache and Updating the Firewall
+    </h2>
+    <p>
+     The Apache web server is among the most popular web servers in the world. It’s well-documented and has been in wide use for much of the history of the web, which makes it a great default choice for hosting a website.
+    </p>
+    <p>
+     Install Apache using Ubuntu’s package manager,
+     <code>
+      apt
+     </code>
+     :
+    </p>
+    <p>
+     Since this is a
+     <code>
+      sudo
+     </code>
+     command, these operations are executed with root privileges. It will ask you for your regular user’s password to verify your intentions.
+    </p>
+    <p>
+     Once you’ve entered your password,
+     <code>
+      apt
+     </code>
+     will tell you which packages it plans to install and how much extra disk space they’ll take up. Press
+     <code>
+      Y
+     </code>
+     and hit
+     <code>
+      ENTER
+     </code>
+     to continue, and the installation will proceed.
+    </p>
+    <h3 id="adjust-the-firewall-to-allow-web-traffic">
+     Adjust the Firewall to Allow Web Traffic
+    </h3>
+    <p>
+     Next, assuming that you have followed the initial server setup instructions and enabled the UFW firewall, make sure that your firewall allows HTTP and HTTPS traffic. You can check that UFW has an application profile for Apache like so:
+    </p>
+    <pre class="code-pre"><code langs="">Available applications:    OpenSSH </code></pre>
+    <p>
+     If you look at the
+     <code>
+      Apache Full
+     </code>
+     profile, it should show that it enables traffic to ports
+     <code>
+      80
+     </code>
+     and
+     <code>
+      443
+     </code>
+     :
+    </p>
+    <pre class="code-pre"><code langs="">Profile: Apache Full Title: Web Server (HTTP,HTTPS) Description: Apache v2 is the next generation of the omnipresent Apache web server.  Ports:  </code></pre>
+    <p>
+     Allow incoming HTTP and HTTPS traffic for this profile:
+    </p>
+    <p>
+     You can do a spot check right away to verify that everything went as planned by visiting your server’s public IP address in your web browser (see the note under the next heading to find out what your public IP address is if you do not have this information already):
+    </p>
+    <pre class="code-pre"><code langs="">http:// </code></pre>
+    <p>
+     You will see the default Ubuntu 18.04 Apache web page, which is there for informational and testing purposes. It should look something like this:
+    </p>
+    <p>
+     <img alt="Ubuntu 18.04 Apache default" src="http://assets.digitalocean.com/articles/how-to-install-lamp-ubuntu-18/small_apache_default_1804.png"/>
+    </p>
+    <p>
+     If you see this page, then your web server is now correctly installed and accessible through your firewall.
+    </p>
+    <h3 id="how-to-find-your-server-39-s-public-ip-address">
+     How To Find your Server’s Public IP Address
+    </h3>
+    <p>
+     If you do not know what your server’s public IP address is, there are a number of ways you can find it. Usually, this is the address you use to connect to your server through SSH.
+    </p>
+    <p>
+     There are a few different ways to do this from the command line. First, you could use the
+     <code>
+      iproute2
+     </code>
+     tools to get your IP address by typing this:
+    </p>
+    <p>
+     This will give you two or three lines back. They are all correct addresses, but your computer may only be able to use one of them, so feel free to try each one.
+    </p>
+    <p>
+     An alternative method is to use the
+     <code>
+      curl
+     </code>
+     utility to contact an outside party to tell you how
+     <em>
+      it
+     </em>
+     sees your server. This is done by asking a specific server what your IP address is:
+    </p>
+    <p>
+     Regardless of the method you use to get your IP address, type it into your web browser’s address bar to view the default Apache page.
+    </p>
+    <h2 id="step-2-—-installing-mysql">
+     Step 2 — Installing MySQL
+    </h2>
+    <p>
+     Now that you have your web server up and running, it is time to install MySQL. MySQL is a database management system. Basically, it will organize and provide access to databases where your site can store information.
+    </p>
+    <p>
+     Again, use
+     <code>
+      apt
+     </code>
+     to acquire and install this software:
+    </p>
+    <p>
+     <span class="note">
+      <strong>
+       Note
+      </strong>
+      : In this case, you do not have to run
+      <code>
+       sudo apt update
+      </code>
+      prior to the command. This is because you recently ran it in the commands above to install Apache. The package index on your computer should already be up-to-date.
+      <br/>
+     </span>
+    </p>
+    <p>
+     This command, too, will show you a list of the packages that will be installed, along with the amount of disk space they’ll take up. Enter
+     <code>
+      Y
+     </code>
+     to continue.
+    </p>
+    <p>
+     When the installation is complete, run a simple security script that comes pre-installed with MySQL which will remove some dangerous defaults and lock down access to your database system. Start the interactive script by running:
+    </p>
+    <p>
+     This will ask if you want to configure the
+     <code>
+      VALIDATE PASSWORD PLUGIN
+     </code>
+     .
+    </p>
+    <p>
+     <span class="note">
+      <strong>
+       Note:
+      </strong>
+      Enabling this feature is something of a judgment call. If enabled, passwords which don’t match the specified criteria will be rejected by MySQL with an error. This will cause issues if you use a weak password in conjunction with software which automatically configures MySQL user credentials, such as the Ubuntu packages for phpMyAdmin. It is safe to leave validation disabled, but you should always use strong, unique passwords for database credentials.
+      <br/>
+     </span>
+    </p>
+    <p>
+     Answer
+     <code>
+      Y
+     </code>
+     for yes, or anything else to continue without enabling.
+    </p>
+    <pre class="code-pre"><code langs="">VALIDATE PASSWORD PLUGIN can be used to test passwords and improve security. It checks the strength of password and allows the users to set only those passwords which are secure enough. Would you like to setup VALIDATE PASSWORD plugin?  Press y|Y for Yes, any other key for No: </code></pre>
+    <p>
+     If you answer “yes”, you’ll be asked to select a level of password validation. Keep in mind that if you enter
+     <code>
+      2
+     </code>
+     for the strongest level, you will receive errors when attempting to set any password which does not contain numbers, upper and lowercase letters, and special characters, or which is based on common dictionary words.
+    </p>
+    <pre class="code-pre"><code langs="">There are three levels of password validation policy:  LOW    Length &gt;= 8 MEDIUM Length &gt;= 8, numeric, mixed case, and special characters STRONG Length &gt;= 8, numeric, mixed case, special characters and dictionary                  file  Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG:  </code></pre>
+    <p>
+     Regardless of whether you chose to set up the
+     <code>
+      VALIDATE PASSWORD PLUGIN
+     </code>
+     , your server will next ask you to select and confirm a password for the MySQL
+     <strong>
+      root
+     </strong>
+     user. This is an administrative account in MySQL that has increased privileges. Think of it as being similar to the
+     <strong>
+      root
+     </strong>
+     account for the server itself (although the one you are configuring now is a MySQL-specific account). Make sure this is a strong, unique password, and do not leave it blank.
+    </p>
+    <p>
+     If you enabled password validation, you’ll be shown the password strength for the root password you just entered and your server will ask if you want to change that password. If you are happy with your current password, enter
+     <code>
+      N
+     </code>
+     for “no” at the prompt:
+    </p>
+    <pre class="code-pre"><code langs="">Using existing password for root.  Estimated strength of the password:  Change the password for root ? ((Press y|Y for Yes, any other key for No) :  </code></pre>
+    <p>
+     For the rest of the questions, press
+     <code>
+      Y
+     </code>
+     and hit the
+     <code>
+      ENTER
+     </code>
+     key at each prompt. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MySQL immediately respects the changes you have made.
+    </p>
+    <p>
+     Note that in Ubuntu systems running MySQL 5.7 (and later versions), the
+     <strong>
+      root
+     </strong>
+     MySQL user is set to authenticate using the
+     <code>
+      auth_socket
+     </code>
+     plugin by default rather than with a password. This allows for some greater security and usability in many cases, but it can also complicate things when you need to allow an external program (e.g., phpMyAdmin) to access the user.
+    </p>
+    <p>
+     If you prefer to use a password when connecting to MySQL as
+     <strong>
+      root
+     </strong>
+     , you will need to switch its authentication method from
+     <code>
+      auth_socket
+     </code>
+     to
+     <code>
+      mysql_native_password
+     </code>
+     . To do this, open up the MySQL prompt from your terminal:
+    </p>
+    <p>
+     Next, check which authentication method each of your MySQL user accounts use with the following command:
+    </p>
+    <pre class="code-pre"><code langs="">+------------------+-------------------------------------------+-----------------------+-----------+ | user             | authentication_string                     | plugin                | host      | +------------------+-------------------------------------------+-----------------------+-----------+ | root             |                                           | auth_socket           | localhost | | mysql.session    | *THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE | mysql_native_password | localhost | | mysql.sys        | *THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE | mysql_native_password | localhost | | debian-sys-maint | *CC744277A401A7D25BE1CA89AFF17BF607F876FF | mysql_native_password | localhost | +------------------+-------------------------------------------+-----------------------+-----------+ 4 rows in set (0.00 sec) </code></pre>
+    <p>
+     In this example, you can see that the
+     <strong>
+      root
+     </strong>
+     user does in fact authenticate using the
+     <code>
+      auth_socket
+     </code>
+     plugin. To configure the
+     <strong>
+      root
+     </strong>
+     account to authenticate with a password, run the following
+     <code>
+      ALTER USER
+     </code>
+     command. Be sure to change  to a strong password of your choosing:
+    </p>
+    <p>
+     Then, run
+     <code>
+      FLUSH PRIVILEGES
+     </code>
+     which tells the server to reload the grant tables and put your new changes into effect:
+    </p>
+    <p>
+     Check the authentication methods employed by each of your users again to confirm that
+     <strong>
+      root
+     </strong>
+     no longer authenticates using the
+     <code>
+      auth_socket
+     </code>
+     plugin:
+    </p>
+    <pre class="code-pre"><code langs="">+------------------+-------------------------------------------+-----------------------+-----------+ | user             | authentication_string                     | plugin                | host      | +------------------+-------------------------------------------+-----------------------+-----------+ | root             | *3636DACC8616D997782ADD0839F92C1571D6D78F |  | localhost | | mysql.session    | *THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE | mysql_native_password | localhost | | mysql.sys        | *THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE | mysql_native_password | localhost | | debian-sys-maint | *CC744277A401A7D25BE1CA89AFF17BF607F876FF | mysql_native_password | localhost | +------------------+-------------------------------------------+-----------------------+-----------+ 4 rows in set (0.00 sec) </code></pre>
+    <p>
+     You can see in this example output that the
+     <strong>
+      root
+     </strong>
+     MySQL user now authenticates using a password. Once you confirm this on your own server, you can exit the MySQL shell:
+    </p>
+    <p>
+     At this point, your database system is now set up and you can move on to installing PHP, the final component of the LAMP stack.
+    </p>
+    <h2 id="step-3-—-installing-php">
+     Step 3 — Installing PHP
+    </h2>
+    <p>
+     PHP is the component of your setup that will process code to display dynamic content. It can run scripts, connect to your MySQL databases to get information, and hand the processed content over to your web server to display.
+    </p>
+    <p>
+     Once again, leverage the
+     <code>
+      apt
+     </code>
+     system to install PHP. In addition, include some helper packages this time so that PHP code can run under the Apache server and talk to your MySQL database:
+    </p>
+    <p>
+     This should install PHP without any problems. We’ll test this in a moment.
+    </p>
+    <p>
+     In most cases, you will want to modify the way that Apache serves files when a directory is requested. Currently, if a user requests a directory from the server, Apache will first look for a file called
+     <code>
+      index.html
+     </code>
+     . We want to tell the web server to prefer PHP files over others, so make Apache look for an
+     <code>
+      index.php
+     </code>
+     file first.
+    </p>
+    <p>
+     To do this, type this command to open the
+     <code>
+      dir.conf
+     </code>
+     file in a text editor with root privileges:
+    </p>
+    <p>
+     It will look like this:
+    </p>
+    <pre class="code-pre"><code langs="">&lt;IfModule mod_dir.c&gt; DirectoryIndex index.html index.cgi index.pl  index.xhtml index.htm &lt;/IfModule&gt; </code></pre>
+    <p>
+     Move the PHP index file (highlighted above) to the first position after the
+     <code>
+      DirectoryIndex
+     </code>
+     specification, like this:
+    </p>
+    <pre class="code-pre"><code langs="">&lt;IfModule mod_dir.c&gt; DirectoryIndex  index.html index.cgi index.pl index.xhtml index.htm &lt;/IfModule&gt; </code></pre>
+    <p>
+     When you are finished, save and close the file by pressing
+     <code>
+      CTRL+X
+     </code>
+     . Confirm the save by typing
+     <code>
+      Y
+     </code>
+     and then hit
+     <code>
+      ENTER
+     </code>
+     to verify the file save location.
+    </p>
+    <p>
+     After this, restart the Apache web server in order for your changes to be recognized. Do this by typing this:
+    </p>
+    <p>
+     You can also check on the status of the
+     <code>
+      apache2
+     </code>
+     service using
+     <code>
+      systemctl
+     </code>
+     :
+    </p>
+    <pre class="code-pre"><code langs="">● apache2.service - LSB: Apache2 web server Loaded: loaded (/etc/init.d/apache2; bad; vendor preset: enabled) Drop-In: /lib/systemd/system/apache2.service.d └─apache2-systemd.conf Active: active (running) since Tue 2018-04-23 14:28:43 EDT; 45s ago Docs: man:systemd-sysv-generator(8) Process: 13581 ExecStop=/etc/init.d/apache2 stop (code=exited, status=0/SUCCESS) Process: 13605 ExecStart=/etc/init.d/apache2 start (code=exited, status=0/SUCCESS) Tasks: 6 (limit: 512) CGroup: /system.slice/apache2.service ├─13623 /usr/sbin/apache2 -k start ├─13626 /usr/sbin/apache2 -k start ├─13627 /usr/sbin/apache2 -k start ├─13628 /usr/sbin/apache2 -k start ├─13629 /usr/sbin/apache2 -k start └─13630 /usr/sbin/apache2 -k start </code></pre>
+    <p>
+     Press
+     <code>
+      Q
+     </code>
+     to exit this status output.
+    </p>
+    <p>
+     To enhance the functionality of PHP, you have the option to install some additional modules. To see the available options for PHP modules and libraries, pipe the results of
+     <code>
+      apt search
+     </code>
+     into
+     <code>
+      less
+     </code>
+     , a pager which lets you scroll through the output of other commands:
+    </p>
+    <p>
+     Use the arrow keys to scroll up and down, and press
+     <code>
+      Q
+     </code>
+     to quit.
+    </p>
+    <p>
+     The results are all optional components that you can install. It will give you a short description for each:
+    </p>
+    <pre class="code-pre"><code langs="">bandwidthd-pgsql/bionic 2.0.1+cvs20090917-10ubuntu1 amd64 Tracks usage of TCP/IP and builds html files with graphs  bluefish/bionic 2.2.10-1 amd64 advanced Gtk+ text editor for web and software development  cacti/bionic 1.1.38+ds1-1 all web interface for graphing of monitoring systems  ganglia-webfrontend/bionic 3.6.1-3 all cluster monitoring toolkit - web front-end  golang-github-unknwon-cae-dev/bionic 0.0~git20160715.0.c6aac99-4 all PHP-like Compression and Archive Extensions in Go  haserl/bionic 0.9.35-2 amd64 CGI scripting program for embedded environments  kdevelop-php-docs/bionic 5.2.1-1ubuntu2 all transitional package for kdevelop-php  kdevelop-php-docs-l10n/bionic 5.2.1-1ubuntu2 all transitional package for kdevelop-php-l10n … : </code></pre>
+    <p>
+     To learn more about what each module does, you could search the internet for more information about them. Alternatively, look at the long description of the package by typing:
+    </p>
+    <p>
+     There will be a lot of output, with one field called
+     <code>
+      Description
+     </code>
+     which will have a longer explanation of the functionality that the module provides.
+    </p>
+    <p>
+     For example, to find out what the
+     <code>
+      php-cli
+     </code>
+     module does, you could type this:
+    </p>
+    <p>
+     Along with a large amount of other information, you’ll find something that looks like this:
+    </p>
+    <pre class="code-pre"><code langs="">… Description: command-line interpreter for the PHP scripting language (default) This package provides the /usr/bin/php command interpreter, useful for testing PHP scripts from a shell or performing general shell scripting tasks. . PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML. . This package is a dependency package, which depends on Ubuntu's default PHP version (currently 7.2). … </code></pre>
+    <p>
+     If, after researching, you decide you would like to install a package, you can do so by using the
+     <code>
+      apt install
+     </code>
+     command like you have been doing for the other software.
+    </p>
+    <p>
+     If you decided that
+     <code>
+      php-cli
+     </code>
+     is something that you need, you could type:
+    </p>
+    <p>
+     If you want to install more than one module, you can do that by listing each one, separated by a space, following the
+     <code>
+      apt install
+     </code>
+     command, like this:
+    </p>
+    <p>
+     At this point, your LAMP stack is installed and configured. Before you do anything else, we recommend that you set up an Apache virtual host where you can store your server’s configuration details.
+    </p>
+    <h2 id="step-4-—-setting-up-virtual-hosts-recommended">
+     Step 4 — Setting Up Virtual Hosts (Recommended)
+    </h2>
+    <p>
+     When using the Apache web server, you can use
+     <em>
+      virtual hosts
+     </em>
+     (similar to server blocks in Nginx) to encapsulate configuration details and host more than one domain from a single server. We will set up a domain called
+     <strong>
+      your_domain
+     </strong>
+     , but you should
+     <strong>
+      replace this with your own domain name
+     </strong>
+     . To learn more about setting up a domain name with DigitalOcean, see our  .
+    </p>
+    <p>
+     Apache on Ubuntu 18.04 has one server block enabled by default that is configured to serve documents from the
+     <code>
+      /var/www/html
+     </code>
+     directory. While this works well for a single site, it can become unwieldy if you are hosting multiple sites. Instead of modifying
+     <code>
+      /var/www/html
+     </code>
+     , let’s create a directory structure within
+     <code>
+      /var/www
+     </code>
+     for our
+     <strong>
+      your_domain
+     </strong>
+     site, leaving
+     <code>
+      /var/www/html
+     </code>
+     in place as the default directory to be served if a client request doesn’t match any other sites.
+    </p>
+    <p>
+     Create the directory for
+     <strong>
+      your_domain
+     </strong>
+     as follows:
+    </p>
+    <pre class="code-pre commmand"><code langs="">sudo mkdir /var/www/ </code></pre>
+    <p>
+     Next, assign ownership of the directory with the
+     <code>
+      $USER
+     </code>
+     environment variable:
+    </p>
+    <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo chown -R $USER:$USER /var/www/ </li></ul></code></pre>
+    <p>
+     The permissions of your web roots should be correct if you haven’t modified your
+     <code>
+      unmask
+     </code>
+     value, but you can make sure by typing:
+    </p>
+    <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo chmod -R 755 /var/www/ </li></ul></code></pre>
+    <p>
+     Next, create a sample
+     <code>
+      index.html
+     </code>
+     page using
+     <code>
+      nano
+     </code>
+     or your favorite editor:
+    </p>
+    <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">nano /var/www//index.html </li></ul></code></pre>
+    <p>
+     Inside, add the following sample HTML:
+    </p>
+    <pre class="code-pre"><code langs="">&lt;html&gt; &lt;head&gt; &lt;title&gt;Welcome to !&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Success!  The  server block is working!&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt; </code></pre>
+    <p>
+     Save and close the file when you are finished.
+    </p>
+    <p>
+     In order for Apache to serve this content, it’s necessary to create a virtual host file with the correct directives. Instead of modifying the default configuration file located at
+     <code>
+      /etc/apache2/sites-available/000-default.conf
+     </code>
+     directly, let’s make a new one at
+     <code>
+      /etc/apache2/sites-available/  .conf
+     </code>
+     :
+    </p>
+    <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo nano /etc/apache2/sites-available/.conf </li></ul></code></pre>
+    <p>
+     Paste in the following configuration block, which is similar to the default, but updated for our new directory and domain name:
+    </p>
+    <pre class="code-pre"><code langs="">&lt;VirtualHost *:80&gt; ServerAdmin webmaster@localhost ServerName  ServerAlias  DocumentRoot /var/www/ ErrorLog ${APACHE_LOG_DIR}/error.log CustomLog ${APACHE_LOG_DIR}/access.log combined &lt;/VirtualHost&gt; </code></pre>
+    <p>
+     Notice that we’ve updated the
+     <code>
+      DocumentRoot
+     </code>
+     to our new directory and
+     <code>
+      ServerAdmin
+     </code>
+     to an email that the
+     <strong>
+      your_domain
+     </strong>
+     site administrator can access. We’ve also added two directives:
+     <code>
+      ServerName
+     </code>
+     , which establishes the base domain that should match for this virtual host definition, and
+     <code>
+      ServerAlias
+     </code>
+     , which defines further names that should match as if they were the base name.
+    </p>
+    <p>
+     Save and close the file when you are finished.
+    </p>
+    <p>
+     Let’s enable the file with the
+     <code>
+      a2ensite
+     </code>
+     tool:
+    </p>
+    <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo a2ensite .conf </li></ul></code></pre>
+    <p>
+     Disable the default site defined in
+     <code>
+      000-default.conf
+     </code>
+     :
+    </p>
+    <p>
+     Next, let’s test for configuration errors:
+    </p>
+    <p>
+     You should see the following output:
+    </p>
+    <pre class="code-pre"><code langs="">Syntax OK </code></pre>
+    <p>
+     Restart Apache to implement your changes:
+    </p>
+    <p>
+     Apache should now be serving your domain name. You can test this by navigating to
+     <code>
+      http://
+     </code>
+     , where you should see something like this:
+    </p>
+    <p>
+     <img alt="Apache virtual host example" src="https://assets.digitalocean.com/articles/apache_virtual_hosts_ubuntu/vhost_your_domain.png"/>
+    </p>
+    <p>
+     With that, you virtual host is fully set up. Before making any more changes or deploying an application, though, it would be helpful to proactively test out your PHP configuration in case there are any issues that should be addressed.
+    </p>
+    <h2 id="step-5-—-testing-php-processing-on-your-web-server">
+     Step 5 — Testing PHP Processing on your Web Server
+    </h2>
+    <p>
+     In order to test that your system is configured properly for PHP, create a very basic PHP script called
+     <code>
+      info.php
+     </code>
+     . In order for Apache to find this file and serve it correctly, it must be saved to your web root directory.
+    </p>
+    <p>
+     Create the file at the web root you created in the previous step by running:
+    </p>
+    <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo nano /var/www//info.php </li></ul></code></pre>
+    <p>
+     This will open a blank file. Add the following text, which is valid PHP code, inside the file:
+    </p>
+    <pre class="code-pre"><code langs="">&lt;?php phpinfo(); ?&gt; </code></pre>
+    <p>
+     When you are finished, save and close the file.
+    </p>
+    <p>
+     Now you can test whether your web server is able to correctly display content generated by this PHP script. To try this out, visit this page in your web browser. You’ll need your server’s public IP address again.
+    </p>
+    <p>
+     The address you will want to visit is:
+    </p>
+    <pre class="code-pre"><code langs="">http:///info.php </code></pre>
+    <p>
+     The page that you come to should look something like this:
+    </p>
+    <p>
+     <img alt="Ubuntu 18.04 default PHP info" src="https://assets.digitalocean.com/articles/how-to-install-lamp-ubuntu-18/small_php_info_1804.png"/>
+    </p>
+    <p>
+     This page provides some basic information about your server from the perspective of PHP. It is useful for debugging and to ensure that your settings are being applied correctly.
+    </p>
+    <p>
+     If you can see this page in your browser, then your PHP is working as expected.
+    </p>
+    <p>
+     You probably want to remove this file after this test because it could actually give information about your server to unauthorized users. To do this, run the following command:
+    </p>
+    <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo rm /var/www//info.php </li></ul></code></pre>
+    <p>
+     You can always recreate this page if you need to access the information again later.
+    </p>
+    <h2 id="conclusion">
+     Conclusion
+    </h2>
+    <p>
+     Now that you have a LAMP stack installed, you have many choices for what to do next.  Basically, you’ve installed a platform that will allow you to install most kinds of websites and web software on your server.
+    </p>
+    <p>
+     As an immediate next step, you should ensure that connections to your web server are secured, by serving them via HTTPS. The easiest option here is to  to secure your site with a free TLS/SSL certificate.
+    </p>
+    <p>
+     Some other popular options are:
+    </p>
+   </div>
+  </div>
+  <div class="tutorial-footer">
+   <div class="tutorial-footer-details">
+    <div class="postable-info-bar-container">
+     <div class="postable-info-bar">
+      <div class="author-byline">
+       <div class="component-collaborators-container">
+        <ul class="component-collaborators-content">
+         <li class="collaborator-byline-avatar">
+          <a href="/community/users/mdrake">
+           <div class="mod-avatar mod-avatar-large">
+            <img alt="3072b0699d3add2e0d0f31b97397dd68302c8842" class="avatar avatar-large" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/users/avatars/large/3072b0699d3add2e0d0f31b97397dd68302c8842.jpg?1509387385"/>
+           </div>
+          </a>
+         </li>
+         <li class="collaborators-byline-data">
+          <p class="names">
+           By
+          </p>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="hsb--container">
+     <div class="hsb--content">
+      <div class="hsb--social-and-comments">
+       <div class="hsb--comment">
+        <strong class="amount">
+         43
+        </strong>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="related-content">
+    <div class="section-content">
+     <h2>
+      Related
+     </h2>
+     <ul>
+      <li title="How To Set Up Apache Virtual Hosts on Ubuntu 18.04 [Quickstart]">
+       <a class="panel" href="/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04-quickstart">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Set Up Apache Virtual Hosts on Ubuntu 18.04 [Quickstart]
+         </h5>
+         <p data-clamp="">
+          This tutorial will guide you through setting up multiple domains and websites using Apache virtual hosts on an Ubuntu 18.04 server. During this process, you’ll learn how to serve different content to different visitors depending on which domains they are requesting. For a…
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Use Database Migrations and Seeders to Abstract Database Setup in Laravel">
+       <a class="panel" href="/community/tutorials/how-to-use-database-migrations-and-seeders-to-abstract-database-setup-in-laravel">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Use Database Migrations and Seeders to Abstract Database Setup in Laravel
+         </h5>
+         <p data-clamp="">
+          Migrations and Seeders are powerful database utilities provided by the Laravel PHP framework to allow developers to quickly bootstrap, destroy and recreate an application’s database. In this guide, we'll create Migrations and Seeders to populate a Laravel 6 demo application's database with sample data.
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="Recommended Steps To Harden Apache HTTP on FreeBSD 12.0">
+       <a class="panel" href="/community/tutorials/recommended-steps-to-harden-apache-http-on-freebsd-12-0">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          Recommended Steps To Harden Apache HTTP on FreeBSD 12.0
+         </h5>
+         <p data-clamp="">
+          Although the default installation of an Apache HTTP server is already safe to use, its configuration can be substantially improved with a few modifications. In this tutorial you'll implement some recommended steps to reduce how much information on your server is exposed. You will verify the directory listings and disable indexing to check the access to resources. You'll also change the default value of the timeout directive to help mitigate Denial of Service type of attacks.
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Set Up Apache Virtual Hosts on Ubuntu 18.04">
+       <a class="panel" href="/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Set Up Apache Virtual Hosts on Ubuntu 18.04
+         </h5>
+         <p data-clamp="">
+          This tutorial will guide you through setting up multiple domains and websites using Apache virtual hosts on an Ubuntu 18.04 server. During this process, you’ll learn how to serve different content to different visitors depending on which domains they are requesting.
+         </p>
+        </div>
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="looking-for-an-answer">
+    <div class="section-content">
+     <h4>
+      Still looking for an answer?
+     </h4>
+    </div>
+   </div>
+  </div>
+  <div class="content-comments">
+   <div class="section-content">
+    <div class="tutorial commentable" id="tutorial_2614">
+     <div class="comments">
+      <ul class="response-list">
+       <a class="js-click-on-load hidden" data-remote="true" href="/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04/comments" rel="nofollow">
+        Load
+       </a>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="creative-commons">
+   <a class="creative-commons-image" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" rel="license" src="/assets/community/creativecommons-08b32a9279fcd47fcd78ac6a26331389.png"/>
+   </a>
+   <div class="license-text">
+    This work is licensed under a
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+    </a>
+    .
+   </div>
+  </div>
+  <div class="modal fade mini-modal" id="sign-in-modal" style="display: none;">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h1>
+       Almost there!
+      </h1>
+     </div>
+     <div class="modal-body">
+      <div class="sign-in-message">
+       Sign into your account, or create a new one, to start interacting.
+      </div>
+      <div class="sign-in-modal-actions">
+       <a class="sign-in-link button blue-button" data-default-url="/community/auth/digitalocean" href="/community/auth/digitalocean">
+        Sign In
+       </a>
+       <a class="sign-up-link button blue-button" data-default-url="/community/auth/digitalocean?display=sessionless+register" href="/community/auth/digitalocean?display=sessionless+register">
+        Sign Up
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

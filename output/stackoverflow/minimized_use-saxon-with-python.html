@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html class="html__responsive" itemscope="" itemtype="http://schema.org/QAPage">
+ <head>
+  <title>
+   xslt - Use saxon with python - Stack Overflow
+  </title>
+  <link href="https://stackoverflow.com/questions/29443364/use-saxon-with-python" rel="canonical"/>
+  <meta content="https://stackoverflow.com/questions/29443364/use-saxon-with-python" property="og:url"/>
+  <meta content="Use saxon with python" itemprop="name" name="twitter:title" property="og:title"/>
+  <meta content="I need to process XSLT using python, currently I'm using lxml which only support XSLT 1, now I need to process XSLT 2 is there any way to use saxon XSLT processor with python?" itemprop="description" name="twitter:description" property="og:description"/>
+  <link href="/feeds/question/29443364" rel="alternate" title="Feed for question 'Use saxon with python'" type="application/atom+xml"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/29443364/use-saxon-with-python" name="twitter:app:url:iphone"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/29443364/use-saxon-with-python" name="twitter:app:url:ipad"/>
+  <meta content="http://stackoverflow.com/questions/29443364/use-saxon-with-python" name="twitter:app:url:googleplay"/>
+ </head>
+ <body class="question-page unified-theme">
+  <div aria-hidden="false" class="p8 ff-sans ps-fixed b0 l0 r0 z-banner" id="js-gdpr-consent-banner" role="banner" style="background-color: #3b4045; color: white;">
+   <div aria-describedby="notice-message" class="wmx8 mx-auto grid grid__center" role="alertdialog">
+    <div aria-label="notice-message" class="grid--cell mr12">
+     <p class="mb0 lh-lg">
+      By using our site, you acknowledge that you have read and understand our  ,  , and our  .
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="left-sidebar js-pinned-left-sidebar ps-relative" data-is-here-when="md lg" id="left-sidebar">
+    <div aria-hidden="true" class="s-popover w-auto p16" id="popover-teams-create-cta" role="menu">
+     <div class="ps-relative overflow-hidden">
+      <p class="mb2">
+       <strong>
+        Teams
+       </strong>
+      </p>
+      <p class="mb16 fs-caption fc-medium">
+       Q&amp;A for Work
+      </p>
+      <p class="mb8 fs-caption fc-medium">
+       Stack Overflow for Teams is a private, secure spot for you and your coworkers to find and share information.
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="snippet-hidden" id="content">
+    <div itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+     <div class="inner-content clearfix">
+      <div class="grid sm:fd-column" id="question-header">
+       <h1 class="grid--cell fs-headline1 fl1 ow-break-word mb8" itemprop="name">
+        <a class="question-hyperlink" href="/questions/29443364/use-saxon-with-python">
+         Use saxon with python
+        </a>
+       </h1>
+      </div>
+      <div class="grid fw-wrap pb8 mb16 bb bc-black-2">
+       <div class="grid--cell ws-nowrap mr16 mb8" title="2015-04-04 06:13:04Z">
+        <time datetime="2015-04-04T06:13:04" itemprop="dateCreated">
+         4 years, 11 months ago
+        </time>
+       </div>
+       <div class="grid--cell ws-nowrap mr16 mb8">
+        <a class="s-link s-link__inherit" href="?lastactivity" title="2019-12-16 02:39:30Z">
+         3 months ago
+        </a>
+       </div>
+       <div class="grid--cell ws-nowrap mb8" title="Viewed 7,036 times">
+        7k times
+       </div>
+      </div>
+      <div aria-label="question and answers" id="mainbar" role="main">
+       <div class="question" data-questionid="29443364" id="question">
+        <div class="post-layout">
+         <div class="votecell post-layout--left">
+          <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="29443364">
+           <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="8" itemprop="upvoteCount">
+            8
+           </div>
+          </div>
+         </div>
+         <div class="postcell post-layout--right">
+          <div class="post-text" itemprop="text">
+           <p>
+            I need to process XSLT using python, currently I'm using lxml which only support XSLT 1, now I need to process XSLT 2 is there any way to use saxon XSLT processor with python?
+           </p>
+          </div>
+          <div class="post-taglist grid gs4 gsy fd-column">
+           <div class="grid ps-relative d-block">
+            <a class="post-tag" href="/questions/tagged/xslt-2.0" rel="tag" title="show questions tagged 'xslt-2.0'">
+             xslt-2.0
+            </a>
+            <a class="post-tag" href="/questions/tagged/saxon" rel="tag" title="show questions tagged 'saxon'">
+             saxon
+            </a>
+           </div>
+          </div>
+          <div class="mb0">
+           <div class="mt16 grid gs8 gsy fw-wrap jc-end ai-start pt4">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 1 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="1" data-se-share-sheet-post-type="question" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this question" href="/q/29443364" itemprop="url" rel="nofollow" title="short permalink to this question">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 1 })" href="/posts/29443364/edit" title="">
+               improve this question
+              </a>
+             </div>
+            </div>
+            <div class="post-signature owner grid--cell">
+             <div class="user-info">
+              <div class="user-action-time">
+               asked
+               <span class="relativetime" title="2015-04-04 06:13:04Z">
+                Apr 4 '15 at 6:13
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/1910531/maliqf">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/dd574340a54d6f46ac9f03c1b296a028?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/1910531/maliqf">
+                Maliqf
+               </a>
+               <span class="d-none" itemprop="name">
+                Maliqf
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 105
+                </span>
+                <span aria-hidden="true" title="2 silver badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 silver badges
+                </span>
+                <span aria-hidden="true" title="8 bronze badges">
+                 <span class="badgecount">
+                  8
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 8 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="answers">
+        <div id="answers-header">
+         <div class="subheader answers-subheader">
+          <h2 data-answercount="5">
+           5 Answers
+           <span itemprop="answerCount" style="display:none;">
+            5
+           </span>
+          </h2>
+          <div>
+           <div id="tabs">
+            <a data-nav-xhref="" data-shortcut="A" data-value="active" href="/questions/29443364/use-saxon-with-python?answertab=active#tab-top" title="Answers with the latest activity first">
+             active
+            </a>
+            <a data-nav-xhref="" data-shortcut="O" data-value="oldest" href="/questions/29443364/use-saxon-with-python?answertab=oldest#tab-top" title="Answers in the order they were provided">
+             oldest
+            </a>
+            <a class="youarehere is-selected" data-nav-xhref="" data-shortcut="V" data-value="votes" href="/questions/29443364/use-saxon-with-python?answertab=votes#tab-top" title="Answers with the highest score first">
+             votes
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer accepted-answer" data-answerid="29444576" id="answer-29444576" itemprop="acceptedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="29444576">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="15" itemprop="upvoteCount">
+             15
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             There are two possible approaches:
+            </p>
+            <ol>
+             <li>
+              <p>
+               set up an HTTP service that accepts tranformation requests and implements them by invoking Saxon from Java; you can then send the transformation requests from Python over HTTP
+              </p>
+             </li>
+             <li>
+              <p>
+               use the Saxon/C product
+               <strike>
+                , currently available on prerelease
+               </strike>
+               : details here:
+               <a href="http://www.saxonica.com/saxon-c/index.xml" rel="noreferrer">
+                http://www.saxonica.com/saxon-c/index.xml
+               </a>
+              </p>
+             </li>
+            </ol>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/29444576" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/29444576/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/29444576/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2018-07-17 08:56:41Z">
+                 Jul 17 '18 at 8:56
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2015-04-04 09:03:16Z">
+                Apr 4 '15 at 9:03
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/415448/michael-kay">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/P2vVZ.png?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/415448/michael-kay">
+                Michael Kay
+               </a>
+               <span class="d-none" itemprop="name">
+                Michael Kay
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 124,675">
+                 125k
+                </span>
+                <span aria-hidden="true" title="6 gold badges">
+                 <span class="badgecount">
+                  6
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 6 gold badges
+                </span>
+                <span aria-hidden="true" title="69 silver badges">
+                 <span class="badgecount">
+                  69
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 69 silver badges
+                </span>
+                <span aria-hidden="true" title="131 bronze badges">
+                 <span class="badgecount">
+                  131
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 131 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="29444576" id="comments-29444576">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="56378855" id="comment-56378855">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @Maliqf, which approach did you end up taking? and how was your experience with it
+                </span>
+                –
+                <a class="comment-user" href="/users/432053/vijay-kumar" title="791 reputation">
+                 Vijay Kumar
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2015-12-16 17:41:10Z">
+                  Dec 16 '15 at 17:41
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="89587968" id="comment-89587968">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 3
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 I wrap Saxon/C in a thin Boost-Python wrapper.  It's not difficult to do providing you know a bit of C/C++ - it's just a bit of boilerplate on-top of the the C++ examples given on Saxon's website.  You can use the supplied PHP API as a guide on how to structure your Python API.  I did it for exactly the reasons stated, no XSLT 3 support native to Python.  It works well for me - specifically it's fast, unlike forking a child saxon process or HTTP requests.
+                </span>
+                –
+                <a class="comment-user" href="/users/2904770/phil" title="448 reputation">
+                 Phil
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-07-12 12:29:43Z">
+                  Jul 12 '18 at 12:29
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="38478202" id="answer-38478202" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="38478202">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="7" itemprop="upvoteCount">
+             7
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             A Python interface for Saxon/C is in development and worth a look:
+            </p>
+            <p>
+             <a href="https://github.com/ajelenak/pysaxon" rel="noreferrer">
+              https://github.com/ajelenak/pysaxon
+             </a>
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/38478202" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/38478202/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2016-07-20 10:03:20Z">
+                Jul 20 '16 at 10:03
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/1408187/ond1">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/d8076884650c64e4cd9fd84dac0c9e3a?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/1408187/ond1">
+                ond1
+               </a>
+               <span class="d-none" itemprop="name">
+                ond1
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 439
+                </span>
+                <span class="v-visible-sr">
+                 4 silver badges
+                </span>
+                <span aria-hidden="true" title="6 bronze badges">
+                 <span class="badgecount">
+                  6
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 6 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="40167794" id="answer-40167794" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="40167794">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="4" itemprop="upvoteCount">
+             4
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             At the moment there is not, but you could use the
+             <a href="https://docs.python.org/2/library/subprocess.html" rel="nofollow">
+              subprocess module
+             </a>
+             to use the Saxon processor:
+            </p>
+            <pre><code>import subprocess  subprocess.call(["saxon", "-o:output.xml", "-s:file.xml", "file.xslt"]) </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/40167794" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/40167794/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/40167794/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2016-10-21 03:39:05Z">
+                 Oct 21 '16 at 3:39
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2016-10-21 03:17:30Z">
+                Oct 21 '16 at 3:17
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/1253735/bruno">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/s6FxZ.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/1253735/bruno">
+                Bruno
+               </a>
+               <span class="d-none" itemprop="name">
+                Bruno
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 687
+                </span>
+                <span aria-hidden="true" title="8 silver badges">
+                 <span class="badgecount">
+                  8
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 8 silver badges
+                </span>
+                <span aria-hidden="true" title="16 bronze badges">
+                 <span class="badgecount">
+                  16
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 16 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="58448374" id="answer-58448374" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="58448374">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Saxon/C release 1.2.0 is now out with XSLT 3.0 support for Python3 see details:
+            </p>
+            <p>
+             <a href="http://www.saxonica.com/saxon-c/index.xml" rel="nofollow noreferrer">
+              http://www.saxonica.com/saxon-c/index.xml
+             </a>
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/58448374" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/58448374/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2019-10-18 09:53:32Z">
+                Oct 18 '19 at 9:53
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/1408187/ond1">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/d8076884650c64e4cd9fd84dac0c9e3a?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/1408187/ond1">
+                ond1
+               </a>
+               <span class="d-none" itemprop="name">
+                ond1
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 439
+                </span>
+                <span class="v-visible-sr">
+                 4 silver badges
+                </span>
+                <span aria-hidden="true" title="6 bronze badges">
+                 <span class="badgecount">
+                  6
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 6 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="59349911" id="answer-59349911" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="59349911">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             If you're using Windows:
+            </p>
+            <p>
+             Download the zip file Saxon-HE 9.9 for Java from
+             <a href="http://saxon.sourceforge.net/#F9.9HE" rel="nofollow noreferrer">
+              http://saxon.sourceforge.net/#F9.9HE
+             </a>
+             and unzip the file to C:\saxon
+            </p>
+            <p>
+             Use this Python code:
+            </p>
+            <pre><code>import os import subprocess  def file_path(relative_path): folder = os.path.dirname(os.path.abspath(__file__)) path_parts = relative_path.split("/") new_path = os.path.join(folder, *path_parts) return new_path  def transform(xml_file, xsl_file, output_file): """all args take relative paths from Python script""" input = file_path(xml_file) output = file_path(output_file) xslt = file_path(xsl_file)  subprocess.call(f"java -cp C:\saxon\saxon9he.jar net.sf.saxon.Transform -t -s:{input} -xsl:{xslt} -o:{output}") </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/59349911" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/59349911/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2019-12-16 02:39:30Z">
+                Dec 16 '19 at 2:39
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/5128561/webucator">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/wX56f.png?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/5128561/webucator">
+                Webucator
+               </a>
+               <span class="d-none" itemprop="name">
+                Webucator
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 908
+                </span>
+                <span aria-hidden="true" title="7 silver badges">
+                 <span class="badgecount">
+                  7
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 7 silver badges
+                </span>
+                <span aria-hidden="true" title="15 bronze badges">
+                 <span class="badgecount">
+                  15
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 15 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <h2 class="bottom-notice" data-loc="1">
+         Not the answer you're looking for?                                Browse other questions tagged
+         <a class="post-tag" href="/questions/tagged/xslt-2.0" rel="tag" title="show questions tagged 'xslt-2.0'">
+          xslt-2.0
+         </a>
+         <a class="post-tag" href="/questions/tagged/saxon" rel="tag" title="show questions tagged 'saxon'">
+          saxon
+         </a>
+         or
+         <a href="/questions/ask">
+          ask your own question
+         </a>
+         .
+        </h2>
+       </div>
+      </div>
+      <div aria-label="sidebar" class="show-votes" id="sidebar" role="complementary">
+       <div class="s-sidebarwidget s-sidebarwidget__yellow s-anchors s-anchors__grayscale mb16" data-tracker="cb=1">
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         The Overflow Blog
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","The Overflow Blog","https://stackoverflow.blog/2020/03/17/podcast-219-time-postgres-guid-docker-razor-char/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 0 })" href="https://stackoverflow.blog/2020/03/17/podcast-219-time-postgres-guid-docker-razor-char/">
+            Podcast: Time Keeps on Slipping
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","The Overflow Blog","https://stackoverflow.blog/2020/03/18/how-to-develop-a-defensive-plan-for-your-open-source-software-project/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 1 })" href="https://stackoverflow.blog/2020/03/18/how-to-develop-a-defensive-plan-for-your-open-source-software-project/">
+            How to develop a defensive plan for your open-source software project
+           </a>
+          </div>
+         </li>
+        </ul>
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         Featured on Meta
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 2 })" href="https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog">
+            The Q1 2020 Community Roadmap is on the Blog
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 3 })" href="https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing">
+            An Update On Creative Commons Licensing
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/345032/community-and-moderator-guidelines-for-escalating-issues-via-new-response-proces",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 4 })" href="https://meta.stackexchange.com/questions/345032/community-and-moderator-guidelines-for-escalating-issues-via-new-response-proces" title="Community and Moderator guidelines for escalating issues via new response process (March 2020)">
+            Community and Moderator guidelines for escalating issues via new response…
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/394498/triage-needs-to-be-fixed-urgently-and-users-need-to-be-notified-upon-receiving",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 5 })" href="https://meta.stackoverflow.com/questions/394498/triage-needs-to-be-fixed-urgently-and-users-need-to-be-notified-upon-receiving" title="Triage needs to be fixed urgently, and users need to be notified upon receiving a review ban!">
+            Triage needs to be fixed urgently, and users need to be notified upon…
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 6 })" href="https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work">
+            How does the Triage queue work?
+           </a>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="module sidebar-linked">
+        <h4 id="h-linked">
+         Linked
+        </h4>
+        <div class="linked" data-tracker="lq=1">
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 29443364, target_question_id: 16698935, position: 0 })">
+          <a href="/q/16698935" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            61
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/16698935/how-to-transform-an-xml-file-using-xslt-in-python?noredirect=1">
+           How to transform an XML file using XSLT in Python?
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 29443364, target_question_id: 52707456, position: 1 })">
+          <a href="/q/52707456" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            5
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/52707456/evaluate-xpath2-0-in-python?noredirect=1">
+           Evaluate Xpath2.0 in python
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 29443364, target_question_id: 32066401, position: 2 })">
+          <a href="/q/32066401" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            1
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/32066401/transforming-multiple-xml-files-using-xslt-in-python?noredirect=1">
+           Transforming multiple xml files using xslt in python
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 29443364, target_question_id: 55319552, position: 3 })">
+          <a href="/q/55319552" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            3
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/55319552/python-selenium-how-to-make-webdriver-use-xpath-version-2-0?noredirect=1">
+           python selenium - how to make webdriver use XPATH version 2.0
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 29443364, target_question_id: 57409445, position: 4 })">
+          <a href="/q/57409445" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            0
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/57409445/applying-xslt-2-0-transformations-with-python?noredirect=1">
+           Applying XSLT 2.0 transformations with Python
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module sidebar-related">
+        <h4 id="h-related">
+         Related
+        </h4>
+        <div class="related js-gps-related-questions" data-tracker="rq=1">
+         <div class="spacer">
+          <a href="/q/3061" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1677
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3061/calling-a-function-of-a-module-by-using-its-name-a-string">
+           Calling a function of a module by using its name (a string)
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/89228" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            4758
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/89228/calling-an-external-command-from-python">
+           Calling an external command from Python
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/100003" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            5594
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/100003/what-are-metaclasses-in-python">
+           What are metaclasses in Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/312443" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2180
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/312443/how-do-you-split-a-list-into-evenly-sized-chunks">
+           How do you split a list into evenly sized chunks?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/354038" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1568
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/354038/how-do-i-check-if-a-string-is-a-number-float">
+           How do I check if a string is a number (float)?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/394809" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            5860
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/394809/does-python-have-a-ternary-conditional-operator">
+           Does Python have a ternary conditional operator?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/739654" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2702
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/739654/how-to-make-a-chain-of-function-decorators">
+           How to make a chain of function decorators?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/1319615" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1236
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/1319615/proper-way-to-declare-custom-exceptions-in-modern-python">
+           Proper way to declare custom exceptions in modern Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/3437059" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            3599
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3437059/does-python-have-a-string-contains-substring-method">
+           Does Python have a string 'contains' substring method?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/5574702" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1299
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/5574702/how-to-print-to-stderr-in-python">
+           How to print to stderr in Python?
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module tex2jax_ignore" id="hot-network-questions">
+        <h4>
+         <a class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })" href="https://stackexchange.com/questions?tab=hot">
+          Hot Network Questions
+         </a>
+        </h4>
+        <ul>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:648 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://retrocomputing.stackexchange.com/questions/14150/how-to-interpret-dave-cutlers-criticism-of-unix">
+           How to interpret Dave Cutler's criticism of Unix?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/201176/numbers-by-position">
+           Numbers by Position
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:375 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://biology.stackexchange.com/questions/90821/are-all-emerging-viral-diseases-of-the-past-100-years-zoonoses">
+           Are all emerging viral diseases of the past 100 years zoonoses?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/201266/a-bit-of-a-digital-xor">
+           A bit of a digital XOR
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:147 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://boardgames.stackexchange.com/questions/50632/why-is-there-no-ruling-to-offset-mandatory-loops">
+           Why is there no ruling to offset Mandatory Loops?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://rpg.stackexchange.com/questions/166529/is-matt-mercers-homebrew-setting-now-considered-an-official-setting">
+           Is Matt Mercer's homebrew setting now considered an official setting?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://music.stackexchange.com/questions/96208/can-one-use-a-whole-note-to-span-a-full-5-4-measure">
+           Can one use a whole note to span a full 5/4 measure?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://travel.stackexchange.com/questions/155085/required-documents-on-arrival-with-person-waiting-outside-at-arrival-area-how">
+           Required documents on arrival with person waiting outside, at arrival area. How can the documents be provided to the person arriving, at customs?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:591 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://economics.stackexchange.com/questions/34483/fixed-cost-of-a-firm">
+           Fixed cost of a firm
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/201259/what-can-you-see-on-a-hexagonal-spiral">
+           What can you see on a hexagonal spiral?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://history.stackexchange.com/questions/57279/why-did-peter-the-great-name-saint-petersburg-russia-with-a-foreign-styled-name">
+           Why did Peter the Great name Saint Petersburg, Russia with a foreign styled name?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://diy.stackexchange.com/questions/186831/how-do-i-use-existing-cat5e-wiring-to-distribute-internet-in-my-house">
+           How do I use existing cat5e wiring to distribute internet in my house?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:336 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://bricks.stackexchange.com/questions/13407/what-is-the-maximum-size-of-lego-instruction-booklets">
+           What is the maximum size of Lego instruction booklets?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://interpersonal.stackexchange.com/questions/24360/having-a-conversation-with-girlfriend-over-possible-future-when-she-shuts-every">
+           Having a conversation with girlfriend over possible future, when she shuts everything down?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:118 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://apple.stackexchange.com/questions/384609/can-i-safely-delete-download-files-to-reclaim-space">
+           Can I safely delete .download files to reclaim space?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://money.stackexchange.com/questions/121746/are-social-security-payments-threatened-by-the-coronavirus-crisis">
+           Are Social Security payments threatened by the Coronavirus crisis?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://rpg.stackexchange.com/questions/166404/can-thorn-whip-be-used-to-hang-an-enemy-in-combat">
+           Can Thorn Whip be used to hang an enemy in combat?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://worldbuilding.stackexchange.com/questions/171477/can-programming-mutate">
+           Can programming "mutate"?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://worldbuilding.stackexchange.com/questions/171558/why-would-a-very-advanced-transhumanist-civilization-ever-need-to-have-a-militar">
+           Why would a very advanced Transhumanist Civilization ever need to have a military or wage wars?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://dba.stackexchange.com/questions/262111/sql-estimates-are-way-off-on-delete-statement-with-triggers-on-huge-tables">
+           SQL estimates are way off on DELETE statement with Triggers on huge tables
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://rpg.stackexchange.com/questions/166507/is-there-a-spell-that-allows-you-to-divine-what-happened-here">
+           Is there a spell that allows you to divine what happened "here"?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/201285/return-a-word-with-a-prescribed-sum-of-letters">
+           Return a word with a prescribed sum of letters
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://diy.stackexchange.com/questions/186845/can-a-broken-prong-stuck-in-an-outlet-increase-electrical-consumption">
+           Can a broken prong stuck in an outlet increase electrical consumption?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://mathematica.stackexchange.com/questions/216533/how-to-remove-style-from-a-styled-number">
+           How to remove style from a styled number?
+          </a>
+         </li>
+        </ul>
+        <a class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })" href="#">
+         more hot questions
+        </a>
+       </div>
+       <div class="js-feed-link" id="feed-link">
+        <a href="/feeds/question/29443364" title="Feed of this question and its answers">
+         Question feed
+        </a>
+       </div>
+       <aside aria-describedby="feed-modal-description" aria-hidden="true" aria-labelledby="feed-modal-title" class="s-modal js-feed-link-modal" role="dialog" tabindex="-1">
+        <div class="s-modal--dialog js-modal-dialog wmx4" data-controller="se-draggable" role="document">
+         <h1 class="s-modal--header fw-bold js-first-tabbable" data-target="se-draggable.handle" id="feed-modal-title" tabindex="0">
+          Subscribe to RSS
+         </h1>
+         <div class="grid gs4 gsy fd-column">
+          <div class="grid--cell">
+           <label class="d-block s-label c-default" for="feed-url">
+            Question feed
+            <p class="s-description mt2" id="feed-modal-description">
+             To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+            </p>
+           </label>
+          </div>
+          <div class="grid ps-relative">
+           <input class="s-input" id="feed-url" name="feed-url" readonly="readonly" type="text" value="https://stackoverflow.com/feeds/question/29443364"/>
+          </div>
+         </div>
+        </div>
+       </aside>
+      </div>
+     </div>
+     <div id="prettify-lang" style="display:none">
+      default
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   How To Install and Use Docker on Ubuntu 16.04 | DigitalOcean
+  </title>
+  <meta content="There are two methods for installing Docker on Ubuntu 16.04. One method involves installing it on an existing installation of the operating system. The other involves spinning up a server with a tool called Docker Machine that auto-installs Docker on" name="description"/>
+  <meta content="How To Install and Use Docker on Ubuntu 16.04 | DigitalOcean" name="og:title"/>
+  <meta content="There are two methods for installing Docker on Ubuntu 16.04. One method involves installing it on an existing installation of the operating system. The other involves spinning up a server with a tool called Docker Machine that auto-installs Docker on" name="og:description"/>
+  <meta content="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/Docker_Install_mostov_twitter-_-facebook-2.png?1481222610" name="og:image"/>
+  <meta content="How To Install and Use Docker on Ubuntu 16.04 | DigitalOcean" name="twitter:title"/>
+  <meta content="There are two methods for installing Docker on Ubuntu 16.04. One method involves installing it on an existing installation of the operating system. The other involves spinning up a server with a tool called Docker Machine that auto-installs Docker on" name="twitter:description"/>
+  <meta content="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04" name="twitter:url"/>
+  <meta content="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/Docker_Install_mostov_twitter-_-facebook-2.png?1481222610" name="twitter:image"/>
+  <link href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04" rel="canonical"/>
+  <link href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04.amp" rel="amphtml"/>
+  <link href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04" hreflang="en" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/como-instalar-y-usar-docker-en-ubuntu-16-04-es" hreflang="es" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/como-instalar-e-usar-o-docker-no-ubuntu-16-04-pt" hreflang="pt" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/docker-ubuntu-16-04-ru" hreflang="ru" rel="alternate"/>
+  <link href="/assets/community/application-a17365d856927de0b593d349e87810f6.css" media="all" rel="stylesheet"/>
+  <meta content="w2e7DQjMcfkYuJjGFmaEGEGw/SQPPnNtgE+wthHmedFPRa78H4ANhVXhcYESyseIr2Zxz8JMODszJj61PHZwTA==" name="csrf-token"/>
+ </head>
+ <body class="feature-filter-bar feature-upvotes tutorials-controller tutorial-single" data-completed-tutorial-id="" data-env="production" data-facebook-app-id="694818843983011" data-flagged="" data-js="tutorial" data-prefix="/community" data-tutorial-id="1973" data-upvote="null" data-user-id="">
+  <div class="outside_viewport">
+   <div class="modal fade mini-modal" id="contents-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Contents
+       </h1>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="translation-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Language
+       </h1>
+      </div>
+      <div class="modal-body">
+       <div class="content-translations">
+        <div class="current-language">
+         <ul class="languages large">
+          <li>
+           <a class="edit" href="/community/tutorials/como-instalar-y-usar-docker-en-ubuntu-16-04-es" title="Español">
+            Español
+           </a>
+          </li>
+          <li>
+           <a class="edit" href="/community/tutorials/como-instalar-e-usar-o-docker-no-ubuntu-16-04-pt" title="Português">
+            Português
+           </a>
+          </li>
+          <li>
+           <a class="edit" href="/community/tutorials/docker-ubuntu-16-04-ru" title="Русский">
+            Русский
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="share-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Share
+       </h1>
+      </div>
+      <div class="modal-body">
+       <div class="social-sharing social-sharing-container">
+        <ul class="top">
+         <li class="shareBtn" id="sbTwitter">
+          <a class="share-link share-popup" href="http://twitter.com/share?text=How%20To%20Install%20and%20Use%20Docker%20on%20Ubuntu%2016.04&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04?utm_content=how-to-install-and-use-docker-on-ubuntu-16-04&amp;utm_medium=community&amp;utm_source=twshare" target="_blank" title="Share on Twitter">
+           Twitter
+          </a>
+         </li>
+         <li class="shareBtn" id="sbFacebook">
+          <a class="share-link share-popup" href="https://www.facebook.com/sharer/sharer.php?u=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04?utm_content=how-to-install-and-use-docker-on-ubuntu-16-04&amp;utm_medium=community&amp;utm_source=fbshare" target="_blank" title="Share on Facebook">
+           Facebook
+          </a>
+         </li>
+         <li class="shareBtn" id="sbYC">
+          <a class="share-link share-popup" href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20and%20Use%20Docker%20on%20Ubuntu%2016.04&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04?utm_content=how-to-install-and-use-docker-on-ubuntu-16-04&amp;utm_medium=community&amp;utm_source=hnshare" target="_blank" title="Submit to Hacker News">
+           Hacker News
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container tutorial-header">
+    <div class="featured-items-right-bar">
+     <h3>
+      Related
+     </h3>
+     <a href="/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04">
+      <div class="featured-item-regular">
+       How To Install Docker Compose on Ubuntu 16.04
+       <span class="featured-item-category">
+        <img alt="Tutorial" height="14" src="/assets/community/tutorials/featured-item-tutorial-icon-2150ccbef202144a53cea261312af267.png" width="14"/>
+        Tutorial
+       </span>
+      </div>
+     </a>
+     <a href="/community/tutorials/how-to-build-a-node-js-application-with-docker-quickstart">
+      <div class="featured-item-regular">
+       How To Build a Node.js Application with Docker [Quickstart]
+       <span class="featured-item-category">
+        <img alt="Tutorial" height="14" src="/assets/community/tutorials/featured-item-tutorial-icon-2150ccbef202144a53cea261312af267.png" width="14"/>
+        Tutorial
+       </span>
+      </div>
+     </a>
+    </div>
+    <img alt="How To Install and Use Docker on Ubuntu 16.04" class="tutorial-image" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/Docker_Install_mostov_twitter-_-facebook-2.png?1481222610" title="How To Install and Use Docker on Ubuntu 16.04"/>
+    <h1 class="content-title Tutorial-header">
+     How To Install and Use Docker on Ubuntu 16.04
+    </h1>
+    <span class="meta-section date-views">
+     <span class="meta-section timestamp">
+      <span class="tutorial-date-text">
+       Updated
+      </span>
+      <span class="tutorial-date">
+       October 19, 2018
+      </span>
+     </span>
+     <span class="meta-section pageviews">
+      <span class="views-count v-mid">
+       2.3m
+      </span>
+     </span>
+    </span>
+    <span class="meta-section tags">
+     <a class="tag" href="/community/tags/ubuntu">
+      Ubuntu
+     </a>
+     <a class="tag" href="/community/tags/docker">
+      Docker
+     </a>
+     <a class="tag" href="/community/tags/ubuntu-16-04">
+      Ubuntu 16.04
+     </a>
+    </span>
+   </div>
+   <div class="tutorial-authors">
+    <div class="component-collaborators-container">
+     <ul class="component-collaborators-content">
+      <li class="collaborator-byline-avatar">
+       <a href="/community/users/finid">
+        <img alt="finid" class="avatar avatar-large" height="80" src="https://secure.gravatar.com/avatar/989a7705a77732d888ddaff8b440fc3d?secure=true&amp;d=identicon" width="80"/>
+       </a>
+      </li>
+      <li class="collaborators-byline-data">
+       <p class="names">
+        By
+        <a href="/community/users/finid">
+         finid
+        </a>
+       </p>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="container versioned-tutorial-group-navigation" data-versioned-tutorial-group-navigation="">
+    <div class="versioned-tutorial-group-navigation__header" data-versioned-tutorial-group-navigation-header="">
+     <h5 class="versioned-tutorial-group-navigation__heading">
+      Not using
+      <strong>
+       Ubuntu 16.04
+      </strong>
+      ? Choose a different version:
+     </h5>
+    </div>
+    <div class="versioned-tutorial-group-navigation__body" data-versioned-tutorial-group-navigation-body="">
+     <ul class="versioned-tutorial-group-navigation__list">
+      <li class="versioned-tutorial-group-navigation__list-item">
+       <a class="versioned-tutorial-group-navigation__link" href="/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-18-04" title="Automated Ansible">
+        <span class="text">
+         Automated Ansible
+        </span>
+       </a>
+      </li>
+      <li class="versioned-tutorial-group-navigation__list-item">
+       <a class="versioned-tutorial-group-navigation__link" href="/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04" title="Ubuntu 18.04">
+        <span class="text">
+         Ubuntu 18.04
+        </span>
+       </a>
+      </li>
+      <li class="versioned-tutorial-group-navigation__list-item">
+       <a class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable" data-distribution-version-id="12" data-tutorial-request="" data-versioned-tutorial-group-id="39" href="javascript:;" title="Automated Docker">
+        <span class="text">
+         Automated Docker
+        </span>
+       </a>
+      </li>
+      <li class="versioned-tutorial-group-navigation__list-item">
+       <a class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable" data-distribution-version-id="14" data-tutorial-request="" data-versioned-tutorial-group-id="39" href="javascript:;" title="Automated Bash">
+        <span class="text">
+         Automated Bash
+        </span>
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content-body tutorial-content" data-growable-markdown="">
+    <h3 id="introduction">
+     Introduction
+    </h3>
+    <p>
+     Docker is an application that makes it simple and easy to run application processes in a container, which are like virtual machines, only more portable, more resource-friendly, and more dependent on the host operating system. For a detailed introduction to the different components of a Docker container, check out
+     <a href="https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-introduction-to-common-components">
+      The Docker Ecosystem: An Introduction to Common Components
+     </a>
+     .
+    </p>
+    <p>
+     There are two methods for installing Docker on Ubuntu 16.04. One method involves installing it on an existing installation of the operating system. The other involves spinning up a server with a tool called
+     <a href="https://www.digitalocean.com/community/tutorials/how-to-provision-and-manage-remote-docker-hosts-with-docker-machine-on-ubuntu-16-04">
+      Docker Machine
+     </a>
+     that auto-installs Docker on it.
+    </p>
+    <p>
+     In this tutorial, you’ll learn how to install and use it on an existing installation of Ubuntu 16.04.
+    </p>
+    <h2 id="prerequisites">
+     Prerequisites
+    </h2>
+    <p>
+     To follow this tutorial, you will need the following:
+    </p>
+    <ul>
+     <li>
+      One Ubuntu 16.04 server set up with a non-root user with sudo privileges and a basic firewall, as explained in the
+      <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04">
+       Initial Setup Guide for Ubuntu 16.04
+      </a>
+     </li>
+     <li>
+      An account on
+      <a href="https://hub.docker.com/">
+       Docker Hub
+      </a>
+      if you wish to create your own images and push them to Docker Hub, as shown in Steps 7 and 8
+     </li>
+    </ul>
+    <h2 id="step-1-—-installing-docker">
+     Step 1 — Installing Docker
+    </h2>
+    <p>
+     The Docker installation package available in the official Ubuntu 16.04 repository may not be the latest version. To get this latest version, install Docker from the official Docker repository. This section shows you how to do just that.
+    </p>
+    <p>
+     First, in order to ensure the downloads are valid, add the GPG key for the official Docker repository to your system:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - </li></ul></code></pre>
+    <p>
+     Add the Docker repository to APT sources:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" </li></ul></code></pre>
+    <p>
+     Next, update the package database with the Docker packages from the newly added repo:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo apt-get update </li></ul></code></pre>
+    <p>
+     Make sure you are about to install from the Docker repo instead of the default Ubuntu 16.04 repo:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">apt-cache policy docker-ce </li></ul></code></pre>
+    <p>
+     You should see output similar to the follow:
+    </p>
+    <div class="code-label" title="Output of apt-cache policy docker-ce">
+     Output of apt-cache policy docker-ce
+    </div>
+    <pre class="code-pre"><code>docker-ce: Installed: (none) Candidate: <span class="highlight">18.06.1~ce~3-0~ubuntu</span> Version table: <span class="highlight">18.06.1~ce~3-0~ubuntu</span> 500 500 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages  </code></pre>
+    <p>
+     Notice that
+     <code>
+      docker-ce
+     </code>
+     is not installed, but the candidate for installation is from the Docker repository for Ubuntu 16.04 (
+     <code>
+      xenial
+     </code>
+     ).
+    </p>
+    <p>
+     Finally, install Docker:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo apt-get install -y docker-ce </li></ul></code></pre>
+    <p>
+     Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo systemctl status docker </li></ul></code></pre>
+    <p>
+     The output should be similar to the following, showing that the service is active and running:
+    </p>
+    <pre class="code-pre"><code>● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: <span class="highlight">active (running)</span> since Thu 2018-10-18 20:28:23 UTC; 35s ago Docs: https://docs.docker.com Main PID: 13412 (dockerd) CGroup: /system.slice/docker.service ├─13412 /usr/bin/dockerd -H fd:// └─13421 docker-containerd --config /var/run/docker/containerd/containerd.toml </code></pre>
+    <p>
+     Installing Docker now gives you not just the Docker service (daemon) but also the
+     <code>
+      docker
+     </code>
+     command line utility, or the Docker client. We’ll explore how to use the
+     <code>
+      docker
+     </code>
+     command later in this tutorial.
+    </p>
+    <h2 id="step-2-—-executing-the-docker-command-without-sudo-optional">
+     Step 2 — Executing the Docker Command Without Sudo (Optional)
+    </h2>
+    <p>
+     By default, running the
+     <code>
+      docker
+     </code>
+     command requires root privileges — that is, you have to prefix the command with
+     <code>
+      sudo
+     </code>
+     . It can also be run by a user in the
+     <strong>
+      docker
+     </strong>
+     group, which is automatically created during the installation of Docker. If you attempt to run the
+     <code>
+      docker
+     </code>
+     command without prefixing it with
+     <code>
+      sudo
+     </code>
+     or without being in the docker group, you’ll get an output like this:
+    </p>
+    <pre class="code-pre"><code>docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?. See 'docker run --help'. </code></pre>
+    <p>
+     If you want to avoid typing
+     <code>
+      sudo
+     </code>
+     whenever you run the
+     <code>
+      docker
+     </code>
+     command, add your username to the
+     <code>
+      docker
+     </code>
+     group:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo usermod -aG docker ${USER} </li></ul></code></pre>
+    <p>
+     To apply the new group membership, you can log out of the server and back in, or you can type the following:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">su - ${USER} </li></ul></code></pre>
+    <p>
+     You will be prompted to enter your user’s password to continue.  Afterwards, you can confirm that your user is now added to the
+     <code>
+      docker
+     </code>
+     group by typing:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">id -nG </li></ul></code></pre>
+    <pre class="code-pre"><code><span class="highlight">sammy</span> sudo docker </code></pre>
+    <p>
+     If you need to add a user to the
+     <code>
+      docker
+     </code>
+     group that you’re not logged in as, declare that username explicitly using:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo usermod -aG docker <span class="highlight">username</span> </li></ul></code></pre>
+    <p>
+     The rest of this article assumes you are running the
+     <code>
+      docker
+     </code>
+     command as a user in the docker user group. If you choose not to, please prepend the commands with
+     <code>
+      sudo
+     </code>
+     .
+    </p>
+    <h2 id="step-3-—-using-the-docker-command">
+     Step 3 — Using the Docker Command
+    </h2>
+    <p>
+     With Docker installed and working, now’s the time to become familiar with the command line utility. Using
+     <code>
+      docker
+     </code>
+     consists of passing it a chain of options and commands followed by arguments. The syntax takes this form:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker [option] [command] [arguments] </li></ul></code></pre>
+    <p>
+     To view all available subcommands, type:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker </li></ul></code></pre>
+    <p>
+     As of Docker 18.06.1, the complete list of available subcommands includes:
+    </p>
+    <pre class="code-pre"><code> attach      Attach local standard input, output, and error streams to a running container build       Build an image from a Dockerfile commit      Create a new image from a container's changes cp          Copy files/folders between a container and the local filesystem create      Create a new container diff        Inspect changes to files or directories on a container's filesystem events      Get real time events from the server exec        Run a command in a running container export      Export a container's filesystem as a tar archive history     Show the history of an image images      List images import      Import the contents from a tarball to create a filesystem image info        Display system-wide information inspect     Return low-level information on Docker objects kill        Kill one or more running containers load        Load an image from a tar archive or STDIN login       Log in to a Docker registry logout      Log out from a Docker registry logs        Fetch the logs of a container pause       Pause all processes within one or more containers port        List port mappings or a specific mapping for the container ps          List containers pull        Pull an image or a repository from a registry push        Push an image or a repository to a registry rename      Rename a container restart     Restart one or more containers rm          Remove one or more containers rmi         Remove one or more images run         Run a command in a new container save        Save one or more images to a tar archive (streamed to STDOUT by default) search      Search the Docker Hub for images start       Start one or more stopped containers stats       Display a live stream of container(s) resource usage statistics stop        Stop one or more running containers tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE top         Display the running processes of a container unpause     Unpause all processes within one or more containers update      Update configuration of one or more containers version     Show the Docker version information wait        Block until one or more containers stop, then print their exit codes </code></pre>
+    <p>
+     To view the switches available to a specific command, type:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker <span class="highlight">docker-subcommand</span> --help </li></ul></code></pre>
+    <p>
+     To view system-wide information about Docker, use:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker info </li></ul></code></pre>
+    <h2 id="step-4-—-working-with-docker-images">
+     Step 4 — Working with Docker Images
+    </h2>
+    <p>
+     Docker containers are run from Docker images. By default, it pulls these images from Docker Hub, a Docker registry managed by Docker, the company behind the Docker project. Anybody can build and host their Docker images on Docker Hub, so most applications and Linux distributions you’ll need to run Docker containers have images that are hosted on Docker Hub.
+    </p>
+    <p>
+     To check whether you can access and download images from Docker Hub, type:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker run hello-world </li></ul></code></pre>
+    <p>
+     In the output, you should see the following message, which indicates that Docker is working correctly:
+    </p>
+    <pre class="code-pre"><code>... Hello from Docker! This message shows that your installation appears to be working correctly. ... </code></pre>
+    <p>
+     You can search for images available on Docker Hub by using the
+     <code>
+      docker
+     </code>
+     command with the
+     <code>
+      search
+     </code>
+     subcommand. For example, to search for the Ubuntu image, type:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker search ubuntu </li></ul></code></pre>
+    <p>
+     The script will crawl Docker Hub and return a listing of all images whose name matches the search string. In this case, the output will be similar to this:
+    </p>
+    <pre class="code-pre"><code> NAME                                                   DESCRIPTION                                     STARS            OFFICIAL            AUTOMATED ubuntu                                                 Ubuntu is a Debian-based Linux operating sys…   8564                [OK] dorowu/ubuntu-desktop-lxde-vnc                         Ubuntu with openssh-server and NoVNC            230                                     [OK] rastasheep/ubuntu-sshd                                 Dockerized SSH service, built on top of offi…   176                                     [OK] consol/ubuntu-xfce-vnc                                 Ubuntu container with "headless" VNC session…   129                                     [OK] ansible/ubuntu14.04-ansible                            Ubuntu 14.04 LTS with ansible                   95                                      [OK] ubuntu-upstart                                         Upstart is an event-based replacement for th…   91                  [OK] neurodebian                                            NeuroDebian provides neuroscience research s…   54                  [OK] 1and1internet/ubuntu-16-nginx-php-phpmyadmin-mysql-5   ubuntu-16-nginx-php-phpmyadmin-mysql-5          48                                      [OK] ubuntu-debootstrap                                     debootstrap --variant=minbase --components=m…   39                  [OK] nuagebec/ubuntu                                        Simple always updated Ubuntu docker images w…   23                                      [OK] tutum/ubuntu                                           Simple Ubuntu docker images with SSH access     18 i386/ubuntu                                            Ubuntu is a Debian-based Linux operating sys…   14 1and1internet/ubuntu-16-apache-php-7.0                 ubuntu-16-apache-php-7.0                        13                                      [OK] ppc64le/ubuntu                                         Ubuntu is a Debian-based Linux operating sys…   12 eclipse/ubuntu_jdk8                                    Ubuntu, JDK8, Maven 3, git, curl, nmap, mc, …   6                                       [OK] 1and1internet/ubuntu-16-nginx-php-5.6-wordpress-4      ubuntu-16-nginx-php-5.6-wordpress-4             6                                       [OK] codenvy/ubuntu_jdk8                                    Ubuntu, JDK8, Maven 3, git, curl, nmap, mc, …   4                                       [OK] darksheer/ubuntu                                       Base Ubuntu Image -- Updated hourly             4                                       [OK] pivotaldata/ubuntu                                     A quick freshening-up of the base Ubuntu doc…   2 1and1internet/ubuntu-16-sshd                           ubuntu-16-sshd                                  1                                       [OK] smartentry/ubuntu                                      ubuntu with smartentry                          1                                       [OK] ossobv/ubuntu                                          Custom ubuntu image from scratch (based on o…   0 paasmule/bosh-tools-ubuntu                             Ubuntu based bosh-cli                           0                                       [OK] 1and1internet/ubuntu-16-healthcheck                    ubuntu-16-healthcheck                           0                                       [OK] pivotaldata/ubuntu-gpdb-dev                            Ubuntu images for GPDB development              0   </code></pre>
+    <p>
+     In the
+     <strong>
+      OFFICIAL
+     </strong>
+     column,
+     <strong>
+      OK
+     </strong>
+     indicates an image built and supported by the company behind the project. Once you’ve identified the image that you would like to use, you can download it to your computer using the
+     <code>
+      pull
+     </code>
+     subcommand. Try this with the
+     <code>
+      ubuntu
+     </code>
+     image, like so:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker pull ubuntu </li></ul></code></pre>
+    <p>
+     After an image has been downloaded, you may then run a container using the downloaded image with the
+     <code>
+      run
+     </code>
+     subcommand. If an image has not been downloaded when
+     <code>
+      docker
+     </code>
+     is executed with the
+     <code>
+      run
+     </code>
+     subcommand, the Docker client will first download the image, then run a container using it:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker run ubuntu </li></ul></code></pre>
+    <p>
+     To see the images that have been downloaded to your computer, type:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker images </li></ul></code></pre>
+    <p>
+     The output should look similar to the following:
+    </p>
+    <pre class="code-pre"><code>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE ubuntu              latest              ea4c82dcd15a        16 hours ago        85.8MB hello-world         latest              4ab4c602aa5e        5 weeks ago         1.84kB </code></pre>
+    <p>
+     As you’ll see later in this tutorial, images that you use to run containers can be modified and used to generate new images, which may then be uploaded (
+     <em>
+      pushed
+     </em>
+     is the technical term) to Docker Hub or other Docker registries.
+    </p>
+    <h2 id="step-5-—-running-a-docker-container">
+     Step 5 — Running a Docker Container
+    </h2>
+    <p>
+     The
+     <code>
+      hello-world
+     </code>
+     container you ran in the previous step is an example of a container that runs and exits after emitting a test message. Containers can be much more useful than that, and they can be interactive. After all, they are similar to virtual machines, only more resource-friendly.
+    </p>
+    <p>
+     As an example, let’s run a container using the latest image of Ubuntu. The combination of the
+     <strong>
+      -i
+     </strong>
+     and
+     <strong>
+      -t
+     </strong>
+     switches gives you interactive shell access into the container:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker run -it ubuntu </li></ul></code></pre>
+    <p>
+     <span class="note">
+      <strong>
+       Note:
+      </strong>
+      The default behavior for the
+      <code>
+       run
+      </code>
+      command is to start a new container. Once you run the preceding the command, you will open up the shell interface of a second
+      <code>
+       ubuntu
+      </code>
+      container.
+      <br/>
+     </span>
+    </p>
+    <p>
+     Your command prompt should change to reflect the fact that you’re now working inside the container and should take this form:
+    </p>
+    <pre class="code-pre"><code>root@<span class="highlight">9b0db8a30ad1</span>:/# </code></pre>
+    <p>
+     <span class="note">
+      <strong>
+       Note:
+      </strong>
+      Remember the container id in the command prompt. In the preceding example, it is
+      <code>
+       9b0db8a30ad1
+      </code>
+      . You’ll need that container ID later to identify the container when you want to remove it.
+      <br/>
+     </span>
+    </p>
+    <p>
+     Now you can run any command inside the container. For example, let’s update the package database inside the container. You don’t need to prefix any command with
+     <code>
+      sudo
+     </code>
+     , because you’re operating inside the container as the
+     <strong>
+      root
+     </strong>
+     user:
+    </p>
+    <pre class="code-pre custom_prefix second-environment"><code><ul class="prefixed"><li class="line" prefix="root@9b0db8a30ad1:/#">apt-get update </li></ul></code></pre>
+    <p>
+     Then install any application in it. Let’s install Node.js:
+    </p>
+    <pre class="code-pre custom_prefix second-environment"><code><ul class="prefixed"><li class="line" prefix="root@9b0db8a30ad1:/#">apt-get install -y nodejs </li></ul></code></pre>
+    <p>
+     This installs Node.js in the container from the official Ubuntu repository. When the installation finishes, verify that Node.js is installed:
+    </p>
+    <pre class="code-pre custom_prefix second-environment"><code><ul class="prefixed"><li class="line" prefix="root@9b0db8a30ad1:/#">node -v </li></ul></code></pre>
+    <p>
+     You’ll see the version number displayed in your terminal:
+    </p>
+    <pre class="code-pre second-environment"><code>v8.10.0 </code></pre>
+    <p>
+     Any changes you make inside the container only apply to that container.
+    </p>
+    <p>
+     To exit the container, type
+     <code>
+      exit
+     </code>
+     at the prompt.
+    </p>
+    <p>
+     Let’s look at managing the containers on our system next.
+    </p>
+    <h2 id="step-6-—-managing-docker-containers">
+     Step 6 — Managing Docker Containers
+    </h2>
+    <p>
+     After using Docker for a while, you’ll have many active (running) and inactive containers on your computer. To view the
+     <strong>
+      active ones
+     </strong>
+     , use:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker ps </li></ul></code></pre>
+    <p>
+     You will see output similar to the following:
+    </p>
+    <pre class="code-pre"><code>CONTAINER ID        IMAGE               COMMAND             CREATED  </code></pre>
+    <p>
+     In this tutorial, you started three containers; one from the
+     <code>
+      hello-world
+     </code>
+     image and two from the
+     <code>
+      ubuntu
+     </code>
+     image. These containers are no longer running, but they still exist on your system.
+    </p>
+    <p>
+     To view all containers — active and inactive — run
+     <code>
+      docker ps
+     </code>
+     with the
+     <code>
+      -a
+     </code>
+     switch:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker ps -a </li></ul></code></pre>
+    <p>
+     You’ll see output similar to this:
+    </p>
+    <pre class="code-pre"><code>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                          PORTS               NAMES 9b0db8a30ad1        ubuntu              "/bin/bash"         21 minutes ago      Exited (0) About a minute ago                       xenodochial_neumann d7851eb12e23        ubuntu              "/bin/bash"         24 minutes ago      Exited (0) 24 minutes ago                           boring_chebyshev d54945b6510b        hello-world         "/hello"            32 minutes ago      Exited (0) 32 minutes ago                           youthful_roentgen </code></pre>
+    <p>
+     To view the latest container you created, pass it the
+     <code>
+      -l
+     </code>
+     switch:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker ps -l </li></ul></code></pre>
+    <pre class="code-pre"><code>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                            PORTS               NAMES 9b0db8a30ad1        ubuntu              "/bin/bash"         22 minutes ago      Exited (127) About a minute ago                       xenodochial_neumann </code></pre>
+    <p>
+     To start a stopped container, use
+     <code>
+      docker start
+     </code>
+     , followed by the container ID or the container’s name. Let’s start the Ubuntu-based container with the ID of
+     <code>
+      9b0db8a30ad1
+     </code>
+     :
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker start <span class="highlight">9b0db8a30ad1 </span> </li></ul></code></pre>
+    <p>
+     The container will start, and you can use
+     <code>
+      docker ps
+     </code>
+     to see its status:
+    </p>
+    <pre class="code-pre"><code>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES 9b0db8a30ad1        ubuntu              "/bin/bash"         23 minutes ago      Up 11 seconds                           xenodochial_neumann </code></pre>
+    <p>
+     To stop a running container, use
+     <code>
+      docker stop
+     </code>
+     , followed by the container ID or name. This time, we’ll use the name that Docker assigned the container, which is
+     <code>
+      xenodochial_neumann
+     </code>
+     :
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker stop <span class="highlight">xenodochial_neumann</span> </li></ul></code></pre>
+    <p>
+     Once you’ve decided you no longer need a container anymore, remove it with the
+     <code>
+      docker rm
+     </code>
+     command, again using either the container ID or the name.  Use the
+     <code>
+      docker ps -a
+     </code>
+     command to find the container ID or name for the container associated with the
+     <code>
+      hello-world
+     </code>
+     image and remove it.
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker rm <span class="highlight">youthful_roentgen</span> </li></ul></code></pre>
+    <p>
+     You can start a new container and give it a name using the
+     <code>
+      --name
+     </code>
+     switch. You can also use the
+     <code>
+      --rm
+     </code>
+     switch to create a container that removes itself when it’s stopped. See the
+     <code>
+      docker run help
+     </code>
+     command for more information on these options and others.
+    </p>
+    <p>
+     Containers can be turned into images which you can use to build new containers. Let’s look at how that works.
+    </p>
+    <h2 id="step-7-—-committing-changes-in-a-container-to-a-docker-image">
+     Step 7 — Committing Changes in a Container to a Docker Image
+    </h2>
+    <p>
+     When you start up a Docker image, you can create, modify, and delete files just like you can with a virtual machine. The changes that you make will only apply to that container. You can start and stop it, but once you destroy it with the
+     <code>
+      docker rm
+     </code>
+     command, the changes will be lost for good.
+    </p>
+    <p>
+     This section shows you how to save the state of a container as a new Docker image.
+    </p>
+    <p>
+     After installing Node.js inside the Ubuntu container, you now have a container running off an image, but the container is different from the image you used to create it. But you might want to reuse this Node.js container as the basis for new images later.
+    </p>
+    <p>
+     To do this, commit the changes to a new Docker image instance using the following command structure:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker commit -m "<span class="highlight">What did you do to the image</span>" -a "<span class="highlight">Author Name</span>" <span class="highlight">container-id</span> <span class="highlight">repository</span>/<span class="highlight">new_image_name</span> </li></ul></code></pre>
+    <p>
+     The
+     <strong>
+      -m
+     </strong>
+     switch is for the commit message that helps you and others know what changes you made, while
+     <strong>
+      -a
+     </strong>
+     is used to specify the author. The
+     <code>
+      container ID
+     </code>
+     is the one you noted earlier in the tutorial when you started the interactive Docker session. Unless you created additional repositories on Docker Hub, the repository is usually your Docker Hub username.
+    </p>
+    <p>
+     For example, for the user
+     <strong>
+      sammy
+     </strong>
+     , with the container ID of
+     <code>
+      d9b100f2f636
+     </code>
+     , the command would be:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker commit -m "added node.js" -a "<span class="highlight">sammy</span>" <span class="highlight">d9b100f2f636</span> <span class="highlight">sammy</span>/ubuntu-nodejs </li></ul></code></pre>
+    <p>
+     <span class="note">
+      <strong>
+       Note:
+      </strong>
+      When you
+      <em>
+       commit
+      </em>
+      an image, the new image is saved locally, that is, on your computer. Later in this tutorial, you’ll learn how to push an image to a Docker registry like Docker Hub so that it can be assessed and used by you and others.
+      <br/>
+     </span>
+    </p>
+    <p>
+     After that operation is completed, listing the Docker images now on your computer should show the new image, as well as the old one that it was derived from:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker images </li></ul></code></pre>
+    <p>
+     The output should be similar to this:
+    </p>
+    <pre class="code-pre"><code>REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE <span class="highlight">sammy</span>/ubuntu-nodejs       latest              6a1784a63edf        2 minutes ago       170MB ubuntu                    latest              ea4c82dcd15a        17 hours ago        85.8MB hello-world               latest              4ab4c602aa5e        5 weeks ago         1.84kB </code></pre>
+    <p>
+     In the above example,
+     <strong>
+      ubuntu-nodejs
+     </strong>
+     is the new image, which was derived from the existing ubuntu image from Docker Hub. The size difference reflects the changes that were made. In this example, the change was that Node.js was installed. Next time you need to run a container using Ubuntu with Node.js pre-installed, you can just use the new image.
+    </p>
+    <p>
+     You can also build images from a
+     <code>
+      Dockerfile
+     </code>
+     , which lets you automate the installation of software in a new image. However, that’s outside the scope of this tutorial.
+    </p>
+    <p>
+     Now let’s share the new image with others so they can create containers from it.
+    </p>
+    <h2 id="step-8-—-pushing-docker-images-to-a-docker-repository">
+     Step 8 — Pushing Docker Images to a Docker Repository
+    </h2>
+    <p>
+     The next logical step after creating a new image from an existing image is to share it with a select few of your friends, the whole world on Docker Hub, or another Docker registry that you have access to. To push an image to Docker Hub or any other Docker registry, you must have an account there.
+    </p>
+    <p>
+     This section shows you how to push a Docker image to Docker Hub. To learn how to create your own private Docker registry, check out
+     <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04">
+      How To Set Up a Private Docker Registry on Ubuntu 14.04
+     </a>
+     .
+    </p>
+    <p>
+     To push your image, first log into Docker Hub:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker login -u <span class="highlight">docker-registry-username</span> </li></ul></code></pre>
+    <p>
+     You’ll be prompted to authenticate using your Docker Hub password. If you specified the correct password, authentication should succeed.
+    </p>
+    <span class="note">
+     <p>
+      <strong>
+       Note:
+      </strong>
+      If your Docker registry username is different from the local username you used to create the image, you will have to tag your image with your registry username. For the example given in the last step, you would type:
+     </p>
+     <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker tag <span class="highlight">sammy</span>/ubuntu-nodejs <span class="highlight">docker-registry-username</span>/ubuntu-nodejs </li></ul></code></pre>
+    </span>
+    <p>
+     Then you can push your own image using:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker push <span class="highlight">docker-registry-username</span>/ubuntu-nodejs </li></ul></code></pre>
+    <p>
+     To push the
+     <code>
+      ubuntu-nodejs
+     </code>
+     image to the
+     <strong>
+      sammy
+     </strong>
+     repository, the command would be:
+    </p>
+    <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker push <span class="highlight">sammy</span>/<span class="highlight">ubuntu-nodejs</span> </li></ul></code></pre>
+    <p>
+     The process may take some time to complete as it uploads the images, but when completed, the output will look like this:
+    </p>
+    <pre class="code-pre"><code>The push refers to repository [docker.io/<span class="highlight">sammy</span>/ubuntu-nodejs] 1aa927602b6a: Pushed 76c033092e10: Pushed 2146d867acf3: Pushed ae1f631f14b7: Pushed 102645f1cf72: Pushed latest: digest: sha256:2be90a210910f60f74f433350185feadbbdaca0d050d97181bf593dd85195f06 size: 1362 </code></pre>
+    <p>
+     After pushing an image to a registry, it should be listed on your account’s dashboard, like that shown in the image below.
+    </p>
+    <p>
+     <img alt="New Docker image listing on Docker Hub" src="https://assets.digitalocean.com/articles/docker_1804/ec2vX3Z.png"/>
+    </p>
+    <p>
+     If a push attempt results in the following error, it is likely that you are not logged in:
+    </p>
+    <pre class="code-pre"><code>The push refers to a repository [docker.io/<span class="highlight">sammy</span>/ubuntu-nodejs] e3fbbfb44187: Preparing 5f70bf18a086: Preparing a3b5c80a4eba: Preparing 7f18b442972b: Preparing 3ce512daaf78: Preparing 7aae4540b42d: Waiting unauthorized: authentication required </code></pre>
+    <p>
+     Log in, then repeat the push attempt.
+    </p>
+    <h2 id="conclusion">
+     Conclusion
+    </h2>
+    <p>
+     In this tutorial, you’ve learned the basics to get you started working with Docker on Ubuntu 16.04. Like most open source projects, Docker is built from a fast-developing codebase, so make a habit of visiting the project’s
+     <a href="https://blog.docker.com/">
+      blog page
+     </a>
+     for the latest information.
+    </p>
+    <p>
+     For further exploration, check out the
+     <a href="https://www.digitalocean.com/community/tags/docker?type=tutorials">
+      other Docker tutorials
+     </a>
+     in the DigitalOcean Community.
+    </p>
+   </div>
+  </div>
+  <div class="tutorial-footer">
+   <div class="tutorial-footer-details">
+    <div class="postable-info-bar-container">
+     <div class="postable-info-bar">
+      <div class="author-byline">
+       <div class="component-collaborators-container">
+        <ul class="component-collaborators-content">
+         <li class="collaborator-byline-avatar">
+          <a href="/community/users/finid">
+           <img alt="finid" class="avatar avatar-large" height="80" src="https://secure.gravatar.com/avatar/989a7705a77732d888ddaff8b440fc3d?secure=true&amp;d=identicon" width="80"/>
+          </a>
+         </li>
+         <li class="collaborators-byline-data">
+          <p class="names">
+           By
+           <a href="/community/users/finid">
+            finid
+           </a>
+          </p>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="section-content tutorial-contributors three">
+     <div class="component-collaborators-container">
+      <ul class="component-collaborators-content">
+       <li class="collaborator-byline-avatar">
+        <a href="/community/users/tfox">
+         <img alt="D67be84c5e0a20b4c1cdb360319cdf4b5d9df7f6" class="avatar avatar-large" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/users/avatars/large/d67be84c5e0a20b4c1cdb360319cdf4b5d9df7f6.png?1434061462"/>
+        </a>
+       </li>
+       <li class="collaborators-byline-data">
+        <p class="names">
+         Editor:
+         <a href="/community/users/tfox">
+          Tammy Fox
+         </a>
+        </p>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="hsb--container">
+     <div class="hsb--content">
+      <div class="hsb--social-and-comments">
+       <div class="hsb--comment">
+        <strong class="amount">
+         40
+        </strong>
+       </div>
+      </div>
+     </div>
+     <a class="hsb--flagging-js" data-flag-type="report" data-flaggable-id="1973" data-url="/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04/flag" href="javascript:void(0);">
+      Report an issue
+     </a>
+    </div>
+   </div>
+   <div class="related-content">
+    <div class="section-content">
+     <h2>
+      Related
+     </h2>
+     <ul>
+      <li title="How To Install Docker Compose on Ubuntu 16.04">
+       <a class="panel" href="/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Install Docker Compose on Ubuntu 16.04
+         </h5>
+         <p data-clamp="">
+          Docker is a great tool, but to take full advantage of its potential each component of an application should run in its own container. Docker Compose makes it easier for users to orchestrate the processes of Docker containers, including starting up, shutting down, and setting up intra-container linking and volumes.  In this tutorial, we'll show you how to install the latest version of Docker Compose to help you manage multi-container applications.
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Build a Node.js Application with Docker [Quickstart]">
+       <a class="panel" href="/community/tutorials/how-to-build-a-node-js-application-with-docker-quickstart">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Build a Node.js Application with Docker [Quickstart]
+         </h5>
+         <p data-clamp="">
+          Interested in Node.js but not sure where to start with Docker? This tutorial will walk you through the first step: building an image for a Node.js application and creating a container from it. We will also walk you through pushing that image to Docker Hub and using the saved image to recreate your application container.
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Set Up Password Authentication with Apache on Ubuntu 18.04 [Quickstart]">
+       <a class="panel" href="/community/tutorials/how-to-set-up-password-authentication-with-apache-on-ubuntu-18-04-quickstart">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Set Up Password Authentication with Apache on Ubuntu 18.04 [Quickstart]
+         </h5>
+         <p data-clamp="">
+          This tutorial will walk you through password-protecting assets on an Apache web server running on Ubuntu 18.04. Completing these steps will provide your server with additional security so that unauthorized users cannot access certain parts of your page. For a more detailed…
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Set Up Password Authentication with Apache on Ubuntu 18.04">
+       <a class="panel" href="/community/tutorials/how-to-set-up-password-authentication-with-apache-on-ubuntu-18-04">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Set Up Password Authentication with Apache on Ubuntu 18.04
+         </h5>
+         <p data-clamp="">
+          This tutorial will walk you through password-protecting assets on an Apache web server running on Ubuntu 18.04 in order to provide your server with additional security.
+         </p>
+        </div>
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="looking-for-an-answer">
+    <div class="section-content">
+     <h4>
+      Still looking for an answer?
+     </h4>
+     <div class="lfa--actions">
+      <a class="lfa--action-box" href="/community/questions/new?tags=Docker%2CUbuntu%2CUbuntu+16.04">
+       Ask a question
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="content-comments">
+   <div class="section-content">
+    <div class="tutorial commentable" id="tutorial_1973">
+     <div class="comments-header">
+      <h4 class="comments-count">
+       <span>
+        40 Comments
+       </span>
+      </h4>
+     </div>
+     <div class="comments">
+      <ul class="response-list">
+       <a class="js-click-on-load hidden" data-remote="true" href="/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04/comments" rel="nofollow">
+        Load
+       </a>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="creative-commons">
+   <a class="creative-commons-image" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" rel="license" src="/assets/community/creativecommons-08b32a9279fcd47fcd78ac6a26331389.png"/>
+   </a>
+   <div class="license-text">
+    This work is licensed under a
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+    </a>
+    .
+   </div>
+  </div>
+  <div class="modal fade mini-modal" id="sign-in-modal" style="display: none;">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h1>
+       Almost there!
+      </h1>
+     </div>
+     <div class="modal-body">
+      <div class="sign-in-message">
+       Sign into your account, or create a new one, to start interacting.
+      </div>
+      <div class="sign-in-modal-actions">
+       <a class="sign-in-link button blue-button" data-default-url="/community/auth/digitalocean" href="/community/auth/digitalocean">
+        Sign In
+       </a>
+       <a class="sign-up-link button blue-button" data-default-url="/community/auth/digitalocean?display=sessionless+register" href="/community/auth/digitalocean?display=sessionless+register">
+        Sign Up
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

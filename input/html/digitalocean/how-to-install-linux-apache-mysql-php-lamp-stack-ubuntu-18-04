@@ -1,0 +1,2679 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04 | DigitalOcean
+  </title>
+  <meta content="A 'LAMP' stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web apps. This stack typically consists of the Linux operating system, the Apache web server, a MySQL database, and" name="description"/>
+  <link href="/assets/community/apple-icon-180x180-7cfa57a663a6018512c36d26bbf3fbf4.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/assets/community/apple-icon-152x152-72bb6155ca60aff64dbfe8f4ba7872d7.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="/assets/community/apple-icon-144x144-42910a539ffa155564177508290143e5.png" rel="apple-touch-icon" sizes="144x144"/>
+  <link href="/assets/community/apple-icon-120x120-a8dac8a29b106a451ace9158e750b123.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="/assets/community/apple-icon-114x114-96787f804b626b8e1c33805014c0b62f.png" rel="apple-touch-icon" sizes="114x114"/>
+  <link href="/assets/community/apple-icon-76x76-86662fa594148be74d14b6b7afe15231.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="/assets/community/apple-icon-72x72-9fd2efba53b3e713d7d905717f1e225c.png" rel="apple-touch-icon" sizes="72x72"/>
+  <link href="/assets/community/apple-icon-60x60-ae726a3453fd94d37fa5f54b60f21c27.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="/assets/community/apple-icon-57x57-d2743f8eb69264c906d4cf1107f7a7fb.png" rel="apple-touch-icon" sizes="57x57"/>
+  <link href="/assets/community/android-icon-192x192-c995696140189b712c4fcc68b426ede5.png" rel="icon" sizes="192x192" type="image/png"/>
+  <link href="/assets/community/favicon-32x32-5f934f5585baa8cefeae9d7a4b3d3f1f.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/assets/community/favicon-96x96-a89e0b14e66e4063010e7ded4034aa3a.png" rel="icon" sizes="96x96" type="image/png"/>
+  <link href="/assets/community/favicon-16x16-0bdd2bc48094fc75c4be7efc7c8cb424.png" rel="icon" sizes="16x16" type="image/png"/>
+  <meta content="/assets/community/ms-icon-144x144-42910a539ffa155564177508290143e5.png" name="msapplication-TileImage"/>
+  <meta content="#0069ff" name="msapplication-TileColor"/>
+  <meta content="#0069ff" name="theme-color"/>
+  <meta content="How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04 | DigitalOcean" name="og:title"/>
+  <meta content="A 'LAMP' stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web apps. This stack typically consists of the Linux operating system, the Apache web server, a MySQL database, and" name="og:description"/>
+  <meta content="DigitalOcean" name="og:site_name"/>
+  <meta content="article" name="og:type"/>
+  <meta content="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/LAMP_tw_updated_logo.png?1564576130" name="og:image"/>
+  <meta content="DigitalOcean" name="twitter:site"/>
+  <meta content="How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04 | DigitalOcean" name="twitter:title"/>
+  <meta content="A 'LAMP' stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web apps. This stack typically consists of the Linux operating system, the Apache web server, a MySQL database, and" name="twitter:description"/>
+  <meta content="DigitalOcean" name="twitter:creator"/>
+  <meta content="photo" name="twitter:card"/>
+  <meta content="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04" name="twitter:url"/>
+  <meta content="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/LAMP_tw_updated_logo.png?1564576130" name="twitter:image"/>
+  <link href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04" rel="canonical"/>
+  <link href="https://digitalocean.cdn.prismic.io" rel="preconnect"/>
+  <link href="https://hello.myfonts.net" rel="preconnect"/>
+  <link href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04" hreflang="en" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/como-instalar-en-ubuntu-18-04-la-pila-lamp-linux-apache-mysql-y-php-es" hreflang="es" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/comment-installer-la-pile-linux-apache-mysql-php-lamp-sur-un-serveur-ubuntu-18-04-fr" hreflang="fr" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt" hreflang="pt" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/linux-apache-mysql-php-lamp-ubuntu-18-04-ru" hreflang="ru" rel="alternate"/>
+  <link href="/assets/community/application-50562c69780a2177762d4be947f202f6.css" media="all" rel="stylesheet"/>
+  <meta content="authenticity_token" name="csrf-param"/>
+  <meta content="O6mjpFT3fRMn4NlB+ttqAJq5TgbjWCN/DbLtFT5Yf5F3qi/u0AP4cAYhNV6ifaCcDxR8JX73dIcCnR/dQDrvXQ==" name="csrf-token"/>
+  <script src="/assets/community/prerequisites-4ce77745092b47fb9e02daf4a5204fc6.js">
+  </script>
+  <script>
+   //<![CDATA[
+
+  window.cookieDomain = '.digitalocean.com';
+
+//]]>
+  </script>
+  <script defer="" src="https://assets.digitalocean.com/cookieConsent/cookieConsent.js">
+  </script>
+  <script>
+   (function () {
+    document.addEventListener("DOMContentLoaded", function () {
+      var css = document.getElementById("cookie-consent-css");
+
+      if (css) { return; }
+
+      css = document.createElement("link");
+      css.id = "cookie-consent-css";
+      css.rel = "stylesheet";
+      css.href = "https://assets.digitalocean.com/cookieConsent/cookieConsent.css";
+      document.head.insertBefore(css, document.head.childNodes[ document.head.childNodes.length - 1 ].nextSibling);
+    }, false);
+  })();
+  </script>
+  <script type="text/javascript">
+   if(window.analytics=window.analytics||[],window.analytics.included)window.console&&console.error&&console.error("analytics.js included twice");else{window.analytics.included=!0,window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(a){return function(){var n=Array.prototype.slice.call(arguments);return n.unshift(a),window.analytics.push(n),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(a){var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+a+"/analytics.min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(n,t)},window.analytics.SNIPPET_VERSION="2.0.9",window.analytics.load("puo3uv968t")}
+  window.analytics.page();
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KHWBBT');
+  </script>
+  <!-- End Google Tag Manager -->
+  <script src="/assets/community/internalCookies-8ace97976ab0fb16d124f7afad39c327.js">
+  </script>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js">
+  </script>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <link href="/community/tutorials/feed" rel="alternate" title="RSS" type="application/rss+xml"/>
+  <script>
+   window.comApp = {
+        prefix: '/community',
+        svgIconPath: 'https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg',
+        railsEnv: 'production',
+        rootUrl: 'https://www.digitalocean.com/community',
+        algolia_application_id: '6ZHEUVKJ88',
+        algolia_api_key: 'c5470567eae7fa1177d43222e18ba086'
+      };
+  </script>
+  <script>
+   window.Prism = window.Prism || {};
+  window.Prism.manual = true;
+  </script>
+  <link href="https://assets.digitalocean.com/prism/prism.css" media="all" rel="stylesheet"/>
+  <script src="/assets/community/application-09db2e43c4ed783035eeb9d7a75f36f9.js">
+  </script>
+ </head>
+ <body class="feature-filter-bar feature-upvotes tutorials-controller tutorial-single" data-completed-tutorial-id="" data-env="production" data-facebook-app-id="694818843983011" data-flagged="" data-js="tutorial" data-prefix="/community" data-tutorial-id="2614" data-upvote="null" data-user-id="">
+  <div class="outside_viewport">
+   <div class="modal fade mini-modal" id="contents-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Contents
+       </h1>
+       <button aria-label="close" class="close-button icon icon-close-light" data-dismiss="modal">
+       </button>
+      </div>
+      <div class="modal-body">
+       <div class="table-of-contents-modal">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="translation-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Language
+       </h1>
+       <a aria-label="close" class="close-button" data-dismiss="modal" href="">
+        <span class="icon icon-close-light">
+        </span>
+       </a>
+      </div>
+      <div class="modal-body">
+       <div class="content-translations">
+        <div class="current-language">
+         <ul class="languages large">
+          <li class="current">
+           <span class="icon icon-check-light">
+           </span>
+           English
+          </li>
+          <li>
+           <a class="edit" href="/community/tutorials/como-instalar-en-ubuntu-18-04-la-pila-lamp-linux-apache-mysql-y-php-es" title="Español">
+            Español
+           </a>
+          </li>
+          <li>
+           <a class="edit" href="/community/tutorials/comment-installer-la-pile-linux-apache-mysql-php-lamp-sur-un-serveur-ubuntu-18-04-fr">
+           </a>
+          </li>
+          <li>
+           <a class="edit" href="/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt" title="Português">
+            Português
+           </a>
+          </li>
+          <li>
+           <a class="edit" href="/community/tutorials/linux-apache-mysql-php-lamp-ubuntu-18-04-ru" title="Русский">
+            Русский
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="share-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Share
+       </h1>
+       <button aria-label="close" class="close-button icon icon-close-light" data-dismiss="modal" type="button">
+       </button>
+      </div>
+      <div class="modal-body">
+       <div class="social-sharing social-sharing-container">
+        <ul class="top">
+         <li class="shareBtn" id="sbTwitter">
+          <a class="share-icon share-popup" href="http://twitter.com/share?text=How%20To%20Install%20Linux%2C%20Apache%2C%20MySQL%2C%20PHP%20%28LAMP%29%20stack%20on%20Ubuntu%2018.04&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=twshare" target="_blank" title="Share on Twitter">
+           <span class="sIcon icon-bird">
+           </span>
+          </a>
+          <a class="share-link share-popup" href="http://twitter.com/share?text=How%20To%20Install%20Linux%2C%20Apache%2C%20MySQL%2C%20PHP%20%28LAMP%29%20stack%20on%20Ubuntu%2018.04&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=twshare" target="_blank" title="Share on Twitter">
+           Twitter
+          </a>
+         </li>
+         <li class="shareBtn" id="sbFacebook">
+          <a class="share-icon share-popup" href="https://www.facebook.com/sharer/sharer.php?u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=fbshare" target="_blank" title="Share on Facebook">
+           <span class="sIcon icon-facebook-B">
+           </span>
+          </a>
+          <a class="share-link share-popup" href="https://www.facebook.com/sharer/sharer.php?u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=fbshare" target="_blank" title="Share on Facebook">
+           Facebook
+          </a>
+         </li>
+         <li class="shareBtn" id="sbYC">
+          <a class="share-icon share-popup" href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20Linux%2C%20Apache%2C%20MySQL%2C%20PHP%20%28LAMP%29%20stack%20on%20Ubuntu%2018.04&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=hnshare" target="_blank" title="Submit to Hacker News">
+           <span class="sIcon icon-hacker-news">
+           </span>
+          </a>
+          <a class="share-link share-popup" href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20Linux%2C%20Apache%2C%20MySQL%2C%20PHP%20%28LAMP%29%20stack%20on%20Ubuntu%2018.04&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=hnshare" target="_blank" title="Submit to Hacker News">
+           Hacker News
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="table-of-contents">
+    <div data-js="tableOfContentsDesktop">
+    </div>
+   </div>
+   <!-- algolia universal search -->
+   <input id="q-universal-search" type="hidden" value=""/>
+   <div class="modal fade mini-modal" id="share-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Share
+       </h1>
+       <button aria-label="close" class="close-button icon icon-close-light" data-dismiss="modal" type="button">
+       </button>
+      </div>
+      <div class="modal-body">
+       <div class="social-sharing social-sharing-container">
+        <ul class="bottom">
+         <li class="shareBtn" id="sbTwitter">
+          <a class="share-icon share-popup" href="http://twitter.com/share?text=How%20To%20Install%20Linux%2C%20Apache%2C%20MySQL%2C%20PHP%20%28LAMP%29%20stack%20on%20Ubuntu%2018.04&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=twshare" target="_blank" title="Share on Twitter">
+           <span class="sIcon icon-bird">
+           </span>
+          </a>
+          <a class="share-link share-popup" href="http://twitter.com/share?text=How%20To%20Install%20Linux%2C%20Apache%2C%20MySQL%2C%20PHP%20%28LAMP%29%20stack%20on%20Ubuntu%2018.04&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=twshare" target="_blank" title="Share on Twitter">
+           Twitter
+          </a>
+         </li>
+         <li class="shareBtn" id="sbFacebook">
+          <a class="share-icon share-popup" href="https://www.facebook.com/sharer/sharer.php?u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=fbshare" target="_blank" title="Share on Facebook">
+           <span class="sIcon icon-facebook-B">
+           </span>
+          </a>
+          <a class="share-link share-popup" href="https://www.facebook.com/sharer/sharer.php?u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=fbshare" target="_blank" title="Share on Facebook">
+           Facebook
+          </a>
+         </li>
+         <li class="shareBtn" id="sbYC">
+          <a class="share-icon share-popup" href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20Linux%2C%20Apache%2C%20MySQL%2C%20PHP%20%28LAMP%29%20stack%20on%20Ubuntu%2018.04&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=hnshare" target="_blank" title="Submit to Hacker News">
+           <span class="sIcon icon-hacker-news">
+           </span>
+          </a>
+          <a class="share-link share-popup" href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20Linux%2C%20Apache%2C%20MySQL%2C%20PHP%20%28LAMP%29%20stack%20on%20Ubuntu%2018.04&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=hnshare" target="_blank" title="Submit to Hacker News">
+           Hacker News
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="newsletter-signups-dialog" data-article-target=".content-body" data-newsletter-signup-dialog="" id="newsletter-signup-dialog">
+    <div class="form-message">
+     <div class="pull-right">
+      <a class="newsletter-signups-dialog-dismiss" data-newsletter-signup-dismiss="" href="javascript:;">
+       ×
+      </a>
+     </div>
+     <h4 class="newsletter-signups-dialog-title">
+      Sign up for our newsletter.
+     </h4>
+     <p class="newsletter-signups-dialog-description">
+      Get the latest tutorials on SysAdmin and open source topics.
+     </p>
+     <form accept-charset="UTF-8" action="/community/newsletter" class="newsletter-signup" data-newsletter-signup="true" data-remote="true" id="new_newsletter_signup" method="post">
+      <input name="utf8" type="hidden" value="✓"/>
+      <input data-newsletter-signup-field="url" id="newsletter_signup_url" name="newsletter_signup[url]" type="hidden"/>
+      <input data-newsletter-signup-field="title" id="newsletter_signup_title" name="newsletter_signup[title]" type="hidden"/>
+      <div class="newsletter-signup-ajax-error" data-newsletter-signup-ajax-error="">
+      </div>
+      <div class="form-group">
+       <input class="field" id="newsletter_signup_email" name="newsletter_signup[email]" placeholder="Enter your email address" required="required" type="email"/>
+      </div>
+      <button class="button blue-button" data-disable-with="Sign Up">
+       Sign Up
+      </button>
+     </form>
+    </div>
+    <div class="thanks-message hidden" data-newsletter-signup-successful="">
+     <div class="pull-right">
+      <a class="newsletter-signups-dialog-dismiss icon icon-close-light" data-newsletter-signup-dismiss="" href="javascript:;">
+      </a>
+     </div>
+     <span class="newsletter-signups-dialog-success">
+      Thanks for signing up!
+     </span>
+    </div>
+   </div>
+  </div>
+  <div style="display: none;">
+   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <symbol id="navbar-logo" xmlns="http://www.w3.org/2000/svg">
+     <title>
+      DigitalOcean home
+     </title>
+     <g fill="currentColor" fill-rule="evenodd">
+      <path d="M14.4942 29v-5.5674c5.9572 0 10.5633-5.8478 8.2892-12.059-.8425-2.3006-2.693-4.1355-5.0126-4.9706-6.262-2.2534-12.1564 2.3135-12.1573 8.2207 0 0-.0006.0014-.0014.0014H0C0 5.2123 9.1687-2.1167 19.1138.9624c4.3459 1.3457 7.7993 4.7708 9.1561 9.081C31.3742 19.9068 23.985 29 14.4942 29">
+      </path>
+      <path d="M14.507 23.4468H8.9103v-5.549s.0005-.0011.0011-.0011h5.5949c.0006 0 .0009.0006.0009.0006v5.5495M8.9093 27.7118H4.6105l-.0012-.0012v-4.2638h4.3009v4.2638l-.0009.0012M4.6125 23.4468H1.0088c-.0015 0-.0026-.0012-.0026-.0012v-3.5724s.0011-.0025.0026-.0025h3.601c.0015 0 .0027.0011.0027.0011v3.575M43.2806 9.6357h1.649c1.8346 0 3.345.358 4.49 1.0647 1.2714.7603 1.9164 2.2069 1.9164 4.2991 0 2.1554-.6465 3.6671-1.9207 4.4942h-.0008c-1.0971.7196-2.5981 1.0846-4.462 1.0846h-1.6719V9.6357zm8.324-1.0736c-1.6598-1.142-3.7252-1.721-6.1387-1.721h-5.2537V23.373h5.2537c2.4074 0 4.4737-.6113 6.1407-1.8157.907-.6382 1.6197-1.5304 2.1185-2.651.4962-1.1144.7479-2.4288.7479-3.9067 0-1.4605-.2517-2.758-.7482-3.857-.4988-1.104-1.212-1.972-2.1202-2.5804zM58.1303 6.6376c-.5051 0-.9403.1777-1.2906.5254-.3546.335-.5346.7597-.5346 1.2618 0 .501.1791.9322.532 1.2825.3529.35.788.528 1.2932.528.5042 0 .9394-.178 1.2928-.528.3535-.3508.5324-.7821.5324-1.2825 0-.5015-.18-.926-.5324-1.2592-.3534-.3503-.7886-.528-1.2928-.528M56.6247 23.3729h2.9538V11.7294h-2.9538zM69.5321 19.5787c-.5162.5814-1.1793.8635-2.0264.8635-.8471 0-1.5064-.282-2.015-.863-.5065-.5777-.7637-1.3439-.7637-2.2773 0-.9479.2572-1.7238.764-2.3058.502-.576 1.1796-.8683 2.0147-.8683.8465 0 1.5096.284 2.0262.8695.5142.582.7751 1.3573.7751 2.3046 0 .9328-.2609 1.6988-.7749 2.2768zm.775-6.8767c-.8908-.7858-1.8858-1.2444-2.9614-1.2444-1.6305 0-2.9859.5598-4.0276 1.662-1.0555 1.0932-1.5907 2.5006-1.5907 4.1823 0 1.644.5269 3.0464 1.568 4.1709 1.0498 1.088 2.4123 1.6396 4.0503 1.6396 1.139 0 2.1182-.3144 2.9157-.9356v.268c0 .9662-.2608 1.7176-.7751 2.234-.5137.5154-1.226.7764-2.1173.7764-1.3637 0-2.2183-.5314-3.2589-1.9262l-2.0115 1.917.0542.0754c.4346.605 1.1 1.197 1.9785 1.7594.8787.5603 1.9832.8447 3.2832.8447 1.7536 0 3.1726-.5363 4.2172-1.5933 1.0506-1.0628 1.5835-2.486 1.5835-4.2286V11.7294H70.307v.9726zM75.7434 23.3729h2.9541V11.7294h-2.9541zM77.249 6.6376c-.5052 0-.94.1777-1.2906.5254-.3547.335-.5344.7597-.5344 1.2618 0 .501.1789.9322.532 1.2825.353.35.7878.528 1.293.528.5045 0 .9396-.178 1.2928-.528.3535-.3508.5323-.7821.5323-1.2825 0-.5015-.1797-.926-.5323-1.2592-.3532-.3503-.7883-.528-1.2929-.528M85.1724 8.5831h-2.9082v3.1463h-1.6888v2.6702h1.6888v4.8365c0 1.5134.3047 2.5964.9064 3.2181.6031.6247 1.6741.9414 3.1831.9414.48 0 .963-.0156 1.4354-.0463l.133-.0088v-2.6683l-1.013.0526c-.7033 0-1.1728-.1226-1.3961-.3637-.226-.245-.3406-.7636-.3406-1.5404v-4.421h2.7497v-2.6703h-2.7497V8.583M101.7735 23.3729h2.9544V6.8412h-2.9544zM134.5728 19.2094c-.5286.5874-1.0693 1.0966-1.4855 1.3613v.0005c-.4085.2599-.924.3918-1.532.3918-.8703 0-1.5703-.3144-2.1405-.9621-.567-.644-.8545-1.4716-.8545-2.4613s.2838-1.8162.8436-2.4556c.5625-.6434 1.2588-.9562 2.1285-.9562.9515 0 1.9548.5869 2.8145 1.5947l1.9525-1.8568c-1.273-1.6433-2.897-2.4081-4.8352-2.4081-1.622 0-3.028.5862-4.1788 1.7411-1.1446 1.147-1.7251 2.6074-1.7251 4.3409 0 1.7335.58 3.1977 1.7234 4.352 1.1447 1.1557 2.5514 1.7417 4.1805 1.7417 2.139 0 3.8651-.9158 5.029-2.5935l-1.9204-1.8304M140.2405 16.0973c.1422-.5567.401-1.0207.7714-1.381.4005-.3906.9214-.5885 1.5489-.5885.716 0 1.2702.2019 1.6474.6014.3495.3696.5467.8296.588 1.368h-4.5557zm6.4569-2.7414c-.4191-.5788-.9896-1.0448-1.6965-1.3854-.7047-.3404-1.526-.513-2.441-.513-1.6489 0-2.9982.6037-4.0113 1.7946-.9836 1.182-1.4818 2.651-1.4818 4.3665 0 1.7648.547 3.2253 1.6254 4.341 1.0727 1.1105 2.5083 1.6737 4.267 1.6737 1.992 0 3.627-.799 4.8587-2.3752l.0666-.0847-1.9273-1.837c-.1789.2139-.4317.4561-.6628.6722-.2918.273-.5659.4842-.8588.6289-.4415.218-.9369.3255-1.4907.3255-.8187 0-1.4964-.2388-2.0147-.71-.4847-.4403-.768-1.0345-.843-1.7683h7.8265l.0264-1.0693c0-.7569-.1038-1.4862-.3088-2.1677a6.312 6.312 0 0 0-.934-1.8918zM152.797 18.9234c.3352-.2318.8085-.3483 1.4073-.3483.7112 0 1.4654.1413 2.2426.421v1.1421c-.6421.592-1.4996.8922-2.5499.8922-.5114 0-.909-.1126-1.1822-.3355-.2683-.218-.3985-.4955-.3985-.847 0-.3994.1571-.7022.4808-.9245zm5.2452-6.3229h-.0003c-.8952-.758-2.1328-1.143-3.678-1.143-.9829 0-1.902.2144-2.7336.6324-.7691.387-1.5245 1.0275-2.0043 1.8662l.0298.0358 1.8917 1.796c.7791-1.2322 1.6454-1.66 2.7941-1.66.6172 0 1.1298.1643 1.5234.4881.3916.3216.5819.7304.5819 1.249v.5652c-.7324-.221-1.4629-.333-2.1738-.333-1.47 0-2.6663.3432-3.555 1.0193-.9.6852-1.3562 1.665-1.3562 2.9125 0 1.094.3847 1.9829 1.1461 2.6433.7677.6372 1.7275.961 2.8524.961 1.1246 0 2.177-.4495 3.132-1.2191v.9587h2.9089v-7.4852c0-1.4173-.4572-2.523-1.3591-3.2872zM170.7656 12.8285c-.8227-.9092-1.9791-1.371-3.4371-1.371-1.172 0-2.1236.3338-2.8357.9926v-.7207h-2.897v11.6435h2.954v-6.4215c0-.8823.2119-1.5828.6293-2.0826.4162-.4987.989-.741 1.75-.741.6691 0 1.1765.2167 1.5506.662.3759.4474.5662 1.0638.5662 1.8335v6.7496H172v-6.7496c0-1.6127-.415-2.889-1.2344-3.7948M92.8158 18.9234c.3351-.2318.8087-.3483 1.4075-.3483.7112 0 1.4652.1413 2.2426.421v1.1421c-.6421.592-1.4998.8922-2.5502.8922-.5114 0-.9087-.1126-1.1819-.3355-.2683-.218-.3988-.4955-.3988-.847 0-.3994.1574-.7022.4808-.9245zm5.2451-6.3229h-.0003c-.8952-.758-2.1328-1.143-3.6776-1.143-.983 0-1.902.2144-2.7337.6324-.7694.387-1.5247 1.0275-2.0043 1.8662l.0295.0358 1.8917 1.796c.7792-1.2322 1.6458-1.66 2.7941-1.66.6172 0 1.1298.1643 1.5234.4881.3916.3216.5822.7304.5822 1.249v.5652c-.7327-.221-1.4631-.333-2.174-.333-1.47 0-2.6664.3432-3.555 1.0193-.8999.6852-1.3562 1.665-1.3562 2.9125 0 1.094.3847 1.9829 1.1463 2.6433.7677.6372 1.7272.961 2.8524.961 1.1246 0 2.1766-.4495 3.1318-1.2191v.9587H99.42v-7.4852c0-1.4173-.457-2.523-1.359-3.2872zM115.4464 9.5808c-3.0682 0-5.5645 2.4755-5.5645 5.5188s2.4963 5.5188 5.5645 5.5188c3.0682 0 5.5645-2.4755 5.5645-5.5188s-2.4963-5.5188-5.5645-5.5188zm0 14.0408c-4.7383 0-8.5928-3.8228-8.5928-8.522 0-4.6994 3.8545-8.5223 8.5928-8.5223 4.738 0 8.5925 3.8229 8.5925 8.5223 0 4.6992-3.8545 8.522-8.5925 8.522z">
+      </path>
+     </g>
+    </symbol>
+    <symbol fill="currentColor" id="navbar-community_logo" viewBox="0 0 532.2 99.8" xmlns="http://www.w3.org/2000/svg">
+     <path class="st0" d="M98.5,23c15.5,0,27.7,12.1,27.7,28.2c0,16.1-12.3,28.1-27.7,28.1c-15.6,0-27.7-11.9-27.7-28.1 C70.8,35.1,82.9,23,98.5,23z M98.5,67.9c8.7,0,14.9-7,14.9-16.8c0-9.8-6.2-16.8-14.9-16.8c-8.8,0-15,7-15,16.8 C83.5,60.9,89.7,67.9,98.5,67.9z">
+     </path>
+     <path class="st0" d="M166.8,45.9c0-7-3.5-11.6-9.9-11.6c-7.2,0-11.1,5.3-11.1,13.1V78h-12.5V24.3h12.3V29c2.4-2.8,7-6,13.9-6 c7.3,0,12.2,3.1,15,7c4.4-4.9,10-7,16.8-7c14.4,0,21.4,8.5,21.4,23.8V78h-12.5V45.9c0-7-3.5-11.6-9.9-11.6 c-7.2,0-11.2,5.3-11.2,13.1V78h-12.4V45.9z">
+     </path>
+     <path class="st0" d="M255.5,45.9c0-7-3.5-11.6-9.9-11.6c-7.2,0-11.1,5.3-11.1,13.1V78h-12.5V24.3h12.3V29c2.4-2.8,7-6,13.9-6 c7.3,0,12.2,3.1,15,7c4.4-4.9,10-7,16.8-7c14.4,0,21.4,8.5,21.4,23.8V78h-12.5V45.9c0-7-3.5-11.6-9.9-11.6 c-7.2,0-11.2,5.3-11.2,13.1V78h-12.4V45.9z">
+     </path>
+     <path class="st0" d="M322.5,56.4c0,7,3.6,11.6,10.1,11.6c7.2,0,11.2-5.6,11.2-13.5V24.3h12.5V78h-12.3v-4.4 c-3.4,3.7-8.1,5.6-13.9,5.6c-11.9,0-20.1-8.4-20.1-23.7V24.3h12.5V56.4z">
+     </path>
+     <path class="st0" d="M378.2,78h-12.5V24.3h12.3v4.4c2.7-3.1,7.7-5.7,13.9-5.7c13.1,0,21.3,8.5,21.3,23.8V78h-12.5V46.8 c0-7.5-3.7-12.5-10.6-12.5c-7.8,0-11.8,5.6-11.8,14V78z">
+     </path>
+     <path class="st0" d="M427.8,0.2c4.4,0,7.9,3.4,7.9,7.8s-3.5,7.9-7.9,7.9c-4.4,0-7.9-3.5-7.9-7.9S423.4,0.2,427.8,0.2z M421.4,24.3 h12.5V78h-12.5V24.3z">
+     </path>
+     <path class="st0" d="M446.7,59.1V35.5h-6.5V24.3h6.5v-15H459v15h12.2v11.2H459v21.7c0,7.8,1.8,9.8,8.8,9.8c1.2,0,4.1-0.2,4.1-0.2 v11.2c0,0-2.4,0.2-6.7,0.2C451.2,78.1,446.7,72.7,446.7,59.1z">
+     </path>
+     <path class="st0" d="M497.3,78.7l-21.3-54.4h14.2l14,38.8l14.2-38.8h13.6l-24.1,60.2c-3.7,9.4-7.2,15.3-21.3,15.3 c-2.5,0-4.8-0.1-4.8-0.1V88c0,0,1.5,0.1,2.8,0.1c7.6,0,9.8-2.3,11.8-7.8L497.3,78.7z">
+     </path>
+     <path class="st0" d="M62.4,55.9c-5.3,7-12.2,11.4-22.1,11.4c-15.6,0-27-11.7-27-27.5c0-16.1,11.4-27.8,26.5-27.8 c10,0,16.8,4.8,21.3,11.3l8.4-8.8C63.1,5.7,53.3,0,39.7,0C17.1,0,0,15.9,0,39.8c0,23.4,17.1,39.4,40.1,39.4c13.1,0,22-4.9,28.6-12.2 L62.4,55.9z">
+     </path>
+    </symbol>
+    <symbol fill="none" id="navbar-control_panel_icon" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
+     <path d="M19.6875 23.4862C19.6885 23.9722 19.4965 24.4388 19.1537 24.7833C18.8109 25.1279 18.3454 25.3222 17.8594 25.3237H3.23438C2.99366 25.3232 2.75539 25.2753 2.53321 25.1827C2.31102 25.09 2.10927 24.9545 1.93949 24.7839C1.7697 24.6132 1.63522 24.4108 1.54373 24.1881C1.45223 23.9655 1.40552 23.727 1.40626 23.4862V3.25498C1.40577 3.01417 1.45271 2.77562 1.54441 2.55295C1.63611 2.33028 1.77077 2.12785 1.9407 1.95722C2.11063 1.7866 2.31251 1.65111 2.5348 1.5585C2.75709 1.46589 2.99545 1.41797 3.23626 1.41748L17.8613 1.44186C18.347 1.44384 18.812 1.63843 19.1544 1.98292C19.4968 2.32741 19.6885 2.79366 19.6875 3.27936V23.4862Z" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+     </path>
+     <path d="M43.5863 12.27C43.5828 12.7516 43.3883 13.212 43.0456 13.5503C42.7028 13.8885 42.2397 14.0768 41.7582 14.0738H27.1332C26.8947 14.0755 26.6582 14.0302 26.4372 13.9405C26.2162 13.8507 26.015 13.7183 25.8453 13.5508C25.6755 13.3833 25.5404 13.1839 25.4477 12.9642C25.355 12.7444 25.3065 12.5085 25.3051 12.27V3.24565C25.308 2.76461 25.5019 2.30442 25.8439 1.96621C26.186 1.62799 26.6484 1.43941 27.1294 1.4419L41.7544 1.41753C42.2365 1.41403 42.7002 1.60205 43.0437 1.94027C43.3872 2.27849 43.5823 2.73924 43.5863 3.22128V12.27Z" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+     </path>
+     <path d="M19.6875 41.7956C19.686 42.0347 19.6375 42.2712 19.5446 42.4915C19.4518 42.7118 19.3164 42.9117 19.1463 43.0797C18.9762 43.2477 18.7747 43.3806 18.5532 43.4707C18.3318 43.5609 18.0947 43.6065 17.8556 43.605L3.23063 43.5806C2.74908 43.5826 2.28644 43.3934 1.94436 43.0545C1.60228 42.7155 1.40873 42.2547 1.40625 41.7731V32.7563C1.40748 32.5175 1.45575 32.2813 1.54831 32.0612C1.64087 31.8412 1.7759 31.6415 1.94569 31.4736C2.11547 31.3057 2.31667 31.173 2.53779 31.0829C2.75892 30.9929 2.99562 30.9473 3.23438 30.9488H17.8594C18.3414 30.9463 18.8047 31.1352 19.1475 31.4742C19.4903 31.8131 19.6845 32.2742 19.6875 32.7563V41.7956Z" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+     </path>
+     <path d="M27.1349 43.605C26.894 43.6045 26.6555 43.5565 26.433 43.4638C26.2106 43.3711 26.0087 43.2354 25.8387 43.0646C25.6688 42.8937 25.5341 42.6911 25.4426 42.4682C25.351 42.2453 25.3042 42.0066 25.3049 41.7656V21.5381C25.3042 21.2973 25.3509 21.0587 25.4424 20.8359C25.5338 20.6132 25.6683 20.4106 25.8381 20.2398C26.0078 20.069 26.2095 19.9333 26.4317 19.8405C26.6539 19.7476 26.8923 19.6995 27.1331 19.6987H41.7581C41.9989 19.6995 42.2372 19.7476 42.4594 19.8405C42.6816 19.9333 42.8833 20.069 43.0531 20.2398C43.2228 20.4106 43.3573 20.6132 43.4488 20.8359C43.5402 21.0587 43.5869 21.2973 43.5862 21.5381V41.7412C43.5872 42.2271 43.3955 42.6935 43.0532 43.0383C42.7109 43.3831 42.2458 43.5781 41.7599 43.5806L27.1349 43.605Z" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+     </path>
+    </symbol>
+    <symbol fill="none" id="navbar-community_icon" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
+     <g clip-path="url(#clip0)">
+      <path d="M12.6562 10.5469C12.6562 9.85155 12.8624 9.17184 13.2487 8.5937C13.635 8.01556 14.1841 7.56495 14.8265 7.29886C15.4689 7.03277 16.1758 6.96315 16.8577 7.0988C17.5397 7.23445 18.1661 7.56929 18.6578 8.06095C19.1495 8.55262 19.4843 9.17905 19.6199 9.86101C19.7556 10.543 19.686 11.2499 19.4199 11.8922C19.1538 12.5346 18.7032 13.0837 18.1251 13.47C17.5469 13.8563 16.8672 14.0625 16.1719 14.0625" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M16.1719 18.2812C16.0328 18.2812 15.8969 18.3225 15.7812 18.3997C15.6656 18.477 15.5755 18.5868 15.5223 18.7153C15.4691 18.8438 15.4551 18.9852 15.4823 19.1215C15.5094 19.2579 15.5764 19.3832 15.6747 19.4816C15.773 19.5799 15.8983 19.6469 16.0347 19.674C16.1711 19.7011 16.3125 19.6872 16.4409 19.634C16.5694 19.5808 16.6792 19.4906 16.7565 19.375C16.8338 19.2594 16.875 19.1234 16.875 18.9844C16.875 18.7979 16.8009 18.6191 16.6691 18.4872C16.5372 18.3553 16.3584 18.2812 16.1719 18.2812Z" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M32.3438 4.21875V12.6562" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M29.5312 1.40625C30.2772 1.40625 30.9925 1.70257 31.52 2.23001C32.0474 2.75746 32.3438 3.47283 32.3438 4.21875" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M4.21875 1.40625H29.5312" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M1.40625 4.21875C1.40625 3.47283 1.70257 2.75746 2.23001 2.23001C2.75746 1.70257 3.47283 1.40625 4.21875 1.40625" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M1.40625 23.9062V4.21875" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M4.21875 26.7188C3.47283 26.7187 2.75746 26.4224 2.23001 25.895C1.70257 25.3675 1.40625 24.6522 1.40625 23.9062" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M9.84375 26.7188H4.21875" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M9.84375 35.1562V26.7188" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M15.4688 30.9375L9.84375 35.1562" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M43.5938 35.1562H37.9688V43.5938L29.5312 35.1562H21.0938V18.2812H43.5938V35.1562Z" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+      <path d="M32.3438 23.9062V29.5312" stroke="#0069FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+     </g>
+     <defs>
+      <clipPath id="clip0">
+       <rect fill="white" height="45" width="45">
+       </rect>
+      </clipPath>
+     </defs>
+    </symbol>
+    <symbol fill="currentColor" id="navbar-search" viewBox="0 0 16 16">
+     <path d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z" fill-rule="evenodd">
+     </path>
+    </symbol>
+    <symbol fill="currentColor" id="navbar-logomark" viewBox="65.2 173.5 180 180">
+     <path d="M155.2,351.7v-34.2c36.2,0,64.3-35.9,50.4-74c-5.1-14.1-16.4-25.4-30.5-30.5c-38.1-13.8-74,14.2-74,50.4l0,0H67c0-57.7,55.8-102.7,116.3-83.8c26.4,8.3,47.5,29.3,55.7,55.7C257.9,295.9,213,351.7,155.2,351.7z">
+     </path>
+     <polygon points="155.3,317.6 121.3,317.6 121.3,283.6 121.3,283.6 155.3,283.6 155.3,283.6">
+     </polygon>
+     <polygon points="121.3,343.8 95.1,343.8 95.1,343.8 95.1,317.6 121.3,317.6">
+     </polygon>
+     <path d="M95.1,317.6H73.2l0,0v-21.9l0,0h21.9l0,0V317.6z">
+     </path>
+    </symbol>
+    <symbol fill="none" id="navbar-write4do" stroke="currentColor" viewBox="0 0 30 30">
+     <path d="M16.3063 17.67L11.6663 18.3338L12.3288 13.6925L24.2613 1.76002C24.7887 1.23257 25.5041 0.936249 26.25 0.936249C26.6194 0.936249 26.9851 1.009 27.3263 1.15034C27.6675 1.29168 27.9776 1.49885 28.2388 1.76002C28.4999 2.02118 28.7071 2.33123 28.8484 2.67246C28.9898 3.01369 29.0625 3.37942 29.0625 3.74877C29.0625 4.11811 28.9898 4.48384 28.8484 4.82507C28.7071 5.1663 28.4999 5.47635 28.2388 5.73752L16.3063 17.67Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+     </path>
+     <path d="M22.935 3.08624L26.9125 7.06374" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+     </path>
+     <path d="M23.4375 17.8125V27.1875C23.4375 27.6848 23.24 28.1617 22.8883 28.5133C22.5367 28.865 22.0598 29.0625 21.5625 29.0625H2.8125C2.31522 29.0625 1.83831 28.865 1.48667 28.5133C1.13504 28.1617 0.9375 27.6848 0.9375 27.1875V8.4375C0.9375 7.94022 1.13504 7.46331 1.48667 7.11167C1.83831 6.76004 2.31522 6.5625 2.8125 6.5625H12.1875" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+     </path>
+    </symbol>
+    <symbol fill="none" id="navbar-meetups" stroke="currentColor" viewBox="0 0 30 30">
+     <path d="M27.1901 4.6875H2.81506C1.77953 4.6875 0.940063 5.52697 0.940063 6.5625V27.1875C0.940063 28.223 1.77953 29.0625 2.81506 29.0625H27.1901C28.2256 29.0625 29.0651 28.223 29.0651 27.1875V6.5625C29.0651 5.52697 28.2256 4.6875 27.1901 4.6875Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+     </path>
+     <path d="M0.940063 12.1875H29.0651" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+     </path>
+     <path d="M8.44006 7.5V0.9375" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+     </path>
+     <path d="M21.5651 7.5V0.9375" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+     </path>
+    </symbol>
+    <symbol fill="none" id="navbar-hacktoberfest" stroke="currentColor" viewBox="0 0 30 30">
+     <path d="M19.2063 24.9918L16.5714 22.3569V14.4854L13.986 17.0708V23.5755L12.5615 25L11.1371 23.5591V8.44175L10.7419 8.04652L8.93042 9.8662L8 8.94401L11.9358 5.00823L11.944 5.01647L12.1005 5.16468L13.9778 7.04199V13.8431L16.5632 11.2577V8.42528L15.2705 7.12433L17.3948 5L19.4286 7.03376V20.9572L20.4249 21.9535L21.6352 20.7431L22.5492 21.6571L19.2063 24.9918Z" fill="currentcolor">
+     </path>
+     <rect height="28.5" rx="2.25" stroke="currentColor" stroke-width="1.5" width="28.5" x="0.75" y="0.75">
+     </rect>
+    </symbol>
+    <symbol fill="none" id="navbar-build" stroke="currentColor" viewBox="0 0 16 16">
+     <path d="M1.5 14.5C1.23478 14.5 0.98043 14.3946 0.792893 14.2071C0.605357 14.0196 0.5 13.7652 0.5 13.5V2.57667C0.500879 2.29139 0.614596 2.01804 0.81632 1.81632C1.01804 1.6146 1.29139 1.50088 1.57667 1.5H14.4287C14.7125 1.50088 14.9845 1.61403 15.1852 1.81476C15.386 2.01548 15.4991 2.28747 15.5 2.57133V13.4233C15.4991 13.7086 15.3854 13.982 15.1837 14.1837C14.982 14.3854 14.7086 14.4991 14.4233 14.5H1.5Z" stroke-linecap="round" stroke-linejoin="round">
+     </path>
+     <path d="M15.5 4.5H0.5" stroke-linecap="round" stroke-linejoin="round">
+     </path>
+     <path d="M11 7.5L13 9.5L11 11.5" stroke-linecap="round" stroke-linejoin="round">
+     </path>
+     <path d="M5 7.5L3 9.5L5 11.5" stroke-linecap="round" stroke-linejoin="round">
+     </path>
+     <path d="M9 7.5L7 11.5" stroke-linecap="round" stroke-linejoin="round">
+     </path>
+    </symbol>
+   </svg>
+  </div>
+  <nav aria-label="Navigation" class="navbar" data-js="global-navbar" role="navigation">
+   <ul class="utility" role="menubar">
+    <li data-flex="grow" data-js="global-navbar-banner" data-show="always" role="banner">
+    </li>
+    <li role="menuitem">
+     <a href="/products/">
+      Products
+     </a>
+    </li>
+    <li role="menuitem">
+     <a href="/pricing/">
+      Pricing
+     </a>
+    </li>
+    <li aria-haspopup="true" role="menuitem" tabindex="0">
+     <span class="expander">
+      Docs
+     </span>
+     <div aria-expanded="false" class="mini" role="menuitem">
+      <ul role="menu">
+       <li role="menuitem">
+        <a href="/docs/">
+         Product Docs
+        </a>
+       </li>
+       <li role="menuitem">
+        <a href="https://developers.digitalocean.com/documentation/">
+         API Docs
+        </a>
+       </li>
+      </ul>
+     </div>
+    </li>
+    <li aria-haspopup="true" role="menuitem" tabindex="0">
+     <span class="expander">
+      Sign in
+     </span>
+     <div aria-expanded="false" class="mini" role="menuitem">
+      <header>
+       Sign in to
+      </header>
+      <ul role="menu">
+       <li role="menuitem">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <use xlink:href="#navbar-community_icon">
+         </use>
+        </svg>
+        <a href="/community/auth/digitalocean" id="log-in">
+         Community
+        </a>
+       </li>
+       <li role="menuitem">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <use xlink:href="#navbar-control_panel_icon">
+         </use>
+        </svg>
+        <a href="https://cloud.digitalocean.com/registrations/new">
+         Control Panel
+        </a>
+       </li>
+      </ul>
+     </div>
+    </li>
+   </ul>
+   <ul class="primary" role="menubar">
+    <li class="logo-square" data-show="always" role="menuitem">
+     <a href="https://www.digitalocean.com/">
+      <svg shape-rendering="auto" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+       <use xlink:href="#navbar-logomark">
+       </use>
+      </svg>
+     </a>
+    </li>
+    <li data-show="always" role="menuitem">
+     <a class="home" href="/community" title="DigitalOcean Community Home">
+      <svg height="24px" shape-rendering="auto" width="120px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+       <use xlink:href="#navbar-community_logo">
+       </use>
+      </svg>
+     </a>
+    </li>
+    <li role="menuitem">
+     <a data-activatable="true" href="/community/tutorials">
+      Tutorials
+     </a>
+    </li>
+    <li role="menuitem">
+     <a data-activatable="true" href="/community/questions">
+      Questions
+     </a>
+    </li>
+    <li aria-haspopup="true" class="mega_parent" role="menuitem" tabindex="0">
+     <span class="expander">
+      Get Involved
+     </span>
+     <div aria-expanded="false" class="mega" role="menuitem">
+      <div class="section column">
+       <header>
+        Participate
+       </header>
+       <ul role="menu">
+        <li role="menuitem">
+         <a class="with_image" href="https://www.digitalocean.com/write-for-donations/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <use xlink:href="#navbar-write4do">
+           </use>
+          </svg>
+          <p>
+           <strong>
+            Write for DigitalOcean
+           </strong>
+           You get paid, we donate to tech non-profits.
+          </p>
+         </a>
+        </li>
+        <li role="menuitem">
+         <a class="with_image" href="https://www.meetup.com/pro/digitalocean">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <use xlink:href="#navbar-meetups">
+           </use>
+          </svg>
+          <p>
+           <strong>
+            DigitalOcean Meetups
+           </strong>
+           Find and meet other developers in your city.
+          </p>
+         </a>
+        </li>
+        <li role="menuitem">
+         <a class="with_image" href="https://hacktoberfest.digitalocean.com">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <use xlink:href="#navbar-hacktoberfest">
+           </use>
+          </svg>
+          <p>
+           <strong>
+            Hacktoberfest
+           </strong>
+           Contribute to Open Source
+          </p>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="section column">
+       <header>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <use xlink:href="#navbar-build">
+         </use>
+        </svg>
+        Build with DigitalOcean
+       </header>
+       <ul class="indent" role="menu">
+        <li role="menuitem">
+         <a href="/community/tools" title="Community-built tools and integrations that use the DigitalOcean API">
+          Community Tools and Integrations
+         </a>
+        </li>
+        <li role="menuitem">
+         <a href="https://www.digitalocean.com/hatch/" title="Build your startup on DigitalOcean.">
+          Hatch Startup Program
+         </a>
+        </li>
+        <li role="menuitem">
+         <a href="https://marketplace.digitalocean.com/vendors/" title="List your open source One-Click Application in the DigitalOcean Marketplace">
+          Marketplace Partner Program
+         </a>
+        </li>
+        <li role="menuitem">
+         <a href="https://www.digitalocean.com/partners/solutions-partners/" title="Easily deploy &amp; modernize your clients’ infrastructures with the Solutions Partner Program">
+          Solutions Partner Program
+         </a>
+        </li>
+        <li role="menuitem">
+         <a href="https://www.digitalocean.com/droplets-for-demos/" title="DigitalOcean credits to fund research for conference and meetup presentations">
+          Presentation Grants
+         </a>
+        </li>
+        <li role="menuitem">
+         <a href="https://github.com/digitalocean" title="View all the open-source projects that DigitalOcean have on GitHub">
+          DigitalOcean on GitHub
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </li>
+    <li class="right" data-flex="grow" data-show="mobile" role="menuitem">
+     <a data-body-class="mobile_nav_expanded" data-js="modal_toggle" href="javascript:void(0);">
+      <span class="icon-menu-thin">
+      </span>
+     </a>
+    </li>
+    <li data-flex="grow" role="menuitem">
+     <button class="search_button" id="q">
+      <svg height="14px" shape-rendering="auto" width="14px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+       <use xlink:href="#navbar-search">
+       </use>
+      </svg>
+      Search DigitalOcean
+      <kbd>
+       /
+      </kbd>
+     </button>
+    </li>
+    <li role="menuitem">
+     <a class="button blue-button small-button" href="/community/auth/digitalocean?display=sessionless+register">
+      Sign Up
+     </a>
+    </li>
+   </ul>
+   <div class="mobile_nav_bg" data-js="modal_toggle">
+   </div>
+   <div class="mobile_nav">
+    <a aria-label="close" data-dismiss="modal" data-js="modal_toggle" href="javascript:void(0);">
+     <span class="icon-close">
+     </span>
+    </a>
+    <div class="mobile_nav_content">
+     <header>
+      Community
+     </header>
+     <ul role="menu">
+      <li role="menuitem">
+       <a data-activatable="true" href="/community/tutorials">
+        Tutorials
+       </a>
+      </li>
+      <li role="menuitem">
+       <a data-activatable="true" href="/community/questions">
+        Questions
+       </a>
+      </li>
+      <li role="menuitem">
+       <a href="https://www.meetup.com/pro/digitalocean">
+        Meetups
+       </a>
+      </li>
+      <li role="menuitem">
+       <a href="https://www.digitalocean.com/write-for-donations/">
+        Write for us
+       </a>
+      </li>
+      <li role="menuitem">
+       <a href="https://hacktoberfest.digitalocean.com">
+        Hacktoberfest
+       </a>
+      </li>
+      <li role="menuitem">
+       <a href="/community/tools">
+        Tools
+       </a>
+      </li>
+     </ul>
+     <header>
+      Products
+     </header>
+     <ul role="menu">
+      <li role="menuitem">
+       <a href="https://www.digitalocean.com/">
+        Homepage
+       </a>
+      </li>
+      <li role="menuitem">
+       <a href="https://www.digitalocean.com/pricing">
+        Pricing
+       </a>
+      </li>
+      <li role="menuitem">
+       <a href="https://www.digitalocean.com/products">
+        Product Overview
+       </a>
+      </li>
+      <li role="menuitem">
+       <a href="https://marketplace.digitalocean.com/">
+        Marketplace
+       </a>
+      </li>
+     </ul>
+     <header>
+      Customers
+     </header>
+     <ul role="menu">
+      <li role="menuitem">
+       <a href="https://cloud.digitalocean.com/login">
+        Control panel
+       </a>
+      </li>
+      <li role="menuitem">
+       <a href="https://www.digitalocean.com/docs/">
+        Documentation
+       </a>
+      </li>
+      <li role="menuitem">
+       <a href="https://www.digitalocean.com/company/contact/#support">
+        Contact Support
+       </a>
+      </li>
+      <li role="menuitem">
+       <a href="https://www.digitalocean.com/company/contact/sales/">
+        Contact Sales
+       </a>
+      </li>
+     </ul>
+     <ul role="menu">
+      <li class="mobile-log-in" role="menuitem">
+       <a href="/community/auth/digitalocean" id="log-in">
+        Sign In
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <header>
+   <div class="legacy-header">
+    <div class="flash-container">
+    </div>
+    <div class="wrapper">
+    </div>
+   </div>
+  </header>
+  <div class="wrapper layout-wrapper">
+   <div class="section-content section-content-growable content Tutorial-content content-has-mobile-image">
+    <div class="postable-info-bar-container">
+     <div class="postable-info-bar">
+      <div class="author-byline">
+      </div>
+      <div class="right-section">
+       <div class="section-item section-item-translations">
+        <div class="content-translations">
+         <div class="current-language">
+          <a class="language-button" data-target="#translation-modal" data-toggle="modal" href="#" title="English">
+           Language: EN
+           <span class="icon icon-arrow-up">
+           </span>
+           <span class="icon icon-arrow-down">
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="section-item table-of-contents-triggers">
+        <div class="toc-trigger-mobile" data-target="#contents-modal" data-toggle="modal">
+         <a href="javascript:void(0);">
+          <span class="icon icon-contents">
+          </span>
+          <span class="title">
+           Contents
+          </span>
+          <span class="icon icon-arrow-down">
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <img alt="How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04" class="tutorial-image-mobile" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/LAMP_tw_updated_logo.png?1564576130" title="How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04"/>
+    <div class="container tutorial-header">
+     <div class="featured-items-right-bar">
+      <h3>
+       Related
+      </h3>
+      <a href="https://www.digitalocean.com/products/managed-databases-mysql/">
+       <div class="featured-item-highlight">
+        <span class="featured-item-highlight-image">
+         <img alt="Product" height="45" src="https://images.prismic.io/digitalocean%2F1428caea-c011-469a-959e-fec58da0a926_databases.svg?auto=compress,format" width="45"/>
+        </span>
+        Now Available: Managed MySQL Databases
+        <span class="featured-item-category">
+         Product
+        </span>
+       </div>
+      </a>
+      <a href="https://www.digitalocean.com/products/managed-databases/">
+       <div class="featured-item-regular">
+        Managed MySQL, Redis, Postgres on DigitalOcean
+        <span class="featured-item-category">
+         <img alt="Digitalocean%2f1428caea c011 469a 959e fec58da0a926 databases" height="14" src="https://images.prismic.io/digitalocean%2F1428caea-c011-469a-959e-fec58da0a926_databases.svg?auto=compress,format" width="14"/>
+         Product
+        </span>
+       </div>
+      </a>
+      <a href="/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04-quickstart">
+       <div class="featured-item-regular">
+        How To Set Up Apache Virtual Hosts on Ubuntu 18.04 [Quickstart]
+        <span class="featured-item-category">
+         <img alt="Tutorial" height="14" src="/assets/community/tutorials/featured-item-tutorial-icon-2150ccbef202144a53cea261312af267.png" width="14"/>
+         Tutorial
+        </span>
+       </div>
+      </a>
+      <a href="/community/tutorials/how-to-use-database-migrations-and-seeders-to-abstract-database-setup-in-laravel">
+       <div class="featured-item-regular">
+        How To Use Database Migrations and Seeders to Abstract Database Setup in Laravel
+        <span class="featured-item-category">
+         <img alt="Tutorial" height="14" src="/assets/community/tutorials/featured-item-tutorial-icon-2150ccbef202144a53cea261312af267.png" width="14"/>
+         Tutorial
+        </span>
+       </div>
+      </a>
+     </div>
+     <img alt="How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04" class="tutorial-image" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/LAMP_tw_updated_logo.png?1564576130" title="How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04"/>
+     <h1 class="content-title Tutorial-header">
+      How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04
+     </h1>
+     <span class="meta-section date-views">
+      <span class="meta-section timestamp">
+       <span class="tutorial-date-text">
+        Posted
+       </span>
+       <span class="tutorial-date">
+        April 27, 2018
+       </span>
+      </span>
+      <span class="meta-section pageviews">
+       <span class="icon icon-eye v-mid">
+       </span>
+       <span class="views-count v-mid">
+        1m
+       </span>
+       <span class="sr-only">
+        views
+       </span>
+      </span>
+     </span>
+     <span class="meta-section tags">
+      <a class="tag" href="/community/tags/mysql">
+       MySQL
+      </a>
+      <a class="tag" href="/community/tags/apache">
+       Apache
+      </a>
+      <a class="tag" href="/community/tags/php">
+       PHP
+      </a>
+      <a class="tag" href="/community/tags/lamp-stack">
+       LAMP Stack
+      </a>
+      <a class="tag" href="/community/tags/ubuntu-18-04">
+       Ubuntu 18.04
+      </a>
+      <a class="tag" href="/community/tags/databases">
+       Databases
+      </a>
+     </span>
+    </div>
+    <div class="tutorial-authors">
+     <div class="component-collaborators-container">
+      <ul class="component-collaborators-content">
+       <li class="collaborator-byline-avatar">
+        <a href="/community/users/mdrake">
+         <div class="mod-avatar mod-avatar-large">
+          <img alt="3072b0699d3add2e0d0f31b97397dd68302c8842" class="avatar avatar-large" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/users/avatars/large/3072b0699d3add2e0d0f31b97397dd68302c8842.jpg?1509387385"/>
+          <span class="mod-star" data-container="body" data-toggle="tooltip" title="MOD">
+           <span class="mod-star-icon">
+           </span>
+          </span>
+         </div>
+        </a>
+       </li>
+       <li class="collaborators-byline-data">
+        <p class="names">
+         By
+         <a href="/community/users/mdrake">
+          Mark Drake
+         </a>
+        </p>
+        <p>
+         <a class="advice" href="https://www.digitalocean.com/community/write-for-digitalocean">
+          Become an author
+         </a>
+        </p>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="container versioned-tutorial-group-navigation" data-versioned-tutorial-group-navigation="">
+     <div class="versioned-tutorial-group-navigation__header" data-versioned-tutorial-group-navigation-header="">
+      <h5 class="versioned-tutorial-group-navigation__heading">
+       Not using
+       <strong>
+        Ubuntu 18.04
+       </strong>
+       ? Choose a different version:
+      </h5>
+      <span class="versioned-tutorial-group-navigation__arrow">
+       <svg viewBox="0 0 105.565 60.872" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.526 46.087c-3.37 3.382-3.37 8.868 0 12.246 3.37 3.386 8.832 3.386 12.202 0l43.384-43.547c3.37-3.382 3.37-8.87 0-12.246-3.37-3.386-8.833-3.386-12.202 0L2.526 46.087z" fill="#fff">
+        </path>
+        <path d="M90.835 58.333c3.37 3.386 8.833 3.386 12.202 0 3.37-3.378 3.37-8.864 0-12.246L59.654 2.54c-3.37-3.386-8.832-3.386-12.202 0-3.37 3.377-3.37 8.864 0 12.246l43.383 43.547z" fill="#fff">
+        </path>
+       </svg>
+      </span>
+     </div>
+     <div class="versioned-tutorial-group-navigation__body" data-versioned-tutorial-group-navigation-body="">
+      <ul class="versioned-tutorial-group-navigation__list">
+       <li class="versioned-tutorial-group-navigation__list-item">
+        <a class="versioned-tutorial-group-navigation__link" href="/community/tutorials/how-to-use-ansible-to-install-and-set-up-lamp-on-ubuntu-18-04" title="Automated: Ansible">
+         <span class="text">
+          Automated: Ansible
+         </span>
+         <span class="icon-arrow-down versioned-tutorial-group-navigation__link-arrow">
+         </span>
+        </a>
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+        <a class="versioned-tutorial-group-navigation__link" href="/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7" title="CentOS 7">
+         <span class="text">
+          CentOS 7
+         </span>
+         <span class="icon-arrow-down versioned-tutorial-group-navigation__link-arrow">
+         </span>
+        </a>
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+        <a class="versioned-tutorial-group-navigation__link" href="/community/tutorials/how-to-install-linux-apache-mariadb-php-lamp-stack-debian9" title="Debian 9">
+         <span class="text">
+          Debian 9
+         </span>
+         <span class="icon-arrow-down versioned-tutorial-group-navigation__link-arrow">
+         </span>
+        </a>
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+        <a class="versioned-tutorial-group-navigation__link" href="/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-debian-8" title="Debian 8">
+         <span class="text">
+          Debian 8
+         </span>
+         <span class="icon-arrow-down versioned-tutorial-group-navigation__link-arrow">
+         </span>
+        </a>
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+        <a class="versioned-tutorial-group-navigation__link" href="/community/tutorials/how-to-install-linux-apache-mariadb-php-lamp-stack-on-debian-10" title="Debian 10">
+         <span class="text">
+          Debian 10
+         </span>
+         <span class="icon-arrow-down versioned-tutorial-group-navigation__link-arrow">
+         </span>
+        </a>
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+        <a class="versioned-tutorial-group-navigation__link" href="/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04" title="Ubuntu 16.04">
+         <span class="text">
+          Ubuntu 16.04
+         </span>
+         <span class="icon-arrow-down versioned-tutorial-group-navigation__link-arrow">
+         </span>
+        </a>
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+        <a class="versioned-tutorial-group-navigation__link" href="/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-14-04" title="Ubuntu 14.04">
+         <span class="text">
+          Ubuntu 14.04
+         </span>
+         <span class="icon-arrow-down versioned-tutorial-group-navigation__link-arrow">
+         </span>
+        </a>
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+        <a class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable" data-distribution-version-id="12" data-tutorial-request="" data-versioned-tutorial-group-id="1" href="javascript:;" title="Automated: Docker">
+         <span class="text">
+          Automated: Docker
+         </span>
+         <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">
+          request
+         </small>
+        </a>
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+        <a class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable" data-distribution-version-id="14" data-tutorial-request="" data-versioned-tutorial-group-id="1" href="javascript:;" title="Automated: Bash">
+         <span class="text">
+          Automated: Bash
+         </span>
+         <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">
+          request
+         </small>
+        </a>
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+        <a class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable" data-distribution-version-id="20" data-tutorial-request="" data-versioned-tutorial-group-id="1" href="javascript:;" title="CentOS 8">
+         <span class="text">
+          CentOS 8
+         </span>
+         <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">
+          request
+         </small>
+        </a>
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+        <a class="versioned-tutorial-group-navigation__link" href="/community/tutorial_collections/how-to-install-lamp" title="How To Install LAMP">
+         <span class="text">
+          View All
+         </span>
+         <span class="icon-arrow-down versioned-tutorial-group-navigation__link-arrow">
+         </span>
+        </a>
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+       </li>
+       <li class="versioned-tutorial-group-navigation__list-item">
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="content-body tutorial-content" data-growable-markdown="">
+     <p>
+      <em>
+       A previous version of this tutorial was written by
+       <a href="https://www.digitalocean.com/community/users/bpb">
+        Brennan Bearnes
+       </a>
+       .
+      </em>
+     </p>
+     <h3 id="introduction">
+      Introduction
+     </h3>
+     <p>
+      A “LAMP” stack is a group of open-source software that is typically installed together to enable a server to host dynamic websites and web apps. This term is actually an acronym which represents the
+      <strong>
+       L
+      </strong>
+      inux operating system, with the
+      <strong>
+       A
+      </strong>
+      pache web server. The site data is stored in a
+      <strong>
+       M
+      </strong>
+      ySQL database, and dynamic content is processed by
+      <strong>
+       P
+      </strong>
+      HP.
+     </p>
+     <p>
+      In this guide, we will install a LAMP stack on an Ubuntu 18.04 server.
+     </p>
+     <h2 id="prerequisites">
+      Prerequisites
+     </h2>
+     <p>
+      In order to complete this tutorial, you will need to have an Ubuntu 18.04 server with a non-root
+      <code>
+       sudo
+      </code>
+      -enabled user account and a basic firewall. This can be configured using our
+      <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04">
+       initial server setup guide for Ubuntu 18.04
+      </a>
+      .
+     </p>
+     <h2 id="step-1-—-installing-apache-and-updating-the-firewall">
+      Step 1 — Installing Apache and Updating the Firewall
+     </h2>
+     <p>
+      The Apache web server is among the most popular web servers in the world. It’s well-documented and has been in wide use for much of the history of the web, which makes it a great default choice for hosting a website.
+     </p>
+     <p>
+      Install Apache using Ubuntu’s package manager,
+      <code>
+       apt
+      </code>
+      :
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt update
+</li><li class="line" prefix="$">sudo apt install apache2
+</li></ul></code></pre>
+     <p>
+      Since this is a
+      <code>
+       sudo
+      </code>
+      command, these operations are executed with root privileges. It will ask you for your regular user’s password to verify your intentions.
+     </p>
+     <p>
+      Once you’ve entered your password,
+      <code>
+       apt
+      </code>
+      will tell you which packages it plans to install and how much extra disk space they’ll take up. Press
+      <code>
+       Y
+      </code>
+      and hit
+      <code>
+       ENTER
+      </code>
+      to continue, and the installation will proceed.
+     </p>
+     <h3 id="adjust-the-firewall-to-allow-web-traffic">
+      Adjust the Firewall to Allow Web Traffic
+     </h3>
+     <p>
+      Next, assuming that you have followed the initial server setup instructions and enabled the UFW firewall, make sure that your firewall allows HTTP and HTTPS traffic. You can check that UFW has an application profile for Apache like so:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo ufw app list
+</li></ul></code></pre>
+     <pre class="code-pre"><code langs=""><div class="secondary-code-label" title="Output">Output</div>Available applications:
+  <span class="highlight">Apache</span>
+  <span class="highlight">Apache Full</span>
+  <span class="highlight">Apache Secure</span>
+  OpenSSH
+</code></pre>
+     <p>
+      If you look at the
+      <code>
+       Apache Full
+      </code>
+      profile, it should show that it enables traffic to ports
+      <code>
+       80
+      </code>
+      and
+      <code>
+       443
+      </code>
+      :
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo ufw app info "Apache Full"
+</li></ul></code></pre>
+     <pre class="code-pre"><code langs=""><div class="secondary-code-label" title="Output">Output</div>Profile: Apache Full
+Title: Web Server (HTTP,HTTPS)
+Description: Apache v2 is the next generation of the omnipresent Apache web
+server.
+
+Ports:
+  <span class="highlight">80,443/tcp</span>
+</code></pre>
+     <p>
+      Allow incoming HTTP and HTTPS traffic for this profile:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo ufw allow in "Apache Full"
+</li></ul></code></pre>
+     <p>
+      You can do a spot check right away to verify that everything went as planned by visiting your server’s public IP address in your web browser (see the note under the next heading to find out what your public IP address is if you do not have this information already):
+     </p>
+     <pre class="code-pre"><code langs="">http://<span class="highlight">your_server_ip</span>
+</code></pre>
+     <p>
+      You will see the default Ubuntu 18.04 Apache web page, which is there for informational and testing purposes. It should look something like this:
+     </p>
+     <p>
+      <img alt="Ubuntu 18.04 Apache default" src="http://assets.digitalocean.com/articles/how-to-install-lamp-ubuntu-18/small_apache_default_1804.png"/>
+     </p>
+     <p>
+      If you see this page, then your web server is now correctly installed and accessible through your firewall.
+     </p>
+     <h3 id="how-to-find-your-server-39-s-public-ip-address">
+      How To Find your Server’s Public IP Address
+     </h3>
+     <p>
+      If you do not know what your server’s public IP address is, there are a number of ways you can find it. Usually, this is the address you use to connect to your server through SSH.
+     </p>
+     <p>
+      There are a few different ways to do this from the command line. First, you could use the
+      <code>
+       iproute2
+      </code>
+      tools to get your IP address by typing this:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+</li></ul></code></pre>
+     <p>
+      This will give you two or three lines back. They are all correct addresses, but your computer may only be able to use one of them, so feel free to try each one.
+     </p>
+     <p>
+      An alternative method is to use the
+      <code>
+       curl
+      </code>
+      utility to contact an outside party to tell you how
+      <em>
+       it
+      </em>
+      sees your server. This is done by asking a specific server what your IP address is:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt install curl
+</li><li class="line" prefix="$">curl http://icanhazip.com
+</li></ul></code></pre>
+     <p>
+      Regardless of the method you use to get your IP address, type it into your web browser’s address bar to view the default Apache page.
+     </p>
+     <h2 id="step-2-—-installing-mysql">
+      Step 2 — Installing MySQL
+     </h2>
+     <p>
+      Now that you have your web server up and running, it is time to install MySQL. MySQL is a database management system. Basically, it will organize and provide access to databases where your site can store information.
+     </p>
+     <p>
+      Again, use
+      <code>
+       apt
+      </code>
+      to acquire and install this software:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt install mysql-server
+</li></ul></code></pre>
+     <p>
+      <span class="note">
+       <strong>
+        Note
+       </strong>
+       : In this case, you do not have to run
+       <code>
+        sudo apt update
+       </code>
+       prior to the command. This is because you recently ran it in the commands above to install Apache. The package index on your computer should already be up-to-date.
+       <br/>
+      </span>
+     </p>
+     <p>
+      This command, too, will show you a list of the packages that will be installed, along with the amount of disk space they’ll take up. Enter
+      <code>
+       Y
+      </code>
+      to continue.
+     </p>
+     <p>
+      When the installation is complete, run a simple security script that comes pre-installed with MySQL which will remove some dangerous defaults and lock down access to your database system. Start the interactive script by running:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo mysql_secure_installation
+</li></ul></code></pre>
+     <p>
+      This will ask if you want to configure the
+      <code>
+       VALIDATE PASSWORD PLUGIN
+      </code>
+      .
+     </p>
+     <p>
+      <span class="note">
+       <strong>
+        Note:
+       </strong>
+       Enabling this feature is something of a judgment call. If enabled, passwords which don’t match the specified criteria will be rejected by MySQL with an error. This will cause issues if you use a weak password in conjunction with software which automatically configures MySQL user credentials, such as the Ubuntu packages for phpMyAdmin. It is safe to leave validation disabled, but you should always use strong, unique passwords for database credentials.
+       <br/>
+      </span>
+     </p>
+     <p>
+      Answer
+      <code>
+       Y
+      </code>
+      for yes, or anything else to continue without enabling.
+     </p>
+     <pre class="code-pre"><code langs="">VALIDATE PASSWORD PLUGIN can be used to test passwords
+and improve security. It checks the strength of password
+and allows the users to set only those passwords which are
+secure enough. Would you like to setup VALIDATE PASSWORD plugin?
+
+Press y|Y for Yes, any other key for No:
+</code></pre>
+     <p>
+      If you answer “yes”, you’ll be asked to select a level of password validation. Keep in mind that if you enter
+      <code>
+       2
+      </code>
+      for the strongest level, you will receive errors when attempting to set any password which does not contain numbers, upper and lowercase letters, and special characters, or which is based on common dictionary words.
+     </p>
+     <pre class="code-pre"><code langs="">There are three levels of password validation policy:
+
+LOW    Length &gt;= 8
+MEDIUM Length &gt;= 8, numeric, mixed case, and special characters
+STRONG Length &gt;= 8, numeric, mixed case, special characters and dictionary                  file
+
+Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: <span class="highlight">1</span>
+</code></pre>
+     <p>
+      Regardless of whether you chose to set up the
+      <code>
+       VALIDATE PASSWORD PLUGIN
+      </code>
+      , your server will next ask you to select and confirm a password for the MySQL
+      <strong>
+       root
+      </strong>
+      user. This is an administrative account in MySQL that has increased privileges. Think of it as being similar to the
+      <strong>
+       root
+      </strong>
+      account for the server itself (although the one you are configuring now is a MySQL-specific account). Make sure this is a strong, unique password, and do not leave it blank.
+     </p>
+     <p>
+      If you enabled password validation, you’ll be shown the password strength for the root password you just entered and your server will ask if you want to change that password. If you are happy with your current password, enter
+      <code>
+       N
+      </code>
+      for “no” at the prompt:
+     </p>
+     <pre class="code-pre"><code langs="">Using existing password for root.
+
+Estimated strength of the password: <span class="highlight">100</span>
+Change the password for root ? ((Press y|Y for Yes, any other key for No) : <span class="highlight">n</span>
+</code></pre>
+     <p>
+      For the rest of the questions, press
+      <code>
+       Y
+      </code>
+      and hit the
+      <code>
+       ENTER
+      </code>
+      key at each prompt. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MySQL immediately respects the changes you have made.
+     </p>
+     <p>
+      Note that in Ubuntu systems running MySQL 5.7 (and later versions), the
+      <strong>
+       root
+      </strong>
+      MySQL user is set to authenticate using the
+      <code>
+       auth_socket
+      </code>
+      plugin by default rather than with a password. This allows for some greater security and usability in many cases, but it can also complicate things when you need to allow an external program (e.g., phpMyAdmin) to access the user.
+     </p>
+     <p>
+      If you prefer to use a password when connecting to MySQL as
+      <strong>
+       root
+      </strong>
+      , you will need to switch its authentication method from
+      <code>
+       auth_socket
+      </code>
+      to
+      <code>
+       mysql_native_password
+      </code>
+      . To do this, open up the MySQL prompt from your terminal:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo mysql
+</li></ul></code></pre>
+     <p>
+      Next, check which authentication method each of your MySQL user accounts use with the following command:
+     </p>
+     <pre class="code-pre custom_prefix"><code langs=""><ul class="prefixed"><li class="line" prefix="mysql&gt;">SELECT user,authentication_string,plugin,host FROM mysql.user;
+</li></ul></code></pre>
+     <pre class="code-pre"><code langs=""><div class="secondary-code-label" title="Output">Output</div>+------------------+-------------------------------------------+-----------------------+-----------+
+| user             | authentication_string                     | plugin                | host      |
++------------------+-------------------------------------------+-----------------------+-----------+
+| root             |                                           | auth_socket           | localhost |
+| mysql.session    | *THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE | mysql_native_password | localhost |
+| mysql.sys        | *THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE | mysql_native_password | localhost |
+| debian-sys-maint | *CC744277A401A7D25BE1CA89AFF17BF607F876FF | mysql_native_password | localhost |
++------------------+-------------------------------------------+-----------------------+-----------+
+4 rows in set (0.00 sec)
+</code></pre>
+     <p>
+      In this example, you can see that the
+      <strong>
+       root
+      </strong>
+      user does in fact authenticate using the
+      <code>
+       auth_socket
+      </code>
+      plugin. To configure the
+      <strong>
+       root
+      </strong>
+      account to authenticate with a password, run the following
+      <code>
+       ALTER USER
+      </code>
+      command. Be sure to change
+      <code>
+       <span class="highlight">
+        password
+       </span>
+      </code>
+      to a strong password of your choosing:
+     </p>
+     <pre class="code-pre custom_prefix"><code langs=""><ul class="prefixed"><li class="line" prefix="mysql&gt;">ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<span class="highlight">password</span>';
+</li></ul></code></pre>
+     <p>
+      Then, run
+      <code>
+       FLUSH PRIVILEGES
+      </code>
+      which tells the server to reload the grant tables and put your new changes into effect:
+     </p>
+     <pre class="code-pre custom_prefix"><code langs=""><ul class="prefixed"><li class="line" prefix="mysql&gt;">FLUSH PRIVILEGES;
+</li></ul></code></pre>
+     <p>
+      Check the authentication methods employed by each of your users again to confirm that
+      <strong>
+       root
+      </strong>
+      no longer authenticates using the
+      <code>
+       auth_socket
+      </code>
+      plugin:
+     </p>
+     <pre class="code-pre custom_prefix"><code langs=""><ul class="prefixed"><li class="line" prefix="mysql&gt;">SELECT user,authentication_string,plugin,host FROM mysql.user;
+</li></ul></code></pre>
+     <pre class="code-pre"><code langs=""><div class="secondary-code-label" title="Output">Output</div>+------------------+-------------------------------------------+-----------------------+-----------+
+| user             | authentication_string                     | plugin                | host      |
++------------------+-------------------------------------------+-----------------------+-----------+
+| root             | *3636DACC8616D997782ADD0839F92C1571D6D78F | <span class="highlight">mysql_native_password</span> | localhost |
+| mysql.session    | *THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE | mysql_native_password | localhost |
+| mysql.sys        | *THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE | mysql_native_password | localhost |
+| debian-sys-maint | *CC744277A401A7D25BE1CA89AFF17BF607F876FF | mysql_native_password | localhost |
++------------------+-------------------------------------------+-----------------------+-----------+
+4 rows in set (0.00 sec)
+</code></pre>
+     <p>
+      You can see in this example output that the
+      <strong>
+       root
+      </strong>
+      MySQL user now authenticates using a password. Once you confirm this on your own server, you can exit the MySQL shell:
+     </p>
+     <pre class="code-pre custom_prefix"><code langs=""><ul class="prefixed"><li class="line" prefix="mysql&gt;">exit
+</li></ul></code></pre>
+     <p>
+      At this point, your database system is now set up and you can move on to installing PHP, the final component of the LAMP stack.
+     </p>
+     <h2 id="step-3-—-installing-php">
+      Step 3 — Installing PHP
+     </h2>
+     <p>
+      PHP is the component of your setup that will process code to display dynamic content. It can run scripts, connect to your MySQL databases to get information, and hand the processed content over to your web server to display.
+     </p>
+     <p>
+      Once again, leverage the
+      <code>
+       apt
+      </code>
+      system to install PHP. In addition, include some helper packages this time so that PHP code can run under the Apache server and talk to your MySQL database:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt install php libapache2-mod-php php-mysql
+</li></ul></code></pre>
+     <p>
+      This should install PHP without any problems. We’ll test this in a moment.
+     </p>
+     <p>
+      In most cases, you will want to modify the way that Apache serves files when a directory is requested. Currently, if a user requests a directory from the server, Apache will first look for a file called
+      <code>
+       index.html
+      </code>
+      . We want to tell the web server to prefer PHP files over others, so make Apache look for an
+      <code>
+       index.php
+      </code>
+      file first.
+     </p>
+     <p>
+      To do this, type this command to open the
+      <code>
+       dir.conf
+      </code>
+      file in a text editor with root privileges:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo nano /etc/apache2/mods-enabled/dir.conf
+</li></ul></code></pre>
+     <p>
+      It will look like this:
+     </p>
+     <div class="code-label" title="/etc/apache2/mods-enabled/dir.conf">
+      /etc/apache2/mods-enabled/dir.conf
+     </div>
+     <pre class="code-pre"><code langs="">&lt;IfModule mod_dir.c&gt;
+    DirectoryIndex index.html index.cgi index.pl <span class="highlight">index.php</span> index.xhtml index.htm
+&lt;/IfModule&gt;
+</code></pre>
+     <p>
+      Move the PHP index file (highlighted above) to the first position after the
+      <code>
+       DirectoryIndex
+      </code>
+      specification, like this:
+     </p>
+     <div class="code-label" title="/etc/apache2/mods-enabled/dir.conf">
+      /etc/apache2/mods-enabled/dir.conf
+     </div>
+     <pre class="code-pre"><code langs="">&lt;IfModule mod_dir.c&gt;
+    DirectoryIndex <span class="highlight">index.php</span> index.html index.cgi index.pl index.xhtml index.htm
+&lt;/IfModule&gt;
+</code></pre>
+     <p>
+      When you are finished, save and close the file by pressing
+      <code>
+       CTRL+X
+      </code>
+      . Confirm the save by typing
+      <code>
+       Y
+      </code>
+      and then hit
+      <code>
+       ENTER
+      </code>
+      to verify the file save location.
+     </p>
+     <p>
+      After this, restart the Apache web server in order for your changes to be recognized. Do this by typing this:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo systemctl restart apache2
+</li></ul></code></pre>
+     <p>
+      You can also check on the status of the
+      <code>
+       apache2
+      </code>
+      service using
+      <code>
+       systemctl
+      </code>
+      :
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo systemctl status apache2
+</li></ul></code></pre>
+     <pre class="code-pre"><code langs=""><div class="secondary-code-label" title="Sample Output">Sample Output</div>● apache2.service - LSB: Apache2 web server
+   Loaded: loaded (/etc/init.d/apache2; bad; vendor preset: enabled)
+  Drop-In: /lib/systemd/system/apache2.service.d
+           └─apache2-systemd.conf
+   Active: active (running) since Tue 2018-04-23 14:28:43 EDT; 45s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 13581 ExecStop=/etc/init.d/apache2 stop (code=exited, status=0/SUCCESS)
+  Process: 13605 ExecStart=/etc/init.d/apache2 start (code=exited, status=0/SUCCESS)
+    Tasks: 6 (limit: 512)
+   CGroup: /system.slice/apache2.service
+           ├─13623 /usr/sbin/apache2 -k start
+           ├─13626 /usr/sbin/apache2 -k start
+           ├─13627 /usr/sbin/apache2 -k start
+           ├─13628 /usr/sbin/apache2 -k start
+           ├─13629 /usr/sbin/apache2 -k start
+           └─13630 /usr/sbin/apache2 -k start
+</code></pre>
+     <p>
+      Press
+      <code>
+       Q
+      </code>
+      to exit this status output.
+     </p>
+     <p>
+      To enhance the functionality of PHP, you have the option to install some additional modules. To see the available options for PHP modules and libraries, pipe the results of
+      <code>
+       apt search
+      </code>
+      into
+      <code>
+       less
+      </code>
+      , a pager which lets you scroll through the output of other commands:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">apt search php- | less
+</li></ul></code></pre>
+     <p>
+      Use the arrow keys to scroll up and down, and press
+      <code>
+       Q
+      </code>
+      to quit.
+     </p>
+     <p>
+      The results are all optional components that you can install. It will give you a short description for each:
+     </p>
+     <pre class="code-pre"><code langs="">bandwidthd-pgsql/bionic 2.0.1+cvs20090917-10ubuntu1 amd64
+  Tracks usage of TCP/IP and builds html files with graphs
+
+bluefish/bionic 2.2.10-1 amd64
+  advanced Gtk+ text editor for web and software development
+
+cacti/bionic 1.1.38+ds1-1 all
+  web interface for graphing of monitoring systems
+
+ganglia-webfrontend/bionic 3.6.1-3 all
+  cluster monitoring toolkit - web front-end
+
+golang-github-unknwon-cae-dev/bionic 0.0~git20160715.0.c6aac99-4 all
+  PHP-like Compression and Archive Extensions in Go
+
+haserl/bionic 0.9.35-2 amd64
+  CGI scripting program for embedded environments
+
+kdevelop-php-docs/bionic 5.2.1-1ubuntu2 all
+  transitional package for kdevelop-php
+
+kdevelop-php-docs-l10n/bionic 5.2.1-1ubuntu2 all
+  transitional package for kdevelop-php-l10n
+…
+:
+</code></pre>
+     <p>
+      To learn more about what each module does, you could search the internet for more information about them. Alternatively, look at the long description of the package by typing:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">apt show <span class="highlight">package_name</span>
+</li></ul></code></pre>
+     <p>
+      There will be a lot of output, with one field called
+      <code>
+       Description
+      </code>
+      which will have a longer explanation of the functionality that the module provides.
+     </p>
+     <p>
+      For example, to find out what the
+      <code>
+       php-cli
+      </code>
+      module does, you could type this:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">apt show php-cli
+</li></ul></code></pre>
+     <p>
+      Along with a large amount of other information, you’ll find something that looks like this:
+     </p>
+     <pre class="code-pre"><code langs=""><div class="secondary-code-label" title="Output">Output</div>…
+Description: command-line interpreter for the PHP scripting language (default)
+ This package provides the /usr/bin/php command interpreter, useful for
+ testing PHP scripts from a shell or performing general shell scripting tasks.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Ubuntu's default
+ PHP version (currently 7.2).
+…
+</code></pre>
+     <p>
+      If, after researching, you decide you would like to install a package, you can do so by using the
+      <code>
+       apt install
+      </code>
+      command like you have been doing for the other software.
+     </p>
+     <p>
+      If you decided that
+      <code>
+       php-cli
+      </code>
+      is something that you need, you could type:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt install php-cli
+</li></ul></code></pre>
+     <p>
+      If you want to install more than one module, you can do that by listing each one, separated by a space, following the
+      <code>
+       apt install
+      </code>
+      command, like this:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt install <span class="highlight">package1</span> <span class="highlight">package2</span> <span class="highlight">...</span>
+</li></ul></code></pre>
+     <p>
+      At this point, your LAMP stack is installed and configured. Before you do anything else, we recommend that you set up an Apache virtual host where you can store your server’s configuration details.
+     </p>
+     <h2 id="step-4-—-setting-up-virtual-hosts-recommended">
+      Step 4 — Setting Up Virtual Hosts (Recommended)
+     </h2>
+     <p>
+      When using the Apache web server, you can use
+      <em>
+       virtual hosts
+      </em>
+      (similar to server blocks in Nginx) to encapsulate configuration details and host more than one domain from a single server. We will set up a domain called
+      <strong>
+       your_domain
+      </strong>
+      , but you should
+      <strong>
+       replace this with your own domain name
+      </strong>
+      . To learn more about setting up a domain name with DigitalOcean, see our
+      <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-digitalocean-dns">
+       Introduction to DigitalOcean DNS
+      </a>
+      .
+     </p>
+     <p>
+      Apache on Ubuntu 18.04 has one server block enabled by default that is configured to serve documents from the
+      <code>
+       /var/www/html
+      </code>
+      directory. While this works well for a single site, it can become unwieldy if you are hosting multiple sites. Instead of modifying
+      <code>
+       /var/www/html
+      </code>
+      , let’s create a directory structure within
+      <code>
+       /var/www
+      </code>
+      for our
+      <strong>
+       your_domain
+      </strong>
+      site, leaving
+      <code>
+       /var/www/html
+      </code>
+      in place as the default directory to be served if a client request doesn’t match any other sites.
+     </p>
+     <p>
+      Create the directory for
+      <strong>
+       your_domain
+      </strong>
+      as follows:
+     </p>
+     <pre class="code-pre commmand"><code langs="">sudo mkdir /var/www/<span class="highlight">your_domain</span>
+</code></pre>
+     <p>
+      Next, assign ownership of the directory with the
+      <code>
+       $USER
+      </code>
+      environment variable:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo chown -R $USER:$USER /var/www/<span class="highlight">your_domain</span>
+</li></ul></code></pre>
+     <p>
+      The permissions of your web roots should be correct if you haven’t modified your
+      <code>
+       unmask
+      </code>
+      value, but you can make sure by typing:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo chmod -R 755 /var/www/<span class="highlight">your_domain</span>
+</li></ul></code></pre>
+     <p>
+      Next, create a sample
+      <code>
+       index.html
+      </code>
+      page using
+      <code>
+       nano
+      </code>
+      or your favorite editor:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">nano /var/www/<span class="highlight">your_domain</span>/index.html
+</li></ul></code></pre>
+     <p>
+      Inside, add the following sample HTML:
+     </p>
+     <div class="code-label" title="/var/www/your_domain/index.html">
+      /var/www/your_domain/index.html
+     </div>
+     <pre class="code-pre"><code langs="">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Welcome to <span class="highlight">Your_domain</span>!&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Success!  The <span class="highlight">your_domain</span> server block is working!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+     <p>
+      Save and close the file when you are finished.
+     </p>
+     <p>
+      In order for Apache to serve this content, it’s necessary to create a virtual host file with the correct directives. Instead of modifying the default configuration file located at
+      <code>
+       /etc/apache2/sites-available/000-default.conf
+      </code>
+      directly, let’s make a new one at
+      <code>
+       /etc/apache2/sites-available/
+       <span class="highlight">
+        your_domain
+       </span>
+       .conf
+      </code>
+      :
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo nano /etc/apache2/sites-available/<span class="highlight">your_domain</span>.conf
+</li></ul></code></pre>
+     <p>
+      Paste in the following configuration block, which is similar to the default, but updated for our new directory and domain name:
+     </p>
+     <div class="code-label" title="/etc/apache2/sites-available/your_domain.conf">
+      /etc/apache2/sites-available/your_domain.conf
+     </div>
+     <pre class="code-pre"><code langs="">&lt;VirtualHost *:80&gt;
+    ServerAdmin webmaster@localhost
+    ServerName <span class="highlight">your_domain</span>
+    ServerAlias <span class="highlight">www.your_domain</span>
+    DocumentRoot /var/www/<span class="highlight">your_domain</span>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/VirtualHost&gt;
+</code></pre>
+     <p>
+      Notice that we’ve updated the
+      <code>
+       DocumentRoot
+      </code>
+      to our new directory and
+      <code>
+       ServerAdmin
+      </code>
+      to an email that the
+      <strong>
+       your_domain
+      </strong>
+      site administrator can access. We’ve also added two directives:
+      <code>
+       ServerName
+      </code>
+      , which establishes the base domain that should match for this virtual host definition, and
+      <code>
+       ServerAlias
+      </code>
+      , which defines further names that should match as if they were the base name.
+     </p>
+     <p>
+      Save and close the file when you are finished.
+     </p>
+     <p>
+      Let’s enable the file with the
+      <code>
+       a2ensite
+      </code>
+      tool:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo a2ensite <span class="highlight">your_domain</span>.conf
+</li></ul></code></pre>
+     <p>
+      Disable the default site defined in
+      <code>
+       000-default.conf
+      </code>
+      :
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo a2dissite 000-default.conf
+</li></ul></code></pre>
+     <p>
+      Next, let’s test for configuration errors:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apache2ctl configtest
+</li></ul></code></pre>
+     <p>
+      You should see the following output:
+     </p>
+     <pre class="code-pre"><code langs=""><div class="secondary-code-label" title="Output">Output</div>Syntax OK
+</code></pre>
+     <p>
+      Restart Apache to implement your changes:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo systemctl restart apache2
+</li></ul></code></pre>
+     <p>
+      Apache should now be serving your domain name. You can test this by navigating to
+      <code>
+       http://
+       <span class="highlight">
+        your_domain
+       </span>
+      </code>
+      , where you should see something like this:
+     </p>
+     <p>
+      <img alt="Apache virtual host example" src="https://assets.digitalocean.com/articles/apache_virtual_hosts_ubuntu/vhost_your_domain.png"/>
+     </p>
+     <p>
+      With that, you virtual host is fully set up. Before making any more changes or deploying an application, though, it would be helpful to proactively test out your PHP configuration in case there are any issues that should be addressed.
+     </p>
+     <h2 id="step-5-—-testing-php-processing-on-your-web-server">
+      Step 5 — Testing PHP Processing on your Web Server
+     </h2>
+     <p>
+      In order to test that your system is configured properly for PHP, create a very basic PHP script called
+      <code>
+       info.php
+      </code>
+      . In order for Apache to find this file and serve it correctly, it must be saved to your web root directory.
+     </p>
+     <p>
+      Create the file at the web root you created in the previous step by running:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo nano /var/www/<span class="highlight">your_domain</span>/info.php
+</li></ul></code></pre>
+     <p>
+      This will open a blank file. Add the following text, which is valid PHP code, inside the file:
+     </p>
+     <div class="code-label" title="info.php">
+      info.php
+     </div>
+     <pre class="code-pre"><code langs="">&lt;?php
+phpinfo();
+?&gt;
+</code></pre>
+     <p>
+      When you are finished, save and close the file.
+     </p>
+     <p>
+      Now you can test whether your web server is able to correctly display content generated by this PHP script. To try this out, visit this page in your web browser. You’ll need your server’s public IP address again.
+     </p>
+     <p>
+      The address you will want to visit is:
+     </p>
+     <pre class="code-pre"><code langs="">http://<span class="highlight">your_domain</span>/info.php
+</code></pre>
+     <p>
+      The page that you come to should look something like this:
+     </p>
+     <p>
+      <img alt="Ubuntu 18.04 default PHP info" src="https://assets.digitalocean.com/articles/how-to-install-lamp-ubuntu-18/small_php_info_1804.png"/>
+     </p>
+     <p>
+      This page provides some basic information about your server from the perspective of PHP. It is useful for debugging and to ensure that your settings are being applied correctly.
+     </p>
+     <p>
+      If you can see this page in your browser, then your PHP is working as expected.
+     </p>
+     <p>
+      You probably want to remove this file after this test because it could actually give information about your server to unauthorized users. To do this, run the following command:
+     </p>
+     <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo rm /var/www/<span class="highlight">your_domain</span>/info.php
+</li></ul></code></pre>
+     <p>
+      You can always recreate this page if you need to access the information again later.
+     </p>
+     <h2 id="conclusion">
+      Conclusion
+     </h2>
+     <p>
+      Now that you have a LAMP stack installed, you have many choices for what to do next.  Basically, you’ve installed a platform that will allow you to install most kinds of websites and web software on your server.
+     </p>
+     <p>
+      As an immediate next step, you should ensure that connections to your web server are secured, by serving them via HTTPS. The easiest option here is to
+      <a href="https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04">
+       use Let’s Encrypt
+      </a>
+      to secure your site with a free TLS/SSL certificate.
+     </p>
+     <p>
+      Some other popular options are:
+     </p>
+     <ul>
+      <li>
+       <a href="https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lamp-on-ubuntu-16-04">
+        Install Wordpress
+       </a>
+       the most popular content management system on the internet.
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-18-04">
+        Set Up PHPMyAdmin
+       </a>
+       to help manage your MySQL databases from web browser.
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/community/articles/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server">
+        Learn how to use SFTP
+       </a>
+       to transfer files to and from your server.
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="tutorial-footer">
+    <div class="tutorial-footer-details">
+     <div class="postable-info-bar-container">
+      <div class="postable-info-bar">
+       <div class="author-byline">
+        <div class="component-collaborators-container">
+         <ul class="component-collaborators-content">
+          <li class="collaborator-byline-avatar">
+           <a href="/community/users/mdrake">
+            <div class="mod-avatar mod-avatar-large">
+             <img alt="3072b0699d3add2e0d0f31b97397dd68302c8842" class="avatar avatar-large" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/users/avatars/large/3072b0699d3add2e0d0f31b97397dd68302c8842.jpg?1509387385"/>
+             <span class="mod-star" data-container="body" data-toggle="tooltip" title="MOD">
+              <span class="mod-star-icon">
+              </span>
+             </span>
+            </div>
+           </a>
+          </li>
+          <li class="collaborators-byline-data">
+           <p class="names">
+            By
+            <a href="/community/users/mdrake">
+             Mark Drake
+            </a>
+           </p>
+           <p>
+           </p>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="section-content tutorial-contributors three">
+      <div class="component-collaborators-container">
+       <ul class="component-collaborators-content">
+        <li class="collaborators-byline-data">
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="hsb--container">
+      <div class="hsb--content">
+       <div class="hsb--undo hsb--hide">
+        <span class="icon icon-helpfulness-upvoted">
+        </span>
+        <span class="hsb--question">
+         You rated this helpful.
+        </span>
+        <button class="hsb--button-down hsb--vote-down-js" data-upvotable-type="Tutorial" name="button" type="submit">
+         Undo
+        </button>
+       </div>
+       <div class="hsb--flagging-undo hsb--hide">
+        <span class="icon icon-helpfulness-flag">
+        </span>
+        <span class="hsb--question">
+         You reported this tutorial.
+        </span>
+        <button class="hsb--button-down hsb--unflagging-js" name="button" type="submit">
+         Undo
+        </button>
+       </div>
+       <div class="hsb--do">
+        <span class="hsb--question">
+         Was this helpful?
+        </span>
+        <button class="hsb--button hsb--vote-up-js" data-upvotable-id="2614" data-upvotable-type="Tutorial" id="submit-upvote-report" name="button" type="submit">
+         Yes
+        </button>
+        <button class="hsb--button hsb--flagging-js" data-flag-type="no" data-flaggable-id="2614" data-url="/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04/flag" name="button" type="submit">
+         No
+        </button>
+       </div>
+       <div class="hsb--social-and-comments">
+        <div class="hsb--social-sharing">
+         <a class="share-popup" href="http://twitter.com/share?text=How%20To%20Install%20Linux%2C%20Apache%2C%20MySQL%2C%20PHP%20%28LAMP%29%20stack%20on%20Ubuntu%2018.04&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=twshare" target="_blank">
+          <span class="icon icon-helpfulness-twitter">
+          </span>
+         </a>
+         <a class="share-popup" href="https://www.facebook.com/sharer/sharer.php?u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=fbshare" target="_blank">
+          <span class="icon icon-helpfulness-facebook">
+          </span>
+         </a>
+         <a class="share-popup" href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20Linux%2C%20Apache%2C%20MySQL%2C%20PHP%20%28LAMP%29%20stack%20on%20Ubuntu%2018.04&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04?utm_content=how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=hnshare" target="_blank">
+          <span class="icon icon-helpfulness-hacker-news">
+          </span>
+         </a>
+        </div>
+        <div class="hsb--comment">
+         <span class="icon icon-helpfulness-comment">
+         </span>
+         <strong class="amount">
+          43
+         </strong>
+        </div>
+       </div>
+      </div>
+      <a class="hsb--flagging-js" data-flag-type="report" data-flaggable-id="2614" data-url="/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04/flag" href="javascript:void(0);">
+       Report an issue
+      </a>
+     </div>
+    </div>
+    <div class="related-content">
+     <div class="section-content">
+      <h2>
+       Related
+      </h2>
+      <ul>
+       <li title="How To Set Up Apache Virtual Hosts on Ubuntu 18.04 [Quickstart]">
+        <a class="panel" href="/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04-quickstart">
+         <h6>
+          Tutorial
+         </h6>
+         <div class="panel-data">
+          <h5>
+           How To Set Up Apache Virtual Hosts on Ubuntu 18.04 [Quickstart]
+          </h5>
+          <p data-clamp="">
+           This tutorial will guide you through setting up multiple domains and websites using Apache virtual hosts on an Ubuntu 18.04 server. During this process, you’ll learn how to serve different content to different visitors depending on which domains they are requesting. For a…
+          </p>
+         </div>
+        </a>
+       </li>
+       <li title="How To Use Database Migrations and Seeders to Abstract Database Setup in Laravel">
+        <a class="panel" href="/community/tutorials/how-to-use-database-migrations-and-seeders-to-abstract-database-setup-in-laravel">
+         <h6>
+          Tutorial
+         </h6>
+         <div class="panel-data">
+          <h5>
+           How To Use Database Migrations and Seeders to Abstract Database Setup in Laravel
+          </h5>
+          <p data-clamp="">
+           Migrations and Seeders are powerful database utilities provided by the Laravel PHP framework to allow developers to quickly bootstrap, destroy and recreate an application’s database.
+In this guide, we'll create Migrations and Seeders to populate a Laravel 6 demo application's database with sample data.
+          </p>
+         </div>
+        </a>
+       </li>
+       <li title="Recommended Steps To Harden Apache HTTP on FreeBSD 12.0">
+        <a class="panel" href="/community/tutorials/recommended-steps-to-harden-apache-http-on-freebsd-12-0">
+         <h6>
+          Tutorial
+         </h6>
+         <div class="panel-data">
+          <h5>
+           Recommended Steps To Harden Apache HTTP on FreeBSD 12.0
+          </h5>
+          <p data-clamp="">
+           Although the default installation of an Apache HTTP server is already safe to use, its configuration can be substantially improved with a few modifications. In this tutorial you'll implement some recommended steps to reduce how much information on your server is exposed. You will verify the directory listings and disable indexing to check the access to resources. You'll also change the default value of the timeout directive to help mitigate Denial of Service type of attacks.
+          </p>
+         </div>
+        </a>
+       </li>
+       <li title="How To Set Up Apache Virtual Hosts on Ubuntu 18.04">
+        <a class="panel" href="/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04">
+         <h6>
+          Tutorial
+         </h6>
+         <div class="panel-data">
+          <h5>
+           How To Set Up Apache Virtual Hosts on Ubuntu 18.04
+          </h5>
+          <p data-clamp="">
+           This tutorial will guide you through setting up multiple domains and websites using Apache virtual hosts on an Ubuntu 18.04 server. During this process, you’ll learn how to serve different content to different visitors depending on which domains they are requesting.
+          </p>
+         </div>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="looking-for-an-answer">
+     <div class="section-content">
+      <h4>
+       Still looking for an answer?
+      </h4>
+      <div class="lfa--actions">
+       <a class="lfa--action-box" href="/community/questions/new?tags=LAMP+Stack%2CDatabases%2CPHP%2CMySQL%2CApache%2CUbuntu+18.04">
+        <span class="icon icon-look-for-answer-question">
+        </span>
+        Ask a question
+       </a>
+       <a class="lfa--action-box use-universal-search-js" href="javascript:void(0)">
+        <span class="icon icon-look-for-answer-search-thin">
+        </span>
+        Search for more help
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="content-comments">
+    <div class="section-content">
+     <div class="tutorial commentable" id="tutorial_2614">
+      <div class="comments-header">
+       <h4 class="comments-count">
+        <span>
+         43 Comments
+        </span>
+       </h4>
+      </div>
+      <div class="response response-form no-avatar">
+       <div class="js-display-on-error flash error hidden">
+       </div>
+       <form accept-charset="UTF-8" action="/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04/comments" class="content-form disabled-form" data-remote="true" id="new_comment" method="post">
+        <input name="utf8" type="hidden" value="✓"/>
+        <textarea class="js-comment-content tutorial-comment-field" data-markdown="true" id="comment_content" name="comment[content]" placeholder="Leave a comment..."></textarea>
+        <div class="log-in-notice">
+         <a href="/community/auth/digitalocean">
+          Sign In to Comment
+         </a>
+        </div>
+        <div class="clearfix">
+        </div>
+       </form>
+      </div>
+      <div class="comments">
+       <ul class="response-list">
+        <a class="js-click-on-load hidden" data-remote="true" href="/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04/comments" rel="nofollow">
+         Load
+        </a>
+       </ul>
+       <div class="comments-spinner">
+        <div class="spinner spinner-large">
+         <div class="bounce1">
+         </div>
+         <div class="bounce2">
+         </div>
+         <div class="bounce3">
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="load-more-container">
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="creative-commons">
+    <a class="creative-commons-image" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+     <img alt="Creative Commons License" rel="license" src="/assets/community/creativecommons-08b32a9279fcd47fcd78ac6a26331389.png"/>
+    </a>
+    <div class="license-text">
+     This work is licensed under a
+     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+      Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+     </a>
+     .
+    </div>
+   </div>
+   <div class="clearfix">
+   </div>
+  </div>
+  <footer>
+   <section>
+    <a class="panel" href="https://www.digitalocean.com/write-for-donations/">
+     <div class="photo_wrap">
+      <img alt="" class="photo" src="https://images.prismic.io/digitalocean/70910e9fdeb57be46aaa209ce8d9b4dc8e117fab_w4do2.jpg?auto=compress,format"/>
+     </div>
+     <span class="heading">
+      Become a contributor
+     </span>
+     <p>
+      You get paid; we donate to tech nonprofits.
+     </p>
+    </a>
+    <a class="panel" href="https://www.meetup.com/pro/digitalocean">
+     <div class="photo_wrap">
+      <img alt="" class="photo" src="https://images.prismic.io/digitalocean/2491485f96735e5982e330914d8a617f85395fab_meetups.jpg?auto=compress,format"/>
+     </div>
+     <span class="heading">
+      Connect with other developers
+     </span>
+     <p>
+      Find a DigitalOcean Meetup near you.
+     </p>
+    </a>
+    <a class="panel" href="https://www.digitalocean.com/community/newsletter">
+     <div class="photo_wrap">
+      <img alt="" class="photo" src="https://images.prismic.io/digitalocean/ca12c951cc76f33037f3384bba9942545d160d82_iaan_illo.jpg?auto=compress,format"/>
+     </div>
+     <span class="heading">
+      Get our biweekly newsletter
+     </span>
+     <p>
+      Sign up for Infrastructure as a Newsletter.
+     </p>
+    </a>
+   </section>
+   <section class="slim">
+    <span class="heading">
+     Featured on Community
+    </span>
+    <a href="https://www.digitalocean.com/community/curriculums/kubernetes-for-full-stack-developers">
+     Kubernetes Course
+    </a>
+    <a href="https://www.digitalocean.com/community/tutorial_series/how-to-code-in-python-3">
+     Learn Python 3
+    </a>
+    <a href="https://www.digitalocean.com/community/tutorials/machine-learning-projects-python-a-digitalocean-ebook">
+     Machine Learning in Python
+    </a>
+    <a href="https://www.digitalocean.com/community/tutorials/how-to-write-your-first-program-in-go">
+     Getting started with Go
+    </a>
+    <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-kubernetes">
+     Intro to Kubernetes
+    </a>
+    <hr/>
+    <span class="heading">
+     DigitalOcean Products
+    </span>
+    <a href="https://www.digitalocean.com/products/droplets/">
+     Droplets
+    </a>
+    <a href="https://www.digitalocean.com/products/managed-databases/">
+     Managed Databases
+    </a>
+    <a href="https://www.digitalocean.com/products/kubernetes/">
+     Managed Kubernetes
+    </a>
+    <a href="https://www.digitalocean.com/products/spaces/">
+     Spaces Object Storage
+    </a>
+    <a href="https://marketplace.digitalocean.com/">
+     Marketplace
+    </a>
+   </section>
+   <section class="product">
+    <a class="copy" href="/products">
+     <h3>
+      Welcome to the developer cloud
+     </h3>
+     <p>
+      DigitalOcean makes it simple to launch in the cloud and scale up as you grow – whether you’re running one virtual machine or ten thousand.
+     </p>
+     <span class="link_text">
+      Learn More
+     </span>
+    </a>
+    <div class="feature">
+     <a class="img_wrap" href="/products">
+      <img alt="DigitalOcean Cloud Control Panel" class="photo" src="https://images.prismic.io/digitalocean/95c1215227aa7f39f2bd23076de28feb969741c7_cloud.digitalocean.com_projects_63f9252f-652b-4645-9c0c-bee96f2bc503_resources_ic0ce81-2.png?auto=compress,format"/>
+     </a>
+    </div>
+   </section>
+   <section class="dark">
+    <div class="vlist grow">
+     <a href="https://www.digitalocean.com">
+      <svg height="50" viewBox="0 0 50 50" width="50" xmlns="http://www.w3.org/2000/svg">
+       <title>
+        DigitalOcean Homepage
+       </title>
+       <g fill="#0080FF" fill-rule="evenodd">
+        <path d="M24.9153 50v-9.661c10.226 0 18.1638-10.1413 14.2372-20.904-1.4406-3.983-4.6327-7.1751-8.6158-8.6158C19.774 6.921 9.6327 14.8305 9.6327 25.0565H0C0 8.7571 15.7627-3.9548 32.8531 1.3842c7.4576 2.3446 13.418 8.2768 15.7345 15.7344C53.9266 34.2373 41.2429 50 24.9153 50">
+        </path>
+        <path d="M15.339 40.3672h9.6045v-9.6045H15.339zM7.9379 47.7684h7.401v-7.4012H7.938zM1.7514 40.3672H7.938v-6.1864H1.7514z">
+        </path>
+       </g>
+      </svg>
+     </a>
+     <br/>
+     <br/>
+     ©
+     <script type="text/javascript">
+      document.write(new Date().getFullYear());
+     </script>
+     DigitalOcean, LLC. All rights reserved.
+    </div>
+    <div class="vlist">
+     <span class="heading">
+      Company
+     </span>
+     <ul>
+      <li>
+       <a href="https://www.digitalocean.com/about/">
+        About
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/about/leadership/">
+        Leadership
+       </a>
+      </li>
+      <li>
+       <a href="https://blog.digitalocean.com/">
+        Blog
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/careers/">
+        Careers
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/partners/">
+        Partners
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/referral-program/">
+        Referral Program
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/press/">
+        Press
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/legal/">
+        Legal &amp; Security
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="vlist">
+     <span class="heading">
+      Products
+     </span>
+     <ul>
+      <li>
+       <a href="https://www.digitalocean.com/products/">
+        Products Overview
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/pricing/">
+        Pricing
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/products/droplets/">
+        Droplets
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/products/kubernetes/">
+        Kubernetes
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/products/managed-databases/">
+        Managed Databases
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/products/spaces/">
+        Spaces
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/products/marketplace/">
+        Marketplace
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/products/load-balancer/">
+        Load Balancers
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/products/block-storage/">
+        Block Storage
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/products/tools-and-integrations/">
+        Tools &amp; Integrations
+       </a>
+      </li>
+      <li>
+       <a href="https://developers.digitalocean.com/documentation/">
+        API
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/docs">
+        Documentation
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/docs/release-notes/">
+        Release Notes
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="vlist">
+     <span class="heading">
+      Community
+     </span>
+     <ul>
+      <li>
+       <a href="https://www.digitalocean.com/community/tutorials">
+        Tutorials
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/community/questions">
+        Q&amp;A
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/community/tools">
+        Tools and Integrations
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/community/tags">
+        Tags
+       </a>
+      </li>
+      <li>
+       <a href="https://ideas.digitalocean.com/">
+        Product Ideas
+       </a>
+      </li>
+      <li>
+       <a href="https://www.meetup.com/pro/digitalocean/?utm_source=do_www">
+        Meetups
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/write-for-donations/">
+        Write for DOnations
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/droplets-for-demos/">
+        Droplets for Demos
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/hatch/">
+        Hatch Startup Program
+       </a>
+      </li>
+      <li>
+       <a href="http://store.digitalocean.com/">
+        Shop Swag
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/research/">
+        Research Program
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/currents/">
+        Currents Research
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/open-source/">
+        Open Source
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="vlist">
+     <span class="heading">
+      Contact
+     </span>
+     <ul>
+      <li>
+       <a href="https://www.digitalocean.com/support/start/">
+        Get Support
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/docs/getting-started/faq/">
+        Trouble Signing In?
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/company/contact/sales/">
+        Sales
+       </a>
+      </li>
+      <li>
+       <a href="https://www.digitalocean.com/company/contact/#abuse">
+        Report Abuse
+       </a>
+      </li>
+      <li>
+       <a href="https://status.digitalocean.com/">
+        System Status
+       </a>
+      </li>
+     </ul>
+    </div>
+   </section>
+  </footer>
+  <div class="modal fade mini-modal" id="sign-in-modal" style="display: none;">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h1>
+       Almost there!
+      </h1>
+      <a aria-label="close" class="close-button" data-dismiss="modal" href="">
+       <span class="icon icon-close-light">
+       </span>
+      </a>
+     </div>
+     <div class="modal-body">
+      <div class="sign-in-message">
+       Sign into your account, or create a new one, to start interacting.
+      </div>
+      <div class="sign-in-modal-actions">
+       <a class="sign-in-link button blue-button" data-default-url="/community/auth/digitalocean" href="/community/auth/digitalocean">
+        Sign In
+       </a>
+       <a class="sign-up-link button blue-button" data-default-url="/community/auth/digitalocean?display=sessionless+register" href="/community/auth/digitalocean?display=sessionless+register">
+        Sign Up
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   $(function() {
+      var dropDownOptions = {};
+      
+
+      VTGNavigationDropdown($('[data-versioned-tutorial-group-navigation]'), dropDownOptions);
+      createTutorialRequest({
+        $tutorialRequestLinks: $("[data-tutorial-request]"),
+        tutorialRequestStatusSelector: "[data-tutorial-request-status-indicator]",
+        tutorialRequestUrl: "/community/api/tutorial_requests",
+      });
+    });
+  </script>
+  <script>
+   $(function() {
+      window.initHelpfulnessActions(2614, '/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04/flag');
+    });
+  </script>
+  <script>
+   $(function() {
+      if (!!window.init_sharing) {
+        window.init_sharing();
+      }
+      new window.NewsletterSignup();
+      new window.GrowableMarkdown({ target: '[data-growable-markdown]' });
+    });
+  </script>
+  <script type="application/ld+json">
+   {"@context":"http://schema.org","@type":"Article","name":"How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04","headline":"How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04","alternativeHeadline":"How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04","description":"A \"LAMP\" stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web apps. This stack typically consists of the Linux operating system, the Apache web server, a MySQL database, and PHP, a dynamic content processor. This tutorial serves as a guide for installing these components on an Ubuntu 18.04 server.","keywords":"LAMP Stack,Databases,PHP,MySQL,Apache,April 2018,Ubuntu 18.04","url":"https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04"},"dateModified":"2019-09-18T19:54:55Z","inLanguage":"en","accessMode":"textual","accessModeSufficient":"textual","isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","publishingPrinciples":"https://www.digitalocean.com/community/tutorials/technical-recommendations-and-best-practices-for-digitalocean-s-tutorials","author":[{"@type":"Person","name":"Mark Drake","@id":"https://www.digitalocean.com/community/users/mdrake"}],"datePublished":"2018-04-27T18:12:30Z","image":{"@type":"ImageObject","url":"https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/LAMP_tw_updated_logo.png?1564576130","height":375,"width":750},"interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":"456"},{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":"41"}],"sourceOrganization":{"@type":"Organization","name":"DigitalOcean Community","url":"https://www.digitalocean.com/community"},"publisher":{"@type":"Organization","name":"DigitalOcean","url":"https://www.digitalocean.com","logo":{"@type":"ImageObject","url":"https://assets.digitalocean.com/logos/DO_Logo_horizontal_blue.png","width":351,"height":60}}}
+  </script>
+  <script type="text/javascript">
+   $(function() {
+      $('.use-universal-search-js').on('click', function () {
+        $('#q').trigger('click');
+      });
+    });
+
+    window.loadUniversalSearchScript( function () {
+      var search = new UniversalSearch({
+        element_id: 'q',
+        search_on_slash: true,
+        primary_list: ['quicknav', 'community_consolidated'],
+        secondary_list: ['alldocs', 'marketplace'],
+        algolia_app_id: "6ZHEUVKJ88",
+        algolia_public_key: "c5470567eae7fa1177d43222e18ba086"
+      });
+      search.start();
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html class="html__responsive" itemscope="" itemtype="http://schema.org/QAPage">
+ <head>
+  <title>
+   Merging XML files with identical nodes using python - Stack Overflow
+  </title>
+  <link href="https://stackoverflow.com/questions/52752601/merging-xml-files-with-identical-nodes-using-python" rel="canonical"/>
+  <meta content="https://stackoverflow.com/questions/52752601/merging-xml-files-with-identical-nodes-using-python" property="og:url"/>
+  <meta content="Merging XML files with identical nodes using python" itemprop="name" name="twitter:title" property="og:title"/>
+  <meta content="Looking to merge the following XML. I'd like to this in Python, though it's not a requirement by any means.  File 1:  &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&amp;gt; &amp;lt;Package xmlns..." itemprop="description" name="twitter:description" property="og:description"/>
+  <link href="/feeds/question/52752601" rel="alternate" title="Feed for question 'Merging XML files with identical nodes using python'" type="application/atom+xml"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/52752601/merging-xml-files-with-identical-nodes-using-python" name="twitter:app:url:iphone"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/52752601/merging-xml-files-with-identical-nodes-using-python" name="twitter:app:url:ipad"/>
+  <meta content="http://stackoverflow.com/questions/52752601/merging-xml-files-with-identical-nodes-using-python" name="twitter:app:url:googleplay"/>
+ </head>
+ <body class="question-page unified-theme">
+  <div aria-hidden="false" class="p8 ff-sans ps-fixed b0 l0 r0 z-banner" id="js-gdpr-consent-banner" role="banner" style="background-color: #3b4045; color: white;">
+   <div aria-describedby="notice-message" class="wmx8 mx-auto grid grid__center" role="alertdialog">
+    <div aria-label="notice-message" class="grid--cell mr12">
+     <p class="mb0 lh-lg">
+      By using our site, you acknowledge that you have read and understand our  ,  , and our  .
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="left-sidebar js-pinned-left-sidebar ps-relative" data-is-here-when="md lg" id="left-sidebar">
+    <div aria-hidden="true" class="s-popover w-auto p16" id="popover-teams-create-cta" role="menu">
+     <div class="ps-relative overflow-hidden">
+      <p class="mb2">
+       <strong>
+        Teams
+       </strong>
+      </p>
+      <p class="mb16 fs-caption fc-medium">
+       Q&amp;A for Work
+      </p>
+      <p class="mb8 fs-caption fc-medium">
+       Stack Overflow for Teams is a private, secure spot for you and your coworkers to find and share information.
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="snippet-hidden" id="content">
+    <div itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+     <div class="inner-content clearfix">
+      <div class="grid sm:fd-column" id="question-header">
+       <h1 class="grid--cell fs-headline1 fl1 ow-break-word mb8" itemprop="name">
+        <a class="question-hyperlink" href="/questions/52752601/merging-xml-files-with-identical-nodes-using-python">
+         Merging XML files with identical nodes using python
+        </a>
+       </h1>
+      </div>
+      <div class="grid fw-wrap pb8 mb16 bb bc-black-2">
+       <div class="grid--cell ws-nowrap mr16 mb8" title="2018-10-11 05:07:57Z">
+        <time datetime="2018-10-11T05:07:57" itemprop="dateCreated">
+         1 year, 5 months ago
+        </time>
+       </div>
+       <div class="grid--cell ws-nowrap mr16 mb8">
+        <a class="s-link s-link__inherit" href="?lastactivity" title="2018-10-14 15:12:21Z">
+         1 year, 5 months ago
+        </a>
+       </div>
+       <div class="grid--cell ws-nowrap mb8" title="Viewed 107 times">
+        107 times
+       </div>
+      </div>
+      <div aria-label="question and answers" id="mainbar" role="main">
+       <div class="question" data-questionid="52752601" id="question">
+        <div class="post-layout">
+         <div class="postcell post-layout--right">
+          <div class="post-text" itemprop="text">
+           <p>
+            Looking to merge the following XML. I'd like to this in Python, though it's not a requirement by any means.
+           </p>
+           <p>
+            <strong>
+             File 1:
+            </strong>
+           </p>
+           <pre><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; &lt;Package xmlns="http://soap.sforce.com/2006/04/metadata"&gt; &lt;types&gt; &lt;members&gt;Class 1&lt;/members&gt; &lt;members&gt;Class 2&lt;/members&gt; &lt;name&gt;ApexClass&lt;/name&gt; &lt;/types&gt; &lt;types&gt; &lt;members&gt;Trigger 1&lt;/members&gt; &lt;name&gt;ApexTrigger&lt;/name&gt; &lt;/types&gt; &lt;types&gt; &lt;members&gt;Rule 1&lt;/members&gt; &lt;members&gt;Rule 2&lt;/members&gt; &lt;name&gt;WorkflowRule&lt;/name&gt; &lt;/types&gt; &lt;types&gt; &lt;members&gt;Address&lt;/members&gt; &lt;name&gt;CustomField&lt;/name&gt; &lt;/types&gt; &lt;version&gt;39.0&lt;/version&gt; &lt;/Package&gt; </code></pre>
+           <p>
+            <strong>
+             File 2:
+            </strong>
+           </p>
+           <pre><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; &lt;Package xmlns="http://soap.sforce.com/2006/04/metadata"&gt; &lt;types&gt; &lt;members&gt;Class 3&lt;/members&gt; &lt;name&gt;ApexClass&lt;/name&gt; &lt;/types&gt; &lt;types&gt; &lt;members&gt;Rule 2&lt;/members&gt; &lt;name&gt;WorkflowRule&lt;/name&gt; &lt;/types&gt; &lt;types&gt; &lt;members&gt;Phone&lt;/members&gt; &lt;name&gt;CustomField&lt;/name&gt; &lt;/types&gt; &lt;version&gt;41.0&lt;/version&gt; &lt;/Package&gt; </code></pre>
+           <p>
+            Merge
+            <strong>
+             File 1
+            </strong>
+            and
+            <strong>
+             File 2
+            </strong>
+            to create
+            <strong>
+             File 3
+            </strong>
+            below:
+           </p>
+           <pre><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; &lt;Package xmlns="http://soap.sforce.com/2006/04/metadata"&gt; &lt;types&gt; &lt;members&gt;Class 1&lt;/members&gt; &lt;members&gt;Class 2&lt;/members&gt; &lt;members&gt;Class 3&lt;/members&gt; &lt;name&gt;ApexClass&lt;/name&gt; &lt;/types&gt; &lt;types&gt; &lt;members&gt;Trigger 1&lt;/members&gt; &lt;name&gt;ApexTrigger&lt;/name&gt; &lt;/types&gt; &lt;types&gt; &lt;members&gt;Rule 1&lt;/members&gt; &lt;members&gt;Rule 2&lt;/members&gt; &lt;name&gt;WorkflowRule&lt;/name&gt; &lt;/types&gt; &lt;types&gt; &lt;members&gt;Address&lt;/members&gt; &lt;members&gt;Phone&lt;/members&gt; &lt;name&gt;CustomField&lt;/name&gt; &lt;/types&gt; &lt;version&gt;41.0&lt;/version&gt; &lt;/Package&gt; </code></pre>
+           <p>
+            Please note the  identifying node can be one of more than 50 different values.
+           </p>
+           <p>
+            Thanks in advance for any assistance.
+           </p>
+           <p>
+            <strong>
+             Edit:
+            </strong>
+            Ouch, that down vote hurts. To clarify &amp; justify the question, I should have pointed out that I was having difficulty on where to even start on this problem as extensive searches on SO were yielding no clues, and that the point of the question was to get suggestions on where to begin.
+           </p>
+          </div>
+          <div class="post-taglist grid gs4 gsy fd-column">
+           <div class="grid ps-relative d-block">
+            <a class="post-tag" href="/questions/tagged/merge" rel="tag" title="show questions tagged 'merge'">
+             merge
+            </a>
+            <a class="post-tag" href="/questions/tagged/salesforce" rel="tag" title="show questions tagged 'salesforce'">
+             salesforce
+            </a>
+           </div>
+          </div>
+          <div class="mb0">
+           <div class="mt16 grid gs8 gsy fw-wrap jc-end ai-start pt4">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 1 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="1" data-se-share-sheet-post-type="question" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this question" href="/q/52752601" itemprop="url" rel="nofollow" title="short permalink to this question">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 1 })" href="/posts/52752601/edit" title="">
+               improve this question
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 1 })" href="/posts/52752601/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2018-10-11 16:22:29Z">
+                 Oct 11 '18 at 16:22
+                </span>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <span class="d-none" itemprop="name">
+                mpaler
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature owner grid--cell">
+             <div class="user-info">
+              <div class="user-action-time">
+               asked
+               <span class="relativetime" title="2018-10-11 05:07:57Z">
+                Oct 11 '18 at 5:07
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/988468/mpaler">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/4de97a487abf943de71adac0b2733642?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/988468/mpaler">
+                mpaler
+               </a>
+               <span class="d-none" itemprop="name">
+                mpaler
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 105
+                </span>
+                <span aria-hidden="true" title="7 bronze badges">
+                 <span class="badgecount">
+                  7
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 7 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="post-layout--right">
+          <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="52752601" id="comments-52752601">
+           <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+            <li class="comment js-comment" data-comment-id="92429083" id="comment-92429083">
+             <div class="comment-text js-comment-text-and-form">
+              <div class="comment-body js-comment-edit-hide">
+               <span class="comment-copy">
+                Yes you can do this. In python 3.6 at least the xml handler can read the whole file into a nice object and duplicated get turned into array, then you can just combine the arrays pretty easy.
+               </span>
+               –
+               <a class="comment-user" href="/users/4216567/noone392" title="375 reputation">
+                noone392
+               </a>
+               <span class="comment-date" dir="ltr">
+                <span class="relativetime-clean" title="2018-10-11 05:20:28Z">
+                 Oct 11 '18 at 5:20
+                </span>
+               </span>
+              </div>
+             </div>
+            </li>
+            <li class="comment js-comment" data-comment-id="92433501" id="comment-92433501">
+             <div class="comment-text js-comment-text-and-form">
+              <div class="comment-body js-comment-edit-hide">
+               <span class="comment-copy">
+                @mpaler, please ignore the close vote and downvote on this question. There is absolutely nothing wrong with the question, there is something seriously wrong with the person who downvoted it. Certainly the close reason ("too broad") is nonsense. One could criticise the question because you don't show what you've already tried, but in my view it's perfectly reasonable to ask what approach to take if you don't know where to start.
+               </span>
+               –
+               <a class="comment-user" href="/users/415448/michael-kay" title="124,675 reputation">
+                Michael Kay
+               </a>
+               <span class="comment-date" dir="ltr">
+                <span class="relativetime-clean" title="2018-10-11 08:04:07Z">
+                 Oct 11 '18 at 8:04
+                </span>
+               </span>
+              </div>
+             </div>
+            </li>
+            <li class="comment js-comment" data-comment-id="92452021" id="comment-92452021">
+             <div class="comment-text js-comment-text-and-form">
+              <div class="comment-body js-comment-edit-hide">
+               <span class="comment-copy">
+                @MichaelKay thanks. I figured not even showing an attempt would be a strike against -- however, you are correct, I wasn't even sure where to start. Perhaps I should have clarified that in the question...
+               </span>
+               –
+               <a class="comment-user owner" href="/users/988468/mpaler" title="105 reputation">
+                mpaler
+               </a>
+               <span class="comment-date" dir="ltr">
+                <span class="relativetime-clean" title="2018-10-11 16:12:42Z">
+                 Oct 11 '18 at 16:12
+                </span>
+               </span>
+              </div>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="answers">
+        <div id="answers-header">
+         <div class="subheader answers-subheader">
+          <h2 data-answercount="1">
+           1 Answer
+           <span itemprop="answerCount" style="display:none;">
+            1
+           </span>
+          </h2>
+          <div>
+           <div id="tabs">
+            <a data-nav-xhref="" data-shortcut="A" data-value="active" href="/questions/52752601/merging-xml-files-with-identical-nodes-using-python?answertab=active#tab-top" title="Answers with the latest activity first">
+             active
+            </a>
+            <a data-nav-xhref="" data-shortcut="O" data-value="oldest" href="/questions/52752601/merging-xml-files-with-identical-nodes-using-python?answertab=oldest#tab-top" title="Answers in the order they were provided">
+             oldest
+            </a>
+            <a class="youarehere is-selected" data-nav-xhref="" data-shortcut="V" data-value="votes" href="/questions/52752601/merging-xml-files-with-identical-nodes-using-python?answertab=votes#tab-top" title="Answers with the highest score first">
+             votes
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer accepted-answer" data-answerid="52754952" id="answer-52754952" itemprop="acceptedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="52754952">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Since you're prepared to consider alternatives to Python coding, here's an XSLT 3.0 solution:
+            </p>
+            <pre><code>&lt;xsl:transform version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="#all" xpath-default-namespace="http://soap.sforce.com/2006/04/metadata" expand-text="true"&gt; &lt;xsl:param name="file1" as="xs:string"/&gt; &lt;xsl:param name="file2" as="xs:string"/&gt; &lt;xsl:template name="xsl:initial-template"&gt; &lt;Package xmlns="http://soap.sforce.com/2006/04/metadata"&gt; &lt;xsl:merge&gt; &lt;xsl:merge-source for-each-source="$file1, $file2" select="//types" sort-before-merge="true"&gt; &lt;xsl:merge-key select="name"/&gt; &lt;/xsl:merge-source&gt; &lt;xsl:merge-action&gt; &lt;types&gt; &lt;xsl:for-each-group select="current-merge-group()/members" group-by="."&gt; &lt;xsl:copy-of select="current-group()[1]"/&gt; &lt;/xsl:for-each-group&gt; &lt;name&gt;{current-merge-key()}&lt;/name&gt; &lt;/types&gt; &lt;/xsl:merge-action&gt; &lt;/xsl:merge&gt; &lt;/Package&gt; &lt;/xsl:template&gt; &lt;/xsl:transform&gt; </code></pre>
+            <p>
+             You can run this from the command line as follows:
+            </p>
+            <pre><code>java net.sf.saxon.Transform -xsl:test.xsl -t -it file1=file1.xml file2=file2.xml !indent=yes </code></pre>
+            <p>
+             Explanation: the
+             <code>
+              xsl:merge-source
+             </code>
+             identifies the two sequences of elements to be merged;
+             <code>
+              xsl:merge-key
+             </code>
+             defines the key on which they are to be merged, and tells us that the sequences are not already sorted by that key. The
+             <code>
+              xsl:merge-action
+             </code>
+             says how each group of elements sharing a merge key is to be processed; in this case we output the distinct
+             <code>
+              &lt;members&gt;
+             </code>
+             elements using
+             <code>
+              xsl:for-each-group
+             </code>
+             , then we output the
+             <code>
+              &lt;name&gt;
+             </code>
+             .
+            </p>
+            <p>
+             There's one difference between the output and your desired output: the stylesheet produces output sorted by
+             <code>
+              &lt;name&gt;
+             </code>
+             . I'm not sure what your criteria for sorting the output were; if the output order is important, then we might need adjustments.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/52754952" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/52754952/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/52754952/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2018-10-14 15:12:21Z">
+                 Oct 14 '18 at 15:12
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2018-10-11 07:51:22Z">
+                Oct 11 '18 at 7:51
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/415448/michael-kay">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/P2vVZ.png?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/415448/michael-kay">
+                Michael Kay
+               </a>
+               <span class="d-none" itemprop="name">
+                Michael Kay
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 124,675">
+                 125k
+                </span>
+                <span aria-hidden="true" title="6 gold badges">
+                 <span class="badgecount">
+                  6
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 6 gold badges
+                </span>
+                <span aria-hidden="true" title="69 silver badges">
+                 <span class="badgecount">
+                  69
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 69 silver badges
+                </span>
+                <span aria-hidden="true" title="131 bronze badges">
+                 <span class="badgecount">
+                  131
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 131 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="52754952" id="comments-52754952">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="1">
+             <li class="comment js-comment" data-comment-id="92452242" id="comment-92452242">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Thank Michael! Frankly, I never realized xsl was such a slick tool. How would I implement this solution from the command line? And can you suggest a way to pass in for-each-source="doc('1.xml'), doc('2.xml')" as a command-line argument?
+                </span>
+                –
+                <a class="comment-user owner" href="/users/988468/mpaler" title="105 reputation">
+                 mpaler
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-10-11 16:20:37Z">
+                  Oct 11 '18 at 16:20
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="92452281" id="comment-92452281">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Download an XSLT 3.0 processor such as Saxon-HE and follow the instructions at
+                 <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/commandline" rel="nofollow noreferrer">
+                  saxonica.com/documentation/index.html#!using-xsl/commandline
+                 </a>
+                </span>
+                –
+                <a class="comment-user" href="/users/415448/michael-kay" title="124,675 reputation">
+                 Michael Kay
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-10-11 16:21:49Z">
+                  Oct 11 '18 at 16:21
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="92452309" id="comment-92452309">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 I've amended the example to declare the filenames as parameters. It can also be generalised to handle any number of input files if you want.
+                </span>
+                –
+                <a class="comment-user" href="/users/415448/michael-kay" title="124,675 reputation">
+                 Michael Kay
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-10-11 16:22:53Z">
+                  Oct 11 '18 at 16:22
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="92516972" id="comment-92516972">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Hi Michael, giving this a good go today and am running into the following: Static error in xsl:merge-key/@sort-before-merge on line 15 column 66 of stylesheet.xsl:   XTSE0090: Attribute @sort-before-merge is not allowed on element &lt;xsl:merge-key&gt; I should point out that I'm running OSX version of saxon: Saxon-HE 9.9.0.1J from Saxonica
+                </span>
+                –
+                <a class="comment-user owner" href="/users/988468/mpaler" title="105 reputation">
+                 mpaler
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-10-14 01:17:16Z">
+                  Oct 14 '18 at 1:17
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="92526183" id="comment-92526183">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Sorry I put the attribute on the wrong element: it belongs on xsl:merge-source. Since you're interested in using it, I'll now test the example.
+                </span>
+                –
+                <a class="comment-user" href="/users/415448/michael-kay" title="124,675 reputation">
+                 Michael Kay
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-10-14 14:53:59Z">
+                  Oct 14 '18 at 14:53
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+           <div data-anon="true" data-rep="50" id="comments-link-52754952">
+            <a class="js-show-link comments-link" href="#" onclick="" role="button" title="expand to show all comments on this post">
+             show
+             <b>
+              1
+             </b>
+             more comment
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <h2 class="bottom-notice" data-loc="1">
+         Not the answer you're looking for?                                Browse other questions tagged
+         <a class="post-tag" href="/questions/tagged/merge" rel="tag" title="show questions tagged 'merge'">
+          merge
+         </a>
+         <a class="post-tag" href="/questions/tagged/salesforce" rel="tag" title="show questions tagged 'salesforce'">
+          salesforce
+         </a>
+         or
+         <a href="/questions/ask">
+          ask your own question
+         </a>
+         .
+        </h2>
+       </div>
+      </div>
+      <div aria-label="sidebar" class="show-votes" id="sidebar" role="complementary">
+       <div class="s-sidebarwidget s-sidebarwidget__yellow s-anchors s-anchors__grayscale mb16" data-tracker="cb=1">
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         The Overflow Blog
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","The Overflow Blog","https://stackoverflow.blog/2020/03/17/podcast-219-time-postgres-guid-docker-razor-char/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 0 })" href="https://stackoverflow.blog/2020/03/17/podcast-219-time-postgres-guid-docker-razor-char/">
+            Podcast: Time Keeps on Slipping
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","The Overflow Blog","https://stackoverflow.blog/2020/03/18/how-to-develop-a-defensive-plan-for-your-open-source-software-project/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 1 })" href="https://stackoverflow.blog/2020/03/18/how-to-develop-a-defensive-plan-for-your-open-source-software-project/">
+            How to develop a defensive plan for your open-source software project
+           </a>
+          </div>
+         </li>
+        </ul>
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         Featured on Meta
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 2 })" href="https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog">
+            The Q1 2020 Community Roadmap is on the Blog
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 3 })" href="https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing">
+            An Update On Creative Commons Licensing
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/345032/community-and-moderator-guidelines-for-escalating-issues-via-new-response-proces",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 4 })" href="https://meta.stackexchange.com/questions/345032/community-and-moderator-guidelines-for-escalating-issues-via-new-response-proces" title="Community and Moderator guidelines for escalating issues via new response process (March 2020)">
+            Community and Moderator guidelines for escalating issues via new response…
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/394498/triage-needs-to-be-fixed-urgently-and-users-need-to-be-notified-upon-receiving",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 5 })" href="https://meta.stackoverflow.com/questions/394498/triage-needs-to-be-fixed-urgently-and-users-need-to-be-notified-upon-receiving" title="Triage needs to be fixed urgently, and users need to be notified upon receiving a review ban!">
+            Triage needs to be fixed urgently, and users need to be notified upon…
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 6 })" href="https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work">
+            How does the Triage queue work?
+           </a>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="module sidebar-related">
+        <h4 id="h-related">
+         Related
+        </h4>
+        <div class="related js-gps-related-questions" data-tracker="rq=1">
+         <div class="spacer">
+          <a href="/q/38987" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            4602
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/38987/how-do-i-merge-two-dictionaries-in-a-single-expression">
+           How do I merge two dictionaries in a single expression?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/82831" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes extra-large">
+            5439
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/82831/how-do-i-check-whether-a-file-exists-without-exceptions">
+           How do I check whether a file exists without exceptions?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/89228" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            4758
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/89228/calling-an-external-command-from-python">
+           Calling an external command from Python
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/100003" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            5594
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/100003/what-are-metaclasses-in-python">
+           What are metaclasses in Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/123198" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2363
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/123198/how-do-i-copy-a-file-in-python">
+           How do I copy a file in Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/176918" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            3038
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/176918/finding-the-index-of-an-item-in-a-list">
+           Finding the index of an item in a list
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/394809" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            5860
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/394809/does-python-have-a-ternary-conditional-operator">
+           Does Python have a ternary conditional operator?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/1425892" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1577
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/1425892/how-do-you-merge-two-git-repositories">
+           How do you merge two Git repositories?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/3207219" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes extra-large">
+            3473
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3207219/how-do-i-list-all-files-of-a-directory">
+           How do I list all files of a directory?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/3437059" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            3599
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3437059/does-python-have-a-string-contains-substring-method">
+           Does Python have a string 'contains' substring method?
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module tex2jax_ignore" id="hot-network-questions">
+        <h4>
+         <a class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })" href="https://stackexchange.com/questions?tab=hot">
+          Hot Network Questions
+         </a>
+        </h4>
+        <ul>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://travel.stackexchange.com/questions/155085/required-documents-on-arrival-with-person-waiting-outside-at-arrival-area-how">
+           Required documents on arrival with person waiting outside, at arrival area. How can the documents be provided to the person arriving, at customs?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:605 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://civicrm.stackexchange.com/questions/35117/is-there-a-way-to-separate-audit-activities-from-real-actvitites-in-a-case">
+           Is there a way to separate audit activities from "real" actvitites in a case?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:617 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://law.stackexchange.com/questions/49941/why-do-statutes-of-limitations-exist">
+           Why do statutes of limitations exist?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:591 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://economics.stackexchange.com/questions/34483/fixed-cost-of-a-firm">
+           Fixed cost of a firm
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/201266/a-bit-of-a-digital-xor">
+           A bit of a digital XOR
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:147 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://boardgames.stackexchange.com/questions/50632/why-is-there-no-ruling-to-offset-mandatory-loops">
+           Why is there no ruling to offset Mandatory Loops?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://mechanics.stackexchange.com/questions/75079/no-electrical-to-the-dashboard-after-attempting-jumpstart-with-schumacher-charge">
+           No electrical to the dashboard after attempting jumpstart with Schumacher charger
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://worldbuilding.stackexchange.com/questions/171558/why-would-a-very-advanced-transhumanist-civilization-ever-need-to-have-a-militar">
+           Why would a very advanced Transhumanist Civilization ever need to have a military or wage wars?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codereview.stackexchange.com/questions/239103/simple-text-based-game-in-c">
+           Simple text based game in C
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://history.stackexchange.com/questions/57288/how-did-the-authorities-not-find-the-speakeasy-clubs-during-the-prohibition">
+           How did the authorities not find the speakeasy clubs during the prohibition?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://stackoverflow.com/questions/60740528/how-to-count-the-number-of-dashes-between-any-two-alphabetical-characters">
+           How to count the number of dashes between any two alphabetical characters?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://travel.stackexchange.com/questions/155022/how-do-you-self-isolate-in-a-hostel-dorm-room">
+           How do you 'self-isolate' in a hostel dorm room?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://diy.stackexchange.com/questions/186831/how-do-i-use-existing-cat5e-wiring-to-distribute-internet-in-my-house">
+           How do I use existing cat5e wiring to distribute internet in my house?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://scifi.stackexchange.com/questions/228687/why-is-rorschachs-mask-symmetrical">
+           Why is Rorschach's mask symmetrical?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://superuser.com/questions/1533614/test-condition-in-if-command">
+           Test condition in if command
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://space.stackexchange.com/questions/41950/why-is-nasa-building-its-own-rocket-for-the-moon-mission-when-it-could-use-space">
+           Why is NASA building its own rocket for the moon mission when it could use SpaceX's?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://workplace.stackexchange.com/questions/155095/are-there-significant-additional-risks-in-changing-jobs-during-the-covid-19-pand">
+           Are there significant additional risks in changing jobs during the COVID-19 pandemic?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:375 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://biology.stackexchange.com/questions/90821/are-all-emerging-viral-diseases-of-the-past-100-years-zoonoses">
+           Are all emerging viral diseases of the past 100 years zoonoses?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/201285/return-a-word-with-a-prescribed-sum-of-letters">
+           Return a word with a prescribed sum of letters
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://worldbuilding.stackexchange.com/questions/171549/why-would-the-offspring-of-a-clone-not-suffer-from-a-degenerative-illness">
+           Why would the offspring of a clone not suffer from a degenerative illness?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://blender.stackexchange.com/questions/170126/is-it-possible-to-use-an-image-to-edit-a-mesh-to-the-images-size">
+           Is it possible to use an image to edit a mesh to the image's size?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://rpg.stackexchange.com/questions/166522/can-prestidigitation-create-medical-gloves">
+           Can Prestidigitation create medical gloves?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://academia.stackexchange.com/questions/145494/what-methods-can-be-used-in-online-exams-to-genuinely-test-the-students-knowled">
+           What methods can be used in online exams to genuinely test the students' knowledge and capabilities?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://space.stackexchange.com/questions/41958/apollo-command-module-heatshield-tube-what-was-it-for">
+           Apollo Command Module heatshield tube - what was it for?
+          </a>
+         </li>
+        </ul>
+        <a class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })" href="#">
+         more hot questions
+        </a>
+       </div>
+       <div class="js-feed-link" id="feed-link">
+        <a href="/feeds/question/52752601" title="Feed of this question and its answers">
+         Question feed
+        </a>
+       </div>
+       <aside aria-describedby="feed-modal-description" aria-hidden="true" aria-labelledby="feed-modal-title" class="s-modal js-feed-link-modal" role="dialog" tabindex="-1">
+        <div class="s-modal--dialog js-modal-dialog wmx4" data-controller="se-draggable" role="document">
+         <h1 class="s-modal--header fw-bold js-first-tabbable" data-target="se-draggable.handle" id="feed-modal-title" tabindex="0">
+          Subscribe to RSS
+         </h1>
+         <div class="grid gs4 gsy fd-column">
+          <div class="grid--cell">
+           <label class="d-block s-label c-default" for="feed-url">
+            Question feed
+            <p class="s-description mt2" id="feed-modal-description">
+             To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+            </p>
+           </label>
+          </div>
+          <div class="grid ps-relative">
+           <input class="s-input" id="feed-url" name="feed-url" readonly="readonly" type="text" value="https://stackoverflow.com/feeds/question/52752601"/>
+          </div>
+         </div>
+        </div>
+       </aside>
+      </div>
+     </div>
+     <div id="prettify-lang" style="display:none">
+      default
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

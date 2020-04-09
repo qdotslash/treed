@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html class="html__responsive" itemscope="" itemtype="http://schema.org/QAPage">
+ <head>
+  <title>
+   python - Non-recursive os.walk() - Stack Overflow
+  </title>
+  <link href="https://stackoverflow.com/questions/4117588/non-recursive-os-walk" rel="canonical"/>
+  <meta content="https://stackoverflow.com/questions/4117588/non-recursive-os-walk" property="og:url"/>
+  <meta content="Non-recursive os.walk()" itemprop="name" name="twitter:title" property="og:title"/>
+  <meta content="I'm looking for a way to do a non-recursive os.walk() walk, just like os.listdir() works. But I need to return in the same way the os.walk() returns. Any idea?  Thank you in advance." itemprop="description" name="twitter:description" property="og:description"/>
+  <link href="https://cdn.sstatic.net/Shared/stacks.css?v=f6dc2e55f461" rel="stylesheet" type="text/css"/>
+  <link href="https://cdn.sstatic.net/Sites/stackoverflow/primary.css?v=51d616a70c7c" rel="stylesheet" type="text/css"/>
+  <link href="/feeds/question/4117588" rel="alternate" title="Feed for question 'Non-recursive os.walk()'" type="application/atom+xml"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/4117588/non-recursive-os-walk" name="twitter:app:url:iphone"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/4117588/non-recursive-os-walk" name="twitter:app:url:ipad"/>
+  <meta content="http://stackoverflow.com/questions/4117588/non-recursive-os-walk" name="twitter:app:url:googleplay"/>
+ </head>
+ <body class="question-page unified-theme">
+  <div aria-hidden="false" class="p8 ff-sans ps-fixed b0 l0 r0 z-banner" id="js-gdpr-consent-banner" role="banner" style="background-color: #3b4045; color: white;">
+   <div aria-describedby="notice-message" class="wmx8 mx-auto grid grid__center" role="alertdialog">
+    <div aria-label="notice-message" class="grid--cell mr12">
+     <p class="mb0 lh-lg">
+      By using our site, you acknowledge that you have read and understand our  ,  , and our  .
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="left-sidebar js-pinned-left-sidebar ps-relative" data-is-here-when="md lg" id="left-sidebar">
+    <div aria-hidden="true" class="s-popover w-auto p16" id="popover-teams-create-cta" role="menu">
+     <div class="ps-relative overflow-hidden">
+      <p class="mb2">
+       <strong>
+        Teams
+       </strong>
+      </p>
+      <p class="mb16 fs-caption fc-medium">
+       Q&amp;A for Work
+      </p>
+      <p class="mb8 fs-caption fc-medium">
+       Stack Overflow for Teams is a private, secure spot for you and your coworkers to find and share information.
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="snippet-hidden" id="content">
+    <div itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+     <div class="inner-content clearfix">
+      <div class="grid sm:fd-column" id="question-header">
+       <h1 class="grid--cell fs-headline1 fl1 ow-break-word mb8" itemprop="name">
+        <a class="question-hyperlink" href="/questions/4117588/non-recursive-os-walk">
+         Non-recursive os.walk()
+        </a>
+       </h1>
+      </div>
+      <div class="grid fw-wrap pb8 mb16 bb bc-black-2">
+       <div class="grid--cell ws-nowrap mr16 mb8" title="2010-11-07 11:57:36Z">
+        <time datetime="2010-11-07T11:57:36" itemprop="dateCreated">
+         9 years, 3 months ago
+        </time>
+       </div>
+       <div class="grid--cell ws-nowrap mr16 mb8">
+        <a class="s-link s-link__inherit" href="?lastactivity" title="2019-06-19 16:55:16Z">
+         8 months ago
+        </a>
+       </div>
+       <div class="grid--cell ws-nowrap mb8" title="Viewed 15,142 times">
+        15k times
+       </div>
+      </div>
+      <div aria-label="question and answers" id="mainbar" role="main">
+       <div class="question" data-questionid="4117588" id="question">
+        <div class="post-layout">
+         <div class="votecell post-layout--left">
+          <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="4117588">
+           <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="29" itemprop="upvoteCount">
+            29
+           </div>
+          </div>
+         </div>
+         <div class="postcell post-layout--right">
+          <div class="post-text" itemprop="text">
+           <p>
+            I'm looking for a way to do a non-recursive
+            <code>
+             os.walk()
+            </code>
+            walk, just like
+            <code>
+             os.listdir()
+            </code>
+            works. But I need to return in the same way the
+            <code>
+             os.walk()
+            </code>
+            returns. Any idea?
+           </p>
+           <p>
+            Thank you in advance.
+           </p>
+          </div>
+          <div class="post-taglist grid gs4 gsy fd-column">
+           <div class="grid ps-relative d-block">
+            <a class="post-tag" href="/questions/tagged/os.walk" rel="tag" title="show questions tagged 'os.walk'">
+             os.walk
+            </a>
+            <a class="post-tag" href="/questions/tagged/non-recursive" rel="tag" title="show questions tagged 'non-recursive'">
+             non-recursive
+            </a>
+           </div>
+          </div>
+          <div class="mb0">
+           <div class="mt16 grid gs8 gsy fw-wrap jc-end ai-start pt4">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 1 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="1" data-se-share-sheet-post-type="question" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this question" href="/q/4117588" itemprop="url" rel="nofollow" title="short permalink to this question">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 1 })" href="/posts/4117588/edit" title="">
+               improve this question
+              </a>
+             </div>
+            </div>
+            <div class="post-signature owner grid--cell">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               asked
+               <span class="relativetime" title="2010-11-07 11:57:36Z">
+                Nov 7 '10 at 11:57
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/222758/paulo-freitas">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/ecbfcdd7e601b36d836b2c4d0b3bafbb?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/222758/paulo-freitas">
+                Paulo Freitas
+               </a>
+               <span class="d-none" itemprop="name">
+                Paulo Freitas
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 9,882
+                </span>
+                <span aria-hidden="true" title="13 gold badges">
+                 <span class="badgecount">
+                  13
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 13 gold badges
+                </span>
+                <span aria-hidden="true" title="65 silver badges">
+                 <span class="badgecount">
+                  65
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 65 silver badges
+                </span>
+                <span aria-hidden="true" title="91 bronze badges">
+                 <span class="badgecount">
+                  91
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 91 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="answers">
+        <div id="answers-header">
+         <div class="subheader answers-subheader">
+          <h2 data-answercount="4">
+           4 Answers
+           <span itemprop="answerCount" style="display:none;">
+            4
+           </span>
+          </h2>
+          <div>
+           <div id="tabs">
+            <a data-nav-xhref="" data-shortcut="A" data-value="active" href="/questions/4117588/non-recursive-os-walk?answertab=active#tab-top" title="Answers with the latest activity first">
+             active
+            </a>
+            <a data-nav-xhref="" data-shortcut="O" data-value="oldest" href="/questions/4117588/non-recursive-os-walk?answertab=oldest#tab-top" title="Answers in the order they were provided">
+             oldest
+            </a>
+            <a class="youarehere is-selected" data-nav-xhref="" data-shortcut="V" data-value="votes" href="/questions/4117588/non-recursive-os-walk?answertab=votes#tab-top" title="Answers with the highest score first">
+             votes
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer accepted-answer" data-answerid="4117594" id="answer-4117594" itemprop="acceptedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="4117594">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="35" itemprop="upvoteCount">
+             35
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <pre><code>next(os.walk(...)) </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/4117594" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/4117594/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2010-11-07 12:00:44Z">
+                Nov 7 '10 at 12:00
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/20862/ignacio-vazquez-abrams">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/2343ae368d3241278581ce6c87f62a25?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/20862/ignacio-vazquez-abrams">
+                Ignacio Vazquez-Abrams
+               </a>
+               <span class="d-none" itemprop="name">
+                Ignacio Vazquez-Abrams
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 636,189">
+                 636k
+                </span>
+                <span aria-hidden="true" title="115 gold badges">
+                 <span class="badgecount">
+                  115
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 115 gold badges
+                </span>
+                <span aria-hidden="true" title="1138 silver badges">
+                 <span class="badgecount">
+                  1138
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 1138 silver badges
+                </span>
+                <span aria-hidden="true" title="1222 bronze badges">
+                 <span class="badgecount">
+                  1222
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 1222 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="4117594" id="comments-4117594">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="4435089" id="comment-4435089">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 More simple than I could think... Thank you!
+                </span>
+                –
+                <a class="comment-user owner" href="/users/222758/paulo-freitas" title="9,882 reputation">
+                 Paulo Freitas
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2010-11-07 12:14:35Z">
+                  Nov 7 '10 at 12:14
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="91403874" id="comment-91403874">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 6
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 what does next do?
+                </span>
+                –
+                <a class="comment-user" href="/users/1240092/tremendows" title="4,006 reputation">
+                 tremendows
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-09-07 17:34:32Z">
+                  Sep 7 '18 at 17:34
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="93409706" id="comment-93409706">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 2
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Then you have to have two forms of the loop if you want to make the recursion optional :(
+                </span>
+                –
+                <a class="comment-user" href="/users/196732/cpill" title="3,313 reputation">
+                 CpILL
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-11-12 13:02:34Z">
+                  Nov 12 '18 at 13:02
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="40349464" id="answer-40349464" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="40349464">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="21" itemprop="upvoteCount">
+             21
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Add a
+             <code>
+              break
+             </code>
+             after the filenames for loop:
+            </p>
+            <pre><code>for root, dirs, filenames in os.walk(workdir): for fileName in filenames: print (fileName) break   #prevent descending into subfolders </code></pre>
+            <p>
+             This works because (by default)
+             <code>
+              os.walk
+             </code>
+             first lists the files in the requested folder and then goes into subfolders.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/40349464" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/40349464/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/40349464/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2019-06-19 16:55:16Z">
+                 Jun 19 '19 at 16:55
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2016-10-31 19:46:30Z">
+                Oct 31 '16 at 19:46
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/910409/alecz">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/b4ba8fb5fec6fa0e85f3f5a14a774c66?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/910409/alecz">
+                Alecz
+               </a>
+               <span class="d-none" itemprop="name">
+                Alecz
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 1,180
+                </span>
+                <span aria-hidden="true" title="13 silver badges">
+                 <span class="badgecount">
+                  13
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 13 silver badges
+                </span>
+                <span aria-hidden="true" title="13 bronze badges">
+                 <span class="badgecount">
+                  13
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 13 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="40349464" id="comments-40349464">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="99849606" id="comment-99849606">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 3
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 I feel this ought to be the accepted answer. So very simple and accurate.
+                </span>
+                –
+                <a class="comment-user" href="/users/2917993/chockomonkey" title="2,395 reputation">
+                 Chockomonkey
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-06-17 21:59:47Z">
+                  Jun 17 '19 at 21:59
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="14608100" id="answer-14608100" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="14608100">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="6" itemprop="upvoteCount">
+             6
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             My a bit more parametrised solution would be this:
+            </p>
+            <pre><code>for root, dirs, files in os.walk(path): if not recursive: while len(dirs) &gt; 0: dirs.pop()  //some fency code here using generated list </code></pre>
+            <p>
+             Edit: fixes, if/while issue. Thanks,
+             <a href="https://stackoverflow.com/users/153436/dirk-van-oosterbosch">
+              @Dirk van Oosterbosch
+             </a>
+             :}
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/14608100" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/14608100/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/14608100/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2017-05-23 12:32:17Z">
+                 May 23 '17 at 12:32
+                </span>
+               </a>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/-1/community">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/a007be5a61f6aa8f3e85ae2fc18dd66e?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details">
+               <a href="/users/-1/community">
+                Community
+               </a>
+               <span class="mod-flair" title="moderator">
+                ♦
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 1
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2013-01-30 15:51:28Z">
+                Jan 30 '13 at 15:51
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/1150918/kamiccolo">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/e81acdd9b6273c7860ac440c99eb747c?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/1150918/kamiccolo">
+                Kamiccolo
+               </a>
+               <span class="d-none" itemprop="name">
+                Kamiccolo
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 4,742
+                </span>
+                <span aria-hidden="true" title="2 gold badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 gold badges
+                </span>
+                <span aria-hidden="true" title="33 silver badges">
+                 <span class="badgecount">
+                  33
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 33 silver badges
+                </span>
+                <span aria-hidden="true" title="38 bronze badges">
+                 <span class="badgecount">
+                  38
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 38 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="14608100" id="comments-14608100">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="23124748" id="comment-23124748">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 4
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 This only works if there is
+                 <b>
+                  one
+                 </b>
+                 subdirectory. For multiple subdirectories use
+                 <code>
+                  while len(dirs) &gt; 0
+                 </code>
+                 instead of
+                 <code>
+                  if
+                 </code>
+                 .
+                </span>
+                –
+                <a class="comment-user" href="/users/153436/dirk-van-oosterbosch" title="421 reputation">
+                 Dirk van Oosterbosch
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2013-04-23 19:35:55Z">
+                  Apr 23 '13 at 19:35
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="63843587" id="comment-63843587">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @DirkvanOosterbosch: or even simpler: just
+                 <code>
+                  if not recursive: break
+                 </code>
+                 Unrelated: you could use
+                 <code>
+                  del dirs[:]
+                 </code>
+                 instead of
+                 <code>
+                  while dirs: dirs.pop()
+                 </code>
+                 .
+                </span>
+                –
+                <a class="comment-user" href="/users/4279/jfs" title="304,050 reputation">
+                 jfs
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2016-07-05 18:02:18Z">
+                  Jul 5 '16 at 18:02
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="20006661" id="answer-20006661" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="20006661">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Well what Kamiccolo meant was more in line with this:
+            </p>
+            <pre><code>for str_dirname, lst_subdirs, lst_files in os.walk(str_path): if not bol_recursive: while len(lst_subdirs) &gt; 0: lst_subdirs.pop() </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/20006661" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/20006661/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2013-11-15 17:07:08Z">
+                Nov 15 '13 at 17:07
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/2997174/sanders">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/c7d548943cd28c8d8f0b79b410d52457?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/2997174/sanders">
+                Sanders
+               </a>
+               <span class="d-none" itemprop="name">
+                Sanders
+               </span>
+               <div class="-flair">
+                <span class="v-visible-sr">
+                 1 bronze badge
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <h2 class="bottom-notice" data-loc="1">
+         Not the answer you're looking for?                                Browse other questions tagged
+         <a class="post-tag" href="/questions/tagged/os.walk" rel="tag" title="show questions tagged 'os.walk'">
+          os.walk
+         </a>
+         <a class="post-tag" href="/questions/tagged/non-recursive" rel="tag" title="show questions tagged 'non-recursive'">
+          non-recursive
+         </a>
+         or
+         <a href="/questions/ask">
+          ask your own question
+         </a>
+         .
+        </h2>
+       </div>
+      </div>
+      <div aria-label="sidebar" class="show-votes" id="sidebar" role="complementary">
+       <div class="s-sidebarwidget s-sidebarwidget__yellow s-anchors s-anchors__grayscale mb16" data-tracker="cb=1">
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light">
+         Blog
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Blog","https://stackoverflow.blog/2020/02/20/requirements-volatility-is-the-core-problem-of-software-engineering/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 0 })" href="https://stackoverflow.blog/2020/02/20/requirements-volatility-is-the-core-problem-of-software-engineering/">
+            Requirements volatility is the core problem of software engineering
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Blog","https://stackoverflow.blog/2020/02/21/the-overflow-11-efficiently-lazy/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 1 })" href="https://stackoverflow.blog/2020/02/21/the-overflow-11-efficiently-lazy/">
+            The Overflow #11: Efficiently lazy
+           </a>
+          </div>
+         </li>
+        </ul>
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light">
+         Featured on Meta
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/343890/the-company-s-commitment-to-rebuilding-the-relationship-with-you-our-community",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 2 })" href="https://meta.stackexchange.com/questions/343890/the-company-s-commitment-to-rebuilding-the-relationship-with-you-our-community">
+            The company’s commitment to rebuilding the relationship with you, our community
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/393723/what-is-the-mission-of-meta-as-a-community",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 3 })" href="https://meta.stackoverflow.com/questions/393723/what-is-the-mission-of-meta-as-a-community">
+            What is the mission of Meta, as a community?
+           </a>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="module sidebar-related">
+        <h4 id="h-related">
+         Related
+        </h4>
+        <div class="related js-gps-related-questions" data-tracker="rq=1">
+         <div class="spacer">
+          <a href="/q/3061" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1652
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3061/calling-a-function-of-a-module-by-using-its-name-a-string">
+           Calling a function of a module by using its name (a string)
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/312443" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2158
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/312443/how-do-you-split-a-list-into-evenly-sized-chunks">
+           How do you split a list into evenly sized chunks?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/606191" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2125
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/606191/convert-bytes-to-a-string">
+           Convert bytes to a string
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/739654" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2689
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/739654/how-to-make-a-chain-of-function-decorators">
+           How to make a chain of function decorators?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/3845423" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            648
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3845423/remove-empty-strings-from-a-list-of-strings">
+           Remove empty strings from a list of strings
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/6470428" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2615
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/6470428/catch-multiple-exceptions-in-one-line-except-block">
+           Catch multiple exceptions in one line (except block)
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/9371238" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1787
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/9371238/why-is-reading-lines-from-stdin-much-slower-in-c-than-python">
+           Why is reading lines from stdin much slower in C++ than Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/10660435" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1218
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/10660435/pythonic-way-to-create-a-long-multi-line-string">
+           Pythonic way to create a long multi-line string
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module tex2jax_ignore" id="hot-network-questions">
+        <h4>
+         <a class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })" href="https://stackexchange.com/questions?tab=hot">
+          Hot Network Questions
+         </a>
+        </h4>
+        <ul>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://diy.stackexchange.com/questions/185318/is-it-necessary-to-shut-off-the-water-supply-to-a-radiator-in-order-to-replace-a">
+           Is it necessary to shut off the water supply to a radiator in order to replace a radiator valve?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://worldbuilding.stackexchange.com/questions/169252/how-would-a-well-equipped-renaissance-knight-mitigate-a-dragons-fire-breath">
+           How would a well-equipped Renaissance knight mitigate a dragon's fire breath?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:435 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://chess.stackexchange.com/questions/28605/knowing-that-alphazero-beat-stockfish-8-28-wins-0-losses-and-72-draws-what">
+           Knowing that AlphaZero beat Stockfish 8 (28 wins, 0 losses, and 72 draws), what would AlphaZero's rating be?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://superuser.com/questions/1527484/why-in-linux-the-rights-to-execute-the-file-doesnt-work">
+           Why in Linux the rights to execute the file doesn't work?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/199832/find-self-locating-strings-in-a-number">
+           Find self-locating strings in a number
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://electronics.stackexchange.com/questions/482560/is-it-true-that-the-average-of-the-product-of-current-and-voltage-is-always-real">
+           Is it true that the average of the product of current and voltage is always real power?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://gaming.stackexchange.com/questions/364344/what-happens-to-my-5970-pokemon-after-i-stop-paying">
+           What happens to my 5970 Pokemon after I stop paying?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://aviation.stackexchange.com/questions/74771/can-a-private-jet-take-off-without-notifying-anybody-and-land-on-private-land">
+           Can a private jet take off without notifying anybody and land on private land?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://academia.stackexchange.com/questions/144561/one-reviewer-in-the-committee-rejected-my-ph-d-defense-but-he-didnt-attend">
+           One reviewer in the committee rejected my Ph.D. defense but he didn't attend
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://chemistry.stackexchange.com/questions/128247/electron-paring-in-atoms">
+           Electron paring in atoms
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:257 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://japanese.stackexchange.com/questions/74556/what-is-the-meaning-of-%e3%83%90%e3%82%ab%e3%81%ab%e3%81%af%e3%81%88%e3%81%88%e3%81%98%e3%82%83%e3%81%aa%e3%81%84%e3%81%8b">
+           What is the meaning of バカにはええじゃないか?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:118 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://apple.stackexchange.com/questions/382700/how-can-i-take-a-screenshot-of-the-app-switcher-in-macos">
+           How can I take a screenshot of the app switcher in macOS?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:553 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://earthscience.stackexchange.com/questions/19266/why-are-atmospheric-bro-and-clo-important-to-measure-by-satellite">
+           Why are atmospheric BrO and ClO important to measure by satellite?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:648 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://retrocomputing.stackexchange.com/questions/13876/were-there-any-8-bit-cpus-with-24-bit-addressing">
+           Were there any 8-bit CPUs with 24-bit addressing?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://softwareengineering.stackexchange.com/questions/405555/whose-responsibility-is-it-to-fix-merge-conflicts">
+           Whose responsibility is it to fix merge conflicts?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://aviation.stackexchange.com/questions/74778/did-people-really-hand-start-big-bombers-in-wwii">
+           Did people really hand-start big bombers in WWII?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://aviation.stackexchange.com/questions/74815/what-sort-of-debris-has-been-found-in-737-max-fuel-tanks">
+           What sort of debris has been found in 737 Max fuel tanks?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://workplace.stackexchange.com/questions/153539/as-a-non-hot-drink-drinker-is-it-appropriate-to-have-a-break-when-all-of-my-c">
+           As a 'non-hot-drink-drinker', is it appropriate to have a break when all of my coworkers go downstairs to grab a drink?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://mathematica.stackexchange.com/questions/215158/merge-list-repeating-elements">
+           Merge list repeating elements
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/199811/ascii-art-is-ready-for-take-off">
+           ASCII art is ready for take-off
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://english.stackexchange.com/questions/525885/is-there-a-more-specific-verb-for-getting-cancer">
+           Is there a more specific verb for "getting" cancer?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:253 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://german.stackexchange.com/questions/56483/is-it-possible-to-create-a-sentence-with-only-one-repeated-more-than-twice-wor">
+           Is it possible to create a sentence with only one repeated (more than twice) word
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://tex.stackexchange.com/questions/529601/how-to-draw-the-product-topology-diagram-for-r3">
+           How to draw the product topology diagram for $R^3$?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/199916/simulate-a-random-walk">
+           Simulate a random walk
+          </a>
+         </li>
+        </ul>
+        <a class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })" href="#">
+         more hot questions
+        </a>
+       </div>
+       <div class="js-feed-link" id="feed-link">
+        <a href="/feeds/question/4117588" title="Feed of this question and its answers">
+         Question feed
+        </a>
+       </div>
+       <aside aria-describedby="feed-modal-description" aria-hidden="true" aria-labelledby="feed-modal-title" class="s-modal js-feed-link-modal" role="dialog" tabindex="-1">
+        <div class="s-modal--dialog js-modal-dialog wmx4" data-controller="se-draggable" role="document">
+         <h1 class="s-modal--header fw-bold js-first-tabbable" data-target="se-draggable.handle" id="feed-modal-title" tabindex="0">
+          Subscribe to RSS
+         </h1>
+         <div class="grid gs4 gsy fd-column">
+          <div class="grid--cell">
+           <label class="d-block s-label c-default" for="feed-url">
+            Question feed
+            <p class="s-description mt2" id="feed-modal-description">
+             To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+            </p>
+           </label>
+          </div>
+          <div class="grid ps-relative">
+           <input class="s-input" id="feed-url" name="feed-url" readonly="readonly" type="text" value="https://stackoverflow.com/feeds/question/4117588"/>
+          </div>
+         </div>
+        </div>
+       </aside>
+      </div>
+     </div>
+     <div id="prettify-lang" style="display:none">
+      lang-py
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

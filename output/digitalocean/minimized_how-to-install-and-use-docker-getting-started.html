@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   How To Install and Use Docker: Getting Started | DigitalOcean
+  </title>
+  <meta content="In this DigitalOcean article, we aim to thoroughly introduce the reader to docker– one of the most exciting and powerful open-source projects to come to life in the recent years. Docker helps people with porting applications across systems and machine" name="description"/>
+  <meta content="How To Install and Use Docker: Getting Started | DigitalOcean" name="og:title"/>
+  <meta content="In this DigitalOcean article, we aim to thoroughly introduce the reader to docker– one of the most exciting and powerful open-source projects to come to life in the recent years. Docker helps people with porting applications across systems and machine" name="og:description"/>
+  <meta content="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/12122013Docker_twitter.png?1426699613" name="og:image"/>
+  <meta content="How To Install and Use Docker: Getting Started | DigitalOcean" name="twitter:title"/>
+  <meta content="In this DigitalOcean article, we aim to thoroughly introduce the reader to docker– one of the most exciting and powerful open-source projects to come to life in the recent years. Docker helps people with porting applications across systems and machine" name="twitter:description"/>
+  <meta content="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started" name="twitter:url"/>
+  <meta content="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/12122013Docker_twitter.png?1426699613" name="twitter:image"/>
+  <link href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started" rel="canonical"/>
+  <link href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started.amp" rel="amphtml"/>
+  <link href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started" hreflang="en" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/como-instalar-e-utilizar-o-docker-primeiros-passos-pt" hreflang="pt" rel="alternate"/>
+  <link href="/assets/community/application-a17365d856927de0b593d349e87810f6.css" media="all" rel="stylesheet"/>
+  <meta content="h/AtUL5Mr4azZmn8bXaS2LQRX54xbZfZCMXGIyaxOL/lOdN3B0+Ndf2JHTFVjzM8/H05zFye/QDEn9A473Au9w==" name="csrf-token"/>
+ </head>
+ <body class="feature-filter-bar feature-upvotes tutorials-controller tutorial-single" data-completed-tutorial-id="" data-env="production" data-facebook-app-id="694818843983011" data-flagged="" data-js="tutorial" data-prefix="/community" data-tutorial-id="888" data-upvote="null" data-user-id="">
+  <div class="outside_viewport">
+   <div class="modal fade mini-modal" id="contents-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Contents
+       </h1>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="translation-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Language
+       </h1>
+      </div>
+      <div class="modal-body">
+       <div class="content-translations">
+        <div class="current-language">
+         <ul class="languages small">
+          <li>
+           <a class="edit" href="/community/tutorials/como-instalar-e-utilizar-o-docker-primeiros-passos-pt" title="Português">
+            Português
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="share-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Share
+       </h1>
+      </div>
+      <div class="modal-body">
+       <div class="social-sharing social-sharing-container">
+        <ul class="top">
+         <li class="shareBtn" id="sbTwitter">
+          <a class="share-link share-popup" href="http://twitter.com/share?text=How%20To%20Install%20and%20Use%20Docker%3A%20Getting%20Started&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started?utm_content=how-to-install-and-use-docker-getting-started&amp;utm_medium=community&amp;utm_source=twshare" target="_blank" title="Share on Twitter">
+           Twitter
+          </a>
+         </li>
+         <li class="shareBtn" id="sbFacebook">
+          <a class="share-link share-popup" href="https://www.facebook.com/sharer/sharer.php?u=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started?utm_content=how-to-install-and-use-docker-getting-started&amp;utm_medium=community&amp;utm_source=fbshare" target="_blank" title="Share on Facebook">
+           Facebook
+          </a>
+         </li>
+         <li class="shareBtn" id="sbYC">
+          <a class="share-link share-popup" href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20and%20Use%20Docker%3A%20Getting%20Started&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started?utm_content=how-to-install-and-use-docker-getting-started&amp;utm_medium=community&amp;utm_source=hnshare" target="_blank" title="Submit to Hacker News">
+           Hacker News
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container tutorial-header">
+    <div class="featured-items-right-bar">
+     <h3>
+      Related
+     </h3>
+     <a href="/community/tutorials/how-to-build-a-node-js-application-with-docker-quickstart">
+      <div class="featured-item-regular">
+       How To Build a Node.js Application with Docker [Quickstart]
+       <span class="featured-item-category">
+        <img alt="Tutorial" height="14" src="/assets/community/tutorials/featured-item-tutorial-icon-2150ccbef202144a53cea261312af267.png" width="14"/>
+        Tutorial
+       </span>
+      </div>
+     </a>
+     <a href="/community/tutorials/how-to-set-up-password-authentication-with-apache-on-ubuntu-18-04-quickstart">
+      <div class="featured-item-regular">
+       How To Set Up Password Authentication with Apache on Ubuntu 18.04 [Quickstart]
+       <span class="featured-item-category">
+        <img alt="Tutorial" height="14" src="/assets/community/tutorials/featured-item-tutorial-icon-2150ccbef202144a53cea261312af267.png" width="14"/>
+        Tutorial
+       </span>
+      </div>
+     </a>
+    </div>
+    <img alt="How To Install and Use Docker: Getting Started" class="tutorial-image" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/12122013Docker_twitter.png?1426699613" title="How To Install and Use Docker: Getting Started"/>
+    <h1 class="content-title Tutorial-header">
+     How To Install and Use Docker: Getting Started
+    </h1>
+    <span class="meta-section date-views">
+     <span class="meta-section timestamp">
+      <span class="tutorial-date">
+       December 11, 2013
+      </span>
+     </span>
+     <span class="meta-section pageviews">
+      <span class="views-count v-mid">
+       658.1k
+      </span>
+     </span>
+    </span>
+    <span class="meta-section tags">
+     <a class="tag" href="/community/tags/ubuntu">
+      Ubuntu
+     </a>
+     <a class="tag" href="/community/tags/docker">
+      Docker
+     </a>
+    </span>
+   </div>
+   <div class="tutorial-authors">
+    <div class="component-collaborators-container">
+     <ul class="component-collaborators-content">
+      <li class="collaborators-byline-data">
+       <p class="names">
+        By
+        <span>
+         O.S Tezer
+        </span>
+       </p>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content-body tutorial-content tutorial-content-legacy" data-growable-markdown="">
+    <span class="warning">
+     <h2 id="status-deprecated">
+      <strong>
+       Status:
+      </strong>
+      Deprecated
+     </h2>
+     <p>
+      This article is deprecated and no longer maintained.
+     </p>
+     <h3 id="see-instead">
+      See Instead
+     </h3>
+     <p>
+      This article may still be useful as a reference, but may not work or follow best practices. We strongly recommend using a recent article written for the operating system you are using.
+     </p>
+     <p>
+      The latest version of this article is available at
+      <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04">
+       How To Install and Use Docker on Ubuntu 16.04
+      </a>
+      .
+     </p>
+    </span>
+    <h3 id="introduction">
+     Introduction
+    </h3>
+    <hr/>
+    <p>
+     The provided use cases are limitless and the need has always been there.
+     <a href="https://www.docker.io/">
+      Docker
+     </a>
+     is here to offer you an efficient, speedy way to port applications across systems and machines. It is light and lean, allowing you to quickly contain applications and run them within their own secure environments (via Linux Containers: LXC).
+    </p>
+    <p>
+     In this DigitalOcean article, we aim to thoroughly introduce you to Docker: one of the most exciting and powerful open-source projects to come to life in the recent years. Docker can help you with so much it’s unfair to attempt to summarize its capabilities in one sentence.
+    </p>
+    <h3 id="glossary">
+     Glossary
+    </h3>
+    <hr/>
+    <h3 id="1-docker">
+     1. Docker
+    </h3>
+    <hr/>
+    <h3 id="2-the-docker-project-and-its-main-parts">
+     2. The Docker Project and its Main Parts
+    </h3>
+    <hr/>
+    <h3 id="3-docker-elements">
+     3. Docker Elements
+    </h3>
+    <hr/>
+    <ol>
+     <li>
+      Docker Containers
+     </li>
+     <li>
+      Docker Images
+     </li>
+     <li>
+      Dockerfiles
+     </li>
+    </ol>
+    <h3 id="4-how-to-install-docker">
+     4. How to Install Docker
+    </h3>
+    <hr/>
+    <h3 id="5-how-to-use-docker">
+     5. How To Use Docker
+    </h3>
+    <hr/>
+    <ol>
+     <li>
+      Beginning
+     </li>
+     <li>
+      Working with Images
+     </li>
+     <li>
+      Working with Containers
+     </li>
+    </ol>
+    <h2 id="docker">
+     Docker
+    </h2>
+    <hr/>
+    <p>
+     Whether it be from your development machine to a remote server for production, or packaging everything for use elsewhere, it is always a challenge when it comes to porting your application stack together with its dependencies and getting it to run without hiccups. In fact, the challenge is immense and solutions so far have not really proved successful for the masses.
+    </p>
+    <p>
+     In a nutshell, docker as a
+     <em>
+      project
+     </em>
+     offers you the complete set of higher-level tools to carry everything that forms an application across systems and machines - virtual or physical - and brings along loads more of great benefits with it.
+    </p>
+    <p>
+     Docker achieves its robust application (and therefore, process and resource) containment via
+     <strong>
+      <em>
+       Linux Containers
+      </em>
+     </strong>
+     (e.g. namespaces and other kernel features). Its further capabilities come from a project’s own parts and components, which extract all the complexity of working with
+     <em>
+      lower-level
+     </em>
+     linux tools/APIs used for system and application management with regards to securely containing processes.
+    </p>
+    <h2 id="the-docker-project-and-its-main-parts">
+     The Docker Project and its Main Parts
+    </h2>
+    <hr/>
+    <p>
+     Docker project (open-sourced by dotCloud in March ‘13) consists of several main parts (applications) and elements (used by these parts) which are all [mostly] built on top of already existing functionality, libraries and frameworks offered by the Linux kernel and third-parties (e.g. LXC, device-mapper, aufs etc.).
+    </p>
+    <h3 id="main-docker-parts">
+     Main Docker Parts
+    </h3>
+    <hr/>
+    <ol>
+     <li>
+      docker daemon: used to manage docker (LXC) containers on the host it runs
+     </li>
+     <li>
+      docker CLI: used to command and communicate with the docker daemon
+     </li>
+     <li>
+      docker image index: a repository (public or private) for docker images
+     </li>
+    </ol>
+    <h3 id="main-docker-elements">
+     Main Docker Elements
+    </h3>
+    <hr/>
+    <ol>
+     <li>
+      docker containers: directories containing everything-your-application
+     </li>
+     <li>
+      docker images: snapshots of containers or base OS (e.g. Ubuntu) images
+     </li>
+     <li>
+      Dockerfiles: scripts automating the building process of images
+     </li>
+    </ol>
+    <h2 id="docker-elements">
+     Docker Elements
+    </h2>
+    <hr/>
+    <p>
+     The following elements are used by the applications forming the docker project.
+    </p>
+    <h3 id="docker-containers">
+     Docker Containers
+    </h3>
+    <hr/>
+    <p>
+     The entire procedure of porting applications using docker relies solely on the shipment of containers.
+    </p>
+    <p>
+     Docker containers are basically directories which can be packed (e.g. tar-archived) like any other, then shared and run across various different machines and platforms (hosts). The only dependency is having the hosts tuned to run the containers (i.e. have docker installed). Containment here is obtained via
+     <em>
+      Linux Containers
+     </em>
+     (LXC).
+    </p>
+    <p>
+     <strong>
+      LXC (Linux Containers)
+     </strong>
+    </p>
+    <p>
+     Linux Containers can be defined as a combination various kernel-level features (i.e. things that Linux-kernel
+     <em>
+      can
+     </em>
+     do) which allow management of applications (and resources they use) contained within their own environment. By making use of certain features (e.g. namespaces, chroots, cgroups and SELinux profiles), the LXC contains application processes and helps with their management through limiting resources, not allowing reach beyond their own file-system (access to the parent’s namespace) etc.
+    </p>
+    <p>
+     <strong>
+      Docker
+     </strong>
+     with its
+     <em>
+      containers
+     </em>
+     makes use of LXC, however, also brings along much more.
+    </p>
+    <h3 id="docker-containers">
+     Docker Containers
+    </h3>
+    <hr/>
+    <p>
+     Docker containers have several main features.
+    </p>
+    <p>
+     They allow;
+    </p>
+    <ul>
+     <li>
+      Application portability
+     </li>
+     <li>
+      Isolating processes
+     </li>
+     <li>
+      Prevention from tempering with the outside
+     </li>
+     <li>
+      Managing resource consumption
+     </li>
+    </ul>
+    <p>
+     and more, requiring much less resources than traditional virtual-machines used for isolated application deployments.
+    </p>
+    <p>
+     They do
+     <strong>
+      not
+     </strong>
+     allow;
+    </p>
+    <ul>
+     <li>
+      Messing with other processes
+     </li>
+     <li>
+      Causing “dependency hell”
+     </li>
+     <li>
+      Or not working on a different system
+     </li>
+     <li>
+      Being vulnerable to attacks and abuse all system’s resources
+     </li>
+    </ul>
+    <p>
+     and (also) more.
+    </p>
+    <p>
+     Being based and depending on LXC, from a technical aspect, these containers are like a directory (but a shaped and formatted one). This allows
+     <em>
+      portability
+     </em>
+     and
+     <em>
+      gradual builds
+     </em>
+     of containers.
+    </p>
+    <p>
+     Each container is layered like an
+     <em>
+      onion
+     </em>
+     and each action taken within a container consists of putting another block (which actually translates to a simple change within the file system) on top of the previous one. And various tools and configurations make this set-up work in a harmonious way altogether (e.g. union file-system).
+    </p>
+    <p>
+     What this way of having containers allows is the extreme benefit of easily launching and creating new containers and images, which are thus kept lightweight (thanks to gradual and layered way they are built). Since everything is based on the file-system, taking snapshots and performing roll-backs in time are
+     <em>
+      cheap
+     </em>
+     (i.e. very easily done / not heavy on resources), much like
+     <em>
+      version control systems
+     </em>
+     (VCS).
+    </p>
+    <p>
+     Each
+     <strong>
+      docker container
+     </strong>
+     starts from a
+     <strong>
+      docker image
+     </strong>
+     which forms the base for other applications and layers to come.
+    </p>
+    <h3 id="docker-images">
+     Docker Images
+    </h3>
+    <hr/>
+    <p>
+     Docker images constitute the base of docker containers
+     <em>
+      from
+     </em>
+     which everything starts to
+     <em>
+      form
+     </em>
+     . They are very similar to default operating-system disk images which are used to run applications on servers or desktop computers.
+    </p>
+    <p>
+     Having these images (e.g. Ubuntu base) allow seamless portability across systems. They make a solid, consistent and dependable base with everything that is needed to run the applications. When everything is self-contained and the risk of system-level updates or modifications are eliminated, the container becomes immune to external exposures which could put it out of order -
+     <em>
+      preventing the dependency hell
+     </em>
+     .
+    </p>
+    <p>
+     As more layers (tools, applications etc.) are added on top of the base, new images can be formed by
+     <em>
+      committing
+     </em>
+     these changes. When a new container gets created from a saved (i.e. committed) image, things continue from where they left off. And the
+     <a href="http://en.wikipedia.org/wiki/UnionFS">
+      <strong>
+       union file system
+      </strong>
+     </a>
+     , brings all the layers together as a single entity when you work with a container.
+    </p>
+    <p>
+     These base images can be explicitly stated when working with the
+     <strong>
+      docker CLI
+     </strong>
+     to directly create a new container or they might be specified inside a
+     <strong>
+      <em>
+       Dockerfile
+      </em>
+     </strong>
+     for automated image building.
+    </p>
+    <h3 id="dockerfiles">
+     Dockerfiles
+    </h3>
+    <hr/>
+    <p>
+     <strong>
+      Dockerfiles
+     </strong>
+     are scripts containing a successive series of instructions, directions, and commands which are to be executed to form a new docker image. Each command executed translates to a new layer of the onion, forming the end product. They basically replace the process of doing everything manually and repeatedly. When a
+     <strong>
+      Dockerfile
+     </strong>
+     is finished executing, you end up having formed an image, which then you use to start (i.e. create) a new container.
+    </p>
+    <h2 id="how-to-install-docker">
+     How To Install Docker
+    </h2>
+    <hr/>
+    <p>
+     At first, docker was only available on Ubuntu. Nowadays, it is possible to deploy docker on RHEL based systems (e.g. CentOS) and others as well.
+    </p>
+    <p>
+     Let’s quickly go over the installation process for Ubuntu.
+    </p>
+    <p>
+     <span class="note">
+      <strong>
+       Note:
+      </strong>
+      Docker can be installed automatically on your Droplet by adding
+      <a href="http://do.co/1U5n2BA">
+       this script
+      </a>
+      to its User Data when launching it. Check out
+      <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata">
+       this tutorial
+      </a>
+      to learn more about Droplet User Data.
+      <br/>
+     </span>
+    </p>
+    <h3 id="installation-instructions-for-ubuntu">
+     Installation Instructions for Ubuntu
+    </h3>
+    <hr/>
+    <p>
+     The simplest way to get docker, other than using the pre-built application image, is to go with a 64-bit Ubuntu 14.04 VPS
+    </p>
+    <p>
+     Update your droplet:
+    </p>
+    <pre class="code-pre"><code>sudo apt-get update sudo apt-get -y upgrade </code></pre>
+    <p>
+     Make sure aufs support is available:
+    </p>
+    <pre class="code-pre"><code>sudo apt-get install linux-image-extra-`uname -r` </code></pre>
+    <p>
+     Add docker repository key to apt-key for package verification:
+    </p>
+    <pre class="code-pre"><code>sudo apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D </code></pre>
+    <p>
+     Add the docker repository to Apt sources:
+    </p>
+    <pre class="code-pre"><code>echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee /etc/apt/sources.list.d/docker.list </code></pre>
+    <p>
+     Update the repository with the new addition:
+    </p>
+    <pre class="code-pre"><code>sudo apt-get update </code></pre>
+    <p>
+     Finally, download and install docker:
+    </p>
+    <pre class="code-pre"><code>sudo apt-get install docker-engine </code></pre>
+    <p>
+     Ubuntu’s default firewall (UFW: Uncomplicated Firewall) denies all forwarding traffic by default, which is needed by docker.
+    </p>
+    <p>
+     Enable forwarding with UFW:
+    </p>
+    <p>
+     Edit UFW configuration using the nano text editor.
+    </p>
+    <pre class="code-pre"><code>sudo nano /etc/default/ufw </code></pre>
+    <p>
+     Scroll down and find the line beginning with DEFAULT
+     <em>
+      FORWARD
+     </em>
+     POLICY.
+    </p>
+    <p>
+     Replace:
+    </p>
+    <pre class="code-pre"><code>DEFAULT_FORWARD_POLICY="DROP" </code></pre>
+    <p>
+     With:
+    </p>
+    <pre class="code-pre"><code>DEFAULT_FORWARD_POLICY="ACCEPT" </code></pre>
+    <p>
+     Press CTRL+X and approve with Y to save and close.
+    </p>
+    <p>
+     Finally, reload the UFW:
+    </p>
+    <pre class="code-pre"><code>sudo ufw reload </code></pre>
+    <blockquote>
+     <p>
+      For a full set of instructions, check out docker documentation for installation
+      <a href="https://docs.docker.com/installation/ubuntulinux/">
+       here
+      </a>
+      .
+     </p>
+    </blockquote>
+    <h2 id="how-to-use-docker">
+     How To Use Docker
+    </h2>
+    <hr/>
+    <p>
+     Once you have docker installed, its intuitive usage experience makes it very easy to work with. By now, you shall have the docker daemon running in the background. If not, use the following command to run the docker daemon.
+    </p>
+    <p>
+     To run the docker daemon:
+    </p>
+    <pre class="code-pre"><code>sudo docker -d &amp; </code></pre>
+    <p>
+     Usage Syntax:
+    </p>
+    <p>
+     Using docker (via CLI) consists of passing it a chain of options and commands followed by arguments. Please note that docker needs sudo privileges in order to work.
+    </p>
+    <pre class="code-pre"><code>sudo docker [option] [command] [arguments] </code></pre>
+    <p>
+     <strong>
+      Note:
+     </strong>
+     Below instructions and explanations are provided to be used as a guide and to give you an overall idea of using and working with docker. The best way to get familiar with it is practice on a new VPS. Do not be afraid of breaking anything– in fact, do break things! With docker, you can save your progress and continue from there very easily.
+    </p>
+    <h3 id="beginning">
+     Beginning
+    </h3>
+    <hr/>
+    <p>
+     Let’s begin with seeing all available commands docker have.
+    </p>
+    <p>
+     Ask docker for a list of all available commands:
+    </p>
+    <pre class="code-pre"><code>sudo docker </code></pre>
+    <blockquote>
+     <p>
+      All currently (as of 0.7.1) available commands:
+     </p>
+    </blockquote>
+    <pre class="code-pre"><code>attach    Attach to a running container build     Build a container from a Dockerfile commit    Create a new image from a container's changes cp        Copy files/folders from the containers filesystem to the host path diff      Inspect changes on a container's filesystem events    Get real time events from the server export    Stream the contents of a container as a tar archive history   Show the history of an image images    List images import    Create a new filesystem image from the contents of a tarball info      Display system-wide information insert    Insert a file in an image inspect   Return low-level information on a container kill      Kill a running container load      Load an image from a tar archive login     Register or Login to the docker registry server logs      Fetch the logs of a container port      Lookup the public-facing port which is NAT-ed to PRIVATE_PORT ps        List containers pull      Pull an image or a repository from the docker registry server push      Push an image or a repository to the docker registry server restart   Restart a running container rm        Remove one or more containers rmi       Remove one or more images run       Run a command in a new container save      Save an image to a tar archive search    Search for an image in the docker index start     Start a stopped container stop      Stop a running container tag       Tag an image into a repository top       Lookup the running processes of a container version   Show the docker version information wait      Block until a container stops, then print its exit code </code></pre>
+    <p>
+     Check out system-wide information and docker version:
+    </p>
+    <pre class="code-pre"><code># For system-wide information on docker: sudo docker info  # For docker version: sudo docker version </code></pre>
+    <h3 id="working-with-images">
+     Working with Images
+    </h3>
+    <hr/>
+    <p>
+     As we have discussed at length, the key to start working with any docker container is using images. There are many freely available images shared across
+     <strong>
+      docker image index
+     </strong>
+     and the
+     <strong>
+      CLI
+     </strong>
+     allows simple access to query the image repository and to download new ones.
+    </p>
+    <blockquote>
+     <p>
+      When you are ready, you can also share your image there as well. See the section on “push” further down for details.
+     </p>
+    </blockquote>
+    <p>
+     Searching for a docker image:*
+    </p>
+    <pre class="code-pre"><code># Usage: sudo docker search [image name] sudo docker search ubuntu </code></pre>
+    <p>
+     This will provide you a
+     <em>
+      very long
+     </em>
+     list of all available images matching the query:
+     <strong>
+      Ubuntu
+     </strong>
+     .
+    </p>
+    <p>
+     <strong>
+      Downloading (PULLing) an image:
+     </strong>
+    </p>
+    <p>
+     Either when you are building / creating a container or before you do, you will need to have an image present at the host machine where the containers will exist. In order to download images (perhaps following “search”) you can execute
+     <strong>
+      pull
+     </strong>
+     to get one.
+    </p>
+    <pre class="code-pre"><code># Usage: sudo docker pull [image name] sudo docker pull ubuntu </code></pre>
+    <p>
+     <strong>
+      Listing images:
+     </strong>
+    </p>
+    <p>
+     All the images on your system, including the ones you have created by committing (see below for details), can be listed using “images”. This provides a full list of all available ones.
+    </p>
+    <pre class="code-pre"><code># Example: sudo docker images sudo docker images  REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE my_img              latest              72461793563e        36 seconds ago      128 MB ubuntu              12.04               8dbd9e392a96        8 months ago        128 MB ubuntu              latest              8dbd9e392a96        8 months ago        128 MB ubuntu              precise             8dbd9e392a96        8 months ago        128 MB ubuntu              12.10               b750fe79269d        8 months ago        175.3 MB ubuntu              quantal             b750fe79269d        8 months ago        175.3 MB </code></pre>
+    <p>
+     <strong>
+      Committing changes to an image:
+     </strong>
+    </p>
+    <p>
+     As you work with a container and continue to perform actions on it (e.g. download and install software, configure files etc.), to have it keep its state, you need to “commit”. Committing makes sure that everything continues from where they left next time you use one (i.e. an image).
+    </p>
+    <pre class="code-pre"><code># Usage: sudo docker commit [container ID] [image name] sudo docker commit 8dbd9e392a96 my_img </code></pre>
+    <p>
+     <strong>
+      Sharing (PUSHing) images:
+     </strong>
+    </p>
+    <p>
+     Although it is a bit early at this moment -
+     <em>
+      in our article
+     </em>
+     , when you have created your own container which you would like to share with the rest of the world, you can use push to have
+     <strong>
+      <em>
+       your
+      </em>
+     </strong>
+     image listed in the index where everybody can download and use.
+    </p>
+    <blockquote>
+     <p>
+      Please remember to “commit” all your changes.
+     </p>
+    </blockquote>
+    <pre class="code-pre"><code># Usage: sudo docker push [username/image name] sudo docker push my_username/my_first_image </code></pre>
+    <p>
+     <strong>
+      Note:
+     </strong>
+     You need to sign-up at
+     <a href="https://index.docker.io/">
+      index.docker.io
+     </a>
+     to push images to docker index.
+    </p>
+    <h3 id="working-with-containers">
+     Working with Containers
+    </h3>
+    <hr/>
+    <p>
+     When you “run” any process using an image, in return, you will have a container. When the process is
+     <strong>
+      not
+     </strong>
+     actively running, this container will be a
+     <strong>
+      <em>
+       non-running
+      </em>
+     </strong>
+     container. Nonetheless, all of them will reside on your system until you remove them via
+     <strong>
+      rm
+     </strong>
+     command.
+    </p>
+    <p>
+     <strong>
+      Listing all current containers:
+     </strong>
+    </p>
+    <p>
+     By default, you can use the following to list all
+     <strong>
+      running
+     </strong>
+     containers:
+    </p>
+    <pre class="code-pre"><code>sudo docker ps </code></pre>
+    <p>
+     To have a list of both
+     <strong>
+      running
+     </strong>
+     and
+     <strong>
+      non-running
+     </strong>
+     ones, use:
+    </p>
+    <pre class="code-pre"><code>sudo docker ps -l </code></pre>
+    <h3 id="creating-a-new-container">
+     Creating a New Container
+    </h3>
+    <hr/>
+    <p>
+     It is currently not possible to create a container without running anything (i.e. commands). To create a new container, you need to use a base image and specify a command to run.
+    </p>
+    <pre class="code-pre"><code># Usage: sudo docker run [image name] [command to run] sudo docker run my_img echo "hello"  # To name a container instead of having long IDs # Usage: sudo docker run -name [name] [image name] [comm.] sudo docker run -name my_cont_1 my_img echo "hello" </code></pre>
+    <blockquote>
+     <p>
+      This will output “hello” and you will be right back where you were. (i.e. your host’s shell)
+     </p>
+     <p>
+      As you can not change the command you run after having created a container (hence specifying one during “creation”), it is common practice to use process managers and even custom launch scripts to be able to execute different commands.
+     </p>
+    </blockquote>
+    <p>
+     <strong>
+      Running a container:
+     </strong>
+    </p>
+    <p>
+     When you create a container and it stops (either due to its process ending or you stopping it explicitly), you can use “run” to get the container working again with the same command used to create it.
+    </p>
+    <pre class="code-pre"><code># Usage: sudo docker run [container ID] sudo docker run c629b7d70666 </code></pre>
+    <blockquote>
+     <p>
+      Remember how to find the containers? See above section for
+      <em>
+       list
+      </em>
+      ing them.
+     </p>
+    </blockquote>
+    <p>
+     <strong>
+      Stopping a container:
+     </strong>
+    </p>
+    <p>
+     To stop a container’s process from running:
+    </p>
+    <pre class="code-pre"><code># Usage: sudo docker stop [container ID] sudo docker stop c629b7d70666 </code></pre>
+    <p>
+     <strong>
+      Saving (
+      <em>
+       commit
+      </em>
+      ting) a container:
+     </strong>
+    </p>
+    <p>
+     If you would like to save the progress and changes you made with a container, you can use “commit” as explained above to save it as an
+     <strong>
+      image
+     </strong>
+     .
+    </p>
+    <blockquote>
+     <p>
+      This command turns your container to an
+      <strong>
+       <em>
+        image
+       </em>
+      </strong>
+      .
+     </p>
+    </blockquote>
+    <p>
+     Remember that with docker, commits are cheap. Do not hesitate to use them to create images to save your progress with a
+     <br/>
+     container or to roll back when you need (e.g. like snapshots in time).
+    </p>
+    <p>
+     <strong>
+      Removing / Deleting a container:
+     </strong>
+    </p>
+    <p>
+     Using the ID of a container, you can delete one with
+     <strong>
+      rm
+     </strong>
+     .
+    </p>
+    <pre class="code-pre"><code># Usage: sudo docker rm [container ID] sudo docker rm c629b7d70666 </code></pre>
+    <p>
+     You can learn more about Docker by reading their
+     <a href="http://docs.docker.io/en/latest/">
+      official documentation
+     </a>
+    </p>
+    <blockquote>
+     <p>
+      <strong>
+       Remember:
+      </strong>
+      Things are progressing very fast at docker. The momentum powered by the community is amazing and many large companies try to join in offering support. However, the product is still not labeled as
+      <strong>
+       <em>
+        production ready
+       </em>
+      </strong>
+      , hence not recommended to be 100% trusted with mission critical deployments -
+      <strong>
+       <em>
+        yet
+       </em>
+      </strong>
+      . Be sure to check releases as they come out and continue keeping on top of all things docker.
+     </p>
+    </blockquote>
+    <div class="author">
+     Submitted by:
+     <a href="https://twitter.com/ostezer">
+      O.S. Tezer
+     </a>
+    </div>
+   </div>
+  </div>
+  <div class="tutorial-footer">
+   <div class="tutorial-footer-details">
+    <div class="postable-info-bar-container">
+     <div class="postable-info-bar">
+      <div class="author-byline">
+       <div class="component-collaborators-container">
+        <ul class="component-collaborators-content">
+         <li class="collaborators-byline-data">
+          <p class="names">
+           By
+           <span>
+            O.S Tezer
+           </span>
+          </p>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="hsb--container">
+     <div class="hsb--content">
+      <div class="hsb--social-and-comments">
+       <div class="hsb--comment">
+        <strong class="amount">
+         12
+        </strong>
+       </div>
+      </div>
+     </div>
+     <a class="hsb--flagging-js" data-flag-type="report" data-flaggable-id="888" data-url="/community/tutorials/how-to-install-and-use-docker-getting-started/flag" href="javascript:void(0);">
+      Report an issue
+     </a>
+    </div>
+   </div>
+   <div class="related-content">
+    <div class="section-content">
+     <h2>
+      Related
+     </h2>
+     <ul>
+      <li title="How To Build a Node.js Application with Docker [Quickstart]">
+       <a class="panel" href="/community/tutorials/how-to-build-a-node-js-application-with-docker-quickstart">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Build a Node.js Application with Docker [Quickstart]
+         </h5>
+         <p data-clamp="">
+          Interested in Node.js but not sure where to start with Docker? This tutorial will walk you through the first step: building an image for a Node.js application and creating a container from it. We will also walk you through pushing that image to Docker Hub and using the saved image to recreate your application container.
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Set Up Password Authentication with Apache on Ubuntu 18.04 [Quickstart]">
+       <a class="panel" href="/community/tutorials/how-to-set-up-password-authentication-with-apache-on-ubuntu-18-04-quickstart">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Set Up Password Authentication with Apache on Ubuntu 18.04 [Quickstart]
+         </h5>
+         <p data-clamp="">
+          This tutorial will walk you through password-protecting assets on an Apache web server running on Ubuntu 18.04. Completing these steps will provide your server with additional security so that unauthorized users cannot access certain parts of your page. For a more detailed…
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Set Up Password Authentication with Apache on Ubuntu 18.04">
+       <a class="panel" href="/community/tutorials/how-to-set-up-password-authentication-with-apache-on-ubuntu-18-04">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Set Up Password Authentication with Apache on Ubuntu 18.04
+         </h5>
+         <p data-clamp="">
+          This tutorial will walk you through password-protecting assets on an Apache web server running on Ubuntu 18.04 in order to provide your server with additional security.
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Install Docker Compose on Debian 10">
+       <a class="panel" href="/community/tutorials/how-to-install-docker-compose-on-debian-10">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Install Docker Compose on Debian 10
+         </h5>
+         <p data-clamp="">
+          Docker Compose makes it easier for users to orchestrate the processes of Docker containers, including starting up, shutting down, and setting up intra-container linking and volumes.  In this tutorial, you'll install the latest version of Docker Compose to help you manage multi-container applications on a Debian 10 server.
+         </p>
+        </div>
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="looking-for-an-answer">
+    <div class="section-content">
+     <h4>
+      Still looking for an answer?
+     </h4>
+     <div class="lfa--actions">
+      <a class="lfa--action-box" href="/community/questions/new?tags=Docker%2CUbuntu">
+       Ask a question
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="content-comments">
+   <div class="section-content">
+    <div class="tutorial commentable" id="tutorial_888">
+     <div class="comments-header">
+      <h4 class="comments-count">
+       <span>
+        12 Comments
+       </span>
+      </h4>
+     </div>
+     <div class="comments">
+      <ul class="response-list">
+       <a class="js-click-on-load hidden" data-remote="true" href="/community/tutorials/how-to-install-and-use-docker-getting-started/comments" rel="nofollow">
+        Load
+       </a>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="creative-commons">
+   <a class="creative-commons-image" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" rel="license" src="/assets/community/creativecommons-08b32a9279fcd47fcd78ac6a26331389.png"/>
+   </a>
+   <div class="license-text">
+    This work is licensed under a
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+    </a>
+    .
+   </div>
+  </div>
+  <div class="modal fade mini-modal" id="sign-in-modal" style="display: none;">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h1>
+       Almost there!
+      </h1>
+     </div>
+     <div class="modal-body">
+      <div class="sign-in-message">
+       Sign into your account, or create a new one, to start interacting.
+      </div>
+      <div class="sign-in-modal-actions">
+       <a class="sign-in-link button blue-button" data-default-url="/community/auth/digitalocean" href="/community/auth/digitalocean">
+        Sign In
+       </a>
+       <a class="sign-up-link button blue-button" data-default-url="/community/auth/digitalocean?display=sessionless+register" href="/community/auth/digitalocean?display=sessionless+register">
+        Sign Up
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

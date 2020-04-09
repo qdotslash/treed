@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   Initial Server Setup with Ubuntu 18.04 | DigitalOcean
+  </title>
+  <meta content="When you first create a new Ubuntu 18.04 server, there are a few configuration steps that you should take early on as part of the basic setup. This will increase the security and usability of your server and will give you a solid foundation for subseq" name="description"/>
+  <meta content="Initial Server Setup with Ubuntu 18.04 | DigitalOcean" name="og:title"/>
+  <meta content="When you first create a new Ubuntu 18.04 server, there are a few configuration steps that you should take early on as part of the basic setup. This will increase the security and usability of your server and will give you a solid foundation for subseq" name="og:description"/>
+  <meta content="https://www.digitalocean.com/assets/community/illustrations/DigitalOcean_Community-02cc36407e7a978ed4fc9ed98f3ed87c.jpg" name="og:image"/>
+  <meta content="Initial Server Setup with Ubuntu 18.04 | DigitalOcean" name="twitter:title"/>
+  <meta content="When you first create a new Ubuntu 18.04 server, there are a few configuration steps that you should take early on as part of the basic setup. This will increase the security and usability of your server and will give you a solid foundation for subseq" name="twitter:description"/>
+  <meta content="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04" name="twitter:url"/>
+  <meta content="https://www.digitalocean.com/assets/community/illustrations/DigitalOcean_Community-02cc36407e7a978ed4fc9ed98f3ed87c.jpg" name="twitter:image"/>
+  <link href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04" rel="canonical"/>
+  <link href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04" hreflang="en" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/ersteinrichtung-des-servers-mit-ubuntu-18-04-de" hreflang="de" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/configuracion-inicial-del-servidor-con-el-sistema-ubuntu-18-04-es" hreflang="es" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/configuration-initiale-de-serveur-avec-ubuntu-18-04-fr" hreflang="fr" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/configuracao-inicial-de-servidor-com-ubuntu-18-04-pt" hreflang="pt" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/ubuntu-18-04-ru" hreflang="ru" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/ubuntu-18-04-cmn" hreflang="zh" rel="alternate"/>
+  <meta content="1MfvVX0MaCOe26xfXJgMNiTsj/Zn7WGrSSIq4VUlMrWQM9arQQOD8zJjFftLrJ+8grgJyEpMvu9WBEy8NbyeaA==" name="csrf-token"/>
+ </head>
+ <body class="feature-filter-bar feature-upvotes tutorials-controller tutorial-single" data-completed-tutorial-id="" data-env="production" data-facebook-app-id="694818843983011" data-flagged="" data-js="tutorial" data-prefix="/community" data-tutorial-id="2610" data-upvote="null" data-user-id="">
+  <div class="outside_viewport">
+   <div class="modal fade mini-modal" id="contents-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Contents
+       </h1>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="translation-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Language
+       </h1>
+      </div>
+      <div class="modal-body">
+       <div class="content-translations">
+        <div class="current-language">
+         <ul class="languages large">
+          <li>
+           <a class="edit" href="/community/tutorials/ersteinrichtung-des-servers-mit-ubuntu-18-04-de" title="Deutsch">
+            Deutsch
+           </a>
+          </li>
+          <li>
+           <a class="edit" href="/community/tutorials/configuracion-inicial-del-servidor-con-el-sistema-ubuntu-18-04-es" title="Español">
+            Español
+           </a>
+          </li>
+          <li>
+           <a class="edit" href="/community/tutorials/configuration-initiale-de-serveur-avec-ubuntu-18-04-fr" title="Français">
+            Français
+           </a>
+          </li>
+          <li>
+           <a class="edit" href="/community/tutorials/configuracao-inicial-de-servidor-com-ubuntu-18-04-pt" title="Português">
+            Português
+           </a>
+          </li>
+          <li>
+           <a class="edit" href="/community/tutorials/ubuntu-18-04-ru" title="Русский">
+            Русский
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="share-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Share
+       </h1>
+      </div>
+      <div class="modal-body">
+       <div class="social-sharing social-sharing-container">
+        <ul class="top">
+         <li class="shareBtn" id="sbTwitter">
+          <a class="share-link share-popup" href="http://twitter.com/share?text=Initial%20Server%20Setup%20with%20Ubuntu%2018.04&amp;url=https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04?utm_content=initial-server-setup-with-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=twshare" target="_blank" title="Share on Twitter">
+           Twitter
+          </a>
+         </li>
+         <li class="shareBtn" id="sbFacebook">
+          <a class="share-link share-popup" href="https://www.facebook.com/sharer/sharer.php?u=https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04?utm_content=initial-server-setup-with-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=fbshare" target="_blank" title="Share on Facebook">
+           Facebook
+          </a>
+         </li>
+         <li class="shareBtn" id="sbYC">
+          <a class="share-link share-popup" href="https://news.ycombinator.com/submitlink?t=Initial%20Server%20Setup%20with%20Ubuntu%2018.04&amp;u=https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04?utm_content=initial-server-setup-with-ubuntu-18-04&amp;utm_medium=community&amp;utm_source=hnshare" target="_blank" title="Submit to Hacker News">
+           Hacker News
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   Tutorial
+  </div>
+  <a href="/community/tutorials/recommended-steps-to-harden-apache-http-on-freebsd-12-0">
+   <div class="featured-item-regular">
+    Recommended Steps To Harden Apache HTTP on FreeBSD 12.0
+    <span class="featured-item-category">
+     <img alt="Tutorial" height="14" src="/assets/community/tutorials/featured-item-tutorial-icon-2150ccbef202144a53cea261312af267.png" width="14"/>
+     Tutorial
+    </span>
+   </div>
+  </a>
+  <h1 class="content-title Tutorial-header">
+   Initial Server Setup with Ubuntu 18.04
+  </h1>
+  <span class="meta-section date-views">
+   <span class="meta-section pageviews">
+    <span class="views-count v-mid">
+     789.6k
+    </span>
+   </span>
+  </span>
+  <span class="meta-section tags">
+   <a class="tag" href="/community/tags/ubuntu">
+    Ubuntu
+   </a>
+   <a class="tag" href="/community/tags/getting-started">
+    Getting Started
+   </a>
+   <a class="tag" href="/community/tags/security">
+    Security
+   </a>
+   <a class="tag" href="/community/tags/initial-server-setup">
+    Initial Server Setup
+   </a>
+  </span>
+  <div class="tutorial-authors">
+   <div class="component-collaborators-container">
+    <ul class="component-collaborators-content">
+     <li class="collaborator-byline-avatar">
+      <a href="/community/users/jellingwood">
+       <img alt="jellingwood" class="avatar avatar-large" height="80" src="https://secure.gravatar.com/avatar/60d901f61a6146e14a3e989bc1f4ef11?secure=true&amp;d=identicon" width="80"/>
+      </a>
+     </li>
+     <li class="collaborators-byline-data">
+      <p class="names">
+       By
+       <a href="/community/users/jellingwood">
+        Justin Ellingwood
+       </a>
+      </p>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="container versioned-tutorial-group-navigation" data-versioned-tutorial-group-navigation="">
+   <div class="versioned-tutorial-group-navigation__header" data-versioned-tutorial-group-navigation-header="">
+    <h5 class="versioned-tutorial-group-navigation__heading">
+     Not using
+     <strong>
+      Ubuntu 18.04
+     </strong>
+     ? Choose a different version:
+    </h5>
+   </div>
+  </div>
+  <div class="content-body tutorial-content" data-growable-markdown="">
+   <h3 id="introduction">
+    Introduction
+   </h3>
+   <p>
+    When you first create a new Ubuntu 18.04 server, there are a few configuration steps that you should take early on as part of the basic setup.  This will increase the security and usability of your server and will give you a solid foundation for subsequent actions.
+   </p>
+   <p>
+    <span class="note">
+     <strong>
+      Note:
+     </strong>
+     The guide below demonstrates how to manually complete the steps we recommend for new Ubuntu 18.04 servers.  Following this procedure manually can be useful to learn some basic system administration skills and as an exercise to fully understand the actions being taken on your server.  As an alternative, if you wish to get up and running more quickly, you can
+     <a href="https://www.digitalocean.com/community/tutorials/automating-initial-server-setup-with-ubuntu-18-04">
+      run our initial server setup script
+     </a>
+     which automates these steps.
+     <br/>
+    </span>
+   </p>
+   <h2 id="step-1-—-logging-in-as-root">
+    Step 1 — Logging in as Root
+   </h2>
+   <p>
+    To log into your server, you will need to know your
+    <strong>
+     server’s public IP address
+    </strong>
+    .  You will also need the password or, if you installed an SSH key for authentication, the private key for the
+    <strong>
+     root
+    </strong>
+    user’s account.  If you have not already logged into your server, you may want to follow our guide on
+    <a href="https://www.digitalocean.com/community/tutorials/how-to-connect-to-your-droplet-with-ssh">
+     how to connect to your Droplet with SSH
+    </a>
+    , which covers this process in detail.
+   </p>
+   <p>
+    If you are not already connected to your server, go ahead and log in as the
+    <strong>
+     root
+    </strong>
+    user using the following command (substitute the highlighted portion of the command with your server’s public IP address):
+   </p>
+   <pre class="code-pre command local-environment"><code langs=""><ul class="prefixed"><li class="line" prefix="$">ssh root@ </li></ul></code></pre>
+   <p>
+    Accept the warning about host authenticity if it appears.  If you are using password authentication, provide your
+    <strong>
+     root
+    </strong>
+    password to log in.  If you are using an SSH key that is passphrase protected, you may be prompted to enter the passphrase the first time you use the key each session.  If this is your first time logging into the server with a password, you may also be prompted to change the
+    <strong>
+     root
+    </strong>
+    password.
+   </p>
+   <h3 id="about-root">
+    About Root
+   </h3>
+   <p>
+    The
+    <strong>
+     root
+    </strong>
+    user is the administrative user in a Linux environment that has very broad privileges.  Because of the heightened privileges of the
+    <strong>
+     root
+    </strong>
+    account, you are
+    <em>
+     discouraged
+    </em>
+    from using it on a regular basis.  This is because part of the power inherent with the
+    <strong>
+     root
+    </strong>
+    account is the ability to make very destructive changes, even by accident.
+   </p>
+   <p>
+    The next step is to set up an alternative user account with a reduced scope of influence for day-to-day work.  We’ll teach you how to gain increased privileges during the times when you need them.
+   </p>
+   <h2 id="step-2-—-creating-a-new-user">
+    Step 2 — Creating a New User
+   </h2>
+   <p>
+    Once you are logged in as
+    <strong>
+     root
+    </strong>
+    , we’re prepared to add the new user account that we will use to log in from now on.
+   </p>
+   <p>
+    This example creates a new user called
+    <strong>
+     sammy
+    </strong>
+    , but you should replace it with a username that you like:
+   </p>
+   <pre class="code-pre super_user"><code langs=""><ul class="prefixed"><li class="line" prefix="#">adduser <span class="highlight">sammy</span> </li></ul></code></pre>
+   <p>
+    You will be asked a few questions, starting with the account password.
+   </p>
+   <p>
+    Enter a strong password and, optionally, fill in any of the additional information if you would like.  This is not required and you can just hit
+    <code>
+     ENTER
+    </code>
+    in any field you wish to skip.
+   </p>
+   <h2 id="step-3-—-granting-administrative-privileges">
+    Step 3 — Granting Administrative Privileges
+   </h2>
+   <p>
+    Now, we have a new user account with regular account privileges.  However, we may sometimes need to do administrative tasks.
+   </p>
+   <p>
+    To avoid having to log out of our normal user and log back in as the
+    <strong>
+     root
+    </strong>
+    account, we can set up what is known as “superuser” or
+    <strong>
+     root
+    </strong>
+    privileges for our normal account.  This will allow our normal user to run commands with administrative privileges by putting the word
+    <code>
+     sudo
+    </code>
+    before each command.
+   </p>
+   <p>
+    To add these privileges to our new user, we need to add the new user to the
+    <strong>
+     sudo
+    </strong>
+    group. By default, on Ubuntu 18.04, users who belong to the
+    <strong>
+     sudo
+    </strong>
+    group are allowed to use the
+    <code>
+     sudo
+    </code>
+    command.
+   </p>
+   <p>
+    As
+    <strong>
+     root
+    </strong>
+    , run this command to add your new user to the
+    <strong>
+     sudo
+    </strong>
+    group (substitute the highlighted word with your new user):
+   </p>
+   <pre class="code-pre super_user"><code langs=""><ul class="prefixed"><li class="line" prefix="#">usermod -aG sudo <span class="highlight">sammy</span> </li></ul></code></pre>
+   <p>
+    Now, when logged in as your regular user, you can type
+    <code>
+     sudo
+    </code>
+    before commands to perform actions with superuser privileges.
+   </p>
+   <h2 id="step-4-—-setting-up-a-basic-firewall">
+    Step 4 — Setting Up a Basic Firewall
+   </h2>
+   <p>
+    Ubuntu 18.04 servers can use the UFW firewall to make sure only connections to certain services are allowed.  We can set up a basic firewall very easily using this application.
+   </p>
+   <p>
+    <span class="note">
+     <strong>
+      Note:
+     </strong>
+     If your servers are running on DigitalOcean, you can optionally use
+     <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-digitalocean-cloud-firewalls">
+      DigitalOcean Cloud Firewalls
+     </a>
+     instead of the UFW firewall.  We recommend using only one firewall at a time to avoid conflicting rules that may be difficult to debug.
+     <br/>
+    </span>
+   </p>
+   <p>
+    Different applications can register their profiles with UFW upon installation.  These profiles allow UFW to manage these applications by name.  OpenSSH, the service allowing us to connect to our server now, has a profile registered with UFW.
+   </p>
+   <p>
+    You can see this by typing:
+   </p>
+   <pre class="code-pre super_user"><code langs=""><ul class="prefixed"><li class="line" prefix="#">ufw app list </li></ul></code></pre>
+   <pre class="code-pre"><code langs="">Available applications: OpenSSH </code></pre>
+   <p>
+    We need to make sure that the firewall allows SSH connections so that we can log back in next time.  We can allow these connections by typing:
+   </p>
+   <pre class="code-pre super_user"><code langs=""><ul class="prefixed"><li class="line" prefix="#">ufw allow OpenSSH </li></ul></code></pre>
+   <p>
+    Afterwards, we can enable the firewall by typing:
+   </p>
+   <pre class="code-pre super_user"><code langs=""><ul class="prefixed"><li class="line" prefix="#">ufw enable </li></ul></code></pre>
+   <p>
+    Type “
+    <code>
+     y
+    </code>
+    ” and press
+    <code>
+     ENTER
+    </code>
+    to proceed.  You can see that SSH connections are still allowed by typing:
+   </p>
+   <pre class="code-pre super_user"><code langs=""><ul class="prefixed"><li class="line" prefix="#">ufw status </li></ul></code></pre>
+   <pre class="code-pre"><code langs="">Status: active  To                         Action      From --                         ------      ---- OpenSSH                    ALLOW       Anywhere OpenSSH (v6)               ALLOW       Anywhere (v6) </code></pre>
+   <p>
+    As
+    <strong>
+     the firewall is currently blocking all connections except for SSH
+    </strong>
+    , if you install and configure additional services, you will need to adjust the firewall settings to allow acceptable traffic in.  You can learn some common UFW operations in
+    <a href="https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands">
+     this guide
+    </a>
+    .
+   </p>
+   <h2 id="step-5-—-enabling-external-access-for-your-regular-user">
+    Step 5 — Enabling External Access for Your Regular User
+   </h2>
+   <p>
+    Now that we have a regular user for daily use, we need to make sure we can SSH into the account directly.
+   </p>
+   <p>
+    <span class="note">
+     <strong>
+      Note:
+     </strong>
+     Until verifying that you can log in and use
+     <code>
+      sudo
+     </code>
+     with your new user, we recommend staying logged in as
+     <strong>
+      root
+     </strong>
+     .  This way, if you have problems, you can troubleshoot and make any necessary changes as
+     <strong>
+      root
+     </strong>
+     .  If you are using a DigitalOcean Droplet and experience problems with your
+     <strong>
+      root
+     </strong>
+     SSH connection, you can
+     <a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-console-to-access-your-droplet">
+      log into the Droplet using the DigitalOcean Console
+     </a>
+     .
+     <br/>
+    </span>
+   </p>
+   <p>
+    The process for configuring SSH access for your new user depends on whether your server’s
+    <strong>
+     root
+    </strong>
+    account uses a password or SSH keys for authentication.
+   </p>
+   <h3 id="if-the-root-account-uses-password-authentication">
+    If the Root Account Uses Password Authentication
+   </h3>
+   <p>
+    If you logged in to your
+    <strong>
+     root
+    </strong>
+    account
+    <em>
+     using a password
+    </em>
+    , then password authentication is enabled for SSH.  You can SSH to your new user account by opening up a new terminal session and using SSH with your new username:
+   </p>
+   <pre class="code-pre command local-environment"><code langs=""><ul class="prefixed"><li class="line" prefix="$">ssh <span class="highlight">sammy</span>@ </li></ul></code></pre>
+   <p>
+    After entering your regular user’s password, you will be logged in.  Remember, if you need to run a command with administrative privileges, type
+    <code>
+     sudo
+    </code>
+    before it like this:
+   </p>
+   <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo <span class="highlight">command_to_run</span> </li></ul></code></pre>
+   <p>
+    You will be prompted for your regular user password when using
+    <code>
+     sudo
+    </code>
+    for the first time each session (and periodically afterwards).
+   </p>
+   <p>
+    To enhance your server’s security,
+    <strong>
+     we strongly recommend setting up SSH keys instead of using password authentication
+    </strong>
+    .  Follow our guide on
+    <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1804">
+     setting up SSH keys on Ubuntu 18.04
+    </a>
+    to learn how to configure key-based authentication.
+   </p>
+   <h3 id="if-the-root-account-uses-ssh-key-authentication">
+    If the Root Account Uses SSH Key Authentication
+   </h3>
+   <p>
+    If you logged in to your
+    <strong>
+     root
+    </strong>
+    account
+    <em>
+     using SSH keys
+    </em>
+    , then password authentication is
+    <em>
+     disabled
+    </em>
+    for SSH.  You will need to add a copy of your local public key to the new user’s
+    <code>
+     ~/.ssh/authorized_keys
+    </code>
+    file to log in successfully.
+   </p>
+   <p>
+    Since your public key is already in the
+    <strong>
+     root
+    </strong>
+    account’s
+    <code>
+     ~/.ssh/authorized_keys
+    </code>
+    file on the server, we can copy that file and directory structure to our new user account in our existing session.
+   </p>
+   <p>
+    The simplest way to copy the files with the correct ownership and permissions is with the
+    <code>
+     rsync
+    </code>
+    command.  This will copy the
+    <strong>
+     root
+    </strong>
+    user’s
+    <code>
+     .ssh
+    </code>
+    directory, preserve the permissions, and modify the file owners, all in a single command.  Make sure to change the highlighted portions of the command below to match your regular user’s name:
+   </p>
+   <span class="note">
+    <p>
+     <strong>
+      Note:
+     </strong>
+     The
+     <code>
+      rsync
+     </code>
+     command treats sources and destinations that end with a trailing slash differently than those without a trailing slash.  When using
+     <code>
+      rsync
+     </code>
+     below, be sure that the source directory (
+     <code>
+      ~/.ssh
+     </code>
+     )
+     <strong>
+      does not
+     </strong>
+     include a trailing slash (check to make sure you are not using
+     <code>
+      ~/.ssh/
+     </code>
+     ).
+    </p>
+    <p>
+     If you accidentally add a trailing slash to the command,
+     <code>
+      rsync
+     </code>
+     will copy the
+     <em>
+      contents
+     </em>
+     of the
+     <strong>
+      root
+     </strong>
+     account’s
+     <code>
+      ~/.ssh
+     </code>
+     directory to the
+     <code>
+      sudo
+     </code>
+     user’s home directory instead of copying the entire
+     <code>
+      ~/.ssh
+     </code>
+     directory structure.  The files will be in the wrong location and SSH will not be able to find and use them.
+     <br/>
+    </p>
+   </span>
+   <pre class="code-pre super_user"><code langs=""><ul class="prefixed"><li class="line" prefix="#">rsync --archive --chown=<span class="highlight">sammy</span>:<span class="highlight">sammy</span> ~/.ssh /home/<span class="highlight">sammy</span> </li></ul></code></pre>
+   <p>
+    Now, open up a new terminal session and using SSH with your new username:
+   </p>
+   <pre class="code-pre command local-environment"><code langs=""><ul class="prefixed"><li class="line" prefix="$">ssh <span class="highlight">sammy</span>@ </li></ul></code></pre>
+   <p>
+    You should be logged in to the new user account without using a password.  Remember, if you need to run a command with administrative privileges, type
+    <code>
+     sudo
+    </code>
+    before it like this:
+   </p>
+   <pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo <span class="highlight">command_to_run</span> </li></ul></code></pre>
+   <p>
+    You will be prompted for your regular user password when using
+    <code>
+     sudo
+    </code>
+    for the first time each session (and periodically afterwards).
+   </p>
+   <h2 id="where-to-go-from-here">
+    Where To Go From Here?
+   </h2>
+   <p>
+    At this point, you have a solid foundation for your server. You can install any of the software you need on your server now.
+   </p>
+  </div>
+  <div class="tutorial-footer">
+   <div class="tutorial-footer-details">
+    <div class="postable-info-bar-container">
+     <div class="postable-info-bar">
+      <div class="author-byline">
+       <div class="component-collaborators-container">
+        <ul class="component-collaborators-content">
+         <li class="collaborator-byline-avatar">
+          <a href="/community/users/jellingwood">
+           <img alt="jellingwood" class="avatar avatar-large" height="80" src="https://secure.gravatar.com/avatar/60d901f61a6146e14a3e989bc1f4ef11?secure=true&amp;d=identicon" width="80"/>
+          </a>
+         </li>
+         <li class="collaborators-byline-data">
+          <p class="names">
+           By
+           <a href="/community/users/jellingwood">
+            Justin Ellingwood
+           </a>
+          </p>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="hsb--container">
+     <div class="hsb--content">
+      <div class="hsb--social-and-comments">
+       <div class="hsb--comment">
+        <strong class="amount">
+         32
+        </strong>
+       </div>
+      </div>
+     </div>
+     <a class="hsb--flagging-js" data-flag-type="report" data-flaggable-id="2610" data-url="/community/tutorials/initial-server-setup-with-ubuntu-18-04/flag" href="javascript:void(0);">
+      Report an issue
+     </a>
+    </div>
+   </div>
+   <div class="related-content">
+    <div class="section-content">
+     <h2>
+      Related
+     </h2>
+     <ul>
+      <li title="How To Set Up Apache Virtual Hosts on Ubuntu 18.04 [Quickstart]">
+       <a class="panel" href="/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04-quickstart">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Set Up Apache Virtual Hosts on Ubuntu 18.04 [Quickstart]
+         </h5>
+         <p data-clamp="">
+          This tutorial will guide you through setting up multiple domains and websites using Apache virtual hosts on an Ubuntu 18.04 server. During this process, you’ll learn how to serve different content to different visitors depending on which domains they are requesting. For a…
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="Recommended Steps To Harden Apache HTTP on FreeBSD 12.0">
+       <a class="panel" href="/community/tutorials/recommended-steps-to-harden-apache-http-on-freebsd-12-0">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          Recommended Steps To Harden Apache HTTP on FreeBSD 12.0
+         </h5>
+         <p data-clamp="">
+          Although the default installation of an Apache HTTP server is already safe to use, its configuration can be substantially improved with a few modifications. In this tutorial you'll implement some recommended steps to reduce how much information on your server is exposed. You will verify the directory listings and disable indexing to check the access to resources. You'll also change the default value of the timeout directive to help mitigate Denial of Service type of attacks.
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Set Up Apache Virtual Hosts on Ubuntu 18.04">
+       <a class="panel" href="/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-18-04">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Set Up Apache Virtual Hosts on Ubuntu 18.04
+         </h5>
+         <p data-clamp="">
+          This tutorial will guide you through setting up multiple domains and websites using Apache virtual hosts on an Ubuntu 18.04 server. During this process, you’ll learn how to serve different content to different visitors depending on which domains they are requesting.
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Set Up SSH Keys on CentOS 8">
+       <a class="panel" href="/community/tutorials/how-to-set-up-ssh-keys-on-centos-8">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Set Up SSH Keys on CentOS 8
+         </h5>
+         <p data-clamp="">
+          SSH, or secure shell, is an encrypted protocol used to administer and communicate with servers. When working with a CentOS server, chances are you will spend most of your time in a terminal session connected to your server through SSH.  In this guide, we'll focus on setting up SSH keys for a CentOS 8 server. SSH keys provide a straightforward, secure method of logging into your server and are recommended for all users.
+         </p>
+        </div>
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="looking-for-an-answer">
+    <div class="section-content">
+     <h4>
+      Still looking for an answer?
+     </h4>
+     <div class="lfa--actions">
+      <a class="lfa--action-box" href="/community/questions/new?tags=Getting+Started%2CInitial+Server+Setup%2CSecurity%2CUbuntu%2CUbuntu+18.04">
+       Ask a question
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="content-comments">
+   <div class="section-content">
+    <div class="tutorial commentable" id="tutorial_2610">
+     <div class="comments-header">
+      <h4 class="comments-count">
+       <span>
+        32 Comments
+       </span>
+      </h4>
+     </div>
+     <div class="comments">
+      <ul class="response-list">
+       <a class="js-click-on-load hidden" data-remote="true" href="/community/tutorials/initial-server-setup-with-ubuntu-18-04/comments" rel="nofollow">
+        Load
+       </a>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="creative-commons">
+   <a class="creative-commons-image" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" rel="license" src="/assets/community/creativecommons-08b32a9279fcd47fcd78ac6a26331389.png"/>
+   </a>
+   <div class="license-text">
+    This work is licensed under a
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+    </a>
+    .
+   </div>
+  </div>
+  <div class="modal fade mini-modal" id="sign-in-modal" style="display: none;">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h1>
+       Almost there!
+      </h1>
+     </div>
+     <div class="modal-body">
+      <div class="sign-in-message">
+       Sign into your account, or create a new one, to start interacting.
+      </div>
+      <div class="sign-in-modal-actions">
+       <a class="sign-in-link button blue-button" data-default-url="/community/auth/digitalocean" href="/community/auth/digitalocean">
+        Sign In
+       </a>
+       <a class="sign-up-link button blue-button" data-default-url="/community/auth/digitalocean?display=sessionless+register" href="/community/auth/digitalocean?display=sessionless+register">
+        Sign Up
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

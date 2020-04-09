@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html class="html__responsive" itemscope="" itemtype="http://schema.org/QAPage">
+ <head>
+  <title>
+   How to compare a list of lists/sets in python? - Stack Overflow
+  </title>
+  <link href="https://stackoverflow.com/questions/6105777/how-to-compare-a-list-of-lists-sets-in-python" rel="canonical"/>
+  <meta content="https://stackoverflow.com/questions/6105777/how-to-compare-a-list-of-lists-sets-in-python" property="og:url"/>
+  <meta content="How to compare a list of lists/sets in python?" itemprop="name" name="twitter:title" property="og:title"/>
+  <meta content="What is the easiest way to compare the 2 lists/sets and output the differences? Are there any built in functions that will help me compare nested lists/sets?  Inputs:  First_list = [['Test.doc', '1..." itemprop="description" name="twitter:description" property="og:description"/>
+  <link href="https://cdn.sstatic.net/Shared/stacks.css?v=f6dc2e55f461" rel="stylesheet" type="text/css"/>
+  <link href="https://cdn.sstatic.net/Sites/stackoverflow/primary.css?v=eb942de8ee32" rel="stylesheet" type="text/css"/>
+  <link href="/feeds/question/6105777" rel="alternate" title="Feed for question 'How to compare a list of lists/sets in python?'" type="application/atom+xml"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/6105777/how-to-compare-a-list-of-lists-sets-in-python" name="twitter:app:url:iphone"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/6105777/how-to-compare-a-list-of-lists-sets-in-python" name="twitter:app:url:ipad"/>
+  <meta content="http://stackoverflow.com/questions/6105777/how-to-compare-a-list-of-lists-sets-in-python" name="twitter:app:url:googleplay"/>
+ </head>
+ <body class="question-page unified-theme">
+  <div aria-hidden="false" class="p8 ff-sans ps-fixed b0 l0 r0 z-banner" id="js-gdpr-consent-banner" role="banner" style="background-color: #3b4045; color: white;">
+   <div aria-describedby="notice-message" class="wmx8 mx-auto grid grid__center" role="alertdialog">
+    <div aria-label="notice-message" class="grid--cell mr12">
+     <p class="mb0 lh-lg">
+      By using our site, you acknowledge that you have read and understand our  ,  , and our  .
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="left-sidebar js-pinned-left-sidebar ps-relative" data-is-here-when="md lg" id="left-sidebar">
+    <div aria-hidden="true" class="s-popover w-auto p16" id="popover-teams-create-cta" role="menu">
+     <div class="ps-relative overflow-hidden">
+      <p class="mb2">
+       <strong>
+        Teams
+       </strong>
+      </p>
+      <p class="mb16 fs-caption fc-medium">
+       Q&amp;A for Work
+      </p>
+      <p class="mb8 fs-caption fc-medium">
+       Stack Overflow for Teams is a private, secure spot for you and your coworkers to find and share information.
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="snippet-hidden" id="content">
+    <div itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+     <div class="inner-content clearfix">
+      <div class="grid sm:fd-column" id="question-header">
+       <h1 class="grid--cell fs-headline1 fl1 ow-break-word mb8" itemprop="name">
+        <a class="question-hyperlink" href="/questions/6105777/how-to-compare-a-list-of-lists-sets-in-python">
+         How to compare a list of lists/sets in python?
+        </a>
+       </h1>
+      </div>
+      <div class="grid fw-wrap pb8 mb16 bb bc-black-2">
+       <div class="grid--cell ws-nowrap mr16 mb8" title="2011-05-24 04:46:59Z">
+        <time datetime="2011-05-24T04:46:59" itemprop="dateCreated">
+         8 years, 9 months ago
+        </time>
+       </div>
+       <div class="grid--cell ws-nowrap mr16 mb8">
+        <a class="s-link s-link__inherit" href="?lastactivity" title="2018-10-03 18:27:02Z">
+         1 year, 5 months ago
+        </a>
+       </div>
+       <div class="grid--cell ws-nowrap mb8" title="Viewed 50,720 times">
+        51k times
+       </div>
+      </div>
+      <div aria-label="question and answers" id="mainbar" role="main">
+       <div class="question" data-questionid="6105777" id="question">
+        <div class="post-layout">
+         <div class="votecell post-layout--left">
+          <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="6105777">
+           <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="24" itemprop="upvoteCount">
+            24
+           </div>
+          </div>
+         </div>
+         <div class="postcell post-layout--right">
+          <div class="post-text" itemprop="text">
+           <p>
+            What is the easiest way to compare the 2 lists/sets and output the differences? Are there any built in functions that will help me compare nested lists/sets?
+           </p>
+           <p>
+            Inputs:
+           </p>
+           <pre><code>First_list = [['Test.doc', '1a1a1a', 1111], ['Test2.doc', '2b2b2b', 2222], ['Test3.doc', '3c3c3c', 3333] ] Secnd_list = [['Test.doc', '1a1a1a', 1111], ['Test2.doc', '2b2b2b', 2222], ['Test3.doc', '8p8p8p', 9999], ['Test4.doc', '4d4d4d', 4444]] </code></pre>
+           <p>
+            Expected Output:
+           </p>
+           <pre><code>Differences = [['Test3.doc', '3c3c3c', 3333], ['Test3.doc', '8p8p8p', 9999], ['Test4.doc', '4d4d4d', 4444]] </code></pre>
+          </div>
+          <div class="post-taglist grid gs4 gsy fd-column">
+           <div class="grid ps-relative d-block">
+            <a class="post-tag" href="/questions/tagged/list" rel="tag" title="show questions tagged 'list'">
+             list
+            </a>
+            <a class="post-tag" href="/questions/tagged/compare" rel="tag" title="show questions tagged 'compare'">
+             compare
+            </a>
+            <a class="post-tag" href="/questions/tagged/set" rel="tag" title="show questions tagged 'set'">
+             set
+            </a>
+            <a class="post-tag" href="/questions/tagged/tuples" rel="tag" title="show questions tagged 'tuples'">
+             tuples
+            </a>
+           </div>
+          </div>
+          <div class="mb0">
+           <div class="mt16 grid gs8 gsy fw-wrap jc-end ai-start pt4">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 1 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="1" data-se-share-sheet-post-type="question" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this question" href="/q/6105777" itemprop="url" rel="nofollow" title="short permalink to this question">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 1 })" href="/posts/6105777/edit" title="">
+               improve this question
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 1 })" href="/posts/6105777/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2017-05-19 08:09:12Z">
+                 May 19 '17 at 8:09
+                </span>
+               </a>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/3336968/fredtantini">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/kvcNB.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details">
+               <a href="/users/3336968/fredtantini">
+                fredtantini
+               </a>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 11,259">
+                 11.3k
+                </span>
+                <span aria-hidden="true" title="6 gold badges">
+                 <span class="badgecount">
+                  6
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 6 gold badges
+                </span>
+                <span aria-hidden="true" title="37 silver badges">
+                 <span class="badgecount">
+                  37
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 37 silver badges
+                </span>
+                <span aria-hidden="true" title="46 bronze badges">
+                 <span class="badgecount">
+                  46
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 46 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature owner grid--cell">
+             <div class="user-info">
+              <div class="user-action-time">
+               asked
+               <span class="relativetime" title="2011-05-24 04:46:59Z">
+                May 24 '11 at 4:46
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/760440/tang">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/c7cafb73e3bad5f6b8ece9e7d5f9580c?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/760440/tang">
+                tang
+               </a>
+               <span class="d-none" itemprop="name">
+                tang
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 263
+                </span>
+                <span class="v-visible-sr">
+                 1 gold badge
+                </span>
+                <span aria-hidden="true" title="2 silver badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 silver badges
+                </span>
+                <span aria-hidden="true" title="5 bronze badges">
+                 <span class="badgecount">
+                  5
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 5 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="answers">
+        <div id="answers-header">
+         <div class="subheader answers-subheader">
+          <h2 data-answercount="7">
+           7 Answers
+           <span itemprop="answerCount" style="display:none;">
+            7
+           </span>
+          </h2>
+          <div>
+           <div id="tabs">
+            <a data-nav-xhref="" data-shortcut="A" data-value="active" href="/questions/6105777/how-to-compare-a-list-of-lists-sets-in-python?answertab=active#tab-top" title="Answers with the latest activity first">
+             active
+            </a>
+            <a data-nav-xhref="" data-shortcut="O" data-value="oldest" href="/questions/6105777/how-to-compare-a-list-of-lists-sets-in-python?answertab=oldest#tab-top" title="Answers in the order they were provided">
+             oldest
+            </a>
+            <a class="youarehere is-selected" data-nav-xhref="" data-shortcut="V" data-value="votes" href="/questions/6105777/how-to-compare-a-list-of-lists-sets-in-python?answertab=votes#tab-top" title="Answers with the highest score first">
+             votes
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer accepted-answer" data-answerid="6105826" id="answer-6105826" itemprop="acceptedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="6105826">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="33" itemprop="upvoteCount">
+             33
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             So you want the difference between two lists of items.
+            </p>
+            <pre><code>first_list = [['Test.doc', '1a1a1a', 1111], ['Test2.doc', '2b2b2b', 2222], ['Test3.doc', '3c3c3c', 3333]] secnd_list = [['Test.doc', '1a1a1a', 1111], ['Test2.doc', '2b2b2b', 2222], ['Test3.doc', '8p8p8p', 9999], ['Test4.doc', '4d4d4d', 4444]] </code></pre>
+            <p>
+             First I'd turn each list of lists into a list of tuples, so as tuples are hashable (lists are not) so you can convert your list of tuples into a set of tuples:
+            </p>
+            <pre><code>first_tuple_list = [tuple(lst) for lst in first_list] secnd_tuple_list = [tuple(lst) for lst in secnd_list] </code></pre>
+            <p>
+             Then you can make sets:
+            </p>
+            <pre><code>first_set = set(first_tuple_list) secnd_set = set(secnd_tuple_list) </code></pre>
+            <p>
+             EDIT (suggested by sdolan): You could have done the last two steps for each list in a one-liner:
+            </p>
+            <pre><code>first_set = set(map(tuple, first_list)) secnd_set = set(map(tuple, secnd_list)) </code></pre>
+            <p>
+             Note:
+             <code>
+              map
+             </code>
+             is a functional programming command that applies the function in the first argument (in this case the
+             <code>
+              tuple
+             </code>
+             function) to each item in the second argument (which in our case is a list of lists).
+            </p>
+            <p>
+             and find the symmetric difference between the sets:
+            </p>
+            <pre><code>&gt;&gt;&gt; first_set.symmetric_difference(secnd_set) set([('Test3.doc', '3c3c3c', 3333), ('Test3.doc', '8p8p8p', 9999), ('Test4.doc', '4d4d4d', 4444)]) </code></pre>
+            <p>
+             Note
+             <code>
+              first_set ^ secnd_set
+             </code>
+             is equivalent to
+             <code>
+              symmetric_difference
+             </code>
+             .
+            </p>
+            <p>
+             Also if you don't want to use sets (e.g., using python 2.2), its quite straightforward to do.  E.g., with list comprehensions:
+            </p>
+            <pre><code>&gt;&gt;&gt; [x for x in first_list if x not in secnd_list] + [x for x in secnd_list if x not in first_list] [['Test3.doc', '3c3c3c', 3333], ['Test3.doc', '8p8p8p', 9999], ['Test4.doc', '4d4d4d', 4444]] </code></pre>
+            <p>
+             or with the functional
+             <code>
+              filter
+             </code>
+             command and
+             <code>
+              lambda
+             </code>
+             functions.  (You have to test both ways and combine).
+            </p>
+            <pre><code>&gt;&gt;&gt; filter(lambda x: x not in secnd_list, first_list) + filter(lambda x: x not in first_list, secnd_list)  [['Test3.doc', '3c3c3c', 3333], ['Test3.doc', '8p8p8p', 9999], ['Test4.doc', '4d4d4d', 4444]] </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/6105826" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/6105826/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/6105826/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2011-05-24 14:38:18Z">
+                 May 24 '11 at 14:38
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2011-05-24 04:54:36Z">
+                May 24 '11 at 4:54
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/457571/dr-jimbob">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/2318229ef6310b03ab828bff43d2ad66?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/457571/dr-jimbob">
+                dr jimbob
+               </a>
+               <span class="d-none" itemprop="name">
+                dr jimbob
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 14,411">
+                 14.4k
+                </span>
+                <span class="v-visible-sr">
+                 3 gold badges
+                </span>
+                <span aria-hidden="true" title="50 silver badges">
+                 <span class="badgecount">
+                  50
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 50 silver badges
+                </span>
+                <span aria-hidden="true" title="72 bronze badges">
+                 <span class="badgecount">
+                  72
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 72 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="6105826" id="comments-6105826">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="7080351" id="comment-7080351">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 3
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 +1: But I think
+                 <code>
+                  map(tuple, first_list)
+                 </code>
+                 is cleaner for the tuple conversion.  Also,
+                 <code>
+                  symmetric_difference
+                 </code>
+                 doesn't need a set for it's first argument, so you can skip the set conversion in
+                 <code>
+                  secnd_set
+                 </code>
+                 (though it may do just that under the covers).
+                </span>
+                –
+                <a class="comment-user" href="/users/186868/sam-dolan" title="27,662 reputation">
+                 Sam Dolan
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2011-05-24 05:18:10Z">
+                  May 24 '11 at 5:18
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="7086344" id="comment-7086344">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @sdolan: I agree map is cleaner.  Also could have done something like
+                 <code>
+                  first_set = set(map(tuple, first_list))
+                 </code>
+                 skipping the intermediate tuple list.  But I was trying to be pedagogical as tang seemed new to python (e.g., not putting quotes in his string), and personally I think list comprehension is more readable to novices than the more functional
+                 <code>
+                  map
+                 </code>
+                 .
+                </span>
+                –
+                <a class="comment-user" href="/users/457571/dr-jimbob" title="14,411 reputation">
+                 dr jimbob
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2011-05-24 12:27:43Z">
+                  May 24 '11 at 12:27
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="22566533" id="comment-22566533">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Hi! If you are online, can you give me an idea how to compare list of list(if unordered), I just linked your
+                 <a href="http://stackoverflow.com/questions/15855792/how-do-i-compare-2d-lists-for-equality-in-python/15855811#15855811">
+                  answer my one here
+                 </a>
+                 I am learning Python. Using
+                 <code>
+                  sort()
+                 </code>
+                 I can do but that changes original list :( ..
+                </span>
+                –
+                <a class="comment-user" href="/users/1673391/grijesh-chauhan" title="49,482 reputation">
+                 Grijesh Chauhan
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2013-04-06 21:18:15Z">
+                  Apr 6 '13 at 21:18
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="6105850" id="answer-6105850" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="6105850">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="3" itemprop="upvoteCount">
+             3
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Not sure if there is a nice function for this, but the "manual" way to do it isn't difficult:
+            </p>
+            <pre><code>differences = []  for list in firstList: if list not in secondList: differences.append(list) </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/6105850" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/6105850/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2011-05-24 04:58:06Z">
+                May 24 '11 at 4:58
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/752601/sam-magura">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/XIVUo.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/752601/sam-magura">
+                Sam Magura
+               </a>
+               <span class="d-none" itemprop="name">
+                Sam Magura
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 604
+                </span>
+                <span aria-hidden="true" title="6 silver badges">
+                 <span class="badgecount">
+                  6
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 6 silver badges
+                </span>
+                <span aria-hidden="true" title="9 bronze badges">
+                 <span class="badgecount">
+                  9
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 9 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="6105850" id="comments-6105850">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="7088749" id="comment-7088749">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 1
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Note that this wouldn't find lists that are in
+                 <code>
+                  secondList
+                 </code>
+                 , but not in
+                 <code>
+                  firstList
+                 </code>
+                 ; though you could always just check both ways like:
+                 <code>
+                  [x for x in first_list if x not in secnd_list] + [x for x in secnd_list if x not in first_list]
+                 </code>
+                 .  Also its a good habit not to use the keyword/type/function
+                 <code>
+                  list
+                 </code>
+                 as a name of a variable.  Even after you are out of the for loop, you won't be able to use the list keyword.
+                </span>
+                –
+                <a class="comment-user" href="/users/457571/dr-jimbob" title="14,411 reputation">
+                 dr jimbob
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2011-05-24 14:32:03Z">
+                  May 24 '11 at 14:32
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="6105867" id="answer-6105867" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="6105867">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="3" itemprop="upvoteCount">
+             3
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <pre><code>&gt;&gt;&gt; First_list = [['Test.doc', '1a1a1a', '1111'], ['Test2.doc', '2b2b2b', '2222'], ['Test3.doc', '3c3c3c', '3333']] &gt;&gt;&gt; Secnd_list = [['Test.doc', '1a1a1a', '1111'], ['Test2.doc', '2b2b2b', '2222'], ['Test3.doc', '3c3c3c', '3333'], ['Test4.doc', '4d4d4d', '4444']]   &gt;&gt;&gt; z = [tuple(y) for y in First_list] &gt;&gt;&gt; z [('Test.doc', '1a1a1a', '1111'), ('Test2.doc', '2b2b2b', '2222'), ('Test3.doc', '3c3c3c', '3333')] &gt;&gt;&gt; x = [tuple(y) for y in Secnd_list] &gt;&gt;&gt; x [('Test.doc', '1a1a1a', '1111'), ('Test2.doc', '2b2b2b', '2222'), ('Test3.doc', '3c3c3c', '3333'), ('Test4.doc', '4d4d4d', '4444')]   &gt;&gt;&gt; set(x) - set(z) set([('Test4.doc', '4d4d4d', '4444')]) </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/6105867" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/6105867/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2011-05-24 05:00:14Z">
+                May 24 '11 at 5:00
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/432745/pyfunc">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/61d5932d030d57eb9948756af74a357f?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/432745/pyfunc">
+                pyfunc
+               </a>
+               <span class="d-none" itemprop="name">
+                pyfunc
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 56,491">
+                 56.5k
+                </span>
+                <span aria-hidden="true" title="14 gold badges">
+                 <span class="badgecount">
+                  14
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 14 gold badges
+                </span>
+                <span aria-hidden="true" title="133 silver badges">
+                 <span class="badgecount">
+                  133
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 133 silver badges
+                </span>
+                <span aria-hidden="true" title="130 bronze badges">
+                 <span class="badgecount">
+                  130
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 130 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="6105867" id="comments-6105867">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="7089071" id="comment-7089071">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 1
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 +1 Note
+                 <code>
+                  set1 - set2
+                 </code>
+                 corresponds to difference (elements in set1 but not in set2), where I think he wanted the symmetric difference (
+                 <code>
+                  set1 ^ set2
+                 </code>
+                 ) to find elements in
+                 <code>
+                  set1
+                 </code>
+                 or
+                 <code>
+                  set2
+                 </code>
+                 , but not both.  As he didn't specify which set to subtract elements from.
+                </span>
+                –
+                <a class="comment-user" href="/users/457571/dr-jimbob" title="14,411 reputation">
+                 dr jimbob
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2011-05-24 14:47:15Z">
+                  May 24 '11 at 14:47
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="6105842" id="answer-6105842" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="6105842">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             i guess you'll have to convert your lists to sets:
+            </p>
+            <pre><code>&gt;&gt;&gt; a = {('a', 'b'), ('c', 'd'), ('e', 'f')} &gt;&gt;&gt; b = {('a', 'b'), ('h', 'g')} &gt;&gt;&gt; a.symmetric_difference(b) {('e', 'f'), ('h', 'g'), ('c', 'd')} </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/6105842" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/6105842/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2011-05-24 04:57:01Z">
+                May 24 '11 at 4:57
+               </span>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               user126284
+               <span class="d-none" itemprop="name">
+                user126284
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="52633523" id="answer-52633523" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="52633523">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Old question but here's a solution I use for returning unique elements not found in both lists.
+            </p>
+            <p>
+             I use this for comparing the values returned from a database and the values generated by a directory crawler package.  I didn't like the other solutions I found because many of them could not dynamically handle both flat lists and nested lists.
+            </p>
+            <pre class="lang-python prettyprint-override"><code>def differentiate(x, y): """ Retrieve a unique of list of elements that do not exist in both x and y. Capable of parsing one-dimensional (flat) and two-dimensional (lists of lists) lists.  :param x: list #1 :param y: list #2 :return: list of unique values """ # Validate both lists, confirm either are empty if len(x) == 0 and len(y) &gt; 0: return y  # All y values are unique if x is empty elif len(y) == 0 and len(x) &gt; 0: return x  # All x values are unique if y is empty  # Get the input type to convert back to before return try: input_type = type(x[0]) except IndexError: input_type = type(y[0])  # Dealing with a 2D dataset (list of lists) try: # Immutable and Unique - Convert list of tuples into set of tuples first_set = set(map(tuple, x)) secnd_set = set(map(tuple, y))  # Dealing with a 1D dataset (list of items) except TypeError: # Unique values only first_set = set(x) secnd_set = set(y)  # Determine which list is longest longest = first_set if len(first_set) &gt; len(secnd_set) else secnd_set shortest = secnd_set if len(first_set) &gt; len(secnd_set) else first_set  # Generate set of non-shared values and return list of values in original type return [input_type(i) for i in {i for i in longest if i not in shortest}] </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/52633523" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/52633523/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2018-10-03 18:27:02Z">
+                Oct 3 '18 at 18:27
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/7926424/stephen-neal">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://graph.facebook.com/10209277694525658/picture?type=large" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/7926424/stephen-neal">
+                Stephen Neal
+               </a>
+               <span class="d-none" itemprop="name">
+                Stephen Neal
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 21
+                </span>
+                <span class="v-visible-sr">
+                 1 bronze badge
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="6105816" id="answer-6105816" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             <a href="http://docs.python.org/library/difflib.html" rel="nofollow">
+              http://docs.python.org/library/difflib.html
+             </a>
+             is a good starting place for what you are looking for.
+            </p>
+            <p>
+             If you apply it recursively to the deltas, you should be able to handle nested data structures.  But it will take some work.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/6105816" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/6105816/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2011-05-24 04:53:45Z">
+                May 24 '11 at 4:53
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/585411/btilly">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/xvEpe.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/585411/btilly">
+                btilly
+               </a>
+               <span class="d-none" itemprop="name">
+                btilly
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 30,475">
+                 30.5k
+                </span>
+                <span class="v-visible-sr">
+                 3 gold badges
+                </span>
+                <span aria-hidden="true" title="43 silver badges">
+                 <span class="badgecount">
+                  43
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 43 silver badges
+                </span>
+                <span aria-hidden="true" title="59 bronze badges">
+                 <span class="badgecount">
+                  59
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 59 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="39764760" id="answer-39764760" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             By using set comprehensions, you can make it a one-liner. If you want:
+            </p>
+            <p>
+             to get a set of tuples, then:
+            </p>
+            <pre><code>Differences = {tuple(i) for i in First_list} ^ {tuple(i) for i in Secnd_list} </code></pre>
+            <p>
+             Or to get a list of tuples, then:
+            </p>
+            <pre><code>Differences = list({tuple(i) for i in First_list} ^ {tuple(i) for i in Secnd_list}) </code></pre>
+            <p>
+             Or to get a list of lists (if you really want), then:
+            </p>
+            <pre><code>Differences = [list(j) for j in {tuple(i) for i in First_list} ^ {tuple(i) for i in Secnd_list}] </code></pre>
+            <p>
+             PS: I read here:
+             <a href="https://stackoverflow.com/a/10973817/4900095">
+              https://stackoverflow.com/a/10973817/4900095
+             </a>
+             that map() function is not a pythonic way to do things.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/39764760" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/39764760/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/39764760/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2017-05-23 12:34:38Z">
+                 May 23 '17 at 12:34
+                </span>
+               </a>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/-1/community">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/a007be5a61f6aa8f3e85ae2fc18dd66e?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details">
+               <a href="/users/-1/community">
+                Community
+               </a>
+               <span class="mod-flair" title="moderator">
+                ♦
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 1
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2016-09-29 08:08:23Z">
+                Sep 29 '16 at 8:08
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/4900095/sukrit-gupta">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/5e885cba6c206e3a49a3bbfaf41d7efe?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/4900095/sukrit-gupta">
+                Sukrit Gupta
+               </a>
+               <span class="d-none" itemprop="name">
+                Sukrit Gupta
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 31
+                </span>
+                <span aria-hidden="true" title="2 bronze badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <aside aria-hidden="false" class="s-notice s-notice__info js-post-notice mb16" role="status">
+         <div class="grid fd-column fw-nowrap">
+          <div class="grid fw-nowrap">
+           <div class="grid--cell fl1 lh-lg">
+            <div class="grid--cell fl1 lh-lg">
+             <b>
+              <a href="/help/privileges/protect-questions">
+               Highly active question
+              </a>
+             </b>
+             . Earn 10 reputation in order to answer this question. The reputation requirement helps protect this question from spam and non-answer activity.
+            </div>
+           </div>
+          </div>
+         </div>
+        </aside>
+        <h2 class="bottom-notice" data-loc="1">
+         Not the answer you're looking for?                                Browse other questions tagged
+         <a class="post-tag" href="/questions/tagged/list" rel="tag" title="show questions tagged 'list'">
+          list
+         </a>
+         <a class="post-tag" href="/questions/tagged/compare" rel="tag" title="show questions tagged 'compare'">
+          compare
+         </a>
+         <a class="post-tag" href="/questions/tagged/set" rel="tag" title="show questions tagged 'set'">
+          set
+         </a>
+         <a class="post-tag" href="/questions/tagged/tuples" rel="tag" title="show questions tagged 'tuples'">
+          tuples
+         </a>
+         or
+         <a href="/questions/ask">
+          ask your own question
+         </a>
+         .
+        </h2>
+       </div>
+      </div>
+      <div aria-label="sidebar" class="show-votes" id="sidebar" role="complementary">
+       <div class="s-sidebarwidget s-sidebarwidget__yellow s-anchors s-anchors__grayscale mb16" data-tracker="cb=1">
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         Blog
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Blog","https://stackoverflow.blog/2020/03/05/a-modern-hello-world-program-needs-more-than-just-code/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 0 })" href="https://stackoverflow.blog/2020/03/05/a-modern-hello-world-program-needs-more-than-just-code/">
+            A modern ‘Hello, World’ program needs more than just code
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Blog","https://stackoverflow.blog/2020/03/06/the-overflow-12-plain-text/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 1 })" href="https://stackoverflow.blog/2020/03/06/the-overflow-12-plain-text/">
+            The Overflow #12: Plain text
+           </a>
+          </div>
+         </li>
+        </ul>
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         Featured on Meta
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 2 })" href="https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog">
+            The Q1 2020 Community Roadmap is on the Blog
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 3 })" href="https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing">
+            An Update On Creative Commons Licensing
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344586/our-commitment-to-responding-to-meta-and-moderators",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 4 })" href="https://meta.stackexchange.com/questions/344586/our-commitment-to-responding-to-meta-and-moderators">
+            Our Commitment to Responding to Meta and Moderators
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 5 })" href="https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work">
+            How does the Triage queue work?
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/394409/open-source-advertising-1h-2020",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 6 })" href="https://meta.stackoverflow.com/questions/394409/open-source-advertising-1h-2020">
+            Open Source Advertising — 1H 2020
+           </a>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="s-sidebarwidget mb16 module">
+        <div class="s-sidebarwidget--header grid ai-center">
+         <a class="js-chat-ad-link" href="https://chat.stackoverflow.com">
+          Visit chat
+         </a>
+        </div>
+       </div>
+       <div class="module sidebar-linked">
+        <h4 id="h-linked">
+         Linked
+        </h4>
+        <div class="linked" data-tracker="lq=1">
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 6105777, target_question_id: 3462143, position: 0 })">
+          <a href="/q/3462143" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            774
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3462143/get-difference-between-two-lists?noredirect=1">
+           Get difference between two lists
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 6105777, target_question_id: 10973766, position: 1 })">
+          <a href="/q/10973766" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            305
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/10973766/understanding-the-map-function?noredirect=1">
+           Understanding the map function
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 6105777, target_question_id: 15855792, position: 2 })">
+          <a href="/q/15855792" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            8
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/15855792/how-do-i-compare-2d-lists-for-equality-in-python?noredirect=1">
+           How do I compare 2D lists for equality in Python?
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 6105777, target_question_id: 43050701, position: 3 })">
+          <a href="/q/43050701" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            0
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/43050701/python-comparison-of-list-of-lists-with-approximating-floats?noredirect=1">
+           Python - Comparison of list of lists with approximating floats
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 6105777, target_question_id: 30267069, position: 4 })">
+          <a href="/q/30267069" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            -1
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/30267069/python-2-7-removing-duplicate-elements-in-a-list-of-lists-compared-to-another-li?noredirect=1">
+           Python 2.7 Removing Duplicate Elements in a List of Lists compared to another List of Lists
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 6105777, target_question_id: 37512360, position: 5 })">
+          <a href="/q/37512360" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            1
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/37512360/fastest-method-for-comparing-ranges-of-multidimensional-lists?noredirect=1">
+           Fastest method for comparing ranges of multidimensional lists
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 6105777, target_question_id: 47191391, position: 6 })">
+          <a href="/q/47191391" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            0
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/47191391/fastest-way-to-compare-array-of-array?noredirect=1">
+           Fastest way to compare Array-of-array?
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module sidebar-related">
+        <h4 id="h-related">
+         Related
+        </h4>
+        <div class="related js-gps-related-questions" data-tracker="rq=1">
+         <div class="spacer">
+          <a href="/q/53513" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            3234
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/53513/how-do-i-check-if-a-list-is-empty">
+           How do I check if a list is empty?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/89228" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            4745
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/89228/calling-an-external-command-from-python">
+           Calling an external command from Python
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/100003" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            5579
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/100003/what-are-metaclasses-in-python">
+           What are metaclasses in Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/176918" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            3029
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/176918/finding-the-index-of-an-item-in-a-list">
+           Finding the index of an item in a list
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/252703" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            3118
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/252703/what-is-the-difference-between-pythons-list-methods-append-and-extend">
+           What is the difference between Python's list methods append and extend?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/394809" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            5837
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/394809/does-python-have-a-ternary-conditional-operator">
+           Does Python have a ternary conditional operator?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/952914" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            3175
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/952914/how-to-make-a-flat-list-out-of-list-of-lists">
+           How to make a flat list out of list of lists?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/1720421" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2403
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/1720421/how-do-i-concatenate-two-lists-in-python">
+           How do I concatenate two lists in Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/2612802" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2437
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/2612802/how-to-clone-or-copy-a-list">
+           How to clone or copy a list?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/3207219" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes extra-large">
+            3473
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3207219/how-do-i-list-all-files-of-a-directory">
+           How do I list all files of a directory?
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module tex2jax_ignore" id="hot-network-questions">
+        <h4>
+         <a class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })" href="https://stackexchange.com/questions?tab=hot">
+          Hot Network Questions
+         </a>
+        </h4>
+        <ul>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:514 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://astronomy.stackexchange.com/questions/35431/is-it-dark-inside-the-sun">
+           Is it dark inside the Sun?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/200650/bad-factorial-joke">
+           Bad factorial joke
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://mechanics.stackexchange.com/questions/74924/overheats-only-when-running-at-low-rpm">
+           Overheats only when running at low RPM
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://aviation.stackexchange.com/questions/75159/what-is-this-squawk-7777-target-at-an-altitude-of-62-700-over-germany">
+           What is this squawk 7777 target at an altitude of 62,700' over Germany?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://academia.stackexchange.com/questions/145139/i-drunkenly-told-a-professor-something-fundamentally-wrong-about-a-friends-thes">
+           I drunkenly told a professor something fundamentally wrong about a friends' thesis work. Should I clarify and/or apologize?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://tex.stackexchange.com/questions/531740/how-to-draw-cylinder-and-take-a-point-its-surface-with-tikz">
+           How to draw cylinder and take a point its surface with Tikz?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://money.stackexchange.com/questions/121314/re-purchasing-a-stock-at-a-loss-reiras">
+           Re-purchasing a stock at a loss. Re:IRA's
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://physics.stackexchange.com/questions/535132/in-which-direction-would-gravitational-waves-be-emitted-when-two-black-holes-col">
+           In which direction would gravitational waves be emitted when two black holes colide?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://tex.stackexchange.com/questions/531647/how-to-insert-a-number-between-columns-in-latex-table">
+           How to insert a number between columns in latex table?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://puzzling.stackexchange.com/questions/94683/one-has-an-end-the-other-has-both">
+           One has an end; the other has both
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://mathoverflow.net/questions/354464/schemes-having-same-reduced-underlying-space-and-same-cotangent-sheaf-are-isomor">
+           schemes having same reduced underlying space and same cotangent sheaf are isomorphic?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:694 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://quantumcomputing.stackexchange.com/questions/10110/negative-of-a-qubit-state">
+           Negative of a qubit state
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:118 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://apple.stackexchange.com/questions/383878/ipad-keyboard-shortcut-to-show-keyboard-shortcuts">
+           iPad Keyboard shortcut to show keyboard shortcuts
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://bicycles.stackexchange.com/questions/66621/bag-for-holding-valuables-on-bike-while-parked">
+           Bag for holding valuables on bike while parked?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://worldbuilding.stackexchange.com/questions/170579/how-do-you-send-out-sos-in-space-if-there-is-no-absolute-coordinate">
+           How do you send out SOS in space if there is no absolute coordinate?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:244 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://sqa.stackexchange.com/questions/42865/is-it-important-to-know-manual-testing-before-learning-test-automation">
+           Is it important to know manual testing before learning test automation?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:166 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://writing.stackexchange.com/questions/50410/repeated-use-of-short-sentences">
+           Repeated Use of Short Sentences
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/200744/the-sbeve-challenge">
+           The SBEVE Challenge
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://history.stackexchange.com/questions/57131/are-there-incidents-of-ronin-travelling-outside-japan-as-soldiers-of-fortune">
+           Are there incidents of ronin travelling outside Japan as soldiers of fortune?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://math.stackexchange.com/questions/3573878/can-a-closed-interval-be-an-open-set-in-a-topological-space">
+           Can a closed interval be an open set in a topological space?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://politics.stackexchange.com/questions/50814/has-a-sitting-us-presidents-ever-lost-a-primary">
+           Has a sitting US presidents ever lost a primary?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://ell.stackexchange.com/questions/239729/usage-of-whose-in-a-sentence">
+           Usage of "whose" in a sentence
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:599 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://vi.stackexchange.com/questions/23135/auto-back-indent-word-else-in-if-else-statement-in-vim">
+           Auto back-indent word 'else' in if/else statement in Vim
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://electronics.stackexchange.com/questions/485068/need-help-how-to-disconnect-this-pictured-connector-inside-a-tablet-computer">
+           Need help how to disconnect this (pictured) connector inside a tablet computer
+          </a>
+         </li>
+        </ul>
+        <a class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })" href="#">
+         more hot questions
+        </a>
+       </div>
+       <div class="js-feed-link" id="feed-link">
+        <a href="/feeds/question/6105777" title="Feed of this question and its answers">
+         Question feed
+        </a>
+       </div>
+       <aside aria-describedby="feed-modal-description" aria-hidden="true" aria-labelledby="feed-modal-title" class="s-modal js-feed-link-modal" role="dialog" tabindex="-1">
+        <div class="s-modal--dialog js-modal-dialog wmx4" data-controller="se-draggable" role="document">
+         <h1 class="s-modal--header fw-bold js-first-tabbable" data-target="se-draggable.handle" id="feed-modal-title" tabindex="0">
+          Subscribe to RSS
+         </h1>
+         <div class="grid gs4 gsy fd-column">
+          <div class="grid--cell">
+           <label class="d-block s-label c-default" for="feed-url">
+            Question feed
+            <p class="s-description mt2" id="feed-modal-description">
+             To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+            </p>
+           </label>
+          </div>
+          <div class="grid ps-relative">
+           <input class="s-input" id="feed-url" name="feed-url" readonly="readonly" type="text" value="https://stackoverflow.com/feeds/question/6105777"/>
+          </div>
+         </div>
+        </div>
+       </aside>
+      </div>
+     </div>
+     <div id="prettify-lang" style="display:none">
+      lang-py
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

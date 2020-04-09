@@ -1,0 +1,3559 @@
+<!DOCTYPE html>
+<html class="html__responsive" itemscope="" itemtype="http://schema.org/QAPage">
+ <head>
+  <title>
+   python - How to check if type of a variable is string? - Stack Overflow
+  </title>
+  <link href="https://stackoverflow.com/questions/4843173/how-to-check-if-type-of-a-variable-is-string" rel="canonical"/>
+  <meta content="https://stackoverflow.com/questions/4843173/how-to-check-if-type-of-a-variable-is-string" property="og:url"/>
+  <meta content="How to check if type of a variable is string?" itemprop="name" name="twitter:title" property="og:title"/>
+  <meta content="Is there a way to check if the type of a variable in python is string. like:  isinstance(x,int); for integer values?" itemprop="description" name="twitter:description" property="og:description"/>
+  <link href="https://cdn.sstatic.net/Shared/stacks.css?v=f6dc2e55f461" rel="stylesheet" type="text/css"/>
+  <link href="https://cdn.sstatic.net/Sites/stackoverflow/primary.css?v=eb942de8ee32" rel="stylesheet" type="text/css"/>
+  <link href="/feeds/question/4843173" rel="alternate" title="Feed for question 'How to check if type of a variable is string?'" type="application/atom+xml"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/4843173/how-to-check-if-type-of-a-variable-is-string" name="twitter:app:url:iphone"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/4843173/how-to-check-if-type-of-a-variable-is-string" name="twitter:app:url:ipad"/>
+  <meta content="http://stackoverflow.com/questions/4843173/how-to-check-if-type-of-a-variable-is-string" name="twitter:app:url:googleplay"/>
+ </head>
+ <body class="question-page unified-theme">
+  <div aria-hidden="false" class="p8 ff-sans ps-fixed b0 l0 r0 z-banner" id="js-gdpr-consent-banner" role="banner" style="background-color: #3b4045; color: white;">
+   <div aria-describedby="notice-message" class="wmx8 mx-auto grid grid__center" role="alertdialog">
+    <div aria-label="notice-message" class="grid--cell mr12">
+     <p class="mb0 lh-lg">
+      By using our site, you acknowledge that you have read and understand our  ,  , and our  .
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="left-sidebar js-pinned-left-sidebar ps-relative" data-is-here-when="md lg" id="left-sidebar">
+    <div aria-hidden="true" class="s-popover w-auto p16" id="popover-teams-create-cta" role="menu">
+     <div class="ps-relative overflow-hidden">
+      <p class="mb2">
+       <strong>
+        Teams
+       </strong>
+      </p>
+      <p class="mb16 fs-caption fc-medium">
+       Q&amp;A for Work
+      </p>
+      <p class="mb8 fs-caption fc-medium">
+       Stack Overflow for Teams is a private, secure spot for you and your coworkers to find and share information.
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="snippet-hidden" id="content">
+    <div itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+     <div class="inner-content clearfix">
+      <div class="grid sm:fd-column" id="question-header">
+       <h1 class="grid--cell fs-headline1 fl1 ow-break-word mb8" itemprop="name">
+        <a class="question-hyperlink" href="/questions/4843173/how-to-check-if-type-of-a-variable-is-string">
+         How to check if type of a variable is string?
+        </a>
+       </h1>
+      </div>
+      <div class="grid fw-wrap pb8 mb16 bb bc-black-2">
+       <div class="grid--cell ws-nowrap mr16 mb8" title="2011-01-30 13:32:19Z">
+        <time datetime="2011-01-30T13:32:19" itemprop="dateCreated">
+         9 years, 1 month ago
+        </time>
+       </div>
+       <div class="grid--cell ws-nowrap mr16 mb8">
+        <a class="s-link s-link__inherit" href="?lastactivity" title="2019-07-29 21:18:34Z">
+         7 months ago
+        </a>
+       </div>
+       <div class="grid--cell ws-nowrap mb8" title="Viewed 842,709 times">
+        843k times
+       </div>
+      </div>
+      <div aria-label="question and answers" id="mainbar" role="main">
+       <div class="question" data-questionid="4843173" id="question">
+        <div class="post-layout">
+         <div class="votecell post-layout--left">
+          <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="4843173">
+           <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="734" itemprop="upvoteCount">
+            734
+           </div>
+          </div>
+         </div>
+         <div class="postcell post-layout--right">
+          <div class="post-text" itemprop="text">
+           <p>
+            Is there a way to check if the type of a variable in python is string. like:
+           </p>
+           <pre><code>isinstance(x,int); </code></pre>
+           <p>
+            for integer values?
+           </p>
+          </div>
+          <div class="post-taglist grid gs4 gsy fd-column">
+           <div class="grid ps-relative d-block">
+            <a class="post-tag" href="/questions/tagged/string" rel="tag" title="show questions tagged 'string'">
+             string
+            </a>
+            <a class="post-tag" href="/questions/tagged/variables" rel="tag" title="show questions tagged 'variables'">
+             variables
+            </a>
+            <a class="post-tag" href="/questions/tagged/types" rel="tag" title="show questions tagged 'types'">
+             types
+            </a>
+           </div>
+          </div>
+          <div class="mb0">
+           <div class="mt16 grid gs8 gsy fw-wrap jc-end ai-start pt4">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 1 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="1" data-se-share-sheet-post-type="question" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this question" href="/q/4843173" itemprop="url" rel="nofollow" title="short permalink to this question">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 1 })" href="/posts/4843173/edit" title="">
+               improve this question
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 1 })" href="/posts/4843173/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2019-07-29 21:18:34Z">
+                 Jul 29 '19 at 21:18
+                </span>
+               </a>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/10967204/ncica">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/iPFcP.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details">
+               <a href="/users/10967204/ncica">
+                ncica
+               </a>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 5,455
+                </span>
+                <span class="v-visible-sr">
+                 1 gold badge
+                </span>
+                <span aria-hidden="true" title="11 silver badges">
+                 <span class="badgecount">
+                  11
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 11 silver badges
+                </span>
+                <span aria-hidden="true" title="28 bronze badges">
+                 <span class="badgecount">
+                  28
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 28 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature owner grid--cell">
+             <div class="user-info">
+              <div class="user-action-time">
+               asked
+               <span class="relativetime" title="2011-01-30 13:32:19Z">
+                Jan 30 '11 at 13:32
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/592450/c-pleaseupvote">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/6084acd42e6eacbd515ef2ca98160278?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/592450/c-pleaseupvote">
+                c_pleaseUpvote
+               </a>
+               <span class="d-none" itemprop="name">
+                c_pleaseUpvote
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 7,373
+                </span>
+                <span class="v-visible-sr">
+                 3 gold badges
+                </span>
+                <span aria-hidden="true" title="12 silver badges">
+                 <span class="badgecount">
+                  12
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 12 silver badges
+                </span>
+                <span aria-hidden="true" title="6 bronze badges">
+                 <span class="badgecount">
+                  6
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 6 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="post-layout--right">
+          <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="4843173" id="comments-4843173">
+           <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+            <li class="comment js-comment" data-comment-id="5377124" id="comment-5377124">
+             <div class="js-comment-actions comment-actions">
+              <div class="comment-score js-comment-edit-hide">
+               <span class="warm" title="number of 'useful comment' votes received">
+                10
+               </span>
+              </div>
+             </div>
+             <div class="comment-text js-comment-text-and-form">
+              <div class="comment-body js-comment-edit-hide">
+               <span class="comment-copy">
+                Required reading on isinstance if you are learning python
+                <a href="http://www.canonical.org/~kragen/isinstance/" rel="nofollow noreferrer">
+                 canonical.org/~kragen/isinstance
+                </a>
+                .
+               </span>
+               –
+               <a class="comment-user" href="/users/46375/whaley" title="15,048 reputation">
+                whaley
+               </a>
+               <span class="comment-date" dir="ltr">
+                <span class="relativetime-clean" title="2011-01-30 13:35:42Z">
+                 Jan 30 '11 at 13:35
+                </span>
+               </span>
+              </div>
+             </div>
+            </li>
+            <li class="comment js-comment" data-comment-id="56098554" id="comment-56098554">
+             <div class="comment-text js-comment-text-and-form">
+              <div class="comment-body js-comment-edit-hide">
+               <span class="comment-copy">
+                see
+                <a href="http://stackoverflow.com/a/1979107/1145750">
+                 stackoverflow.com/a/1979107/1145750
+                </a>
+               </span>
+               –
+               <a class="comment-user" href="/users/1145750/gary-gauh" title="3,317 reputation">
+                Gary Gauh
+               </a>
+               <span class="comment-date" dir="ltr">
+                <span class="relativetime-clean" title="2015-12-09 10:06:36Z">
+                 Dec 9 '15 at 10:06
+                </span>
+               </span>
+              </div>
+             </div>
+            </li>
+            <li class="comment js-comment" data-comment-id="103217873" id="comment-103217873">
+             <div class="comment-text js-comment-text-and-form">
+              <div class="comment-body js-comment-edit-hide">
+               <span class="comment-copy">
+                Be careful with ints since
+                <code>
+                 isinstance(True, int) is True
+                </code>
+                .
+               </span>
+               –
+               <a class="comment-user" href="/users/1529164/albert-tugushev" title="1,184 reputation">
+                Albert Tugushev
+               </a>
+               <span class="comment-date" dir="ltr">
+                <span class="relativetime-clean" title="2019-10-17 18:55:04Z">
+                 Oct 17 '19 at 18:55
+                </span>
+               </span>
+              </div>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="answers">
+        <div id="answers-header">
+         <div class="subheader answers-subheader">
+          <h2 data-answercount="20">
+           20 Answers
+           <span itemprop="answerCount" style="display:none;">
+            20
+           </span>
+          </h2>
+          <div>
+           <div id="tabs">
+            <a data-nav-xhref="" data-shortcut="A" data-value="active" href="/questions/4843173/how-to-check-if-type-of-a-variable-is-string?answertab=active#tab-top" title="Answers with the latest activity first">
+             active
+            </a>
+            <a data-nav-xhref="" data-shortcut="O" data-value="oldest" href="/questions/4843173/how-to-check-if-type-of-a-variable-is-string?answertab=oldest#tab-top" title="Answers in the order they were provided">
+             oldest
+            </a>
+            <a class="youarehere is-selected" data-nav-xhref="" data-shortcut="V" data-value="votes" href="/questions/4843173/how-to-check-if-type-of-a-variable-is-string?answertab=votes#tab-top" title="Answers with the highest score first">
+             votes
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="4843178" id="answer-4843178" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="4843178">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1091" itemprop="upvoteCount">
+             1091
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             In Python 2.x, you would do
+            </p>
+            <pre><code>isinstance(s, basestring) </code></pre>
+            <p>
+             <code>
+              basestring
+             </code>
+             is the
+             <a href="https://docs.python.org/2/library/functions.html#basestring" rel="noreferrer">
+              abstract superclass
+             </a>
+             of
+             <code>
+              str
+             </code>
+             and
+             <code>
+              unicode
+             </code>
+             . It can be used to test whether an object is an instance of
+             <code>
+              str
+             </code>
+             or
+             <code>
+              unicode
+             </code>
+             .
+            </p>
+            <p>
+             In Python 3.x, the correct test is
+            </p>
+            <pre><code>isinstance(s, str) </code></pre>
+            <p>
+             The
+             <code>
+              bytes
+             </code>
+             class isn't considered a string type in Python 3.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/4843178" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/4843178/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/4843178/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2017-10-28 13:59:55Z">
+                 Oct 28 '17 at 13:59
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2011-01-30 13:33:17Z">
+                Jan 30 '11 at 13:33
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/279627/sven-marnach">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/2dceea858ad8f1577bec6ddaa0485d15?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/279627/sven-marnach">
+                Sven Marnach
+               </a>
+               <span class="d-none" itemprop="name">
+                Sven Marnach
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 412,430">
+                 412k
+                </span>
+                <span aria-hidden="true" title="89 gold badges">
+                 <span class="badgecount">
+                  89
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 89 gold badges
+                </span>
+                <span aria-hidden="true" title="801 silver badges">
+                 <span class="badgecount">
+                  801
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 801 silver badges
+                </span>
+                <span aria-hidden="true" title="730 bronze badges">
+                 <span class="badgecount">
+                  730
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 730 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="4843178" id="comments-4843178">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="25721599" id="comment-25721599">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 10
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @Yarin: No. But it doesn't matter, because Python 3.x is not meant to be compatible with Python 2.x at all.
+                </span>
+                –
+                <a class="comment-user" href="/users/492901/netcoder" title="58,249 reputation">
+                 netcoder
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2013-07-15 17:45:57Z">
+                  Jul 15 '13 at 17:45
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="31875629" id="comment-31875629">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 2
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 I found that isinstance(s, str) works with py27, tested on : Python 2.7.5 (default, Aug 25 2013, 00:04:04)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin.
+                </span>
+                –
+                <a class="comment-user" href="/users/987846/kakyo" title="5,248 reputation">
+                 kakyo
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2014-01-16 21:38:46Z">
+                  Jan 16 '14 at 21:38
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="31875707" id="comment-31875707">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="hot" title="number of 'useful comment' votes received">
+                 25
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @kakyo: The problem is that it will miss
+                 <code>
+                  unicode
+                 </code>
+                 objects, which should also be considered strings.  Both the type
+                 <code>
+                  str
+                 </code>
+                 and the type
+                 <code>
+                  unicode
+                 </code>
+                 have the common base class
+                 <code>
+                  basestring
+                 </code>
+                 , and this is what you want to check for.
+                </span>
+                –
+                <a class="comment-user" href="/users/279627/sven-marnach" title="412,430 reputation">
+                 Sven Marnach
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2014-01-16 21:41:36Z">
+                  Jan 16 '14 at 21:41
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="47652964" id="comment-47652964">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 7
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @Yarin if you're porting something from 2.x to 3.x, you can always assign
+                 <code>
+                  basestring = str
+                 </code>
+                 .
+                </span>
+                –
+                <a class="comment-user" href="/users/1335431/jack" title="1,233 reputation">
+                 Jack
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2015-04-20 23:50:46Z">
+                  Apr 20 '15 at 23:50
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="65198582" id="comment-65198582">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 8
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @AdamErickson For compatibility with what exactly?  It doesn't help for compatibility with Python 3, since there is no
+                 <code>
+                  unicode
+                 </code>
+                 in Python 3.  My recommendation for compatibility between Python 2 and 3 is to use the "six" library.  (Specifically
+                 <code>
+                  isintance(s, six.string_types)
+                 </code>
+                 in this case)
+                </span>
+                –
+                <a class="comment-user" href="/users/279627/sven-marnach" title="412,430 reputation">
+                 Sven Marnach
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2016-08-12 14:55:24Z">
+                  Aug 12 '16 at 14:55
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="20612311" id="answer-20612311" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="20612311">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="220" itemprop="upvoteCount">
+             220
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             I know this is an old topic, but being the first one shown on google and given that I don't find any of the answers satisfactory, I'll leave this here for future reference:
+            </p>
+            <p>
+             <a href="https://pypi.python.org/pypi/six" rel="noreferrer">
+              six
+             </a>
+             is a Python 2 and 3 compatibility library which already covers this issue. You can then do something like this:
+            </p>
+            <pre><code>import six  if isinstance(value, six.string_types): pass # It's a string !! </code></pre>
+            <p>
+             Inspecting the code, this is what you find:
+            </p>
+            <pre><code>import sys  PY3 = sys.version_info[0] == 3  if PY3: string_types = str, else: string_types = basestring, </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/20612311" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/20612311/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/20612311/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2017-08-31 15:42:23Z">
+                 Aug 31 '17 at 15:42
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2013-12-16 13:36:49Z">
+                Dec 16 '13 at 13:36
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/2328352/andr%c3%a9-fratelli">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/40762ba3bb07ad05fdcfa713b671673f?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/2328352/andr%c3%a9-fratelli">
+                André Fratelli
+               </a>
+               <span class="d-none" itemprop="name">
+                André Fratelli
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 4,938
+                </span>
+                <span class="v-visible-sr">
+                 3 gold badges
+                </span>
+                <span aria-hidden="true" title="32 silver badges">
+                 <span class="badgecount">
+                  32
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 32 silver badges
+                </span>
+                <span aria-hidden="true" title="72 bronze badges">
+                 <span class="badgecount">
+                  72
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 72 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="20612311" id="comments-20612311">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="67651211" id="comment-67651211">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 4
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 E.g. for a one liner:
+                 <code>
+                  value_is_string = isinstance(value, str if sys.version_info[0] &gt;= 3 else basestring)
+                 </code>
+                 , where
+                 <code>
+                  &gt;=
+                 </code>
+                 assumes any eventual Python 4+ keeps the
+                 <code>
+                  str
+                 </code>
+                 root class for strings.
+                </span>
+                –
+                <a class="comment-user" href="/users/2892254/pi-marillion" title="3,034 reputation">
+                 Pi Marillion
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2016-10-22 13:13:28Z">
+                  Oct 22 '16 at 13:13
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="26828432" id="answer-26828432" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="26828432">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="58" itemprop="upvoteCount">
+             58
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             In Python 3.x or Python 2.7.6
+            </p>
+            <pre><code>if type(x) == str: </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/26828432" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/26828432/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/26828432/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2015-08-19 16:46:49Z">
+                 Aug 19 '15 at 16:46
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2014-11-09 12:57:50Z">
+                Nov 9 '14 at 12:57
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/4232487/texom512">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/3M9AP.png?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/4232487/texom512">
+                Texom512
+               </a>
+               <span class="d-none" itemprop="name">
+                Texom512
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 4,042
+                </span>
+                <span aria-hidden="true" title="2 gold badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 gold badges
+                </span>
+                <span aria-hidden="true" title="12 silver badges">
+                 <span class="badgecount">
+                  12
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 12 silver badges
+                </span>
+                <span aria-hidden="true" title="14 bronze badges">
+                 <span class="badgecount">
+                  14
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 14 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="26828432" id="comments-26828432">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="56585361" id="comment-56585361">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 10
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 I like the elegance of "if type(x) in (str, unicode):", but I see PyLint flags it as "unidiomatic".
+                </span>
+                –
+                <a class="comment-user" href="/users/365509/eukras" title="789 reputation">
+                 eukras
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2015-12-22 18:12:28Z">
+                  Dec 22 '15 at 18:12
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="80927596" id="comment-80927596">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 14
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Comparing types with
+                 <code>
+                  ==
+                 </code>
+                 is explicitly discouraged by PEP8, and has several downsides in addition to be considered "unidiomatic", e.g. it does not detect instances of subclasses of
+                 <code>
+                  str
+                 </code>
+                 , which should be considered strings as well.  If you really want to check for exactly the type
+                 <code>
+                  str
+                 </code>
+                 and explicitly exclude subclasses, use
+                 <code>
+                  type(x) is str
+                 </code>
+                 .
+                </span>
+                –
+                <a class="comment-user" href="/users/279627/sven-marnach" title="412,430 reputation">
+                 Sven Marnach
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2017-10-28 14:03:16Z">
+                  Oct 28 '17 at 14:03
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="38813715" id="answer-38813715" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="38813715">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="17" itemprop="upvoteCount">
+             17
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             you can do:
+            </p>
+            <pre><code>var = 1 if type(var) == int: print('your variable is an integer') </code></pre>
+            <p>
+             or:
+            </p>
+            <pre><code>var2 = 'this is variable #2' if type(var2) == str: print('your variable is a string') else: print('your variable IS NOT a string') </code></pre>
+            <p>
+             hope this helps!
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/38813715" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/38813715/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/38813715/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2017-10-25 18:53:56Z">
+                 Oct 25 '17 at 18:53
+                </span>
+               </a>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/5780109/ivanleoncz">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/d11f4d879b358c7b486b258389b1d66c?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details">
+               <a href="/users/5780109/ivanleoncz">
+                ivanleoncz
+               </a>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 3,418
+                </span>
+                <span class="v-visible-sr">
+                 3 gold badges
+                </span>
+                <span aria-hidden="true" title="35 silver badges">
+                 <span class="badgecount">
+                  35
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 35 silver badges
+                </span>
+                <span aria-hidden="true" title="39 bronze badges">
+                 <span class="badgecount">
+                  39
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 39 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2016-08-07 11:36:02Z">
+                Aug 7 '16 at 11:36
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/6672374/f-taylor">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/3KPBU.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/6672374/f-taylor">
+                F. Taylor
+               </a>
+               <span class="d-none" itemprop="name">
+                F. Taylor
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 407
+                </span>
+                <span class="v-visible-sr">
+                 1 gold badge
+                </span>
+                <span class="v-visible-sr">
+                 4 silver badges
+                </span>
+                <span aria-hidden="true" title="9 bronze badges">
+                 <span class="badgecount">
+                  9
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 9 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="4847186" id="answer-4847186" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="4847186">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="13" itemprop="upvoteCount">
+             13
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             The type module also exists if you are checking more than ints and strings.
+             <a href="http://docs.python.org/library/types.html" rel="noreferrer">
+              http://docs.python.org/library/types.html
+             </a>
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/4847186" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/4847186/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2011-01-31 02:40:45Z">
+                Jan 31 '11 at 2:40
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/281566/dicato">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/b1a10253754380b3937bee563d2cde3b?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/281566/dicato">
+                dicato
+               </a>
+               <span class="d-none" itemprop="name">
+                dicato
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 662
+                </span>
+                <span class="v-visible-sr">
+                 4 silver badges
+                </span>
+                <span aria-hidden="true" title="12 bronze badges">
+                 <span class="badgecount">
+                  12
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 12 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="4847186" id="comments-4847186">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="54118421" id="comment-54118421">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 5
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 More specifically,
+                 <a href="https://docs.python.org/2/library/types.html#types.StringTypes" rel="nofollow noreferrer">
+                  <code>
+                   types.StringTypes
+                  </code>
+                 </a>
+                 .
+                </span>
+                –
+                <a class="comment-user" href="/users/424632/musiphil" title="3,120 reputation">
+                 musiphil
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2015-10-15 17:15:22Z">
+                  Oct 15 '15 at 17:15
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="84593325" id="comment-84593325">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 2
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 types.StringTypes appears to no longer exist in Python 3 :(
+                </span>
+                –
+                <a class="comment-user" href="/users/90551/ibrahim" title="1,538 reputation">
+                 Ibrahim
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-02-14 20:18:04Z">
+                  Feb 14 '18 at 20:18
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="13467120" id="answer-13467120" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="13467120">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="11" itemprop="upvoteCount">
+             11
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Edit based on better answer below.  Go down about 3 answers and find out about the coolness of basestring.
+            </p>
+            <p>
+             Old answer: Watch out for unicode strings, which you can get from several places, including all COM calls in Windows.
+            </p>
+            <pre><code>if isinstance(target, str) or isinstance(target, unicode): </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/13467120" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/13467120/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/13467120/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2014-12-01 19:46:38Z">
+                 Dec 1 '14 at 19:46
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2012-11-20 05:30:13Z">
+                Nov 20 '12 at 5:30
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/647492/wade-hatler">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/92DAX.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/647492/wade-hatler">
+                Wade Hatler
+               </a>
+               <span class="d-none" itemprop="name">
+                Wade Hatler
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 1,373
+                </span>
+                <span aria-hidden="true" title="15 silver badges">
+                 <span class="badgecount">
+                  15
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 15 silver badges
+                </span>
+                <span aria-hidden="true" title="14 bronze badges">
+                 <span class="badgecount">
+                  14
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 14 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="13467120" id="comments-13467120">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="33143315" id="comment-33143315">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 1
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Good catch.  I didn't know about basestring.  It's mentioned about 3 posts down and seems like a better answer.
+                </span>
+                –
+                <a class="comment-user" href="/users/647492/wade-hatler" title="1,373 reputation">
+                 Wade Hatler
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2014-02-19 17:26:07Z">
+                  Feb 19 '14 at 17:26
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="49686869" id="comment-49686869">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 6
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 <code>
+                  isinstance()
+                 </code>
+                 also takes a
+                 <i>
+                  tuple
+                 </i>
+                 as the second argument. So even if
+                 <code>
+                  basestring
+                 </code>
+                 did not exist, you could just use
+                 <code>
+                  isinstance(target, (str, unicode))
+                 </code>
+                 .
+                </span>
+                –
+                <a class="comment-user" href="/users/100297/martijn-pieters" title="797,215 reputation">
+                 Martijn Pieters
+                 <span class="mod-flair" title="moderator">
+                  ♦
+                 </span>
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2015-06-13 15:22:37Z">
+                  Jun 13 '15 at 15:22
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="58703981" id="comment-58703981">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 3
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 In python 3.5.1,
+                 <code>
+                  unicode
+                 </code>
+                 does not appear to be defined:
+                 <code>
+                  NameError: name 'unicode' is not defined
+                 </code>
+                </span>
+                –
+                <a class="comment-user" href="/users/640517/eric-hu" title="16,974 reputation">
+                 Eric Hu
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2016-02-19 13:32:37Z">
+                  Feb 19 '16 at 13:32
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="32632271" id="answer-32632271" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="32632271">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="11" itemprop="upvoteCount">
+             11
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             since
+             <code>
+              basestring
+             </code>
+             isn't defined in Python3, this little trick might help to make the code compatible:
+            </p>
+            <pre><code>try: # check whether python knows about 'basestring' basestring except NameError: # no, it doesn't (it's Python3); use 'str' instead basestring=str </code></pre>
+            <p>
+             after that you can run the following test on both Python2 and Python3
+            </p>
+            <pre><code>isinstance(myvar, basestring) </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/32632271" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/32632271/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2015-09-17 14:00:48Z">
+                Sep 17 '15 at 14:00
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/1169096/uml%c3%a4ute">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/b4d93e08b2830786a7992e8af35514c6?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/1169096/uml%c3%a4ute">
+                umläute
+               </a>
+               <span class="d-none" itemprop="name">
+                umläute
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 20,102">
+                 20.1k
+                </span>
+                <span class="v-visible-sr">
+                 3 gold badges
+                </span>
+                <span class="v-visible-sr">
+                 41 silver badges
+                </span>
+                <span aria-hidden="true" title="88 bronze badges">
+                 <span class="badgecount">
+                  88
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 88 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="32632271" id="comments-32632271">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="60114147" id="comment-60114147">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 4
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Or if you want to catch byte strings too:
+                 <code>
+                  basestring = (str, bytes)
+                 </code>
+                </span>
+                –
+                <a class="comment-user" href="/users/5987/mark-ransom" title="249,182 reputation">
+                 Mark Ransom
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2016-03-26 23:06:12Z">
+                  Mar 26 '16 at 23:06
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="30586306" id="answer-30586306" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="30586306">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="10" itemprop="upvoteCount">
+             10
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Python 2 / 3 including unicode
+            </p>
+            <pre><code>from __future__ import unicode_literals from builtins import str  #  pip install future isinstance('asdf', str)   #  True isinstance(u'asdf', str)  #  True </code></pre>
+            <p>
+             <a href="http://python-future.org/overview.html" rel="noreferrer">
+              http://python-future.org/overview.html
+             </a>
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/30586306" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/30586306/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/30586306/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2016-11-07 23:14:54Z">
+                 Nov 7 '16 at 23:14
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2015-06-02 02:21:01Z">
+                Jun 2 '15 at 2:21
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/134077/crizcraig">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/35887d936c9e5c6bac12624021c93b68?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/134077/crizcraig">
+                crizCraig
+               </a>
+               <span class="d-none" itemprop="name">
+                crizCraig
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 6,267
+                </span>
+                <span class="v-visible-sr">
+                 3 gold badges
+                </span>
+                <span aria-hidden="true" title="40 silver badges">
+                 <span class="badgecount">
+                  40
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 40 silver badges
+                </span>
+                <span aria-hidden="true" title="46 bronze badges">
+                 <span class="badgecount">
+                  46
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 46 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="30586306" id="comments-30586306">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="102931015" id="comment-102931015">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 1
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Thanks a lot! There are dozens of various answers around the internet but the only good is this one.  The first line makes
+                 <code>
+                  type('foo')
+                 </code>
+                 being
+                 <code>
+                  unicode
+                 </code>
+                 by default in python 2, and the second one make
+                 <code>
+                  str
+                 </code>
+                 being instance of
+                 <code>
+                  unicode
+                 </code>
+                 . Thoses makes the code valid in Python 2 and 3. Thanks again !
+                </span>
+                –
+                <a class="comment-user" href="/users/3976813/narann" title="307 reputation">
+                 Narann
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-10-08 08:35:18Z">
+                  Oct 8 '19 at 8:35
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="19469874" id="answer-19469874" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="19469874">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="9" itemprop="upvoteCount">
+             9
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Also I want notice that if you want to check whether the type of a variable is a specific kind, you can compare the type of the variable to the type of a known object.
+            </p>
+            <p>
+             For string you can use this
+            </p>
+            <pre><code>type(s) == type('') </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/19469874" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/19469874/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2013-10-19 19:03:15Z">
+                Oct 19 '13 at 19:03
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/1660286/daniil-grankin">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/60d8ae3ea1868a70d1b8c94ab726140d?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/1660286/daniil-grankin">
+                Daniil Grankin
+               </a>
+               <span class="d-none" itemprop="name">
+                Daniil Grankin
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 3,052
+                </span>
+                <span aria-hidden="true" title="2 gold badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 gold badges
+                </span>
+                <span aria-hidden="true" title="22 silver badges">
+                 <span class="badgecount">
+                  22
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 22 silver badges
+                </span>
+                <span aria-hidden="true" title="33 bronze badges">
+                 <span class="badgecount">
+                  33
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 33 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="19469874" id="comments-19469874">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="47653041" id="comment-47653041">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 7
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 This is a terrible, terrible way to type check in python.  What if another class inherits from
+                 <code>
+                  str
+                 </code>
+                 ?  What about unicode strings, which don't even inherit from
+                 <code>
+                  str
+                 </code>
+                 in 2.x?  Use
+                 <code>
+                  isinstance(s, basestring)
+                 </code>
+                 in 2.x, or
+                 <code>
+                  isinstance(s, str)
+                 </code>
+                 in 3.x.
+                </span>
+                –
+                <a class="comment-user" href="/users/1335431/jack" title="1,233 reputation">
+                 Jack
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2015-04-20 23:54:43Z">
+                  Apr 20 '15 at 23:54
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="47824039" id="comment-47824039">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 1
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @Jack, please read question, and also notice I do not write that it's the best way, just another way.
+                </span>
+                –
+                <a class="comment-user" href="/users/1660286/daniil-grankin" title="3,052 reputation">
+                 Daniil Grankin
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2015-04-24 13:41:14Z">
+                  Apr 24 '15 at 13:41
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="49686722" id="comment-49686722">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 9
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 This is a bad idea for 3 reasons:
+                 <code>
+                  isinstance()
+                 </code>
+                 allows for subclasses (which are strings too, just specialised), the extra
+                 <code>
+                  type('')
+                 </code>
+                 call is redundant when you can just use
+                 <code>
+                  str
+                 </code>
+                 and types are singletons, so
+                 <code>
+                  type(s) is str
+                 </code>
+                 is going to be a more efficient test.
+                </span>
+                –
+                <a class="comment-user" href="/users/100297/martijn-pieters" title="797,215 reputation">
+                 Martijn Pieters
+                 <span class="mod-flair" title="moderator">
+                  ♦
+                 </span>
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2015-06-13 15:15:06Z">
+                  Jun 13 '15 at 15:15
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="35926059" id="answer-35926059" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="35926059">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="8" itemprop="upvoteCount">
+             8
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Lots of good suggestions provided by others here, but I don't see a good cross-platform summary.  The following should be a good drop in for any Python program:
+            </p>
+            <pre><code>def isstring(s): # if we use Python 3 if (sys.version_info[0] &gt;= 3): return isinstance(s, str) # we use Python 2 return isinstance(s, basestring) </code></pre>
+            <p>
+             In this function, we use
+             <code>
+              isinstance(object, classinfo)
+             </code>
+             to see if our input is a
+             <code>
+              str
+             </code>
+             in Python 3 or a
+             <code>
+              basestring
+             </code>
+             in Python 2.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/35926059" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/35926059/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/35926059/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2016-12-21 16:42:16Z">
+                 Dec 21 '16 at 16:42
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2016-03-10 19:58:39Z">
+                Mar 10 '16 at 19:58
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/1724577/duanev">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/42g9c.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/1724577/duanev">
+                duanev
+               </a>
+               <span class="d-none" itemprop="name">
+                duanev
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 712
+                </span>
+                <span aria-hidden="true" title="10 silver badges">
+                 <span class="badgecount">
+                  10
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 10 silver badges
+                </span>
+                <span aria-hidden="true" title="13 bronze badges">
+                 <span class="badgecount">
+                  13
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 13 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="35926059" id="comments-35926059">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="69548761" id="comment-69548761">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 1
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 This will likely break in Python 4, consider
+                 <code>
+                  &gt;=
+                 </code>
+                 at least.
+                </span>
+                –
+                <a class="comment-user" href="/users/551986/thakis" title="3,426 reputation">
+                 thakis
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2016-12-15 22:08:19Z">
+                  Dec 15 '16 at 22:08
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="70093506" id="comment-70093506">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 1
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 be cleaner to check for six.string_types or six.text_type
+                </span>
+                –
+                <a class="comment-user" href="/users/66595/daonb" title="673 reputation">
+                 daonb
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2017-01-03 12:39:06Z">
+                  Jan 3 '17 at 12:39
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="70509464" id="comment-70509464">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @daonb importing an entire module just to do a one-line test is the thinking that causes crazy dependency trees and serious bloat to ruin what should be something short small and simple.  It's your call of course, but just say'n ...
+                </span>
+                –
+                <a class="comment-user" href="/users/1724577/duanev" title="712 reputation">
+                 duanev
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2017-01-14 21:55:08Z">
+                  Jan 14 '17 at 21:55
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="88038384" id="comment-88038384">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @duanev if you're worried about Python 2/3 compatibility it's a better idea to be using six in the project anyways. Six is also a
+                 <i>
+                  single file
+                 </i>
+                 so dependency trees / bloat are not an issue here.
+                </span>
+                –
+                <a class="comment-user" href="/users/9801728/moxieball" title="1,769 reputation">
+                 MoxieBall
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-05-24 15:24:24Z">
+                  May 24 '18 at 15:24
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="18364824" id="answer-18364824" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="18364824">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="7" itemprop="upvoteCount">
+             7
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Alternative way for Python 2, without using basestring:
+            </p>
+            <pre><code>isinstance(s, (str, unicode)) </code></pre>
+            <p>
+             But still won't work in Python 3 since
+             <code>
+              unicode
+             </code>
+             isn't defined (in Python 3).
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/18364824" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/18364824/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2013-08-21 18:15:56Z">
+                Aug 21 '13 at 18:15
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/543561/yprez">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/55f3a5e1e1361002e875aaff493c15fe?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/543561/yprez">
+                yprez
+               </a>
+               <span class="d-none" itemprop="name">
+                yprez
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 12,049">
+                 12k
+                </span>
+                <span aria-hidden="true" title="10 gold badges">
+                 <span class="badgecount">
+                  10
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 10 gold badges
+                </span>
+                <span aria-hidden="true" title="47 silver badges">
+                 <span class="badgecount">
+                  47
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 47 silver badges
+                </span>
+                <span aria-hidden="true" title="67 bronze badges">
+                 <span class="badgecount">
+                  67
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 67 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="38852224" id="answer-38852224" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="38852224">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="7" itemprop="upvoteCount">
+             7
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             So,
+            </p>
+            <p>
+             You have plenty of options to check whether your variable is string or not:
+            </p>
+            <pre><code>a = "my string" type(a) == str # first a.__class__ == str # second isinstance(a, str) # third str(a) == a # forth type(a) == type('') # fifth </code></pre>
+            <p>
+             This order is for purpose.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/38852224" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/38852224/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2016-08-09 13:30:37Z">
+                Aug 9 '16 at 13:30
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/3741729/patnowak">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/zAt11.png?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/3741729/patnowak">
+                PatNowak
+               </a>
+               <span class="d-none" itemprop="name">
+                PatNowak
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 4,753
+                </span>
+                <span class="v-visible-sr">
+                 1 gold badge
+                </span>
+                <span aria-hidden="true" title="16 silver badges">
+                 <span class="badgecount">
+                  16
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 16 silver badges
+                </span>
+                <span aria-hidden="true" title="28 bronze badges">
+                 <span class="badgecount">
+                  28
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 28 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="38854718" id="answer-38854718" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="38854718">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="5" itemprop="upvoteCount">
+             5
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <pre><code>a = '1000' # also tested for 'abc100', 'a100bc', '100abc'  isinstance(a, str) or isinstance(a, unicode) </code></pre>
+            <p>
+             returns True
+            </p>
+            <pre><code>type(a) in [str, unicode] </code></pre>
+            <p>
+             returns True
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/38854718" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/38854718/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/38854718/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2016-09-05 14:00:04Z">
+                 Sep 5 '16 at 14:00
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2016-08-09 15:23:17Z">
+                Aug 9 '16 at 15:23
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/5334188/be-good-do-good">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/5174dfb78299414039e19e27ce37efde?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/5334188/be-good-do-good">
+                be_good_do_good
+               </a>
+               <span class="d-none" itemprop="name">
+                be_good_do_good
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 3,137
+                </span>
+                <span class="v-visible-sr">
+                 3 gold badges
+                </span>
+                <span aria-hidden="true" title="23 silver badges">
+                 <span class="badgecount">
+                  23
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 23 silver badges
+                </span>
+                <span aria-hidden="true" title="37 bronze badges">
+                 <span class="badgecount">
+                  37
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 37 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="38854718" id="comments-38854718">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="65197008" id="comment-65197008">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 For Python 2.7.12 I had to remove the quotes:  type(a) in [str, unicode]
+                </span>
+                –
+                <a class="comment-user" href="/users/2058131/adam-erickson" title="3,199 reputation">
+                 Adam Erickson
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2016-08-12 14:15:12Z">
+                  Aug 12 '16 at 14:15
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="42509422" id="answer-42509422" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="42509422">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="4" itemprop="upvoteCount">
+             4
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Here is my answer to support both Python 2 and Python 3 along with these requirements:
+            </p>
+            <ul>
+             <li>
+              Written in Py3 code with minimal Py2 compat code.
+             </li>
+             <li>
+              Remove Py2 compat code later without disruption. I.e. aim for deletion only, no modification to Py3 code.
+             </li>
+             <li>
+              Avoid using
+              <code>
+               six
+              </code>
+              or similar compat module as they tend to hide away what is trying to be achieved.
+             </li>
+             <li>
+              Future-proof for a potential Py4.
+             </li>
+            </ul>
+            <pre><code>import sys PY2 = sys.version_info.major == 2  # Check if string (lenient for byte-strings on Py2): isinstance('abc', basestring if PY2 else str)  # Check if strictly a string (unicode-string): isinstance('abc', unicode if PY2 else str)  # Check if either string (unicode-string) or byte-string: isinstance('abc', basestring if PY2 else (str, bytes))  # Check for byte-string (Py3 and Py2.7): isinstance('abc', bytes) </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/42509422" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/42509422/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/42509422/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2017-09-28 16:02:37Z">
+                 Sep 28 '17 at 16:02
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2017-02-28 13:00:11Z">
+                Feb 28 '17 at 13:00
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/175584/cas">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/824fa3dd39c2a0ae565f4dab8237dfb9?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/175584/cas">
+                Cas
+               </a>
+               <span class="d-none" itemprop="name">
+                Cas
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 3,674
+                </span>
+                <span aria-hidden="true" title="2 gold badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 gold badges
+                </span>
+                <span aria-hidden="true" title="26 silver badges">
+                 <span class="badgecount">
+                  26
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 26 silver badges
+                </span>
+                <span class="v-visible-sr">
+                 27 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="23975554" id="answer-23975554" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="23975554">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             If you do not want to depend on external libs, this works both for Python 2.7+ and Python 3 (
+             <a href="http://ideone.com/uB4Kdc" rel="nofollow">
+              http://ideone.com/uB4Kdc
+             </a>
+             ):
+            </p>
+            <pre><code># your code goes here s = ["test"]; #s = "test"; isString = False;  if(isinstance(s, str)): isString = True; try: if(isinstance(s, basestring)): isString = True; except NameError: pass;  if(isString): print("String"); else: print("Not String"); </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/23975554" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/23975554/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2014-05-31 23:59:18Z">
+                May 31 '14 at 23:59
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/257561/mprinc">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/e1482f0c012ae8795eb4f451abd37609?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/257561/mprinc">
+                mPrinC
+               </a>
+               <span class="d-none" itemprop="name">
+                mPrinC
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 1,525
+                </span>
+                <span aria-hidden="true" title="15 silver badges">
+                 <span class="badgecount">
+                  15
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 15 silver badges
+                </span>
+                <span aria-hidden="true" title="20 bronze badges">
+                 <span class="badgecount">
+                  20
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 20 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="38848976" id="answer-38848976" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="38848976">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             You can simply use the
+             <em>
+              isinstance
+             </em>
+             function to make sure that the input data is of format
+             <em>
+              string
+             </em>
+             or
+             <em>
+              unicode
+             </em>
+             . Below examples will help you to understand easily.
+            </p>
+            <pre><code>&gt;&gt;&gt; isinstance('my string', str) True &gt;&gt;&gt; isinstance(12, str) False &gt;&gt;&gt; isinstance('my string', unicode) False &gt;&gt;&gt; isinstance(u'my string',  unicode) True </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/38848976" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/38848976/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2016-08-09 11:02:15Z">
+                Aug 9 '16 at 11:02
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/4650590/hassan-mehmood">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/jmfz2.png?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/4650590/hassan-mehmood">
+                Hassan Mehmood
+               </a>
+               <span class="d-none" itemprop="name">
+                Hassan Mehmood
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 1,164
+                </span>
+                <span class="v-visible-sr">
+                 1 gold badge
+                </span>
+                <span aria-hidden="true" title="7 silver badges">
+                 <span class="badgecount">
+                  7
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 7 silver badges
+                </span>
+                <span aria-hidden="true" title="19 bronze badges">
+                 <span class="badgecount">
+                  19
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 19 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="38851167" id="answer-38851167" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="38851167">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="-2" itemprop="upvoteCount">
+             -2
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <pre><code>s = '123' issubclass(s.__class__, str) </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/38851167" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/38851167/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2016-08-09 12:46:30Z">
+                Aug 9 '16 at 12:46
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/5912296/vadim-vaduxa">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/a858ca631a9a2018935866ecc32f58c7?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/5912296/vadim-vaduxa">
+                vadim vaduxa
+               </a>
+               <span class="d-none" itemprop="name">
+                vadim vaduxa
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 201
+                </span>
+                <span aria-hidden="true" title="2 silver badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 silver badges
+                </span>
+                <span aria-hidden="true" title="13 bronze badges">
+                 <span class="badgecount">
+                  13
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 13 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer downvoted-answer" data-answerid="24944968" id="answer-24944968" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="24944968">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="-5" itemprop="upvoteCount">
+             -5
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             This is how I do it:
+            </p>
+            <pre><code>if type(x) == type(str()): </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/24944968" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/24944968/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2014-07-24 22:18:17Z">
+                Jul 24 '14 at 22:18
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/2199852/user">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/609a8dbb58ae54662d89367894520a5e?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/2199852/user">
+                User
+               </a>
+               <span class="d-none" itemprop="name">
+                User
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 18,077">
+                 18.1k
+                </span>
+                <span class="v-visible-sr">
+                 27 gold badges
+                </span>
+                <span aria-hidden="true" title="87 silver badges">
+                 <span class="badgecount">
+                  87
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 87 silver badges
+                </span>
+                <span aria-hidden="true" title="159 bronze badges">
+                 <span class="badgecount">
+                  159
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 159 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="24944968" id="comments-24944968">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="49686817" id="comment-49686817">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 4
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 <code>
+                  type(str())
+                 </code>
+                 is a very roundabout way of saying
+                 <code>
+                  str
+                 </code>
+                 . Types are singletons, so
+                 <code>
+                  type(x) is str
+                 </code>
+                 is more efficient.
+                 <code>
+                  isinstance()
+                 </code>
+                 should be used instead, unless you have very good reasons to ignore subclasses of
+                 <code>
+                  str
+                 </code>
+                 .
+                </span>
+                –
+                <a class="comment-user" href="/users/100297/martijn-pieters" title="797,215 reputation">
+                 Martijn Pieters
+                 <span class="mod-flair" title="moderator">
+                  ♦
+                 </span>
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2015-06-13 15:19:58Z">
+                  Jun 13 '15 at 15:19
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="99083985" id="comment-99083985">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 if type(x) is str:
+                </span>
+                –
+                <a class="comment-user" href="/users/6897603/shaurya-uppal" title="1,623 reputation">
+                 shaurya uppal
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-05-21 06:35:49Z">
+                  May 21 '19 at 6:35
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer downvoted-answer" data-answerid="26644259" id="answer-26644259" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="26644259">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="-6" itemprop="upvoteCount">
+             -6
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             I've seen:
+            </p>
+            <pre><code>hasattr(s, 'endswith') </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/26644259" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/26644259/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2014-10-30 02:52:24Z">
+                Oct 30 '14 at 2:52
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/2440470/fast-tooth">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/008bc9d98d9f4e0c8c98a31128659e5a?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/2440470/fast-tooth">
+                fast tooth
+               </a>
+               <span class="d-none" itemprop="name">
+                fast tooth
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 1,600
+                </span>
+                <span class="v-visible-sr">
+                 3 gold badges
+                </span>
+                <span aria-hidden="true" title="17 silver badges">
+                 <span class="badgecount">
+                  17
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 17 silver badges
+                </span>
+                <span aria-hidden="true" title="28 bronze badges">
+                 <span class="badgecount">
+                  28
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 28 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer downvoted-answer" data-answerid="48226880" id="answer-48226880" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="48226880">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="-12" itemprop="upvoteCount">
+             -12
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <pre><code>&gt;&gt;&gt; thing = 'foo' &gt;&gt;&gt; type(thing).__name__ == 'str' or type(thing).__name__ == 'unicode' True </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/48226880" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/48226880/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2018-01-12 13:04:49Z">
+                Jan 12 '18 at 13:04
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/6165428/richard-urban">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/22bc5157f32824117d4172a266065fc5?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/6165428/richard-urban">
+                Richard Urban
+               </a>
+               <span class="d-none" itemprop="name">
+                Richard Urban
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 155
+                </span>
+                <span aria-hidden="true" title="2 silver badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 silver badges
+                </span>
+                <span aria-hidden="true" title="5 bronze badges">
+                 <span class="badgecount">
+                  5
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 5 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="48226880" id="comments-48226880">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="83435440" id="comment-83435440">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 1
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 In which case would you prefer
+                 <code>
+                  type(thing).__name__ == 'str'
+                 </code>
+                 over
+                 <code>
+                  type(thing) == str
+                 </code>
+                 or
+                 <code>
+                  isinstance(thing, str)
+                 </code>
+                 ? Also
+                 <code>
+                  unicode
+                 </code>
+                 does not exist in modern versions of Python.
+                </span>
+                –
+                <a class="comment-user" href="/users/2301450/vaultah" title="31,893 reputation">
+                 vaultah
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-01-12 13:06:50Z">
+                  Jan 12 '18 at 13:06
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <aside aria-hidden="false" class="s-notice s-notice__info js-post-notice mb16" role="status">
+         <div class="grid fd-column fw-nowrap">
+          <div class="grid fw-nowrap">
+           <div class="grid--cell fl1 lh-lg">
+            <div class="grid--cell fl1 lh-lg">
+             <b>
+              <a href="/help/privileges/protect-questions">
+               Highly active question
+              </a>
+             </b>
+             . Earn 10 reputation in order to answer this question. The reputation requirement helps protect this question from spam and non-answer activity.
+            </div>
+           </div>
+          </div>
+         </div>
+        </aside>
+        <h2 class="bottom-notice" data-loc="1">
+         Not the answer you're looking for?                                Browse other questions tagged
+         <a class="post-tag" href="/questions/tagged/string" rel="tag" title="show questions tagged 'string'">
+          string
+         </a>
+         <a class="post-tag" href="/questions/tagged/variables" rel="tag" title="show questions tagged 'variables'">
+          variables
+         </a>
+         <a class="post-tag" href="/questions/tagged/types" rel="tag" title="show questions tagged 'types'">
+          types
+         </a>
+         or
+         <a href="/questions/ask">
+          ask your own question
+         </a>
+         .
+        </h2>
+       </div>
+      </div>
+      <div aria-label="sidebar" class="show-votes" id="sidebar" role="complementary">
+       <div class="s-sidebarwidget s-sidebarwidget__yellow s-anchors s-anchors__grayscale mb16" data-tracker="cb=1">
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         Blog
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Blog","https://stackoverflow.blog/2020/03/05/a-modern-hello-world-program-needs-more-than-just-code/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 0 })" href="https://stackoverflow.blog/2020/03/05/a-modern-hello-world-program-needs-more-than-just-code/">
+            A modern ‘Hello, World’ program needs more than just code
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Blog","https://stackoverflow.blog/2020/03/06/the-overflow-12-plain-text/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 1 })" href="https://stackoverflow.blog/2020/03/06/the-overflow-12-plain-text/">
+            The Overflow #12: Plain text
+           </a>
+          </div>
+         </li>
+        </ul>
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         Featured on Meta
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 2 })" href="https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog">
+            The Q1 2020 Community Roadmap is on the Blog
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 3 })" href="https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing">
+            An Update On Creative Commons Licensing
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344586/our-commitment-to-responding-to-meta-and-moderators",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 4 })" href="https://meta.stackexchange.com/questions/344586/our-commitment-to-responding-to-meta-and-moderators">
+            Our Commitment to Responding to Meta and Moderators
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 5 })" href="https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work">
+            How does the Triage queue work?
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/394409/open-source-advertising-1h-2020",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 6 })" href="https://meta.stackoverflow.com/questions/394409/open-source-advertising-1h-2020">
+            Open Source Advertising — 1H 2020
+           </a>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="module sidebar-linked">
+        <h4 id="h-linked">
+         Linked
+        </h4>
+        <div class="linked" data-tracker="lq=1">
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 4843173, target_question_id: 35513751, position: 0 })">
+          <a href="/q/35513751" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            1
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/35513751/searching-for-strings-in-list?noredirect=1">
+           Searching for strings in list
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 4843173, target_question_id: 49395363, position: 1 })">
+          <a href="/q/49395363" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            -1
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/49395363/palindrome-string-how-to-exclude-non-strings?noredirect=1">
+           Palindrome string. How to exclude non strings.
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 4843173, target_question_id: 1303243, position: 2 })">
+          <a href="/q/1303243" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes large">
+            392
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/1303243/how-to-find-out-if-a-python-object-is-a-string?noredirect=1">
+           How to find out if a Python object is a string?
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 4843173, target_question_id: 1979004, position: 3 })">
+          <a href="/q/1979004" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            157
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/1979004/what-is-the-difference-between-isinstanceaaa-basestring-and-isinstanceaaa?noredirect=1">
+           What is the difference between isinstance('aaa', basestring) and isinstance('aaa', str)?
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 4843173, target_question_id: 40924099, position: 4 })">
+          <a href="/q/40924099" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            -2
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/40924099/find-longest-string-in-a-list?noredirect=1">
+           Find longest string in a list
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 4843173, target_question_id: 44011545, position: 5 })">
+          <a href="/q/44011545" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            1
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/44011545/data-type-validation-in-python-strings?noredirect=1">
+           Data type validation in python - Strings
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 4843173, target_question_id: 43604215, position: 6 })">
+          <a href="/q/43604215" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            -1
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/43604215/python-if-statement-if-variable-value-is-string-or-any-type?noredirect=1">
+           Python if statement if variable value is string or any Type
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 4843173, target_question_id: 42781267, position: 7 })">
+          <a href="/q/42781267" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            7
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/42781267/is-there-a-pythonics-way-to-distinguish-sequences-objects-like-tuple-and-list?noredirect=1">
+           is there a pythonics way to distinguish Sequences objects like “tuple and list” from Sequence objects like “bytes and str”
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 4843173, target_question_id: 31413006, position: 8 })">
+          <a href="/q/31413006" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            3
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/31413006/how-to-check-whether-all-elements-in-a-list-of-lists-are-strings?noredirect=1">
+           How to check whether all elements in a list of lists are strings
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 4843173, target_question_id: 28084799, position: 9 })">
+          <a href="/q/28084799" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            1
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/28084799/calling-methods-surrounded-by-in-python?noredirect=1">
+           Calling methods surrounded by __ in Python
+          </a>
+         </div>
+         <div class="spacer more">
+          <a href="/questions/linked/4843173">
+           see more linked questions…
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module sidebar-related">
+        <h4 id="h-related">
+         Related
+        </h4>
+        <div class="related js-gps-related-questions" data-tracker="rq=1">
+         <div class="spacer">
+          <a href="/q/7074" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            6396
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/7074/what-is-the-difference-between-string-and-string-in-c">
+           What is the difference between String and string in C#?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/111102" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            7640
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/111102/how-do-javascript-closures-work">
+           How do JavaScript closures work?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/273192" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            4088
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/273192/how-can-i-safely-create-a-nested-directory">
+           How can I safely create a nested directory?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/379906" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2171
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/379906/how-do-i-parse-a-string-to-a-float-or-int">
+           How do I parse a string to a float or int?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/663171" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2079
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/663171/how-do-i-get-a-substring-of-a-string-in-python">
+           How do I get a substring of a string in Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/767486" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1742
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/767486/how-do-you-check-if-a-variable-is-an-array-in-javascript">
+           How do you check if a variable is an array in JavaScript?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/986006" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2559
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/986006/how-do-i-pass-a-variable-by-reference">
+           How do I pass a variable by reference?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/1789945" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            7428
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/1789945/how-to-check-whether-a-string-contains-a-substring-in-javascript">
+           How to check whether a string contains a substring in JavaScript?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/5113374" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1691
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/5113374/javascript-check-if-variable-exists-is-defined-initialized">
+           JavaScript check if variable exists (is defined/initialized)
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/9573244" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1348
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/9573244/how-to-check-if-the-string-is-empty">
+           How to check if the string is empty?
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module tex2jax_ignore" id="hot-network-questions">
+        <h4>
+         <a class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })" href="https://stackexchange.com/questions?tab=hot">
+          Hot Network Questions
+         </a>
+        </h4>
+        <ul>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://space.stackexchange.com/questions/41829/why-would-someone-need-vertical-loading-for-a-spacex-rocket">
+           Why would someone need vertical loading for a SpaceX rocket?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://rpg.stackexchange.com/questions/166015/what-does-the-vorpal-sword-ignoring-resistance-to-slashing-actually-mean">
+           What does the Vorpal Sword ignoring resistance to slashing actually mean?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://gis.stackexchange.com/questions/353368/correlating-mol-m2-with-ton-and-lb">
+           Correlating mol/m^2 with ton and lb?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/200707/mad-libs-number-sequences">
+           Mad Libs number sequences
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:216 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://fitness.stackexchange.com/questions/41722/i-switched-my-routine-from-full-body-to-split-the-result-is-worse-than-i-expect">
+           I switched my routine from full-body to split: the result is worse than I expected
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://worldbuilding.stackexchange.com/questions/170748/why-is-the-death-star-laser-red">
+           Why is the Death Star laser red?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://academia.stackexchange.com/questions/145159/is-it-ethical-to-refuse-a-postdoc-offer-after-lab-visit">
+           Is it ethical to refuse a postdoc offer after lab visit
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:648 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://retrocomputing.stackexchange.com/questions/14055/why-are-the-homing-bumps-on-d-and-k-on-apple-keyboards">
+           Why are the homing bumps on D and K on Apple keyboards?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://rpg.stackexchange.com/questions/165998/how-can-i-get-rid-of-drama-fatigue-as-a-gm">
+           How can I get rid of drama fatigue as a GM?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://diy.stackexchange.com/questions/186217/what-radio-antenna-connector-is-required-fm-am">
+           What radio antenna connector is required? (FM/AM)
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:118 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://apple.stackexchange.com/questions/383878/ipad-keyboard-shortcut-to-show-keyboard-shortcuts">
+           iPad Keyboard shortcut to show keyboard shortcuts
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://movies.stackexchange.com/questions/107126/what-does-herbs-build-up-to-broadcast-mean">
+           What does Herb's build-up to broadcast mean?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:489 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://reverseengineering.stackexchange.com/questions/23401/ghidra-python-get-program-base-address">
+           Ghidra python - get program base address
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://music.stackexchange.com/questions/95984/is-it-better-to-choose-440-hz-or-432-hz-to-tune-an-acoustic-piano">
+           Is it better to choose 440 Hz or 432 Hz to tune an acoustic piano?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://space.stackexchange.com/questions/41834/could-one-skydive-from-a-space-capsule">
+           Could one skydive from a space capsule?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:435 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://chess.stackexchange.com/questions/28795/trading-queens-in-the-opening">
+           Trading queens in the opening
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://mathoverflow.net/questions/354402/pros-and-cons-of-majoring-an-esoteric-research-area">
+           Pros and cons of majoring an esoteric research area
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://puzzling.stackexchange.com/questions/94675/where-can-you-find-such-creatures">
+           Where can you find such creatures?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://rpg.stackexchange.com/questions/166013/are-there-any-rules-on-the-creation-of-a-shield-guardian">
+           Are there any rules on the creation of a shield guardian?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://money.stackexchange.com/questions/121314/re-purchasing-a-stock-at-a-loss-reiras">
+           Re-purchasing a stock at a loss. Re:IRA's
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://puzzling.stackexchange.com/questions/94668/some-first-names">
+           Some first names
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://music.stackexchange.com/questions/95978/can-a-song-be-in-both-a-major-and-minor-key-at-the-same-time">
+           Can a song be in both a major and minor key at the same time?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://skeptics.stackexchange.com/questions/45993/does-a-covid-19-test-in-usa-cost-consumers-more-than-us3000">
+           Does a COVID-19 test in USA cost consumers more than $US3000?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://blender.stackexchange.com/questions/169130/making-a-pineapple">
+           Making a pineapple
+          </a>
+         </li>
+        </ul>
+        <a class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })" href="#">
+         more hot questions
+        </a>
+       </div>
+       <div class="js-feed-link" id="feed-link">
+        <a href="/feeds/question/4843173" title="Feed of this question and its answers">
+         Question feed
+        </a>
+       </div>
+       <aside aria-describedby="feed-modal-description" aria-hidden="true" aria-labelledby="feed-modal-title" class="s-modal js-feed-link-modal" role="dialog" tabindex="-1">
+        <div class="s-modal--dialog js-modal-dialog wmx4" data-controller="se-draggable" role="document">
+         <h1 class="s-modal--header fw-bold js-first-tabbable" data-target="se-draggable.handle" id="feed-modal-title" tabindex="0">
+          Subscribe to RSS
+         </h1>
+         <div class="grid gs4 gsy fd-column">
+          <div class="grid--cell">
+           <label class="d-block s-label c-default" for="feed-url">
+            Question feed
+            <p class="s-description mt2" id="feed-modal-description">
+             To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+            </p>
+           </label>
+          </div>
+          <div class="grid ps-relative">
+           <input class="s-input" id="feed-url" name="feed-url" readonly="readonly" type="text" value="https://stackoverflow.com/feeds/question/4843173"/>
+          </div>
+         </div>
+        </div>
+       </aside>
+      </div>
+     </div>
+     <div id="prettify-lang" style="display:none">
+      lang-py
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

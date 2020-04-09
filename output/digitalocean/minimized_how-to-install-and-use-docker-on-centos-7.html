@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   How To Install and Use Docker on CentOS 7 | DigitalOcean
+  </title>
+  <meta content="Docker is an application that makes it simple and easy to run application processes in a container, which are like virtual machines, only more portable, more resource-friendly, and more dependent on the host operating system. In this tutorial, you'll" name="description"/>
+  <meta content="How To Install and Use Docker on CentOS 7 | DigitalOcean" name="og:title"/>
+  <meta content="Docker is an application that makes it simple and easy to run application processes in a container, which are like virtual machines, only more portable, more resource-friendly, and more dependent on the host operating system. In this tutorial, you'll" name="og:description"/>
+  <meta content="https://www.digitalocean.com/assets/community/illustrations/DigitalOcean_Community-02cc36407e7a978ed4fc9ed98f3ed87c.jpg" name="og:image"/>
+  <meta content="How To Install and Use Docker on CentOS 7 | DigitalOcean" name="twitter:title"/>
+  <meta content="Docker is an application that makes it simple and easy to run application processes in a container, which are like virtual machines, only more portable, more resource-friendly, and more dependent on the host operating system. In this tutorial, you'll" name="twitter:description"/>
+  <meta content="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7" name="twitter:url"/>
+  <meta content="https://www.digitalocean.com/assets/community/illustrations/DigitalOcean_Community-02cc36407e7a978ed4fc9ed98f3ed87c.jpg" name="twitter:image"/>
+  <link href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7" rel="canonical"/>
+  <link href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7.amp" rel="amphtml"/>
+  <link href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7" hreflang="en" rel="alternate"/>
+  <link href="https://www.digitalocean.com/community/tutorials/como-instalar-e-usar-o-docker-no-centos-7-pt" hreflang="pt" rel="alternate"/>
+  <link href="/assets/community/application-a17365d856927de0b593d349e87810f6.css" media="all" rel="stylesheet"/>
+  <meta content="JWMcm/H6lMz+GE1IAwKuii7Z7/RXeCqfJuKODrnOI+vVbqPwAmrgBGpQ5+jeyrBKOA+jrpHMqsVouZfi5iLyiw==" name="csrf-token"/>
+ </head>
+ <body class="feature-filter-bar feature-upvotes tutorials-controller tutorial-single" data-completed-tutorial-id="" data-env="production" data-facebook-app-id="694818843983011" data-flagged="" data-js="tutorial" data-prefix="/community" data-tutorial-id="1975" data-upvote="null" data-user-id="">
+  <div class="outside_viewport">
+   <div class="modal fade mini-modal" id="contents-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Contents
+       </h1>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="translation-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Language
+       </h1>
+      </div>
+      <div class="modal-body">
+       <div class="content-translations">
+        <div class="current-language">
+         <ul class="languages small">
+          <li>
+           <a class="edit" href="/community/tutorials/como-instalar-e-usar-o-docker-no-centos-7-pt" title="Português">
+            Português
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade mini-modal" id="share-modal" style="display: none;">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h1>
+        Share
+       </h1>
+      </div>
+      <div class="modal-body">
+       <div class="social-sharing social-sharing-container">
+        <ul class="top">
+         <li class="shareBtn" id="sbTwitter">
+          <a class="share-link share-popup" href="http://twitter.com/share?text=How%20To%20Install%20and%20Use%20Docker%20on%20CentOS%207&amp;url=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7?utm_content=how-to-install-and-use-docker-on-centos-7&amp;utm_medium=community&amp;utm_source=twshare" target="_blank" title="Share on Twitter">
+           Twitter
+          </a>
+         </li>
+         <li class="shareBtn" id="sbFacebook">
+          <a class="share-link share-popup" href="https://www.facebook.com/sharer/sharer.php?u=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7?utm_content=how-to-install-and-use-docker-on-centos-7&amp;utm_medium=community&amp;utm_source=fbshare" target="_blank" title="Share on Facebook">
+           Facebook
+          </a>
+         </li>
+         <li class="shareBtn" id="sbYC">
+          <a class="share-link share-popup" href="https://news.ycombinator.com/submitlink?t=How%20To%20Install%20and%20Use%20Docker%20on%20CentOS%207&amp;u=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7?utm_content=how-to-install-and-use-docker-on-centos-7&amp;utm_medium=community&amp;utm_source=hnshare" target="_blank" title="Submit to Hacker News">
+           Hacker News
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   Tutorial
+  </div>
+  <a href="/community/tutorials/how-to-automate-your-node-js-production-deployments-with-shipit-on-centos-7">
+   <div class="featured-item-regular">
+    How To Automate Your Node.js Production Deployments with Shipit on CentOS 7
+    <span class="featured-item-category">
+     <img alt="Tutorial" height="14" src="/assets/community/tutorials/featured-item-tutorial-icon-2150ccbef202144a53cea261312af267.png" width="14"/>
+     Tutorial
+    </span>
+   </div>
+  </a>
+  <h1 class="content-title Tutorial-header">
+   How To Install and Use Docker on CentOS 7
+  </h1>
+  <span class="meta-section date-views">
+   <span class="meta-section timestamp">
+    <span class="tutorial-date-text">
+     Updated
+    </span>
+    <span class="tutorial-date">
+     November  2, 2016
+    </span>
+   </span>
+   <span class="meta-section pageviews">
+    <span class="views-count v-mid">
+     610.7k
+    </span>
+   </span>
+  </span>
+  <span class="meta-section tags">
+   <a class="tag" href="/community/tags/centos">
+    CentOS
+   </a>
+   <a class="tag" href="/community/tags/docker">
+    Docker
+   </a>
+  </span>
+  <div class="tutorial-authors">
+   <div class="component-collaborators-container">
+    <ul class="component-collaborators-content">
+     <li class="collaborator-byline-avatar">
+      <a href="/community/users/finid">
+       <img alt="finid" class="avatar avatar-large" height="80" src="https://secure.gravatar.com/avatar/989a7705a77732d888ddaff8b440fc3d?secure=true&amp;d=identicon" width="80"/>
+      </a>
+     </li>
+     <li class="collaborators-byline-data">
+      <p class="names">
+       By
+       <a href="/community/users/finid">
+        finid
+       </a>
+      </p>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="container versioned-tutorial-group-navigation" data-versioned-tutorial-group-navigation="">
+   <div class="versioned-tutorial-group-navigation__header" data-versioned-tutorial-group-navigation-header="">
+    <h5 class="versioned-tutorial-group-navigation__heading">
+     Not using
+     <strong>
+      CentOS 7
+     </strong>
+     ? Choose a different version:
+    </h5>
+   </div>
+   <div class="versioned-tutorial-group-navigation__body" data-versioned-tutorial-group-navigation-body="">
+    <ul class="versioned-tutorial-group-navigation__list">
+     <li class="versioned-tutorial-group-navigation__list-item">
+      <a class="versioned-tutorial-group-navigation__link" href="/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-18-04" title="Automated Ansible">
+       <span class="text">
+        Automated Ansible
+       </span>
+      </a>
+     </li>
+     <li class="versioned-tutorial-group-navigation__list-item">
+      <a class="versioned-tutorial-group-navigation__link" href="/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04" title="Ubuntu 18.04">
+       <span class="text">
+        Ubuntu 18.04
+       </span>
+      </a>
+     </li>
+     <li class="versioned-tutorial-group-navigation__list-item">
+      <a class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable" data-distribution-version-id="12" data-tutorial-request="" data-versioned-tutorial-group-id="39" href="javascript:;" title="Automated Docker">
+       <span class="text">
+        Automated Docker
+       </span>
+      </a>
+     </li>
+     <li class="versioned-tutorial-group-navigation__list-item">
+      <a class="versioned-tutorial-group-navigation__link versioned-tutorial-group-navigation__link--unavailable" data-distribution-version-id="14" data-tutorial-request="" data-versioned-tutorial-group-id="39" href="javascript:;" title="Automated Bash">
+       <span class="text">
+        Automated Bash
+       </span>
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="content-body tutorial-content" data-growable-markdown="">
+   <h3 id="introduction">
+    Introduction
+   </h3>
+   <p>
+    Docker is an application that makes it simple and easy to run application processes in a container, which are like virtual machines, only more portable, more resource-friendly, and more dependent on the host operating system. For a detailed introduction to the different components of a Docker container, check out
+    <a href="https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-an-introduction-to-common-components">
+     The Docker Ecosystem: An Introduction to Common Components
+    </a>
+    .
+   </p>
+   <p>
+    There are two methods for installing Docker on CentOS 7. One method involves installing it on an existing installation of the operating system. The other involves spinning up a server with a tool called
+    <a href="https://www.digitalocean.com/community/tutorials/how-to-provision-and-manage-remote-docker-hosts-with-docker-machine-on-centos-7">
+     Docker Machine
+    </a>
+    that auto-installs Docker on it.
+   </p>
+   <p>
+    In this tutorial, you’ll learn how to install and use it on an existing installation of CentOS 7.
+   </p>
+   <h2 id="prerequisites">
+    Prerequisites
+   </h2>
+   <ul>
+    <li>
+     64-bit CentOS 7 Droplet
+    </li>
+    <li>
+     Non-root user with sudo privileges. A CentOS 7 server set up using
+     <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-centos-7">
+      Initial Setup Guide for CentOS 7
+     </a>
+     explains how to set this up.
+    </li>
+   </ul>
+   <p>
+    <span class="note">
+     <strong>
+      Note:
+     </strong>
+     Docker requires a 64-bit version of CentOS 7 as well as a kernel version equal to or greater than 3.10. The default 64-bit CentOS 7 Droplet meets these requirements.
+     <br/>
+    </span>
+   </p>
+   <p>
+    All the commands in this tutorial should be run as a non-root user. If root access is required for the command, it will be preceded by
+    <code>
+     sudo
+    </code>
+    .
+    <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-centos-7">
+     Initial Setup Guide for CentOS 7
+    </a>
+    explains how to add users and give them sudo access.
+   </p>
+   <h2 id="step-1-—-installing-docker">
+    Step 1 — Installing Docker
+   </h2>
+   <p>
+    The Docker installation package available in the official CentOS 7 repository may not be the latest version. To get the latest and greatest version, install Docker from the official Docker repository. This section shows you how to do just that.
+   </p>
+   <p>
+    But first, let’s update the package database:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo yum check-update </li></ul></code></pre>
+   <p>
+    Now run this command. It will add the official Docker repository, download the latest version of Docker, and install it:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">curl -fsSL https://get.docker.com/ | sh </li></ul></code></pre>
+   <p>
+    After installation has completed, start the Docker daemon:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo systemctl start docker </li></ul></code></pre>
+   <p>
+    Verify that it’s running:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo systemctl status docker </li></ul></code></pre>
+   <p>
+    The output should be similar to the following, showing that the service is active and running:
+   </p>
+   <pre class="code-pre"><code>● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: <span class="highlight">active (running)</span> since Sun 2016-05-01 06:53:52 CDT; 1 weeks 3 days ago Docs: https://docs.docker.com Main PID: 749 (docker) </code></pre>
+   <p>
+    Lastly,  make sure it starts at every server reboot:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo systemctl enable docker </li></ul></code></pre>
+   <p>
+    Installing Docker now gives you not just the Docker service (daemon) but also the
+    <code>
+     docker
+    </code>
+    command line utility, or the Docker client. We’ll explore how to use the
+    <code>
+     docker
+    </code>
+    command later in this tutorial.
+   </p>
+   <h2 id="step-2-—-executing-docker-command-without-sudo-optional">
+    Step 2 — Executing Docker Command Without Sudo (Optional)
+   </h2>
+   <p>
+    By default, running the
+    <code>
+     docker
+    </code>
+    command requires root privileges — that is, you have to prefix the command with
+    <code>
+     sudo
+    </code>
+    . It can also be run by a user in the
+    <strong>
+     docker
+    </strong>
+    group, which is automatically created during the installation of Docker. If you attempt to run the
+    <code>
+     docker
+    </code>
+    command without prefixing it with
+    <code>
+     sudo
+    </code>
+    or without being in the docker group, you’ll get an output like this:
+   </p>
+   <pre class="code-pre"><code>docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?. See 'docker run --help'. </code></pre>
+   <p>
+    If you want to avoid typing
+    <code>
+     sudo
+    </code>
+    whenever you run the
+    <code>
+     docker
+    </code>
+    command, add your username to the docker group:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo usermod -aG docker $(whoami) </li></ul></code></pre>
+   <p>
+    You will need to log out of the Droplet and back in as the same user to enable this change.
+   </p>
+   <p>
+    If you need to add a user to the
+    <code>
+     docker
+    </code>
+    group that you’re not logged in as, declare that username explicitly using:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">sudo usermod -aG docker <span class="highlight">username</span> </li></ul></code></pre>
+   <p>
+    The rest of this article assumes you are running the
+    <code>
+     docker
+    </code>
+    command as a user in the docker user group. If you choose not to, please prepend the commands with
+    <code>
+     sudo
+    </code>
+    .
+   </p>
+   <h2 id="step-3-—-using-the-docker-command">
+    Step 3 — Using the Docker Command
+   </h2>
+   <p>
+    With Docker installed and working, now’s the time to become familiar with the command line utility. Using
+    <code>
+     docker
+    </code>
+    consists of passing it a chain of options and subcommands followed by arguments. The syntax takes this form:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker [option] [command] [arguments] </li></ul></code></pre>
+   <p>
+    To view all available subcommands, type:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker </li></ul></code></pre>
+   <p>
+    As of Docker 1.11.1, the complete list of available subcommands includes:
+   </p>
+   <pre class="code-pre"><code> attach    Attach to a running container build     Build an image from a Dockerfile commit    Create a new image from a container's changes cp        Copy files/folders between a container and the local filesystem create    Create a new container diff      Inspect changes on a container's filesystem events    Get real time events from the server exec      Run a command in a running container export    Export a container's filesystem as a tar archive history   Show the history of an image images    List images import    Import the contents from a tarball to create a filesystem image info      Display system-wide information inspect   Return low-level information on a container or image kill      Kill a running container load      Load an image from a tar archive or STDIN login     Log in to a Docker registry logout    Log out from a Docker registry logs      Fetch the logs of a container network   Manage Docker networks pause     Pause all processes within a container port      List port mappings or a specific mapping for the CONTAINER ps        List containers pull      Pull an image or a repository from a registry push      Push an image or a repository to a registry rename    Rename a container restart   Restart a container rm        Remove one or more containers rmi       Remove one or more images run       Run a command in a new container save      Save one or more images to a tar archive search    Search the Docker Hub for images start     Start one or more stopped containers stats     Display a live stream of container(s) resource usage statistics stop      Stop a running container tag       Tag an image into a repository top       Display the running processes of a container unpause   Unpause all processes within a container update    Update configuration of one or more containers version   Show the Docker version information volume    Manage Docker volumes wait      Block until a container stops, then print its exit code </code></pre>
+   <p>
+    To view the switches available to a specific command, type:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker <span class="highlight">docker-subcommand</span> --help </li></ul></code></pre>
+   <p>
+    To view system-wide information, use:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker info </li></ul></code></pre>
+   <h2 id="step-4-—-working-with-docker-images">
+    Step 4 — Working with Docker Images
+   </h2>
+   <p>
+    Docker containers are run from Docker images. By default, it pulls these images from Docker Hub, a Docker registry managed by Docker, the company behind the Docker project. Anybody can build and host their Docker images on Docker Hub, so most applications and Linux distributions you’ll need to run Docker containers have images that are hosted on Docker Hub.
+   </p>
+   <p>
+    To check whether you can access and download images from Docker Hub, type:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker run hello-world </li></ul></code></pre>
+   <p>
+    The output, which should include the following, should indicate that Docker in working correctly:
+   </p>
+   <pre class="code-pre"><code>Hello from Docker. This message shows that your installation appears to be working correctly. ... </code></pre>
+   <p>
+    You can search for images available on Docker Hub by using the
+    <code>
+     docker
+    </code>
+    command with the
+    <code>
+     search
+    </code>
+    subcommand. For example, to search for the CentOS image, type:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker search centos </li></ul></code></pre>
+   <p>
+    The script will crawl Docker Hub and return a listing of all images whose name match the search string. In this case, the output will be similar to this:
+   </p>
+   <pre class="code-pre"><code>NAME                            DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED centos                          The official build of CentOS.                   2224      [OK] jdeathe/centos-ssh              CentOS-6 6.7 x86_64 / CentOS-7 7.2.1511 x8...   22                   [OK] jdeathe/centos-ssh-apache-php   CentOS-6 6.7 x86_64 / Apache / PHP / PHP M...   17                   [OK] million12/centos-supervisor     Base CentOS-7 with supervisord launcher, h...   11                   [OK] nimmis/java-centos              This is docker images of CentOS 7 with dif...   10                   [OK] torusware/speedus-centos        Always updated official CentOS docker imag...   8                    [OK] nickistre/centos-lamp           LAMP on centos setup                            3                    [OK]  ... </code></pre>
+   <p>
+    In the
+    <strong>
+     OFFICIAL
+    </strong>
+    column,
+    <strong>
+     OK
+    </strong>
+    indicates an image built and supported by the company behind the project. Once you’ve identifed the image that you would like to use, you can download it to your computer using the
+    <code>
+     pull
+    </code>
+    subcommand, like so:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker pull centos </li></ul></code></pre>
+   <p>
+    After an image has been downloaded, you may then run a container using the downloaded image with the
+    <code>
+     run
+    </code>
+    subcommand. If an image has not been downloaded when
+    <code>
+     docker
+    </code>
+    is executed with the
+    <code>
+     run
+    </code>
+    subcommand, the Docker client will first download the image, then run a container using it:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker run centos </li></ul></code></pre>
+   <p>
+    To see the images that have been downloaded to your computer, type:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker images </li></ul></code></pre>
+   <p>
+    The output should look similar to the following:
+   </p>
+   <pre class="code-pre"><code>[secondary_lable Output] REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE centos              latest              778a53015523        5 weeks ago         196.7 MB hello-world         latest              94df4f0ce8a4        2 weeks ago         967 B </code></pre>
+   <p>
+    As you’ll see later in this tutorial, images that you use to run containers can be modified and used to generate new images, which may then be uploaded (
+    <em>
+     pushed
+    </em>
+    is the technical term) to Docker Hub or other Docker registries.
+   </p>
+   <h2 id="step-5-—-running-a-docker-container">
+    Step 5 — Running a Docker Container
+   </h2>
+   <p>
+    The
+    <code>
+     hello-world
+    </code>
+    container you ran in the previous step is an example of a container that runs and exits, after emitting a test message. Containers, however, can be much more useful than that, and they can be interactive. After all, they are similar to virtual machines, only more resource-friendly.
+   </p>
+   <p>
+    As an example, let’s run a container using the latest image of CentOS. The combination of the
+    <strong>
+     -i
+    </strong>
+    and
+    <strong>
+     -t
+    </strong>
+    switches gives you interactive shell access into the container:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker run -it centos </li></ul></code></pre>
+   <p>
+    Your command prompt should change to reflect the fact that you’re now working inside the container and should take this form:
+   </p>
+   <pre class="code-pre"><code>[root@59839a1b7de2 /]# </code></pre>
+   <p>
+    <strong>
+     Important:
+    </strong>
+    Note the container id in the command prompt. In the above example, it is
+    <code>
+     59839a1b7de2
+    </code>
+    .
+   </p>
+   <p>
+    Now you may run any command inside the container. For example, let’s install MariaDB server in the running container. No need to prefix any command with
+    <code>
+     sudo
+    </code>
+    , because you’re operating inside the container with root privileges:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">yum install mariadb-server </li></ul></code></pre>
+   <h2 id="step-6-—-committing-changes-in-a-container-to-a-docker-image">
+    Step 6 — Committing Changes in a Container to a Docker Image
+   </h2>
+   <p>
+    When you start up a Docker image, you can create, modify, and delete files just like you can with a virtual machine. The changes that you make will only apply to that container. You can start and stop it, but once you destroy it with the
+    <code>
+     docker rm
+    </code>
+    command, the changes will be lost for good.
+   </p>
+   <p>
+    This section shows you how to save the state of a container as a new Docker image.
+   </p>
+   <p>
+    After installing MariaDB server inside the CentOS container, you now have a container running off an image, but the container is different from the image you used to create it.
+   </p>
+   <p>
+    To save the state of the container as a new image, first exit from it:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">exit </li></ul></code></pre>
+   <p>
+    Then commit the changes to a new Docker image instance using the following command. The
+    <strong>
+     -m
+    </strong>
+    switch is for the commit message that helps you and others know what changes you made, while
+    <strong>
+     -a
+    </strong>
+    is used to specify the author. The container ID is the one you noted earlier in the tutorial when you started the interactive docker session. Unless you created additional repositories on Docker Hub, the repository is usually your Docker Hub username:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker commit -m "What did you do to the image" -a "Author Name" <span class="highlight">container-id</span> <span class="highlight">repository</span>/<span class="highlight">new_image_name</span> </li></ul></code></pre>
+   <p>
+    For example:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker commit -m "added mariadb-server" -a "Sunday Ogwu-Chinuwa" 59839a1b7de2 finid/centos-mariadb </li></ul></code></pre>
+   <p>
+    <span class="note">
+     <strong>
+      Note:
+     </strong>
+     When you
+     <em>
+      commit
+     </em>
+     an image, the new image is saved locally, that is, on your computer. Later in this tutorial, you’ll learn how to push an image to a Docker registry like Docker Hub so that it may be assessed and used by you and others.
+     <br/>
+    </span>
+   </p>
+   <p>
+    After that operation has completed, listing the Docker images now on your computer should show the new image, as well as the old one that it was derived from:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker images </li></ul></code></pre>
+   <p>
+    The output should be of this sort:
+   </p>
+   <pre class="code-pre"><code>REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE finid/centos-mariadb   latest              23390430ec73        6 seconds ago       424.6 MB centos                 latest              778a53015523        5 weeks ago         196.7 MB hello-world            latest              94df4f0ce8a4        2 weeks ago         967 B </code></pre>
+   <p>
+    In the above example,
+    <strong>
+     centos-mariadb
+    </strong>
+    is the new image, which was derived from the existing CentOS image from Docker Hub. The size difference reflects the changes that were made. And in this example, the change was that MariaDB server was installed. So next time you need to run a container using CentOS with MariaDB server pre-installed, you can just use the new image. Images may also be built from what’s called a Dockerfile. But that’s a very involved process that’s well outside the scope of this article. We’ll explore that in a future article.
+   </p>
+   <h2 id="step-7-—-listing-docker-containers">
+    Step 7 — Listing Docker Containers
+   </h2>
+   <p>
+    After using Docker for a while, you’ll have many active (running) and inactive containers on your computer. To view the active ones, use:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker ps </li></ul></code></pre>
+   <p>
+    You will see output similar to the following:
+   </p>
+   <pre class="code-pre"><code>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES f7c79cc556dd        centos              "/bin/bash"         3 hours ago         Up 3 hours                              silly_spence </code></pre>
+   <p>
+    To view all containers — active and inactive, pass it the
+    <code>
+     -a
+    </code>
+    switch:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker ps -a </li></ul></code></pre>
+   <p>
+    To view the latest container you created, pass it the
+    <code>
+     -l
+    </code>
+    switch:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker ps -l </li></ul></code></pre>
+   <p>
+    Stopping a running or active container is as simple as typing:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker stop <span class="highlight">container-id</span> </li></ul></code></pre>
+   <p>
+    The
+    <span class="highlight">
+     <code>
+      container-id
+     </code>
+    </span>
+    can be found in the output from the
+    <code>
+     docker ps
+    </code>
+    command.
+   </p>
+   <h2 id="step-8-—-pushing-docker-images-to-a-docker-repository">
+    Step 8 — Pushing Docker Images to a Docker Repository
+   </h2>
+   <p>
+    The next logical step after creating a new image from an existing image is to share it with a select few of your friends, the whole world on Docker Hub, or other Docker registry that you have access to. To push an image to Docker Hub or any other Docker registry, you must have an account there.
+   </p>
+   <p>
+    This section shows you how to push a Docker image to Docker Hub.
+   </p>
+   <p>
+    To create an account on Docker Hub, register at
+    <a href="https://hub.docker.com/">
+     Docker Hub
+    </a>
+    . Afterwards, to push your image, first log into Docker Hub. You’ll be prompted to authenticate:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker login -u <span class="highlight">docker-registry-username</span> </li></ul></code></pre>
+   <p>
+    If you specified the correct password, authentication should succeed. Then you may push your own image using:
+   </p>
+   <pre class="code-pre command"><code><ul class="prefixed"><li class="line" prefix="$">docker push <span class="highlight">docker-registry-username</span>/<span class="highlight">docker-image-name</span> </li></ul></code></pre>
+   <p>
+    It will take sometime to complete, and when completed, the output will be of this sort:
+   </p>
+   <pre class="code-pre"><code>The push refers to a repository [docker.io/finid/centos-mariadb] 670194edfaf5: Pushed 5f70bf18a086: Mounted from library/centos 6a6c96337be1: Mounted from library/centos  ...  </code></pre>
+   <p>
+    After pushing an image to a registry, it should be listed on your account’s dashboard, like that show in the image below.
+   </p>
+   <p>
+    <img alt="Docker image listing on Docker Hub" src="https://assets.digitalocean.com/articles/docker_install/docker_hub_dashboard_centos.png"/>
+   </p>
+   <p>
+    If a push attempt results in an error of this sort, then you likely did not log in:
+   </p>
+   <pre class="code-pre"><code>The push refers to a repository [docker.io/finid/centos-mariadb] e3fbbfb44187: Preparing 5f70bf18a086: Preparing a3b5c80a4eba: Preparing 7f18b442972b: Preparing 3ce512daaf78: Preparing 7aae4540b42d: Waiting unauthorized: authentication required </code></pre>
+   <p>
+    Log in, then repeat the push attempt.
+   </p>
+   <h2 id="conclusion">
+    Conclusion
+   </h2>
+   <p>
+    There’s a whole lot more to Docker than has been given in this article, but this should be enough to getting you started working with it on CentOS 7. Like most open source projects, Docker is built from a fast-developing codebase, so make a habit of visiting the project’s
+    <a href="https://blog.docker.com/">
+     blog page
+    </a>
+    for the latest information.
+   </p>
+   <p>
+    Also check out the
+    <a href="https://www.digitalocean.com/community/tags/docker?type=tutorials">
+     other Docker tutorials
+    </a>
+    in the DO Community.
+   </p>
+  </div>
+  <div class="tutorial-footer">
+   <div class="tutorial-footer-details">
+    <div class="postable-info-bar-container">
+     <div class="postable-info-bar">
+      <div class="author-byline">
+       <div class="component-collaborators-container">
+        <ul class="component-collaborators-content">
+         <li class="collaborator-byline-avatar">
+          <a href="/community/users/finid">
+           <img alt="finid" class="avatar avatar-large" height="80" src="https://secure.gravatar.com/avatar/989a7705a77732d888ddaff8b440fc3d?secure=true&amp;d=identicon" width="80"/>
+          </a>
+         </li>
+         <li class="collaborators-byline-data">
+          <p class="names">
+           By
+           <a href="/community/users/finid">
+            finid
+           </a>
+          </p>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="section-content tutorial-contributors three">
+     <div class="component-collaborators-container">
+      <ul class="component-collaborators-content">
+       <li class="collaborator-byline-avatar">
+        <a href="/community/users/tfox">
+         <img alt="D67be84c5e0a20b4c1cdb360319cdf4b5d9df7f6" class="avatar avatar-large" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/users/avatars/large/d67be84c5e0a20b4c1cdb360319cdf4b5d9df7f6.png?1434061462"/>
+        </a>
+       </li>
+       <li class="collaborators-byline-data">
+        <p class="names">
+         Editor:
+         <a href="/community/users/tfox">
+          Tammy Fox
+         </a>
+        </p>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="hsb--container">
+     <div class="hsb--content">
+      <div class="hsb--social-and-comments">
+       <div class="hsb--comment">
+        <strong class="amount">
+         8
+        </strong>
+       </div>
+      </div>
+     </div>
+     <a class="hsb--flagging-js" data-flag-type="report" data-flaggable-id="1975" data-url="/community/tutorials/how-to-install-and-use-docker-on-centos-7/flag" href="javascript:void(0);">
+      Report an issue
+     </a>
+    </div>
+   </div>
+   <div class="related-content">
+    <div class="section-content">
+     <h2>
+      Related
+     </h2>
+     <ul>
+      <li title="How to Install Nginx on CentOS 8">
+       <a class="panel" href="/community/tutorials/how-to-install-nginx-on-centos-8">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How to Install Nginx on CentOS 8
+         </h5>
+         <p data-clamp="">
+          Nginx is one of the most popular web servers in the world and is responsible for hosting some of the largest and highest-traffic sites on the internet. It is more resource-friendly than Apache in most cases and can be used as a web server or reverse proxy. In this guide, we'll discuss how to install Nginx on a CentOS 8 server.
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Automate Your Node.js Production Deployments with Shipit on CentOS 7">
+       <a class="panel" href="/community/tutorials/how-to-automate-your-node-js-production-deployments-with-shipit-on-centos-7">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Automate Your Node.js Production Deployments with Shipit on CentOS 7
+         </h5>
+         <p data-clamp="">
+          Shipit is a universal automation and deployment tool for Node.js developers. It features a task flow based on the popular Orchestrator package, login and interactive SSH commands through OpenSSH, and an extensible API. Developers can use Shipit to automate build and deployment workflows for a wide range of Node.js applications. In this tutorial you will install and configure Shipit to deploy a basic Node.js application from your local development environment to your product environment.
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Install Linux, Nginx, MySQL, PHP (LEMP) Stack on CentOS 8 [Quickstart]">
+       <a class="panel" href="/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-8-quickstart">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Install Linux, Nginx, MySQL, PHP (LEMP) Stack on CentOS 8 [Quickstart]
+         </h5>
+         <p data-clamp="">
+          In this tutorial, you’ll install a LEMP stack on a CentOS 8 server. Although MySQL is available from the default repositories in CentOS 8, this guide will walk through the process of setting up a LEMP stack with MariaDB as the database management…
+         </p>
+        </div>
+       </a>
+      </li>
+      <li title="How To Install Linux, Nginx, MySQL, PHP (LEMP) Stack on CentOS 8">
+       <a class="panel" href="/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-8">
+        <h6>
+         Tutorial
+        </h6>
+        <div class="panel-data">
+         <h5>
+          How To Install Linux, Nginx, MySQL, PHP (LEMP) Stack on CentOS 8
+         </h5>
+         <p data-clamp="">
+          The LEMP software stack is a group of software that can be used to serve dynamic web pages and web applications written in PHP. The name "LEMP" is an acronym that describes a Linux operating system, with an (E)Nginx web server. The backend data is stored in a MariaDB database and the dynamic processing is handled by PHP. In this guide, you'll install a LEMP stack on a CentOS 8 server using MariaDB as the database management system.
+         </p>
+        </div>
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="looking-for-an-answer">
+    <div class="section-content">
+     <h4>
+      Still looking for an answer?
+     </h4>
+     <div class="lfa--actions">
+      <a class="lfa--action-box" href="/community/questions/new?tags=Docker%2CCentOS">
+       Ask a question
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="content-comments">
+   <div class="section-content">
+    <div class="tutorial commentable" id="tutorial_1975">
+     <div class="comments-header">
+      <h4 class="comments-count">
+       <span>
+        8 Comments
+       </span>
+      </h4>
+     </div>
+     <div class="comments">
+      <ul class="response-list">
+       <a class="js-click-on-load hidden" data-remote="true" href="/community/tutorials/how-to-install-and-use-docker-on-centos-7/comments" rel="nofollow">
+        Load
+       </a>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="creative-commons">
+   <a class="creative-commons-image" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" rel="license" src="/assets/community/creativecommons-08b32a9279fcd47fcd78ac6a26331389.png"/>
+   </a>
+   <div class="license-text">
+    This work is licensed under a
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+    </a>
+    .
+   </div>
+  </div>
+  <div class="modal fade mini-modal" id="sign-in-modal" style="display: none;">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h1>
+       Almost there!
+      </h1>
+     </div>
+     <div class="modal-body">
+      <div class="sign-in-message">
+       Sign into your account, or create a new one, to start interacting.
+      </div>
+      <div class="sign-in-modal-actions">
+       <a class="sign-in-link button blue-button" data-default-url="/community/auth/digitalocean" href="/community/auth/digitalocean">
+        Sign In
+       </a>
+       <a class="sign-up-link button blue-button" data-default-url="/community/auth/digitalocean?display=sessionless+register" href="/community/auth/digitalocean?display=sessionless+register">
+        Sign Up
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

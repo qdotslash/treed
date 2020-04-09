@@ -1,0 +1,4000 @@
+<!DOCTYPE html>
+<html class="html__responsive" itemscope="" itemtype="http://schema.org/QAPage">
+ <head>
+  <title>
+   How to import other Python files? - Stack Overflow
+  </title>
+  <link href="https://stackoverflow.com/questions/2349991/how-to-import-other-python-files" rel="canonical"/>
+  <meta content="https://stackoverflow.com/questions/2349991/how-to-import-other-python-files" property="og:url"/>
+  <meta content="How to import other Python files?" itemprop="name" name="twitter:title" property="og:title"/>
+  <meta content="How do I import other files in Python? How exactly can I import a specific python file like import file.py? How can I import a folder instead of a specific file? I want to load a Python file dynam..." itemprop="description" name="twitter:description" property="og:description"/>
+  <link href="https://cdn.sstatic.net/Shared/stacks.css?v=f6dc2e55f461" rel="stylesheet" type="text/css"/>
+  <link href="https://cdn.sstatic.net/Sites/stackoverflow/primary.css?v=eb942de8ee32" rel="stylesheet" type="text/css"/>
+  <link href="/feeds/question/2349991" rel="alternate" title="Feed for question 'How to import other Python files?'" type="application/atom+xml"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/2349991/how-to-import-other-python-files" name="twitter:app:url:iphone"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/2349991/how-to-import-other-python-files" name="twitter:app:url:ipad"/>
+  <meta content="http://stackoverflow.com/questions/2349991/how-to-import-other-python-files" name="twitter:app:url:googleplay"/>
+ </head>
+ <body class="question-page unified-theme">
+  <div aria-hidden="false" class="p8 ff-sans ps-fixed b0 l0 r0 z-banner" id="js-gdpr-consent-banner" role="banner" style="background-color: #3b4045; color: white;">
+   <div aria-describedby="notice-message" class="wmx8 mx-auto grid grid__center" role="alertdialog">
+    <div aria-label="notice-message" class="grid--cell mr12">
+     <p class="mb0 lh-lg">
+      By using our site, you acknowledge that you have read and understand our  ,  , and our  .
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="left-sidebar js-pinned-left-sidebar ps-relative" data-is-here-when="md lg" id="left-sidebar">
+    <div aria-hidden="true" class="s-popover w-auto p16" id="popover-teams-create-cta" role="menu">
+     <div class="ps-relative overflow-hidden">
+      <p class="mb2">
+       <strong>
+        Teams
+       </strong>
+      </p>
+      <p class="mb16 fs-caption fc-medium">
+       Q&amp;A for Work
+      </p>
+      <p class="mb8 fs-caption fc-medium">
+       Stack Overflow for Teams is a private, secure spot for you and your coworkers to find and share information.
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="snippet-hidden" id="content">
+    <div itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+     <div class="inner-content clearfix">
+      <div class="grid sm:fd-column" id="question-header">
+       <h1 class="grid--cell fs-headline1 fl1 ow-break-word mb8" itemprop="name">
+        <a class="question-hyperlink" href="/questions/2349991/how-to-import-other-python-files">
+         How to import other Python files?
+        </a>
+       </h1>
+      </div>
+      <div class="grid fw-wrap pb8 mb16 bb bc-black-2">
+       <div class="grid--cell ws-nowrap mr16 mb8" title="2010-02-28 03:40:11Z">
+        <time datetime="2010-02-28T03:40:11" itemprop="dateCreated">
+         10 years ago
+        </time>
+       </div>
+       <div class="grid--cell ws-nowrap mr16 mb8">
+        <a class="s-link s-link__inherit" href="?lastactivity" title="2019-11-28 11:29:23Z">
+         3 months ago
+        </a>
+       </div>
+       <div class="grid--cell ws-nowrap mb8" title="Viewed 1,515,624 times">
+        1.5m times
+       </div>
+      </div>
+      <div aria-label="question and answers" id="mainbar" role="main">
+       <div class="question" data-questionid="2349991" id="question">
+        <div class="post-layout">
+         <div class="votecell post-layout--left">
+          <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="2349991">
+           <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="753" itemprop="upvoteCount">
+            753
+           </div>
+          </div>
+         </div>
+         <div class="postcell post-layout--right">
+          <div class="post-text" itemprop="text">
+           <p>
+            How do I import other files in Python?
+           </p>
+           <ol>
+            <li>
+             How exactly can I import a specific python file like
+             <code>
+              import file.py
+             </code>
+             ?
+            </li>
+            <li>
+             How can I import a folder instead of a specific file?
+            </li>
+            <li>
+             I want to load a Python file dynamically at runtime, based on user input.
+            </li>
+            <li>
+             I want to know how to load just one specific part from the file.
+            </li>
+           </ol>
+           <p>
+            For example, in
+            <code>
+             main.py
+            </code>
+            I have:
+           </p>
+           <pre><code>from extra import * </code></pre>
+           <p>
+            Although this gives me all the definitions in
+            <code>
+             extra.py
+            </code>
+            , when maybe all I want is a single definition:
+           </p>
+           <pre><code>def gap(): print print </code></pre>
+           <p>
+            What do I add to the
+            <code>
+             import
+            </code>
+            statement to just get
+            <code>
+             gap
+            </code>
+            from
+            <code>
+             extra.py
+            </code>
+            ?
+           </p>
+          </div>
+          <div class="post-taglist grid gs4 gsy fd-column">
+           <div class="grid ps-relative d-block">
+            <a class="post-tag" href="/questions/tagged/python-import" rel="tag" title="show questions tagged 'python-import'">
+             python-import
+            </a>
+           </div>
+          </div>
+          <div class="mb0">
+           <div class="mt16 grid gs8 gsy fw-wrap jc-end ai-start pt4">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 1 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="1" data-se-share-sheet-post-type="question" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this question" href="/q/2349991" itemprop="url" rel="nofollow" title="short permalink to this question">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 1 })" href="/posts/2349991/edit" title="">
+               improve this question
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 1 })" href="/posts/2349991/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2018-05-16 07:24:46Z">
+                 May 16 '18 at 7:24
+                </span>
+               </a>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/452775/lii">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/88963e7cc58eabf150447e7b78a24793?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details">
+               <a href="/users/452775/lii">
+                Lii
+               </a>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 8,807
+                </span>
+                <span aria-hidden="true" title="5 gold badges">
+                 <span class="badgecount">
+                  5
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 5 gold badges
+                </span>
+                <span aria-hidden="true" title="50 silver badges">
+                 <span class="badgecount">
+                  50
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 50 silver badges
+                </span>
+                <span aria-hidden="true" title="67 bronze badges">
+                 <span class="badgecount">
+                  67
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 67 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature owner grid--cell">
+             <div class="user-info">
+              <div class="user-action-time">
+               asked
+               <span class="relativetime" title="2010-02-28 03:40:11Z">
+                Feb 28 '10 at 3:40
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/282944/tamer">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/fdb6804b83fd65aa3eba9a5e634251f2?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/282944/tamer">
+                Tamer
+               </a>
+               <span class="d-none" itemprop="name">
+                Tamer
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 7,549
+                </span>
+                <span class="v-visible-sr">
+                 3 gold badges
+                </span>
+                <span aria-hidden="true" title="13 silver badges">
+                 <span class="badgecount">
+                  13
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 13 silver badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="post-layout--right">
+          <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="2349991" id="comments-2349991">
+           <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+            <li class="comment js-comment" data-comment-id="62142802" id="comment-62142802">
+             <div class="comment-text js-comment-text-and-form">
+              <div class="comment-body js-comment-edit-hide">
+               <span class="comment-copy">
+                See Also:
+                <a href="http://stackoverflow.com/questions/8663076/python-best-way-to-add-to-sys-path-relative-to-the-current-running-script" title="python best way to add to sys path relative to the current running script">
+                 stackoverflow.com/questions/8663076/…
+                </a>
+               </span>
+               –
+               <a class="comment-user" href="/users/42223/dreftymac" title="25,476 reputation">
+                dreftymac
+               </a>
+               <span class="comment-date" dir="ltr">
+                <span class="relativetime-clean" title="2016-05-18 22:10:17Z">
+                 May 18 '16 at 22:10
+                </span>
+               </span>
+              </div>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="answers">
+        <div id="answers-header">
+         <div class="subheader answers-subheader">
+          <h2 data-answercount="19">
+           19 Answers
+           <span itemprop="answerCount" style="display:none;">
+            19
+           </span>
+          </h2>
+          <div>
+           <div id="tabs">
+            <a data-nav-xhref="" data-shortcut="A" data-value="active" href="/questions/2349991/how-to-import-other-python-files?answertab=active#tab-top" title="Answers with the latest activity first">
+             active
+            </a>
+            <a data-nav-xhref="" data-shortcut="O" data-value="oldest" href="/questions/2349991/how-to-import-other-python-files?answertab=oldest#tab-top" title="Answers in the order they were provided">
+             oldest
+            </a>
+            <a class="youarehere is-selected" data-nav-xhref="" data-shortcut="V" data-value="votes" href="/questions/2349991/how-to-import-other-python-files?answertab=votes#tab-top" title="Answers with the highest score first">
+             votes
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer accepted-answer" data-answerid="2349998" id="answer-2349998" itemprop="acceptedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="2349998">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="421" itemprop="upvoteCount">
+             421
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             <code>
+              importlib
+             </code>
+             is recent addition in Python to programmatically import a module. It just a wrapper around
+             <code>
+              __import__
+             </code>
+             See
+             <a href="https://docs.python.org/3/library/importlib.html#module-importlib" rel="noreferrer">
+              https://docs.python.org/3/library/importlib.html#module-importlib
+             </a>
+            </p>
+            <pre><code>import importlib  moduleName = input('Enter module name:') importlib.import_module(moduleName) </code></pre>
+            <p>
+             <strong>
+              Update: Answer below is outdated
+             </strong>
+             . Use the more recent alternative above.
+            </p>
+            <ol>
+             <li>
+              <p>
+               Just
+               <code>
+                import file
+               </code>
+               without the '.py' extension.
+              </p>
+             </li>
+             <li>
+              <p>
+               You can mark a folder as a package, by adding an empty file named
+               <code>
+                __init__.py
+               </code>
+               .
+              </p>
+             </li>
+             <li>
+              <p>
+               You can use the
+               <code>
+                __import__
+               </code>
+               function. It takes the module name as a string. (Again: module name without the '.py' extension.)
+              </p>
+              <pre><code>pmName = input('Enter module name:') pm = __import__(pmName) print(dir(pm)) </code></pre>
+              <p>
+               Type
+               <code>
+                help(__import__)
+               </code>
+               for more details.
+              </p>
+             </li>
+            </ol>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/2349998" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/2349998/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/2349998/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2018-02-16 14:06:51Z">
+                 Feb 16 '18 at 14:06
+                </span>
+               </a>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/1019952/mohamed-taher-alrefaie">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/ryrqT.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details">
+               <a href="/users/1019952/mohamed-taher-alrefaie">
+                Mohamed Taher Alrefaie
+               </a>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 12,819">
+                 12.8k
+                </span>
+                <span aria-hidden="true" title="5 gold badges">
+                 <span class="badgecount">
+                  5
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 5 gold badges
+                </span>
+                <span aria-hidden="true" title="36 silver badges">
+                 <span class="badgecount">
+                  36
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 36 silver badges
+                </span>
+                <span aria-hidden="true" title="57 bronze badges">
+                 <span class="badgecount">
+                  57
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 57 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2010-02-28 03:42:33Z">
+                Feb 28 '10 at 3:42
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/234998/radian">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/f3f8e8bc25c717b3abc8626b31642fb1?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/234998/radian">
+                Radian
+               </a>
+               <span class="d-none" itemprop="name">
+                Radian
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 6,054
+                </span>
+                <span class="v-visible-sr">
+                 1 gold badge
+                </span>
+                <span aria-hidden="true" title="17 silver badges">
+                 <span class="badgecount">
+                  17
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 17 silver badges
+                </span>
+                <span aria-hidden="true" title="31 bronze badges">
+                 <span class="badgecount">
+                  31
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 31 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="2349998" id="comments-2349998">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="2">
+             <li class="comment js-comment" data-comment-id="25957055" id="comment-25957055">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 6
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 If you add an
+                 <code>
+                  import filename
+                 </code>
+                 to the
+                 <b>
+                  init
+                 </b>
+                 .py then you can import the module directly as the folder name.
+                </span>
+                –
+                <a class="comment-user" href="/users/665400/cornsmith" title="1,421 reputation">
+                 CornSmith
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2013-07-22 17:00:12Z">
+                  Jul 22 '13 at 17:00
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="58848515" id="comment-58848515">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 8
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 from
+                 <code>
+                  help(__import__)
+                 </code>
+                 :
+                 <code>
+                  Because this function is meant for use by the Python     interpreter and not for general use it is better to use     importlib.import_module() to programmatically import a module.
+                 </code>
+                </span>
+                –
+                <a class="comment-user" href="/users/5827215/tadhg-mcdonald-jensen" title="12,531 reputation">
+                 Tadhg McDonald-Jensen
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2016-02-23 15:04:17Z">
+                  Feb 23 '16 at 15:04
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="90118888" id="comment-90118888">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 5
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 What if it's not a package but just a script file?
+                </span>
+                –
+                <a class="comment-user" href="/users/1689770/jonathan" title="3,905 reputation">
+                 Jonathan
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-07-29 02:19:42Z">
+                  Jul 29 '18 at 2:19
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="90351379" id="comment-90351379">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 2
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 For importing a script file in the same path (maybe it would also work for a script file in a Python search path),
+                 <code>
+                  import filenamenoext
+                 </code>
+                 works just fine for me, with Python 3.4.8.
+                </span>
+                –
+                <a class="comment-user" href="/users/1397555/alex-hall" title="697 reputation">
+                 Alex Hall
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-08-05 14:05:21Z">
+                  Aug 5 '18 at 14:05
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="95506830" id="comment-95506830">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 7
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Is it still accurate in 2019? Is it python3 or 2?
+                </span>
+                –
+                <a class="comment-user" href="/users/4824854/sandburg" title="421 reputation">
+                 Sandburg
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-01-24 11:34:28Z">
+                  Jan 24 '19 at 11:34
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+           <div data-anon="true" data-rep="50" id="comments-link-2349998">
+            <a class="js-show-link comments-link" href="#" onclick="" role="button" title="expand to show all comments on this post">
+             show
+             <b>
+              2
+             </b>
+             more comments
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="20749411" id="answer-20749411" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="20749411">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="977" itemprop="upvoteCount">
+             977
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <h2>
+             There are many ways to import a python file, all with their pros and cons.
+            </h2>
+            <p>
+             Don't just hastily pick the first import strategy that works for you or else you'll have to rewrite the codebase later on when you find it doesn't meet your needs.
+            </p>
+            <p>
+             I'll start out explaining the easiest example #1, then I'll move toward the most professional and robust example #7
+            </p>
+            <p>
+             <strong>
+              Example 1, Import a python module with python interpreter:
+             </strong>
+            </p>
+            <ol>
+             <li>
+              <p>
+               Put this in /home/el/foo/fox.py:
+              </p>
+              <pre><code>def what_does_the_fox_say(): print("vixens cry") </code></pre>
+             </li>
+             <li>
+              <p>
+               Get into the python interpreter:
+              </p>
+              <pre><code>el@apollo:/home/el/foo$ python Python 2.7.3 (default, Sep 26 2013, 20:03:06) &gt;&gt;&gt; import fox &gt;&gt;&gt; fox.what_does_the_fox_say() vixens cry &gt;&gt;&gt; </code></pre>
+              <p>
+               You imported fox through the python interpreter, invoked the python function
+               <code>
+                what_does_the_fox_say()
+               </code>
+               from within fox.py.
+              </p>
+             </li>
+            </ol>
+            <p>
+             <strong>
+              Example 2, Use
+              <code>
+               execfile
+              </code>
+              or (
+              <a href="https://stackoverflow.com/q/6357361/55075">
+               <code>
+                exec
+               </code>
+               in Python 3
+              </a>
+              ) in a script to execute the other python file in place:
+             </strong>
+            </p>
+            <ol>
+             <li>
+              <p>
+               Put this in /home/el/foo2/mylib.py:
+              </p>
+              <pre><code>def moobar(): print("hi") </code></pre>
+             </li>
+             <li>
+              <p>
+               Put this in /home/el/foo2/main.py:
+              </p>
+              <pre><code>execfile("/home/el/foo2/mylib.py") moobar() </code></pre>
+             </li>
+             <li>
+              <p>
+               run the file:
+              </p>
+              <pre><code>el@apollo:/home/el/foo$ python main.py hi </code></pre>
+              <p>
+               The function moobar was imported from mylib.py and made available in main.py
+              </p>
+             </li>
+            </ol>
+            <p>
+             <strong>
+              Example 3, Use from ... import ... functionality:
+             </strong>
+            </p>
+            <ol>
+             <li>
+              <p>
+               Put this in /home/el/foo3/chekov.py:
+              </p>
+              <pre><code>def question(): print "where are the nuclear wessels?" </code></pre>
+             </li>
+             <li>
+              <p>
+               Put this in /home/el/foo3/main.py:
+              </p>
+              <pre><code>from chekov import question question() </code></pre>
+             </li>
+             <li>
+              <p>
+               Run it like this:
+              </p>
+              <pre><code>el@apollo:/home/el/foo3$ python main.py where are the nuclear wessels? </code></pre>
+              <p>
+               If you defined other functions in chekov.py, they would not be available unless you
+               <code>
+                import *
+               </code>
+              </p>
+             </li>
+            </ol>
+            <p>
+             <strong>
+              Example 4, Import riaa.py if it's in a different file location from where it is imported
+             </strong>
+            </p>
+            <ol>
+             <li>
+              <p>
+               Put this in /home/el/foo4/stuff/riaa.py:
+              </p>
+              <pre><code>def watchout(): print "computers are transforming into a noose and a yoke for humans" </code></pre>
+             </li>
+             <li>
+              <p>
+               Put this in /home/el/foo4/main.py:
+              </p>
+              <pre><code>import sys import os sys.path.append(os.path.abspath("/home/el/foo4/stuff")) from riaa import * watchout() </code></pre>
+             </li>
+             <li>
+              <p>
+               Run it:
+              </p>
+              <pre><code>el@apollo:/home/el/foo4$ python main.py computers are transforming into a noose and a yoke for humans </code></pre>
+              <p>
+               That imports everything in the foreign file from a different directory.
+              </p>
+             </li>
+            </ol>
+            <p>
+             <strong>
+              Example 5, use
+              <code>
+               os.system("python yourfile.py")
+              </code>
+             </strong>
+            </p>
+            <pre><code>import os os.system("python yourfile.py") </code></pre>
+            <p>
+             <strong>
+              Example 6, import your file via piggybacking the python startuphook:
+             </strong>
+            </p>
+            <p>
+             <strong>
+              Update:
+             </strong>
+             This example used to work for both python2 and 3, but now only works for python2.  python3 got rid of this user startuphook feature set because it was abused by low-skill python library writers, using it to impolitely inject their code into the global namespace, before all user-defined programs.  If you want this to work for python3, you'll have to get more creative.  If I tell you how to do it, python developers will disable that feature set as well, so you're on your own.
+            </p>
+            <p>
+             See:
+             <a href="https://docs.python.org/2/library/user.html" rel="noreferrer">
+              https://docs.python.org/2/library/user.html
+             </a>
+            </p>
+            <p>
+             Put this code into your home directory in
+             <code>
+              ~/.pythonrc.py
+             </code>
+            </p>
+            <pre><code>class secretclass: def secretmessage(cls, myarg): return myarg + " is if.. up in the sky, the sky" secretmessage = classmethod( secretmessage )  def skycake(cls): return "cookie and sky pie people can't go up and " skycake = classmethod( skycake ) </code></pre>
+            <p>
+             Put this code into your main.py (can be anywhere):
+            </p>
+            <pre><code>import user msg = "The only way skycake tates good" msg = user.secretclass.secretmessage(msg) msg += user.secretclass.skycake() print(msg + " have the sky pie! SKYCAKE!") </code></pre>
+            <p>
+             Run it, you should get this:
+            </p>
+            <pre><code>$ python main.py The only way skycake tates good is if.. up in the sky, the skycookie and sky pie people can't go up and  have the sky pie! SKYCAKE! </code></pre>
+            <p>
+             If you get an error here:
+             <code>
+              ModuleNotFoundError: No module named 'user'
+             </code>
+             then it means you're using python3, startuphooks are disabled there by default.
+            </p>
+            <p>
+             Credit for this jist goes to:
+             <a href="https://github.com/docwhat/homedir-examples/blob/master/python-commandline/.pythonrc.py" rel="noreferrer">
+              https://github.com/docwhat/homedir-examples/blob/master/python-commandline/.pythonrc.py
+             </a>
+             Send along your up-boats.
+            </p>
+            <p>
+             <strong>
+              Example 7, Most Robust: Import files in python with the bare import command:
+             </strong>
+            </p>
+            <ol>
+             <li>
+              Make a new directory
+              <code>
+               /home/el/foo5/
+              </code>
+             </li>
+             <li>
+              Make a new directory
+              <code>
+               /home/el/foo5/herp
+              </code>
+             </li>
+             <li>
+              <p>
+               Make an empty file named
+               <code>
+                __init__.py
+               </code>
+               under herp:
+              </p>
+              <pre><code>el@apollo:/home/el/foo5/herp$ touch __init__.py el@apollo:/home/el/foo5/herp$ ls __init__.py </code></pre>
+             </li>
+             <li>
+              <p>
+               Make a new directory /home/el/foo5/herp/derp
+              </p>
+             </li>
+             <li>
+              <p>
+               Under derp, make another
+               <code>
+                __init__.py
+               </code>
+               file:
+              </p>
+              <pre><code>el@apollo:/home/el/foo5/herp/derp$ touch __init__.py el@apollo:/home/el/foo5/herp/derp$ ls __init__.py </code></pre>
+             </li>
+             <li>
+              <p>
+               Under /home/el/foo5/herp/derp make a new file called
+               <code>
+                yolo.py
+               </code>
+               Put this in there:
+              </p>
+              <pre><code>def skycake(): print "SkyCake evolves to stay just beyond the cognitive reach of " + "the bulk of men. SKYCAKE!!" </code></pre>
+             </li>
+             <li>
+              <p>
+               The moment of truth, Make the new file
+               <code>
+                /home/el/foo5/main.py
+               </code>
+               , put this in there;
+              </p>
+              <pre><code>from herp.derp.yolo import skycake skycake() </code></pre>
+             </li>
+             <li>
+              <p>
+               Run it:
+              </p>
+              <pre><code>el@apollo:/home/el/foo5$ python main.py SkyCake evolves to stay just beyond the cognitive reach of the bulk of men. SKYCAKE!! </code></pre>
+              <p>
+               The empty
+               <code>
+                __init__.py
+               </code>
+               file communicates to the python interpreter that the developer intends this directory to be an importable package.
+              </p>
+             </li>
+            </ol>
+            <p>
+             If you want to see my post on how to include ALL .py files under a directory see here:
+             <a href="https://stackoverflow.com/a/20753073/445131">
+              https://stackoverflow.com/a/20753073/445131
+             </a>
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/20749411" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/20749411/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/20749411/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2019-06-20 00:28:10Z">
+                 Jun 20 '19 at 0:28
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2013-12-23 18:46:10Z">
+                Dec 23 '13 at 18:46
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/445131/eric-leschinski">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/2b4pE.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/445131/eric-leschinski">
+                Eric Leschinski
+               </a>
+               <span class="d-none" itemprop="name">
+                Eric Leschinski
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 106,046">
+                 106k
+                </span>
+                <span aria-hidden="true" title="47 gold badges">
+                 <span class="badgecount">
+                  47
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 47 gold badges
+                </span>
+                <span aria-hidden="true" title="355 silver badges">
+                 <span class="badgecount">
+                  355
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 355 silver badges
+                </span>
+                <span aria-hidden="true" title="302 bronze badges">
+                 <span class="badgecount">
+                  302
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 302 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="20749411" id="comments-20749411">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="5">
+             <li class="comment js-comment" data-comment-id="56557283" id="comment-56557283">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 5
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 You should also add Example 6: using
+                 <code>
+                  __import__(py_file_name)
+                 </code>
+                 .  Amazing guide anyway
+                </span>
+                –
+                <a class="comment-user" href="/users/3356679/oriadam" title="4,046 reputation">
+                 oriadam
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2015-12-22 02:59:09Z">
+                  Dec 22 '15 at 2:59
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="58829777" id="comment-58829777">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 3
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Every time I have an import issue I end up at this question and am always able to solve my problem. If I could upvote this for each time you've helped me, I would.
+                </span>
+                –
+                <a class="comment-user" href="/users/1382287/dgbp" title="1,491 reputation">
+                 dgBP
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2016-02-23 07:23:48Z">
+                  Feb 23 '16 at 7:23
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="65099717" id="comment-65099717">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 4
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 What's the big difference between all of these, and why is one better than any other? For example 5, you write "Import files in python with the bare import command," but you also use the (bare?) import command in examples 1, 3 and 4, don't you?
+                </span>
+                –
+                <a class="comment-user" href="/users/1070480/hellogoodbye" title="2,160 reputation">
+                 HelloGoodbye
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2016-08-10 08:58:16Z">
+                  Aug 10 '16 at 8:58
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="72974838" id="comment-72974838">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="hot" title="number of 'useful comment' votes received">
+                 27
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Good answer but the fact that you use a different import file as example all the times makes it cumbersome to read.
+                </span>
+                –
+                <a class="comment-user" href="/users/5017267/gented" title="1,156 reputation">
+                 gented
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2017-03-21 21:59:19Z">
+                  Mar 21 '17 at 21:59
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="85223235" id="comment-85223235">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 1
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 I would like to emphasize that even if you work on Windows, the import is case sensitive. So you cannot have
+                 <b>
+                  Module.py
+                 </b>
+                 and have in your code
+                 <b>
+                  import module
+                 </b>
+                </span>
+                –
+                <a class="comment-user" href="/users/797396/radato" title="502 reputation">
+                 radato
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-03-05 11:15:16Z">
+                  Mar 5 '18 at 11:15
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+           <div data-anon="true" data-rep="50" id="comments-link-20749411">
+            <a class="js-show-link comments-link" href="#" onclick="" role="button" title="expand to show all comments on this post">
+             show
+             <b>
+              5
+             </b>
+             more comments
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="16299963" id="answer-16299963" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="16299963">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="63" itemprop="upvoteCount">
+             63
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             To import a specific Python file at 'runtime' with a known name:
+            </p>
+            <pre><code>import os import sys </code></pre>
+            <p>
+             ...
+            </p>
+            <pre><code>scriptpath = "../Test/"  # Add the directory containing your module to the Python path (wants absolute paths) sys.path.append(os.path.abspath(scriptpath))  # Do the import import MyModule </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/16299963" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/16299963/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/16299963/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2019-11-28 11:29:23Z">
+                 Nov 28 '19 at 11:29
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2013-04-30 12:30:38Z">
+                Apr 30 '13 at 12:30
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/410072/james">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/22f57fe1a55d01c728d33cbcfda204b5?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/410072/james">
+                James
+               </a>
+               <span class="d-none" itemprop="name">
+                James
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 21,424">
+                 21.4k
+                </span>
+                <span aria-hidden="true" title="14 gold badges">
+                 <span class="badgecount">
+                  14
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 14 gold badges
+                </span>
+                <span aria-hidden="true" title="69 silver badges">
+                 <span class="badgecount">
+                  69
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 69 silver badges
+                </span>
+                <span aria-hidden="true" title="96 bronze badges">
+                 <span class="badgecount">
+                  96
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 96 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="16299963" id="comments-16299963">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="104345041" id="comment-104345041">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 My friend checked this today with no luck - looks like filename should not be there. He used local file in parent directory and "./" worked at the end as if parent directory (..). Fixing problem in post was rejected - probably misunderstanding(?) Print sys.path and compare records if you are not sure...
+                </span>
+                –
+                <a class="comment-user" href="/users/5480147/tom" title="1,384 reputation">
+                 Tom
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-11-26 13:58:16Z">
+                  Nov 26 '19 at 13:58
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="14503276" id="answer-14503276" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="14503276">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="29" itemprop="upvoteCount">
+             29
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             You do not have many complex methods to import a python file from one folder to another. Just create a
+             <strong>
+              __init__.py
+             </strong>
+             file to declare this folder is a python package and then go to your host file where you want to import just type
+            </p>
+            <p>
+             <code>
+              from root.parent.folder.file import variable, class, whatever
+             </code>
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/14503276" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/14503276/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/14503276/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2016-02-24 23:02:49Z">
+                 Feb 24 '16 at 23:02
+                </span>
+               </a>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/308315/iwasrobbed">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/2ZR4W.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details">
+               <a href="/users/308315/iwasrobbed">
+                iwasrobbed
+               </a>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 43,707">
+                 43.7k
+                </span>
+                <span aria-hidden="true" title="20 gold badges">
+                 <span class="badgecount">
+                  20
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 20 gold badges
+                </span>
+                <span aria-hidden="true" title="133 silver badges">
+                 <span class="badgecount">
+                  133
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 133 silver badges
+                </span>
+                <span aria-hidden="true" title="181 bronze badges">
+                 <span class="badgecount">
+                  181
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 181 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2013-01-24 14:08:54Z">
+                Jan 24 '13 at 14:08
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/209623/fatih-karatana">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/4a275c360acfb7f8aba36e7decc0ba0e?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/209623/fatih-karatana">
+                Fatih Karatana
+               </a>
+               <span class="d-none" itemprop="name">
+                Fatih Karatana
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 1,838
+                </span>
+                <span aria-hidden="true" title="2 gold badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 gold badges
+                </span>
+                <span aria-hidden="true" title="22 silver badges">
+                 <span class="badgecount">
+                  22
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 22 silver badges
+                </span>
+                <span aria-hidden="true" title="37 bronze badges">
+                 <span class="badgecount">
+                  37
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 37 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="14503276" id="comments-14503276">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="75655105" id="comment-75655105">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="warm" title="number of 'useful comment' votes received">
+                 11
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 What if I want a relative path?
+                </span>
+                –
+                <a class="comment-user" href="/users/1037303/domih" title="868 reputation">
+                 domih
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2017-06-02 09:22:11Z">
+                  Jun 2 '17 at 9:22
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="32903271" id="answer-32903271" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="32903271">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="21" itemprop="upvoteCount">
+             21
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             <a href="http://www.tutorialspoint.com/python/python_modules.htm" rel="noreferrer">
+              Import doc ..
+             </a>
+             -- Link for reference
+            </p>
+            <p>
+             The
+             <code>
+              __init__.py
+             </code>
+             files are required to make Python treat the directories as containing packages, this is done to prevent directories with a common name, such as string, from unintentionally hiding valid modules that occur later on the module search path.
+            </p>
+            <p>
+             <code>
+              __init__.py
+             </code>
+             can just be an empty file, but it can also execute initialization code for the package or set the
+             <code>
+              __all__
+             </code>
+             variable.
+            </p>
+            <pre class="lang-python prettyprint-override"><code>mydir/spam/__init__.py mydir/spam/module.py import spam.module or from spam import module </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/32903271" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/32903271/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/32903271/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2018-11-29 05:04:13Z">
+                 Nov 29 '18 at 5:04
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2015-10-02 08:27:54Z">
+                Oct 2 '15 at 8:27
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/4628770/sanyal">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/f3853e500af8b5ed3402bbf140ef6d78?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/4628770/sanyal">
+                Sanyal
+               </a>
+               <span class="d-none" itemprop="name">
+                Sanyal
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 745
+                </span>
+                <span aria-hidden="true" title="7 silver badges">
+                 <span class="badgecount">
+                  7
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 7 silver badges
+                </span>
+                <span aria-hidden="true" title="20 bronze badges">
+                 <span class="badgecount">
+                  20
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 20 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="48712291" id="answer-48712291" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="48712291">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="15" itemprop="upvoteCount">
+             15
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <pre><code>from file import function_name  ######## Importing specific function function_name()                 ######## Calling function </code></pre>
+            <p>
+             and
+            </p>
+            <pre><code>import file              ######## Importing whole package file.function1_name()    ######## Calling function file.function2_name()    ######## Calling function </code></pre>
+            <p>
+             Here are the two simple ways I have understood by now and make sure your "file.py" file which you want to import as a library is present in your current directory only.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/48712291" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/48712291/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/48712291/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2018-02-16 19:49:18Z">
+                 Feb 16 '18 at 19:49
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2018-02-09 18:49:15Z">
+                Feb 9 '18 at 18:49
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/4647076/devendra-bhat">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://lh3.googleusercontent.com/-njfKtsTTzQY/AAAAAAAAAAI/AAAAAAAAAbs/_XeeG-VrFxc/photo.jpg?sz=32" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/4647076/devendra-bhat">
+                Devendra Bhat
+               </a>
+               <span class="d-none" itemprop="name">
+                Devendra Bhat
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 845
+                </span>
+                <span class="v-visible-sr">
+                 1 gold badge
+                </span>
+                <span aria-hidden="true" title="10 silver badges">
+                 <span class="badgecount">
+                  10
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 10 silver badges
+                </span>
+                <span aria-hidden="true" title="19 bronze badges">
+                 <span class="badgecount">
+                  19
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 19 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="56151144" id="answer-56151144" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="56151144">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="8" itemprop="upvoteCount">
+             8
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             First case: You want to import file
+             <code>
+              A.py
+             </code>
+             in file
+             <code>
+              B.py
+             </code>
+             , these two files are in the same folder, like this:
+            </p>
+            <pre><code>. ├── A.py └── B.py </code></pre>
+            <p>
+             You can do this in file
+             <code>
+              B.py
+             </code>
+             :
+            </p>
+            <pre><code>import A </code></pre>
+            <p>
+             or
+            </p>
+            <pre><code>from A import * </code></pre>
+            <p>
+             or
+            </p>
+            <pre><code>from A import THINGS_YOU_WANT_TO_IMPORT_IN_A </code></pre>
+            <p>
+             Then you will be able to use all the functions of file
+             <code>
+              A.py
+             </code>
+             in file
+             <code>
+              B.py
+             </code>
+            </p>
+            <p>
+             Second case: You want to import file
+             <code>
+              folder/A.py
+             </code>
+             in file
+             <code>
+              B.py
+             </code>
+             , these two files are not in the same folder, like this:
+            </p>
+            <pre><code>. ├── B.py └── folder └── A.py </code></pre>
+            <p>
+             You can do this in file B:
+            </p>
+            <pre><code>import folder.A </code></pre>
+            <p>
+             or
+            </p>
+            <pre><code>from folder.A import * </code></pre>
+            <p>
+             or
+            </p>
+            <pre><code>from folder.A import THINGS_YOU_WANT_TO_IMPORT_IN_A </code></pre>
+            <p>
+             Then you will be able to use all the functions of file
+             <code>
+              A.py
+             </code>
+             in file
+             <code>
+              B.py
+             </code>
+            </p>
+            <p>
+             Summary: In the first case, file
+             <code>
+              A.py
+             </code>
+             is a module that you imports in file
+             <code>
+              B.py
+             </code>
+             , you used the syntax
+             <code>
+              import module_name
+             </code>
+             . In the second case,
+             <code>
+              folder
+             </code>
+             is the package that contains the module
+             <code>
+              A.py
+             </code>
+             , you used the syntax
+             <code>
+              import package_name.module_name
+             </code>
+             .
+            </p>
+            <p>
+             For more info on packages and modules, consult this
+             <a href="https://stackoverflow.com/questions/7948494/whats-the-difference-between-a-python-module-and-a-python-package">
+              link
+             </a>
+             .
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/56151144" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/56151144/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/56151144/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2019-05-31 08:51:36Z">
+                 May 31 '19 at 8:51
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2019-05-15 13:57:32Z">
+                May 15 '19 at 13:57
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/6057480/bohao-li">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/9389d363a4bf11c8b70596391e16d1eb?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/6057480/bohao-li">
+                Bohao LI
+               </a>
+               <span class="d-none" itemprop="name">
+                Bohao LI
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 489
+                </span>
+                <span aria-hidden="true" title="6 silver badges">
+                 <span class="badgecount">
+                  6
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 6 silver badges
+                </span>
+                <span aria-hidden="true" title="14 bronze badges">
+                 <span class="badgecount">
+                  14
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 14 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="56151144" id="comments-56151144">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="99310476" id="comment-99310476">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 I tried with a little variation and it worked.
+                 <code>
+                  from folder_a.script import *
+                 </code>
+                 Script.py is under the folder a.
+                </span>
+                –
+                <a class="comment-user" href="/users/6144940/justin" title="149 reputation">
+                 Justin
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-05-29 04:14:07Z">
+                  May 29 '19 at 4:14
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="102900632" id="comment-102900632">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 +1 This is what I was looking for. Couldn't understand other answers but you explained it using the directories.
+                </span>
+                –
+                <a class="comment-user" href="/users/8321664/black-thunder" title="3,843 reputation">
+                 Black Thunder
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-10-07 09:18:08Z">
+                  Oct 7 '19 at 9:18
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="103163900" id="comment-103163900">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 What if I want to import a py file that is in the parent directory?
+                </span>
+                –
+                <a class="comment-user" href="/users/323158/bytedev" title="4,210 reputation">
+                 bytedev
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-10-16 09:35:35Z">
+                  Oct 16 '19 at 9:35
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="103164254" id="comment-103164254">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @bytedev Add
+                 <code>
+                  import sys
+                 </code>
+                 and
+                 <code>
+                  sys.path.append("..")
+                 </code>
+                 to the beginning of the file. According to this:
+                 <a href="https://stackoverflow.com/a/48341902/6057480">
+                  stackoverflow.com/a/48341902/6057480
+                 </a>
+                 . Tested, working perfectly, after doing this, you will be able to import a py file in the parent directory and still able to import py files in the same directory and sub-directories.
+                </span>
+                –
+                <a class="comment-user" href="/users/6057480/bohao-li" title="489 reputation">
+                 Bohao LI
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-10-16 09:46:07Z">
+                  Oct 16 '19 at 9:46
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="44784562" id="answer-44784562" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="44784562">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="7" itemprop="upvoteCount">
+             7
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             the best way to import .py files is by way of
+             <code>
+              __init__.py
+             </code>
+             . the simplest thing to do, is to create an empty file named
+             <code>
+              __init__.py
+             </code>
+             in the same directory that your.py file is located.
+            </p>
+            <p>
+             this
+             <a href="http://mikegrouchy.com/blog/2012/05/be-pythonic-__init__py.html" rel="noreferrer">
+              post
+             </a>
+             by Mike Grouchy is a great explanation of
+             <code>
+              __init__.py
+             </code>
+             and its use for making, importing, and setting up python packages.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/44784562" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/44784562/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/44784562/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2017-06-27 16:14:53Z">
+                 Jun 27 '17 at 16:14
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2017-06-27 15:43:12Z">
+                Jun 27 '17 at 15:43
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/7038819/supreme">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://graph.facebook.com/175006196285476/picture?type=large" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/7038819/supreme">
+                supreme
+               </a>
+               <span class="d-none" itemprop="name">
+                supreme
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 181
+                </span>
+                <span aria-hidden="true" title="2 silver badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 silver badges
+                </span>
+                <span aria-hidden="true" title="8 bronze badges">
+                 <span class="badgecount">
+                  8
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 8 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="44784562" id="comments-44784562">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="76551238" id="comment-76551238">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 1
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @GhostCat I have updated my response. thanks for the link "it would be preferable".
+                </span>
+                –
+                <a class="comment-user" href="/users/7038819/supreme" title="181 reputation">
+                 supreme
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2017-06-27 16:19:17Z">
+                  Jun 27 '17 at 16:19
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="76567421" id="comment-76567421">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 And understand that not everyone is living in your timezone.
+                </span>
+                –
+                <a class="comment-user" href="/users/1531124/ghostcat-salutes-monica-c" title="117,783 reputation">
+                 GhostCat salutes Monica C.
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2017-06-28 04:07:34Z">
+                  Jun 28 '17 at 4:07
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="99805980" id="comment-99805980">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 3
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 You should've posted the contents of Mike Grouchy's post, especially since the link now 404s.
+                 <a href="https://web.archive.org/web/20190309045451/https://mikegrouchy.com/blog/2012/05/be-pythonic-__init__py.html" rel="nofollow noreferrer">
+                  web.archive.org/web/20190309045451/https://mikegrouchy.com/blog/…
+                 </a>
+                </span>
+                –
+                <a class="comment-user" href="/users/3163618/qwr" title="4,753 reputation">
+                 qwr
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-06-16 03:51:21Z">
+                  Jun 16 '19 at 3:51
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="37111623" id="answer-37111623" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="37111623">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="5" itemprop="upvoteCount">
+             5
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             How I import is import the file and use shorthand of it's name.
+            </p>
+            <pre><code>import DoStuff.py as DS DS.main() </code></pre>
+            <p>
+             <strong>
+              Don't forget
+             </strong>
+             that your importing file
+             <strong>
+              MUST BE
+             </strong>
+             named with .py extension
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/37111623" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/37111623/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2016-05-09 09:01:49Z">
+                May 9 '16 at 9:01
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/2500743/luke359">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/fe030973b888908167dbffded9a773d7?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/2500743/luke359">
+                Luke359
+               </a>
+               <span class="d-none" itemprop="name">
+                Luke359
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 381
+                </span>
+                <span class="v-visible-sr">
+                 4 silver badges
+                </span>
+                <span aria-hidden="true" title="12 bronze badges">
+                 <span class="badgecount">
+                  12
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 12 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="37111623" id="comments-37111623">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="98108736" id="comment-98108736">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 3
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Wouldn't
+                 <code>
+                  import DoStuff.py as DS
+                 </code>
+                 attempt to import
+                 <code>
+                  py
+                 </code>
+                 from
+                 <code>
+                  DoStuff
+                 </code>
+                 ?
+                </span>
+                –
+                <a class="comment-user" href="/users/10050580/benj" title="372 reputation">
+                 Benj
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-04-16 18:00:31Z">
+                  Apr 16 '19 at 18:00
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="49896579" id="answer-49896579" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="49896579">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="5" itemprop="upvoteCount">
+             5
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             I'd like to add this note I don't very clearly elsewhere; inside a module/package, when loading from files, the module/package name must be prefixed with the
+             <code>
+              mymodule
+             </code>
+             . Imagine
+             <code>
+              mymodule
+             </code>
+             being layout like this:
+            </p>
+            <pre><code>/main.py /mymodule /__init__.py /somefile.py /otherstuff.py </code></pre>
+            <p>
+             When loading
+             <code>
+              somefile.py
+             </code>
+             /
+             <code>
+              otherstuff.py
+             </code>
+             from
+             <code>
+              __init__.py
+             </code>
+             the contents should look like:
+            </p>
+            <pre><code>from mymodule.somefile import somefunc from mymodule.otherstuff import otherfunc </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/49896579" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/49896579/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/49896579/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2018-04-28 17:19:05Z">
+                 Apr 28 '18 at 17:19
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2018-04-18 09:51:57Z">
+                Apr 18 '18 at 9:51
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/2491/svend">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/00f2c9b243b278d2ba50bc1aeeccc642?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/2491/svend">
+                Svend
+               </a>
+               <span class="d-none" itemprop="name">
+                Svend
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 6,782
+                </span>
+                <span class="v-visible-sr">
+                 3 gold badges
+                </span>
+                <span aria-hidden="true" title="26 silver badges">
+                 <span class="badgecount">
+                  26
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 26 silver badges
+                </span>
+                <span aria-hidden="true" title="42 bronze badges">
+                 <span class="badgecount">
+                  42
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 42 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="53614805" id="answer-53614805" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="53614805">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="2" itemprop="upvoteCount">
+             2
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             In case the
+             <strong>
+              module
+             </strong>
+             you want to import is
+             <strong>
+              not in a sub-directory
+             </strong>
+             , then try the following and run
+             <code>
+              app.py
+             </code>
+             from the deepest common parent directory:
+            </p>
+            <p>
+             Directory Structure:
+            </p>
+            <pre><code>/path/to/common_dir/module/file.py /path/to/common_dir/application/app.py /path/to/common_dir/application/subpath/config.json </code></pre>
+            <p>
+             In
+             <code>
+              app.py
+             </code>
+             , append path of client to sys.path:
+            </p>
+            <pre><code>import os, sys, inspect  sys.path.append(os.getcwd()) from module.file import MyClass instance = MyClass() </code></pre>
+            <p>
+             Optional (If you load e.g. configs) (Inspect seems to be the most robust one for my use cases)
+            </p>
+            <pre><code># Get dirname from inspect module filename = inspect.getframeinfo(inspect.currentframe()).filename dirname = os.path.dirname(os.path.abspath(filename)) MY_CONFIG = os.path.join(dirname, "subpath/config.json") </code></pre>
+            <p>
+             Run
+            </p>
+            <pre><code>user@host:/path/to/common_dir$ python3 application/app.py </code></pre>
+            <p>
+             This solution works for me in cli, as well as PyCharm.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/53614805" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/53614805/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2018-12-04 14:10:41Z">
+                Dec 4 '18 at 14:10
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/7769217/christoph-schranz">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/ihbVh.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/7769217/christoph-schranz">
+                Christoph Schranz
+               </a>
+               <span class="d-none" itemprop="name">
+                Christoph Schranz
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 361
+                </span>
+                <span class="v-visible-sr">
+                 3 silver badges
+                </span>
+                <span aria-hidden="true" title="5 bronze badges">
+                 <span class="badgecount">
+                  5
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 5 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="57255689" id="answer-57255689" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="57255689">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="2" itemprop="upvoteCount">
+             2
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             There are couple of ways of including your python script with name abc.py
+            </p>
+            <ol>
+             <li>
+              e.g. if your file is called abc.py (import abc) Limitation is that your file should be present in the same location where your calling python script is.
+             </li>
+            </ol>
+            <blockquote>
+             <p>
+              import abc
+             </p>
+            </blockquote>
+            <ol start="2">
+             <li>
+              e.g. if your python file is inside the Windows folder. Windows folder is present at the same location where your calling python script is.
+             </li>
+            </ol>
+            <blockquote>
+             <p>
+              from folder import abc
+             </p>
+            </blockquote>
+            <ol start="3">
+             <li>
+              Incase abc.py script is available insider internal_folder which is present inside folder
+             </li>
+            </ol>
+            <blockquote>
+             <p>
+              from folder.internal_folder import abc
+             </p>
+            </blockquote>
+            <ol start="4">
+             <li>
+              As answered by James above, in case your file is at some fixed location
+             </li>
+            </ol>
+            <blockquote>
+             <p>
+              import os
+              <br/>
+              import sys
+              <br/>
+              scriptpath = "../Test/MyModule.py"
+              <br/>
+              sys.path.append(os.path.abspath(scriptpath))
+              <br/>
+              import MyModule
+             </p>
+            </blockquote>
+            <p>
+             In case your python script gets updated and you don't want to upload - use these statements for auto refresh. Bonus :)
+            </p>
+            <pre><code>%load_ext autoreload %autoreload 2 </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/57255689" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/57255689/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/57255689/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2019-07-29 14:29:31Z">
+                 Jul 29 '19 at 14:29
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2019-07-29 14:13:16Z">
+                Jul 29 '19 at 14:13
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/3463297/rishi-jain">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/961b90e70779ccc84b7cfbc33ae5dd57?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/3463297/rishi-jain">
+                rishi jain
+               </a>
+               <span class="d-none" itemprop="name">
+                rishi jain
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 360
+                </span>
+                <span class="v-visible-sr">
+                 3 silver badges
+                </span>
+                <span aria-hidden="true" title="12 bronze badges">
+                 <span class="badgecount">
+                  12
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 12 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="57536161" id="answer-57536161" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="57536161">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="2" itemprop="upvoteCount">
+             2
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             If the function defined is in a file
+             <code>
+              x.py
+             </code>
+             :
+            </p>
+            <pre class="lang-py prettyprint-override"><code>def greet(): print('Hello! How are you?') </code></pre>
+            <p>
+             In the file where you are importing the function, write this:
+            </p>
+            <pre class="lang-py prettyprint-override"><code>from x import greet </code></pre>
+            <p>
+             This is useful if you do not wish to import all the functions in a file.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/57536161" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/57536161/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2019-08-17 12:11:56Z">
+                Aug 17 '19 at 12:11
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/11915854/sid">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/34b4ba370c4dc9583ed1de5f778e118b?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/11915854/sid">
+                Sid
+               </a>
+               <span class="d-none" itemprop="name">
+                Sid
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 740
+                </span>
+                <span aria-hidden="true" title="2 silver badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 silver badges
+                </span>
+                <span aria-hidden="true" title="20 bronze badges">
+                 <span class="badgecount">
+                  20
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 20 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="49476390" id="answer-49476390" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="49476390">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Just to import python file in another python file
+            </p>
+            <p>
+             lets say I have
+             <strong>
+              helper.py
+             </strong>
+             python file which has a display function like,
+            </p>
+            <pre><code>def display(): print("I'm working sundar gsv") </code></pre>
+            <p>
+             Now in
+             <strong>
+              app.py
+             </strong>
+             , you can use the display function,
+            </p>
+            <pre><code>import helper helper.display() </code></pre>
+            <p>
+             The output,
+            </p>
+            <p>
+             <code>
+              I'm working sundar gsv
+             </code>
+            </p>
+            <p>
+             <strong>
+              NOTE:
+             </strong>
+             No need to specify the .py extension.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/49476390" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/49476390/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2018-03-25 13:27:38Z">
+                Mar 25 '18 at 13:27
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/4058429/sundar-gsv">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://lh4.googleusercontent.com/-GZFrxI8ihjY/AAAAAAAAAAI/AAAAAAAABmQ/0QwzeYd4I_Y/photo.jpg?sz=32" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/4058429/sundar-gsv">
+                Sundar Gsv
+               </a>
+               <span class="d-none" itemprop="name">
+                Sundar Gsv
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 357
+                </span>
+                <span class="v-visible-sr">
+                 3 silver badges
+                </span>
+                <span aria-hidden="true" title="5 bronze badges">
+                 <span class="badgecount">
+                  5
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 5 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="51576722" id="answer-51576722" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="51576722">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             This may sound crazy but you can just create a symbolic link to the file you want to import if you're just creating a wrapper script to it.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/51576722" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/51576722/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2018-07-29 02:20:57Z">
+                Jul 29 '18 at 2:20
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/1689770/jonathan">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/78b5dcbdd9f67f569c6102e091faafeb?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/1689770/jonathan">
+                Jonathan
+               </a>
+               <span class="d-none" itemprop="name">
+                Jonathan
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 3,905
+                </span>
+                <span aria-hidden="true" title="2 gold badges">
+                 <span class="badgecount">
+                  2
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 2 gold badges
+                </span>
+                <span aria-hidden="true" title="37 silver badges">
+                 <span class="badgecount">
+                  37
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 37 silver badges
+                </span>
+                <span aria-hidden="true" title="50 bronze badges">
+                 <span class="badgecount">
+                  50
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 50 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="51115333" id="answer-51115333" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="51115333">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             You can also do this:
+             <code>
+              from filename import something
+             </code>
+            </p>
+            <p>
+             example:
+             <code>
+              from client import Client
+             </code>
+             Note that you do not need the
+             <code>
+              .py .pyw .pyui
+             </code>
+             extension.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/51115333" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/51115333/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/51115333/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2018-08-22 10:01:21Z">
+                 Aug 22 '18 at 10:01
+                </span>
+               </a>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/10050580/benj">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/oz8pl.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details">
+               <a href="/users/10050580/benj">
+                Benj
+               </a>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 372
+                </span>
+                <span class="v-visible-sr">
+                 3 silver badges
+                </span>
+                <span aria-hidden="true" title="15 bronze badges">
+                 <span class="badgecount">
+                  15
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 15 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2018-06-30 13:22:40Z">
+                Jun 30 '18 at 13:22
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/10014788/lucas-soares">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://lh5.googleusercontent.com/-QB79WO95myg/AAAAAAAAAAI/AAAAAAAAAHc/qyoKZ3FSEYs/photo.jpg?sz=32" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/10014788/lucas-soares">
+                Lucas Soares
+               </a>
+               <span class="d-none" itemprop="name">
+                Lucas Soares
+               </span>
+               <div class="-flair">
+                <span class="v-visible-sr">
+                 1 bronze badge
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="55892361" id="answer-55892361" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="55892361">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             This is how I did to call a function from a python file, that is flexible for me to call any functions.
+            </p>
+            <pre><code>import os, importlib, sys  def callfunc(myfile, myfunc, *args): pathname, filename = os.path.split(myfile) sys.path.append(os.path.abspath(pathname)) modname = os.path.splitext(filename)[0] mymod = importlib.import_module(modname) result = getattr(mymod, myfunc)(*args) return result  result = callfunc("pathto/myfile.py", "myfunc", arg1, arg2) </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/55892361" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/55892361/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2019-04-28 16:34:49Z">
+                Apr 28 '19 at 16:34
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/5452170/xiao-feng-li">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/16bfc7d23c7bad37f5832e8e01cf849d?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/5452170/xiao-feng-li">
+                Xiao-Feng Li
+               </a>
+               <span class="d-none" itemprop="name">
+                Xiao-Feng Li
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 273
+                </span>
+                <span class="v-visible-sr">
+                 3 silver badges
+                </span>
+                <span aria-hidden="true" title="8 bronze badges">
+                 <span class="badgecount">
+                  8
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 8 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="55892361" id="comments-55892361">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="99805927" id="comment-99805927">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 How is making a new function better than using the function directly?
+                </span>
+                –
+                <a class="comment-user" href="/users/3163618/qwr" title="4,753 reputation">
+                 qwr
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-06-16 03:43:52Z">
+                  Jun 16 '19 at 3:43
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="99852201" id="comment-99852201">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @qwr  The new function callfunc() is simply a wrapper of the code to call the target function in the python file dynamically. The example given is the target "myfunc" in the python file "pathto/myfile.py". What do you mean by "using the function directly"?
+                </span>
+                –
+                <a class="comment-user" href="/users/5452170/xiao-feng-li" title="273 reputation">
+                 Xiao-Feng Li
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-06-18 01:37:08Z">
+                  Jun 18 '19 at 1:37
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="104274722" id="comment-104274722">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Worked perfectly for me. In my example, I replaced:
+                 <code>
+                  from mypath import Path
+                 </code>
+                 with
+                 <code>
+                  Path = callfunc("/folder/to/mypath.py", "Path")
+                 </code>
+                 . Thanks @Xiao-FengLi
+                </span>
+                –
+                <a class="comment-user" href="/users/3894543/user319436" title="123 reputation">
+                 user319436
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-11-24 00:36:06Z">
+                  Nov 24 '19 at 0:36
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="104275529" id="comment-104275529">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @user319436 Glad my answer helps someone finally. :)
+                </span>
+                –
+                <a class="comment-user" href="/users/5452170/xiao-feng-li" title="273 reputation">
+                 Xiao-Feng Li
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-11-24 02:08:40Z">
+                  Nov 24 '19 at 2:08
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="105653033" id="comment-105653033">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Thank @xiao-feng-li!! Great answer!!
+                </span>
+                –
+                <a class="comment-user" href="/users/1958128/altieres-de-matos" title="101 reputation">
+                 Altieres de Matos
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2020-01-15 14:25:23Z">
+                  Jan 15 at 14:25
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="51955067" id="answer-51955067" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             There are many ways, as listed above, but I find that I
+             <strong>
+              just want to import he contents of a file,
+             </strong>
+             and don't want to have to write lines and lines and have to import
+             <em>
+              other
+             </em>
+             modules. So, I came up with a way to get the contents of a file, even with the dot syntax (
+             <code>
+              file.property
+             </code>
+             ) as opposed to merging the imported file with yours.
+             <br/>
+             First of all, here is my file which I'll import,
+             <code>
+              data.py
+             </code>
+            </p>
+            <pre><code>    testString= "A string literal to import and test with" </code></pre>
+            <p>
+             <br/>
+             <b>
+              Note:
+             </b>
+             You could use the
+             <code>
+              .txt
+             </code>
+             extension instead.
+             <br/>
+             In
+             <code>
+              mainfile.py
+             </code>
+             , start by opening and getting the contents.
+            </p>
+            <pre><code>    #!usr/bin/env python3 Data=open('data.txt','r+').read() </code></pre>
+            <p>
+             Now you have the contents as a string, but trying to access
+             <code>
+              data.testString
+             </code>
+             will cause an error, as
+             <code>
+              data
+             </code>
+             is an instance of the
+             <code>
+              str
+             </code>
+             class, and even if it does have a property
+             <code>
+              testString
+             </code>
+             it will not do what you expected.
+             <br/>
+             Next, create a class. For instance (pun intended),
+             <code>
+              ImportedFile
+             </code>
+            </p>
+            <pre><code>    class ImportedFile: </code></pre>
+            <p>
+             And put this into it (with the appropriate indentation):
+            </p>
+            <pre><code>    exec(data) </code></pre>
+            <p>
+             <br/>
+             And finally, re-assign
+             <code>
+              data
+             </code>
+             like so:
+            </p>
+            <pre><code>    data=ImportedFile() </code></pre>
+            <p>
+             And that's it! Just access like you would for any-other module, typing
+             <code>
+              print(data.testString)
+             </code>
+             will print to the console
+             <code>
+              A string literal to import and test with
+             </code>
+             .
+             <br/>
+             If, however, you want the equivalent of
+             <code>
+              from mod import *
+             </code>
+             just drop the class, instance assignment, and de-dent the
+             <code>
+              exec
+             </code>
+             .
+            </p>
+            <p>
+             Hope this helps:)
+             <br/>
+             -Benji
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/51955067" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/51955067/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               <a class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })" href="/posts/51955067/revisions" title="show all edits to this post">
+                edited
+                <span class="relativetime" title="2018-08-22 08:30:55Z">
+                 Aug 22 '18 at 8:30
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2018-08-21 18:57:19Z">
+                Aug 21 '18 at 18:57
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/10050580/benj">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/oz8pl.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/10050580/benj">
+                Benj
+               </a>
+               <span class="d-none" itemprop="name">
+                Benj
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 372
+                </span>
+                <span class="v-visible-sr">
+                 3 silver badges
+                </span>
+                <span aria-hidden="true" title="15 bronze badges">
+                 <span class="badgecount">
+                  15
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 15 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="51955067" id="comments-51955067">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="99805956" id="comment-99805956">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 You seriously think reading the contents of the file as a string and then executing it is a good solution when we have all the other solutions people have posted?
+                </span>
+                –
+                <a class="comment-user" href="/users/3163618/qwr" title="4,753 reputation">
+                 qwr
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-06-16 03:48:13Z">
+                  Jun 16 '19 at 3:48
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="99809002" id="comment-99809002">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @qwr Erm yes, I do. Many of the other answers don't work in some situations. Which is why I needed an easy way that was guaranteed to work. If you are incapable of seeing things from anothers point of view, you need to try using the official IDLE.
+                </span>
+                –
+                <a class="comment-user" href="/users/10050580/benj" title="372 reputation">
+                 Benj
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-06-16 09:41:12Z">
+                  Jun 16 '19 at 9:41
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="56054847" id="answer-56054847" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             One very unknown feature of Python is the ability to import
+             <code>
+              zip
+             </code>
+             files:
+            </p>
+            <pre><code>library.zip |-library |--__init__.py </code></pre>
+            <p>
+             The file
+             <code>
+              __init__.py
+             </code>
+             of the package contains the following:
+            </p>
+            <pre><code>def dummy(): print 'Testing things out...' </code></pre>
+            <p>
+             We can write another script which can import a package from the zip archive. It is only necessary to add the zip file to the sys.path.
+            </p>
+            <pre><code>import sys sys.path.append(r'library.zip')  import library  def run(): library.dummy()  run() </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/56054847" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/56054847/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2019-05-09 08:04:13Z">
+                May 9 '19 at 8:04
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/895659/farsheed">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/cmPXO.jpg?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/895659/farsheed">
+                Farsheed
+               </a>
+               <span class="d-none" itemprop="name">
+                Farsheed
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 8,826
+                </span>
+                <span aria-hidden="true" title="34 silver badges">
+                 <span class="badgecount">
+                  34
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 34 silver badges
+                </span>
+                <span aria-hidden="true" title="48 bronze badges">
+                 <span class="badgecount">
+                  48
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 48 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="56054847" id="comments-56054847">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="99805934" id="comment-99805934">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 what benefit does the zip file provide?
+                </span>
+                –
+                <a class="comment-user" href="/users/3163618/qwr" title="4,753 reputation">
+                 qwr
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2019-06-16 03:45:06Z">
+                  Jun 16 '19 at 3:45
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <aside aria-hidden="false" class="s-notice s-notice__info js-post-notice mb16" role="status">
+         <div class="grid fd-column fw-nowrap">
+          <div class="grid fw-nowrap">
+           <div class="grid--cell fl1 lh-lg">
+            <div class="grid--cell fl1 lh-lg">
+             <b>
+              <a href="/help/privileges/protect-questions">
+               Highly active question
+              </a>
+             </b>
+             . Earn 10 reputation in order to answer this question. The reputation requirement helps protect this question from spam and non-answer activity.
+            </div>
+           </div>
+          </div>
+         </div>
+        </aside>
+        <h2 class="bottom-notice" data-loc="1">
+         Not the answer you're looking for?                                Browse other questions tagged
+         <a class="post-tag" href="/questions/tagged/python-import" rel="tag" title="show questions tagged 'python-import'">
+          python-import
+         </a>
+         or
+         <a href="/questions/ask">
+          ask your own question
+         </a>
+         .
+        </h2>
+       </div>
+      </div>
+      <div aria-label="sidebar" class="show-votes" id="sidebar" role="complementary">
+       <div class="s-sidebarwidget s-sidebarwidget__yellow s-anchors s-anchors__grayscale mb16" data-tracker="cb=1">
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         Blog
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Blog","https://stackoverflow.blog/2020/03/05/a-modern-hello-world-program-needs-more-than-just-code/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 0 })" href="https://stackoverflow.blog/2020/03/05/a-modern-hello-world-program-needs-more-than-just-code/">
+            A modern ‘Hello, World’ program needs more than just code
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Blog","https://stackoverflow.blog/2020/03/06/the-overflow-12-plain-text/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 1 })" href="https://stackoverflow.blog/2020/03/06/the-overflow-12-plain-text/">
+            The Overflow #12: Plain text
+           </a>
+          </div>
+         </li>
+        </ul>
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         Featured on Meta
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 2 })" href="https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog">
+            The Q1 2020 Community Roadmap is on the Blog
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 3 })" href="https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing">
+            An Update On Creative Commons Licensing
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344586/our-commitment-to-responding-to-meta-and-moderators",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 4 })" href="https://meta.stackexchange.com/questions/344586/our-commitment-to-responding-to-meta-and-moderators">
+            Our Commitment to Responding to Meta and Moderators
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 5 })" href="https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work">
+            How does the Triage queue work?
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/394409/open-source-advertising-1h-2020",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 6 })" href="https://meta.stackoverflow.com/questions/394409/open-source-advertising-1h-2020">
+            Open Source Advertising — 1H 2020
+           </a>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="module sidebar-linked">
+        <h4 id="h-linked">
+         Linked
+        </h4>
+        <div class="linked" data-tracker="lq=1">
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 2349991, target_question_id: 27945764, position: 0 })">
+          <a href="/q/27945764" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            6
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/27945764/recursively-import-all-py-files-from-all-folders?noredirect=1">
+           Recursively import all .py files from all folders
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 2349991, target_question_id: 33730968, position: 1 })">
+          <a href="/q/33730968" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            -2
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/33730968/how-do-i-properly-import-use-classes-and-modules-i-built-in-python-in-other-clas?noredirect=1">
+           How do I properly import/use classes and modules I built in Python in other classes/modules?
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 2349991, target_question_id: 48196195, position: 2 })">
+          <a href="/q/48196195" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            0
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/48196195/the-difference-between-np-function-and-function?noredirect=1">
+           The difference between np.function and function
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 2349991, target_question_id: 57154575, position: 3 })">
+          <a href="/q/57154575" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            -2
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/57154575/os-path-join-with-the-import-statement?noredirect=1">
+           os.path.join with the import statement
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 2349991, target_question_id: 48219927, position: 4 })">
+          <a href="/q/48219927" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            0
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/48219927/importing-my-own-python-module?noredirect=1">
+           Importing my own python module
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 2349991, target_question_id: 59624023, position: 5 })">
+          <a href="/q/59624023" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted default">
+            -1
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/59624023/how-do-i-import-local-variable-to-the-another-file-in-python?noredirect=1">
+           How do i import local variable to the another file in python?
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 2349991, target_question_id: 52028909, position: 6 })">
+          <a href="/q/52028909" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            0
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/52028909/how-to-execute-a-python-file-from-another?noredirect=1">
+           How to execute a python file from another
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 2349991, target_question_id: 33994269, position: 7 })">
+          <a href="/q/33994269" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            0
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/33994269/python-call-tkinter-function-from-different-python-script?noredirect=1">
+           python Call Tkinter Function from different python script
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 2349991, target_question_id: 44534539, position: 8 })">
+          <a href="/q/44534539" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            1
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/44534539/import-a-list-of-modules-in-a-file-in-python?noredirect=1">
+           Import a list of modules in a file in Python
+          </a>
+         </div>
+         <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 2349991, target_question_id: 59896916, position: 9 })">
+          <a href="/q/59896916" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes default">
+            -2
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/59896916/how-to-import-a-module-from-level-in-python?noredirect=1">
+           how to import a module from level in python?
+          </a>
+         </div>
+         <div class="spacer more">
+          <a href="/questions/linked/2349991">
+           see more linked questions…
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module sidebar-related">
+        <h4 id="h-related">
+         Related
+        </h4>
+        <div class="related js-gps-related-questions" data-tracker="rq=1">
+         <div class="spacer">
+          <a href="/q/82831" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes extra-large">
+            5422
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/82831/how-do-i-check-whether-a-file-exists-without-exceptions">
+           How do I check whether a file exists without exceptions?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/89228" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            4745
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/89228/calling-an-external-command-from-python">
+           Calling an external command from Python
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/100003" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            5579
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/100003/what-are-metaclasses-in-python">
+           What are metaclasses in Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/123198" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2343
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/123198/how-do-i-copy-a-file-in-python">
+           How do I copy a file in Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/394809" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            5837
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/394809/does-python-have-a-ternary-conditional-operator">
+           Does Python have a ternary conditional operator?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/3207219" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes extra-large">
+            3473
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3207219/how-do-i-list-all-files-of-a-directory">
+           How do I list all files of a directory?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/3437059" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            3600
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3437059/does-python-have-a-string-contains-substring-method">
+           Does Python have a string 'contains' substring method?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/4142151" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            626
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/4142151/how-to-import-the-class-within-the-same-directory-or-sub-directory">
+           How to import the class within the same directory or sub directory?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/4383571" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes extra-large">
+            1295
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/4383571/importing-files-from-different-folder">
+           Importing files from different folder
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/9371238" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1797
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/9371238/why-is-reading-lines-from-stdin-much-slower-in-c-than-python">
+           Why is reading lines from stdin much slower in C++ than Python?
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module tex2jax_ignore" id="hot-network-questions">
+        <h4>
+         <a class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })" href="https://stackexchange.com/questions?tab=hot">
+          Hot Network Questions
+         </a>
+        </h4>
+        <ul>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://puzzling.stackexchange.com/questions/94683/one-has-an-end-the-other-has-both">
+           One has an end; the other has both
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:617 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://law.stackexchange.com/questions/49742/will-storing-hashed-phone-numbers-violate-gdpr">
+           Will storing hashed phone numbers violate GDPR?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:419 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://cs.stackexchange.com/questions/121528/what-is-the-earliest-use-of-the-this-keyword-in-any-programming-language">
+           What is the earliest use of the "this" keyword in any programming language?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://bicycles.stackexchange.com/questions/66621/bag-for-holding-valuables-on-bike-while-parked">
+           Bag for holding valuables on bike while parked?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://tex.stackexchange.com/questions/531740/how-to-draw-cylinder-and-take-a-point-its-surface-with-tikz">
+           How to draw cylinder and take a point its surface with Tikz?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://aviation.stackexchange.com/questions/75144/do-airliner-cabin-filters-trap-viruses-or-other-pathogens">
+           Do airliner cabin filters trap viruses or other pathogens?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/200650/bad-factorial-joke">
+           Bad factorial joke
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:489 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://reverseengineering.stackexchange.com/questions/23401/ghidra-python-get-program-base-address">
+           Ghidra python - get program base address
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://electronics.stackexchange.com/questions/485068/need-help-how-to-disconnect-this-pictured-connector-inside-a-tablet-computer">
+           Need help how to disconnect this (pictured) connector inside a tablet computer
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://worldbuilding.stackexchange.com/questions/170748/why-is-the-death-star-laser-red">
+           Why is the Death Star laser red?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://music.stackexchange.com/questions/96000/alteration-in-a-stave-in-a-score-does-it-communicate-with-the-other-stave">
+           Alteration in a stave in a score: does it communicate with the other stave?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:514 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://astronomy.stackexchange.com/questions/35452/definition-of-rotation-versus-revolution">
+           Definition of Rotation versus Revolution
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://mathoverflow.net/questions/354327/atlas-like-websites-on-specific-areas-of-mathematics">
+           Atlas-like websites on specific areas of mathematics
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://academia.stackexchange.com/questions/145102/how-to-detect-cheating-when-students-take-online-quizzes-or-exams-from-home">
+           How to detect cheating when students take online quizzes or exams from home?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:244 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://sqa.stackexchange.com/questions/42865/is-it-important-to-know-manual-testing-before-learning-test-automation">
+           Is it important to know manual testing before learning test automation?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://history.stackexchange.com/questions/57131/are-there-incidents-of-ronin-travelling-outside-japan-as-soldiers-of-fortune">
+           Are there incidents of ronin travelling outside Japan as soldiers of fortune?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://politics.stackexchange.com/questions/50760/why-doesnt-the-uk-want-to-be-part-of-the-european-convention-on-human-rights">
+           Why doesn't the UK want to be part of the European Convention on Human Rights?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/200713/print-a-list-of-iphones">
+           Print a list of iPhones
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/200685/rgs-4-5-inverting-matrices-modulo-m">
+           (RGS 4/5) Inverting matrices modulo m
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://music.stackexchange.com/questions/95994/how-short-should-i-trim-my-nails">
+           How short should I trim my nails?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://mechanics.stackexchange.com/questions/74924/overheats-only-when-running-at-low-rpm">
+           Overheats only when running at low RPM
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:61 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://photo.stackexchange.com/questions/115020/why-wont-a-tamron-af-ld-200-400mm-f5-6-model-75dn-autofocus-on-nikon-d3300">
+           Why won't a Tamron AF LD 200-400mm f5.6 model 75DN autofocus on Nikon D3300?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://music.stackexchange.com/questions/95978/can-a-song-be-in-both-a-major-and-minor-key-at-the-same-time">
+           Can a song be in both a major and minor key at the same time?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://tex.stackexchange.com/questions/531647/how-to-insert-a-number-between-columns-in-latex-table">
+           How to insert a number between columns in latex table?
+          </a>
+         </li>
+        </ul>
+        <a class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })" href="#">
+         more hot questions
+        </a>
+       </div>
+       <div class="js-feed-link" id="feed-link">
+        <a href="/feeds/question/2349991" title="Feed of this question and its answers">
+         Question feed
+        </a>
+       </div>
+       <aside aria-describedby="feed-modal-description" aria-hidden="true" aria-labelledby="feed-modal-title" class="s-modal js-feed-link-modal" role="dialog" tabindex="-1">
+        <div class="s-modal--dialog js-modal-dialog wmx4" data-controller="se-draggable" role="document">
+         <h1 class="s-modal--header fw-bold js-first-tabbable" data-target="se-draggable.handle" id="feed-modal-title" tabindex="0">
+          Subscribe to RSS
+         </h1>
+         <div class="grid gs4 gsy fd-column">
+          <div class="grid--cell">
+           <label class="d-block s-label c-default" for="feed-url">
+            Question feed
+            <p class="s-description mt2" id="feed-modal-description">
+             To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+            </p>
+           </label>
+          </div>
+          <div class="grid ps-relative">
+           <input class="s-input" id="feed-url" name="feed-url" readonly="readonly" type="text" value="https://stackoverflow.com/feeds/question/2349991"/>
+          </div>
+         </div>
+        </div>
+       </aside>
+      </div>
+     </div>
+     <div id="prettify-lang" style="display:none">
+      lang-py
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

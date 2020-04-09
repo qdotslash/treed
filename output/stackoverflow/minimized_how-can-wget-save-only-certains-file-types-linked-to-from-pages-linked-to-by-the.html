@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html class="html__responsive" itemscope="" itemtype="http://schema.org/QAPage">
+ <head>
+  <title>
+   linux - How can wget save only certains file types linked to from pages linked to by the target page? - Stack Overflow
+  </title>
+  <link href="https://stackoverflow.com/questions/6643475/how-can-wget-save-only-certains-file-types-linked-to-from-pages-linked-to-by-the" rel="canonical"/>
+  <meta content="https://stackoverflow.com/questions/6643475/how-can-wget-save-only-certains-file-types-linked-to-from-pages-linked-to-by-the" property="og:url"/>
+  <meta content="How can wget save only certains file types linked to from pages linked to by the target page?" itemprop="name" name="twitter:title" property="og:title"/>
+  <meta content="How can wget save only certain file types linked to from pages linked to by the target page, regardless of the domain in which the certain files are?  Trying to speed up a task I have to do often. ..." itemprop="description" name="twitter:description" property="og:description"/>
+  <link href="/feeds/question/6643475" rel="alternate" title="Feed for question 'How can wget save only certains file types linked to from pages linked to by the target page?'" type="application/atom+xml"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/6643475/how-can-wget-save-only-certains-file-types-linked-to-from-pages-linked-to-by-the" name="twitter:app:url:iphone"/>
+  <meta content="se-zaphod://stackoverflow.com/questions/6643475/how-can-wget-save-only-certains-file-types-linked-to-from-pages-linked-to-by-the" name="twitter:app:url:ipad"/>
+  <meta content="http://stackoverflow.com/questions/6643475/how-can-wget-save-only-certains-file-types-linked-to-from-pages-linked-to-by-the" name="twitter:app:url:googleplay"/>
+ </head>
+ <body class="question-page unified-theme">
+  <div aria-hidden="false" class="p8 ff-sans ps-fixed b0 l0 r0 z-banner" id="js-gdpr-consent-banner" role="banner" style="background-color: #3b4045; color: white;">
+   <div aria-describedby="notice-message" class="wmx8 mx-auto grid grid__center" role="alertdialog">
+    <div aria-label="notice-message" class="grid--cell mr12">
+     <p class="mb0 lh-lg">
+      By using our site, you acknowledge that you have read and understand our  ,  , and our  .
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="left-sidebar js-pinned-left-sidebar ps-relative" data-is-here-when="md lg" id="left-sidebar">
+    <div aria-hidden="true" class="s-popover w-auto p16" id="popover-teams-create-cta" role="menu">
+     <div class="ps-relative overflow-hidden">
+      <p class="mb2">
+       <strong>
+        Teams
+       </strong>
+      </p>
+      <p class="mb16 fs-caption fc-medium">
+       Q&amp;A for Work
+      </p>
+      <p class="mb8 fs-caption fc-medium">
+       Stack Overflow for Teams is a private, secure spot for you and your coworkers to find and share information.
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="snippet-hidden" id="content">
+    <div itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+     <div class="inner-content clearfix">
+      <div class="grid sm:fd-column" id="question-header">
+       <h1 class="grid--cell fs-headline1 fl1 ow-break-word mb8" itemprop="name">
+        <a class="question-hyperlink" href="/questions/6643475/how-can-wget-save-only-certains-file-types-linked-to-from-pages-linked-to-by-the">
+         How can wget save only certains file types linked to from pages linked to by the target page?
+        </a>
+       </h1>
+      </div>
+      <div class="grid fw-wrap pb8 mb16 bb bc-black-2">
+       <div class="grid--cell ws-nowrap mr16 mb8" title="2011-07-10 20:32:04Z">
+        <time datetime="2011-07-10T20:32:04" itemprop="dateCreated">
+         8 years, 8 months ago
+        </time>
+       </div>
+       <div class="grid--cell ws-nowrap mr16 mb8">
+        <a class="s-link s-link__inherit" href="?lastactivity" title="2013-04-06 15:01:40Z">
+         6 years, 11 months ago
+        </a>
+       </div>
+       <div class="grid--cell ws-nowrap mb8" title="Viewed 22,308 times">
+        22k times
+       </div>
+      </div>
+      <div aria-label="question and answers" id="mainbar" role="main">
+       <div class="question" data-questionid="6643475" id="question">
+        <div class="post-layout">
+         <div class="votecell post-layout--left">
+          <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="6643475">
+           <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="14" itemprop="upvoteCount">
+            14
+           </div>
+          </div>
+         </div>
+         <div class="postcell post-layout--right">
+          <div class="post-text" itemprop="text">
+           <p>
+            How can wget save only certain file types linked to from pages linked to by the target page, regardless of the domain in which the certain files are?
+           </p>
+           <p>
+            Trying to speed up a task I have to do often.
+           </p>
+           <p>
+            I've been rooting through the wget docs and googling, but nothing seems to work. I keep on either getting just the target page or the subpages without the files (even using -H), so I'm obviously doing badly at this.
+           </p>
+           <p>
+            So, essentially, example.com/index1/ contains links to example.com/subpage1/ and example.com/subpage2/, while the subpages contain links to example2.com/file.ext and example2.com/file2.ext, etc. However, example.com/index1.html may link to example.com/index2/ which has links to more subpages I don't want.
+           </p>
+           <p>
+            Can wget even do this, and if not then what do you suggest I use? Thanks.
+           </p>
+          </div>
+          <div class="post-taglist grid gs4 gsy fd-column">
+           <div class="grid ps-relative d-block">
+            <a class="post-tag" href="/questions/tagged/linux" rel="tag" title="show questions tagged 'linux'">
+             linux
+            </a>
+            <a class="post-tag" href="/questions/tagged/wget" rel="tag" title="show questions tagged 'wget'">
+             wget
+            </a>
+           </div>
+          </div>
+          <div class="mb0">
+           <div class="mt16 grid gs8 gsy fw-wrap jc-end ai-start pt4">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 1 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="1" data-se-share-sheet-post-type="question" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this question" href="/q/6643475" itemprop="url" rel="nofollow" title="short permalink to this question">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 1 })" href="/posts/6643475/edit" title="">
+               improve this question
+              </a>
+             </div>
+            </div>
+            <div class="post-signature owner grid--cell">
+             <div class="user-info">
+              <div class="user-action-time">
+               asked
+               <span class="relativetime" title="2011-07-10 20:32:04Z">
+                Jul 10 '11 at 20:32
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/837914/nomen">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/51ef9dce432f3c90bee4d3dd9fd00595?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/837914/nomen">
+                Nomen
+               </a>
+               <span class="d-none" itemprop="name">
+                Nomen
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 141
+                </span>
+                <span class="v-visible-sr">
+                 1 gold badge
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="answers">
+        <div id="answers-header">
+         <div class="subheader answers-subheader">
+          <h2 data-answercount="2">
+           2 Answers
+          </h2>
+          <div>
+           <div id="tabs">
+            <a data-nav-xhref="" data-shortcut="A" data-value="active" href="/questions/6643475/how-can-wget-save-only-certains-file-types-linked-to-from-pages-linked-to-by-the?answertab=active#tab-top" title="Answers with the latest activity first">
+             active
+            </a>
+            <a data-nav-xhref="" data-shortcut="O" data-value="oldest" href="/questions/6643475/how-can-wget-save-only-certains-file-types-linked-to-from-pages-linked-to-by-the?answertab=oldest#tab-top" title="Answers in the order they were provided">
+             oldest
+            </a>
+            <a class="youarehere is-selected" data-nav-xhref="" data-shortcut="V" data-value="votes" href="/questions/6643475/how-can-wget-save-only-certains-file-types-linked-to-from-pages-linked-to-by-the?answertab=votes#tab-top" title="Answers with the highest score first">
+             votes
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="15852428" id="answer-15852428" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="15852428">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="15" itemprop="upvoteCount">
+             15
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Following command worked for me.
+            </p>
+            <pre><code>wget -r --accept "*.ext" --level 2 "example.com/index1/" </code></pre>
+            <p>
+             Need to do recursively so
+             <code>
+              -r
+             </code>
+             should be added.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/15852428" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/15852428/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2013-04-06 15:01:40Z">
+                Apr 6 '13 at 15:01
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/1433665/thekojueffect">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/eb67872e230b18666cedb94bd572809f?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/1433665/thekojueffect">
+                TheKojuEffect
+               </a>
+               <span class="d-none" itemprop="name">
+                TheKojuEffect
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score 14,894">
+                 14.9k
+                </span>
+                <span aria-hidden="true" title="14 gold badges">
+                 <span class="badgecount">
+                  14
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 14 gold badges
+                </span>
+                <span aria-hidden="true" title="68 silver badges">
+                 <span class="badgecount">
+                  68
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 68 silver badges
+                </span>
+                <span aria-hidden="true" title="107 bronze badges">
+                 <span class="badgecount">
+                  107
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 107 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="15852428" id="comments-15852428">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="73576462" id="comment-73576462">
+              <div class="js-comment-actions comment-actions">
+               <div class="comment-score js-comment-edit-hide">
+                <span class="cool" title="number of 'useful comment' votes received">
+                 3
+                </span>
+               </div>
+              </div>
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 This is not exactly the answer to the question. This makes wget download and then reject (delete) the file(s).
+                </span>
+                –
+                <a class="comment-user" href="/users/1305947/joel-g-mathew" title="4,295 reputation">
+                 Joel G Mathew
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2017-04-06 11:34:02Z">
+                  Apr 6 '17 at 11:34
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="94362983" id="comment-94362983">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 @JoelGMathew Great you mentioned that, but even better would telling us what the right command is.
+                </span>
+                –
+                <a class="comment-user" href="/users/1971598/edgar-aroutiounian" title="7,442 reputation">
+                 Edgar Aroutiounian
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2018-12-13 04:59:43Z">
+                  Dec 13 '18 at 4:59
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="6643600" id="answer-6643600" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="votecell post-layout--left">
+           <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="6643600">
+            <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" data-value="1" itemprop="upvoteCount">
+             1
+            </div>
+           </div>
+          </div>
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Something like this should Work:
+            </p>
+            <pre><code>wget --accept "*.ext" --level 2 "example.com/index1/" </code></pre>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+             <div class="post-menu">
+              <a class="js-share-link js-gps-track" data-controller="se-share-sheet" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-s-popover-placement="bottom-start" data-se-share-sheet-location="2" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-subtitle="" data-se-share-sheet-title="Share a link to this answer" href="/a/6643600" itemprop="url" rel="nofollow" title="short permalink to this answer">
+               share
+              </a>
+              <a class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" href="/posts/6643600/edit" title="">
+               improve this answer
+              </a>
+             </div>
+            </div>
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-action-time">
+               answered
+               <span class="relativetime" title="2011-07-10 20:54:04Z">
+                Jul 10 '11 at 20:54
+               </span>
+              </div>
+              <div class="user-gravatar32">
+               <a href="/users/485781/ssapkota">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/f0c4434aeab80f600eb49095e7c93ddd?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+              <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+               <a href="/users/485781/ssapkota">
+                ssapkota
+               </a>
+               <span class="d-none" itemprop="name">
+                ssapkota
+               </span>
+               <div class="-flair">
+                <span class="reputation-score" dir="ltr" title="reputation score ">
+                 2,984
+                </span>
+                <span aria-hidden="true" title="16 silver badges">
+                 <span class="badgecount">
+                  16
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 16 silver badges
+                </span>
+                <span aria-hidden="true" title="28 bronze badges">
+                 <span class="badgecount">
+                  28
+                 </span>
+                </span>
+                <span class="v-visible-sr">
+                 28 bronze badges
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="post-layout--right">
+           <div class="comments js-comments-container bt bc-black-2 mt12" data-min-length="15" data-post-id="6643600" id="comments-6643600">
+            <ul class="comments-list js-comments-list" data-addlink-disabled="true" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-remaining-comments-count="0">
+             <li class="comment js-comment" data-comment-id="7849933" id="comment-7849933">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 I've tried, but that only downloads example.com/index1/ for some reason... Which makes me a little suspicious since it isn't even that file type.
+                </span>
+                –
+                <a class="comment-user owner" href="/users/837914/nomen" title="141 reputation">
+                 Nomen
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2011-07-10 21:04:41Z">
+                  Jul 10 '11 at 21:04
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="7850286" id="comment-7850286">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 Can you provide the site or if not a sample(but real) site instead?
+                </span>
+                –
+                <a class="comment-user" href="/users/485781/ssapkota" title="2,984 reputation">
+                 ssapkota
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2011-07-10 21:38:59Z">
+                  Jul 10 '11 at 21:38
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+             <li class="comment js-comment" data-comment-id="76667831" id="comment-76667831">
+              <div class="comment-text js-comment-text-and-form">
+               <div class="comment-body js-comment-edit-hide">
+                <span class="comment-copy">
+                 I Have same problem, I try use with:
+                 <a href="http://www.institutoveritas.net/livros-digitalizados.php" rel="nofollow noreferrer">
+                  institutoveritas.net/livros-digitalizados.php
+                 </a>
+                </span>
+                –
+                <a class="comment-user" href="/users/2766598/delfino" title="409 reputation">
+                 Delfino
+                </a>
+                <span class="comment-date" dir="ltr">
+                 <span class="relativetime-clean" title="2017-06-30 10:06:32Z">
+                  Jun 30 '17 at 10:06
+                 </span>
+                </span>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <h2 class="bottom-notice" data-loc="1">
+         Not the answer you're looking for?                                Browse other questions tagged
+         <a class="post-tag" href="/questions/tagged/linux" rel="tag" title="show questions tagged 'linux'">
+          linux
+         </a>
+         <a class="post-tag" href="/questions/tagged/wget" rel="tag" title="show questions tagged 'wget'">
+          wget
+         </a>
+         or
+         <a href="/questions/ask">
+          ask your own question
+         </a>
+         .
+        </h2>
+       </div>
+      </div>
+      <div aria-label="sidebar" class="show-votes" id="sidebar" role="complementary">
+       <div class="s-sidebarwidget s-sidebarwidget__yellow s-anchors s-anchors__grayscale mb16" data-tracker="cb=1">
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         The Overflow Blog
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","The Overflow Blog","https://stackoverflow.blog/2020/03/17/podcast-219-time-postgres-guid-docker-razor-char/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 0 })" href="https://stackoverflow.blog/2020/03/17/podcast-219-time-postgres-guid-docker-razor-char/">
+            Podcast: Time Keeps on Slipping
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","The Overflow Blog","https://stackoverflow.blog/2020/03/18/how-to-develop-a-defensive-plan-for-your-open-source-software-project/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 1 })" href="https://stackoverflow.blog/2020/03/18/how-to-develop-a-defensive-plan-for-your-open-source-software-project/">
+            How to develop a defensive plan for your open-source software project
+           </a>
+          </div>
+         </li>
+        </ul>
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         Featured on Meta
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 2 })" href="https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog">
+            The Q1 2020 Community Roadmap is on the Blog
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 3 })" href="https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing">
+            An Update On Creative Commons Licensing
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/345032/community-and-moderator-guidelines-for-escalating-issues-via-new-response-proces",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 4 })" href="https://meta.stackexchange.com/questions/345032/community-and-moderator-guidelines-for-escalating-issues-via-new-response-proces" title="Community and Moderator guidelines for escalating issues via new response process (March 2020)">
+            Community and Moderator guidelines for escalating issues via new response…
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/394498/triage-needs-to-be-fixed-urgently-and-users-need-to-be-notified-upon-receiving",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 5 })" href="https://meta.stackoverflow.com/questions/394498/triage-needs-to-be-fixed-urgently-and-users-need-to-be-notified-upon-receiving" title="Triage needs to be fixed urgently, and users need to be notified upon receiving a review ban!">
+            Triage needs to be fixed urgently, and users need to be notified upon…
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 6 })" href="https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work">
+            How does the Triage queue work?
+           </a>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="module sidebar-related">
+        <h4 id="h-related">
+         Related
+        </h4>
+        <div class="related js-gps-related-questions" data-tracker="rq=1">
+         <div class="spacer">
+          <a href="/q/1324421" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            254
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/1324421/how-to-get-past-the-login-page-with-wget">
+           How to get past the login page with Wget?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/4997693" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            768
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/4997693/given-two-directory-trees-how-can-i-find-out-which-files-differ">
+           Given two directory trees, how can I find out which files differ?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/5905054" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            1800
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/5905054/how-can-i-recursively-find-all-files-in-current-and-subfolders-based-on-wildcard">
+           How can I recursively find all files in current and subfolders based on wildcard matching?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/6565471" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            632
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/6565471/how-can-i-exclude-directories-from-grep-r">
+           How can I exclude directories from grep -R?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/12516937" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            926
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/12516937/grep-but-only-certain-file-extensions">
+           grep, but only certain file extensions
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/16678487" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            511
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/16678487/wget-command-to-download-a-file-and-save-as-a-different-filename">
+           wget command to download a file and save as a different filename
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/25010369" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            276
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/25010369/wget-curl-large-file-from-google-drive">
+           wget/curl large file from google drive
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module tex2jax_ignore" id="hot-network-questions">
+        <h4>
+         <a class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })" href="https://stackexchange.com/questions?tab=hot">
+          Hot Network Questions
+         </a>
+        </h4>
+        <ul>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://rpg.stackexchange.com/questions/166404/can-thorn-whip-be-used-to-hang-an-enemy-in-combat">
+           Can Thorn Whip be used to hang an enemy in combat?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://ell.stackexchange.com/questions/240845/meaning-of-protect-the-valley-something-something-something-something-alive">
+           Meaning of "Protect the valley something, something, something, something alive!"
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://academia.stackexchange.com/questions/145504/do-professors-get-an-education-allowance">
+           Do Professors Get An Education "Allowance"?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://space.stackexchange.com/questions/41980/what-is-the-day-night-cycle-at-the-north-pole-of-mars">
+           What is the day/night cycle at the north pole of Mars?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://physics.stackexchange.com/questions/536522/how-does-many-worlds-interpretation-work-for-non-50-50-probabilities">
+           How does many worlds interpretation work for non-50/50 probabilities?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:147 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://boardgames.stackexchange.com/questions/50632/why-is-there-no-ruling-to-offset-mandatory-loops">
+           Why is there no ruling to offset Mandatory Loops?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://politics.stackexchange.com/questions/51021/how-does-lobbying-work-in-the-us">
+           How does lobbying work in the US?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/201259/what-can-you-see-on-a-hexagonal-spiral">
+           What can you see on a hexagonal spiral?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://bicycles.stackexchange.com/questions/66783/is-my-bike-any-good">
+           Is my bike any good?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:648 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://retrocomputing.stackexchange.com/questions/14150/how-to-interpret-dave-cutlers-criticism-of-unix">
+           How to interpret Dave Cutler's criticism of Unix?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://travel.stackexchange.com/questions/155085/required-documents-on-arrival-with-person-waiting-outside-at-arrival-area-how">
+           Required documents on arrival with person waiting outside, at arrival area. How can the documents be provided to the person arriving, at customs?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:336 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://bricks.stackexchange.com/questions/13407/what-is-the-maximum-size-of-lego-instruction-booklets">
+           What is the maximum size of Lego instruction booklets?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:447 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://raspberrypi.stackexchange.com/questions/109399/does-the-ds18b20-1-wire-temperature-sensor-id-change-with-different-raspberry-pi">
+           Does the DS18B20 1-wire temperature sensor ID change with different Raspberry Pi's?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://aviation.stackexchange.com/questions/75380/what-exactly-is-a-coordinated-turn">
+           What exactly is a "coordinated" turn?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://stackoverflow.com/questions/60740528/how-to-count-the-number-of-dashes-between-any-two-alphabetical-characters">
+           How to count the number of dashes between any two alphabetical characters?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://puzzling.stackexchange.com/questions/95108/shower-thoughts">
+           Shower thoughts
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://puzzling.stackexchange.com/questions/95090/polyominoes-to-construct-alphabet">
+           Polyominoes to construct alphabet
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://mathematica.stackexchange.com/questions/216533/how-to-remove-style-from-a-styled-number">
+           How to remove style from a styled number?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://scifi.stackexchange.com/questions/228687/why-is-rorschachs-mask-symmetrical">
+           Why is Rorschach's mask symmetrical?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://academia.stackexchange.com/questions/145494/what-methods-can-be-used-in-online-exams-to-genuinely-test-the-students-knowled">
+           What methods can be used in online exams to genuinely test the students' knowledge and capabilities?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://physics.stackexchange.com/questions/536688/if-work-is-a-scalar-measurement-why-do-we-sometimes-represent-it-as-the-product">
+           If work is a scalar measurement, why do we sometimes represent it as the product of force (a vector) and distance (scalar)?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://worldbuilding.stackexchange.com/questions/171570/how-would-a-species-be-unable-to-produce-steel">
+           How would a species be unable to produce steel?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://rpg.stackexchange.com/questions/166507/is-there-a-spell-that-allows-you-to-divine-what-happened-here">
+           Is there a spell that allows you to divine what happened "here"?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://dba.stackexchange.com/questions/262111/sql-estimates-are-way-off-on-delete-statement-with-triggers-on-huge-tables">
+           SQL estimates are way off on DELETE statement with Triggers on huge tables
+          </a>
+         </li>
+        </ul>
+        <a class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })" href="#">
+         more hot questions
+        </a>
+       </div>
+       <div class="js-feed-link" id="feed-link">
+        <a href="/feeds/question/6643475" title="Feed of this question and its answers">
+         Question feed
+        </a>
+       </div>
+       <aside aria-describedby="feed-modal-description" aria-hidden="true" aria-labelledby="feed-modal-title" class="s-modal js-feed-link-modal" role="dialog" tabindex="-1">
+        <div class="s-modal--dialog js-modal-dialog wmx4" data-controller="se-draggable" role="document">
+         <h1 class="s-modal--header fw-bold js-first-tabbable" data-target="se-draggable.handle" id="feed-modal-title" tabindex="0">
+          Subscribe to RSS
+         </h1>
+         <div class="grid gs4 gsy fd-column">
+          <div class="grid--cell">
+           <label class="d-block s-label c-default" for="feed-url">
+            Question feed
+            <p class="s-description mt2" id="feed-modal-description">
+             To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+            </p>
+           </label>
+          </div>
+          <div class="grid ps-relative">
+           <input class="s-input" id="feed-url" name="feed-url" readonly="readonly" type="text" value="https://stackoverflow.com/feeds/question/6643475"/>
+          </div>
+         </div>
+        </div>
+       </aside>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

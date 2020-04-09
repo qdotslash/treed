@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html class="html__responsive" itemscope="" itemtype="http://schema.org/QAPage">
+ <head>
+ </head>
+ <body class="question-page unified-theme">
+  <div aria-hidden="false" class="p8 ff-sans ps-fixed b0 l0 r0 z-banner" id="js-gdpr-consent-banner" role="banner" style="background-color: #3b4045; color: white;">
+   <div aria-describedby="notice-message" class="wmx8 mx-auto grid grid__center" role="alertdialog">
+    <div aria-label="notice-message" class="grid--cell mr12">
+     <p class="mb0 lh-lg">
+      By using our site, you acknowledge that you have read and understand our  ,  , and our  .
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="left-sidebar js-pinned-left-sidebar ps-relative" data-is-here-when="md lg" id="left-sidebar">
+    <div aria-hidden="true" class="s-popover w-auto p16" id="popover-teams-create-cta" role="menu">
+     <div class="ps-relative overflow-hidden">
+      <p class="mb2">
+       <strong>
+        Teams
+       </strong>
+      </p>
+      <p class="mb16 fs-caption fc-medium">
+       Q&amp;A for Work
+      </p>
+      <p class="mb8 fs-caption fc-medium">
+       Stack Overflow for Teams is a private, secure spot for you and your coworkers to find and share information.
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="snippet-hidden" id="content">
+    <div itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+     <div class="inner-content clearfix">
+      <div class="grid fw-wrap pb8 mb16 bb bc-black-2">
+       <div class="grid--cell ws-nowrap mr16 mb8" title="2020-02-26 16:47:48Z">
+        <time datetime="2020-02-26T16:47:48" itemprop="dateCreated">
+         21 days ago
+        </time>
+       </div>
+      </div>
+      <div aria-label="question and answers" id="mainbar" role="main">
+       <div class="question" data-questionid="60418726" id="question">
+        <div class="post-layout">
+         <div class="postcell post-layout--right">
+          <div class="post-text" itemprop="text">
+           <p>
+            Using Python or XSLT, I would like to know how to convert highly complex, hierarchical nested XML file to CSV including all the sub-elements and without hard coding as few element nodes as possible or is rational/effective?
+           </p>
+           <p>
+            Please find attached simplified XML example and the output CSV to get a better understanding of what I’m trying to achieve.
+           </p>
+           <p>
+            The actual XML file has much more elements but the data hierarchy and the nesting is like in the example.
+            <code>
+             &lt;InvoiceRow&gt;
+            </code>
+            element and its sub-elements are the only repeating elements in the XML file, all the other elements are static that are repeated in the output CSV as many times as there are
+            <code>
+             &lt;InvoiceRow&gt;
+            </code>
+            elements in the XML file.
+           </p>
+           <p>
+            It’s the repeating
+            <code>
+             &lt;InvoiceRow&gt;
+            </code>
+            element that is causing trouble for me. Elements that don’t repeat are easy to convert to CSV without hard coding any elements.
+           </p>
+           <p>
+            Complex XML scenarios, with hierarchical data structures and multiple one-to-many relationships all being stored in a single XML file. Structured text file.
+           </p>
+           <p>
+            Example XML input:
+           </p>
+           <pre><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt; &lt;Invoice&gt; &lt;SellerDetails&gt; &lt;Identifier&gt;1234-1&lt;/Identifier&gt; &lt;SellerAddress&gt; &lt;SellerStreet&gt;Street1&lt;/SellerStreet&gt; &lt;SellerTown&gt;Town1&lt;/SellerTown&gt; &lt;/SellerAddress&gt; &lt;/SellerDetails&gt; &lt;BuyerDetails&gt; &lt;BuyerIdentifier&gt;1234-2&lt;/BuyerIdentifier&gt; &lt;BuyerAddress&gt; &lt;BuyerStreet&gt;Street2&lt;/BuyerStreet&gt; &lt;BuyerTown&gt;Town2&lt;/BuyerTown&gt; &lt;/BuyerAddress&gt; &lt;/BuyerDetails&gt; &lt;BuyerNumber&gt;001234&lt;/BuyerNumber&gt; &lt;InvoiceDetails&gt; &lt;InvoiceNumber&gt;0001&lt;/InvoiceNumber&gt; &lt;/InvoiceDetails&gt; &lt;InvoiceRow&gt; &lt;ArticleName&gt;Article1&lt;/ArticleName&gt; &lt;RowText&gt;Product Text1&lt;/RowText&gt; &lt;RowText&gt;Product Text2&lt;/RowText&gt; &lt;RowAmount AmountCurrencyIdentifier="EUR"&gt;10.00&lt;/RowAmount&gt; &lt;/InvoiceRow&gt; &lt;InvoiceRow&gt; &lt;ArticleName&gt;Article2&lt;/ArticleName&gt; &lt;RowText&gt;Product Text11&lt;/RowText&gt; &lt;RowText&gt;Product Text22&lt;/RowText&gt; &lt;RowAmount AmountCurrencyIdentifier="EUR"&gt;20.00&lt;/RowAmount&gt; &lt;/InvoiceRow&gt; &lt;InvoiceRow&gt; &lt;ArticleName&gt;Article3&lt;/ArticleName&gt; &lt;RowText&gt;Product Text111&lt;/RowText&gt; &lt;RowText&gt;Product Text222&lt;/RowText&gt; &lt;RowAmount AmountCurrencyIdentifier="EUR"&gt;30.00&lt;/RowAmount&gt; &lt;/InvoiceRow&gt; &lt;EpiDetails&gt; &lt;EpiPartyDetails&gt; &lt;EpiBfiPartyDetails&gt; &lt;EpiBfiIdentifier IdentificationSchemeName="BIC"&gt;XXXXX&lt;/EpiBfiIdentifier&gt; &lt;/EpiBfiPartyDetails&gt; &lt;/EpiPartyDetails&gt; &lt;/EpiDetails&gt; &lt;InvoiceUrlText&gt;Some text&lt;/InvoiceUrlText&gt; &lt;/Invoice&gt; </code></pre>
+           <p>
+            <br/>
+            Example CSV output:
+           </p>
+           <pre><code>Identifier,SellerStreet,SellerTown,BuyerIdentifier,BuyerStreet,BuyerTown,BuyerNumber,InvoiceNumber,ArticleName,RowText,RowText,RowAmount,EpiBfiIdentifier,InvoiceUrlText 1234-1,Street1,Town1,1234-2,Street2,Town2,1234,1,Article1,Product Text1,Product Text2,10,XXXXX,Some text 1234-1,Street1,Town1,1234-2,Street2,Town2,1234,1,Article2,Product Text11,Product Text22,20,XXXXX,Some text 1234-1,Street1,Town1,1234-2,Street2,Town2,1234,1,Article3,Product Text111,Product Text222,30,XXXXX,Some text </code></pre>
+          </div>
+          <div class="mb0">
+           <div class="mt16 grid gs8 gsy fw-wrap jc-end ai-start pt4">
+            <div class="post-signature owner grid--cell">
+             <div class="user-info">
+              <div class="user-gravatar32">
+               <a href="/users/8431326/tim">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/67ef4292d22120eafd500bb480b6fd3e?s=32&amp;d=identicon&amp;r=PG&amp;f=1" width="32"/>
+                </div>
+               </a>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="answers">
+        <div id="answers-header">
+         <div class="subheader answers-subheader">
+          <h2 data-answercount="2">
+           2 Answers
+          </h2>
+         </div>
+        </div>
+        <div class="answer" data-answerid="60419169" id="answer-60419169" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             Consider the following example:
+            </p>
+            <p>
+             <strong>
+              XML
+             </strong>
+            </p>
+            <pre><code>&lt;Invoice&gt; &lt;SellerDetails&gt; &lt;Identifier&gt;1234-1&lt;/Identifier&gt; &lt;SellerAddress&gt; &lt;SellerStreet&gt;Street1&lt;/SellerStreet&gt; &lt;SellerTown&gt;Town1&lt;/SellerTown&gt; &lt;/SellerAddress&gt; &lt;/SellerDetails&gt; &lt;BuyerDetails&gt; &lt;BuyerIdentifier&gt;1234-2&lt;/BuyerIdentifier&gt; &lt;BuyerAddress&gt; &lt;BuyerStreet&gt;Street2&lt;/BuyerStreet&gt; &lt;BuyerTown&gt;Town2&lt;/BuyerTown&gt; &lt;/BuyerAddress&gt; &lt;/BuyerDetails&gt; &lt;BuyerNumber&gt;001234&lt;/BuyerNumber&gt; &lt;InvoiceDetails&gt; &lt;InvoiceNumber&gt;0001&lt;/InvoiceNumber&gt; &lt;/InvoiceDetails&gt; &lt;InvoiceRow&gt; &lt;ArticleName&gt;Article1&lt;/ArticleName&gt; &lt;RowText&gt;Product Text1&lt;/RowText&gt; &lt;RowText&gt;Product Text2&lt;/RowText&gt; &lt;RowAmount AmountCurrencyIdentifier="EUR"&gt;10.00&lt;/RowAmount&gt; &lt;/InvoiceRow&gt; &lt;InvoiceRow&gt; &lt;ArticleName&gt;Article2&lt;/ArticleName&gt; &lt;RowText&gt;Product Text11&lt;/RowText&gt; &lt;RowText&gt;Product Text22&lt;/RowText&gt; &lt;RowAmount AmountCurrencyIdentifier="EUR"&gt;20.00&lt;/RowAmount&gt; &lt;/InvoiceRow&gt; &lt;InvoiceRow&gt; &lt;ArticleName&gt;Article3&lt;/ArticleName&gt; &lt;RowText&gt;Product Text111&lt;/RowText&gt; &lt;RowText&gt;Product Text222&lt;/RowText&gt; &lt;RowAmount AmountCurrencyIdentifier="EUR"&gt;30.00&lt;/RowAmount&gt; &lt;/InvoiceRow&gt; &lt;EpiDetails&gt; &lt;EpiPartyDetails&gt; &lt;EpiBfiPartyDetails&gt; &lt;EpiBfiIdentifier IdentificationSchemeName="BIC"&gt;XXXXX&lt;/EpiBfiIdentifier&gt; &lt;/EpiBfiPartyDetails&gt; &lt;/EpiPartyDetails&gt; &lt;/EpiDetails&gt; &lt;InvoiceUrlText&gt;Some text&lt;/InvoiceUrlText&gt; &lt;/Invoice&gt; </code></pre>
+            <p>
+             <strong>
+              XSLT 1.0
+             </strong>
+            </p>
+            <pre><code>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt; &lt;xsl:output method="text"/&gt;  &lt;xsl:template match="Invoice"&gt; &lt;xsl:variable name="common-head"&gt; &lt;xsl:value-of select="SellerDetails/Identifier"/&gt; &lt;xsl:text&gt;,&lt;/xsl:text&gt; &lt;xsl:value-of select="BuyerDetails/BuyerIdentifier"/&gt; &lt;xsl:text&gt;,&lt;/xsl:text&gt; &lt;xsl:value-of select="InvoiceDetails/InvoiceNumber"/&gt; &lt;xsl:text&gt;,&lt;/xsl:text&gt; &lt;!-- add more here --&gt; &lt;/xsl:variable&gt; &lt;xsl:variable name="common-tail"&gt; &lt;xsl:value-of select="EpiDetails/EpiPartyDetails/EpiBfiPartyDetails/EpiBfiIdentifier"/&gt; &lt;xsl:text&gt;,&lt;/xsl:text&gt; &lt;!-- add more here --&gt; &lt;xsl:value-of select="InvoiceUrlText"/&gt; &lt;/xsl:variable&gt; &lt;!-- header --&gt; &lt;xsl:text&gt;SellerIdentifier,BuyerIdentifier,InvoiceNumber,ArticleName,RowText,RowText,RowAmount,EpiBfiIdentifier,InvoiceUrlText&amp;#10;&lt;/xsl:text&gt; &lt;!-- data --&gt; &lt;xsl:for-each select="InvoiceRow"&gt; &lt;xsl:copy-of select="$common-head"/&gt; &lt;xsl:value-of select="ArticleName"/&gt; &lt;xsl:text&gt;,&lt;/xsl:text&gt; &lt;xsl:value-of select="RowAmount"/&gt; &lt;xsl:text&gt;,&lt;/xsl:text&gt; &lt;!-- add more here --&gt; &lt;xsl:copy-of select="$common-tail"/&gt; &lt;xsl:text&gt;&amp;#10;&lt;/xsl:text&gt; &lt;/xsl:for-each&gt; &lt;/xsl:template&gt;  &lt;/xsl:stylesheet&gt; </code></pre>
+            <p>
+             <strong>
+              Result
+             </strong>
+            </p>
+            <pre><code>SellerIdentifier,BuyerIdentifier,InvoiceNumber,ArticleName,RowText,RowText,RowAmount,EpiBfiIdentifier,InvoiceUrlText 1234-1,1234-2,0001,Article1,10.00,XXXXX,Some text 1234-1,1234-2,0001,Article2,20.00,XXXXX,Some text 1234-1,1234-2,0001,Article3,30.00,XXXXX,Some text </code></pre>
+            <h2>
+             Added in response to:
+            </h2>
+            <blockquote>
+             <p>
+              Is there a way in XSLT to get the same results using loop? For example loop through and output all the elements and the sub-elements except the InvoiceRow elements and then vice versa?
+             </p>
+            </blockquote>
+            <p>
+             If you prefer, you could try something like:
+            </p>
+            <p>
+             <strong>
+              XSLT 1.0
+             </strong>
+            </p>
+            <pre><code>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt; &lt;xsl:output method="text"/&gt;  &lt;xsl:template match="Invoice"&gt; &lt;xsl:variable name="invoice-fields" select="//*[not(*) and not(ancestor::InvoiceRow)]" /&gt; &lt;xsl:variable name="common-data"&gt; &lt;xsl:for-each select="$invoice-fields"&gt; &lt;xsl:value-of select="."/&gt; &lt;xsl:text&gt;,&lt;/xsl:text&gt; &lt;/xsl:for-each&gt; &lt;/xsl:variable&gt; &lt;!-- header --&gt; &lt;xsl:for-each select="$invoice-fields"&gt; &lt;xsl:value-of select="name()"/&gt; &lt;xsl:text&gt;,&lt;/xsl:text&gt; &lt;/xsl:for-each&gt; &lt;xsl:for-each select="InvoiceRow[1]/*"&gt; &lt;xsl:value-of select="name()"/&gt; &lt;xsl:if test="position()!=last()"&gt;,&lt;/xsl:if&gt; &lt;/xsl:for-each&gt; &lt;xsl:text&gt;&amp;#10;&lt;/xsl:text&gt; &lt;!-- data --&gt; &lt;xsl:for-each select="InvoiceRow"&gt; &lt;xsl:copy-of select="$common-data"/&gt; &lt;xsl:for-each select="*"&gt; &lt;xsl:value-of select="."/&gt; &lt;xsl:if test="position()!=last()"&gt;,&lt;/xsl:if&gt; &lt;/xsl:for-each&gt; &lt;xsl:text&gt;&amp;#10;&lt;/xsl:text&gt; &lt;/xsl:for-each&gt; &lt;/xsl:template&gt;  &lt;/xsl:stylesheet&gt; </code></pre>
+            <p>
+             The result here would be:
+            </p>
+            <pre><code>Identifier,SellerStreet,SellerTown,BuyerIdentifier,BuyerStreet,BuyerTown,BuyerNumber,InvoiceNumber,EpiBfiIdentifier,InvoiceUrlText,ArticleName,RowText,RowText,RowAmount 1234-1,Street1,Town1,1234-2,Street2,Town2,001234,0001,XXXXX,Some text,Article1,Product Text1,Product Text2,10.00 1234-1,Street1,Town1,1234-2,Street2,Town2,001234,0001,XXXXX,Some text,Article2,Product Text11,Product Text22,20.00 1234-1,Street1,Town1,1234-2,Street2,Town2,001234,0001,XXXXX,Some text,Article3,Product Text111,Product Text222,30.00 </code></pre>
+            <p>
+             i.e. listing all invoice fields before the row fields.
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info user-hover">
+              <div class="user-gravatar32">
+               <a href="/users/3016153/michael-hor257k">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://i.stack.imgur.com/CWA7Z.png?s=32&amp;g=1" width="32"/>
+                </div>
+               </a>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="answer" data-answerid="60595535" id="answer-60595535" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+         <div class="post-layout">
+          <div class="answercell post-layout--right">
+           <div class="post-text" itemprop="text">
+            <p>
+             I have done similar case like your requirements, I have created one package base on
+             <code>
+              untangle
+             </code>
+             , a package which can parse your XML to pure python objects like:
+            </p>
+            <pre><code>&lt;?xml version="1.0"?&gt; &lt;root&gt; &lt;child name="child1"/&gt; &lt;/root&gt; </code></pre>
+            <p>
+             to
+            </p>
+            <pre><code>obj.root.child['name'] # u'child1' </code></pre>
+            <p>
+             then you can easily write some code to traverse the object to get what you want. For example, you can do something like
+             <code>
+              get_items_by_tag(InvoiceRow)
+             </code>
+             . Hope it helps!
+            </p>
+           </div>
+           <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+            <div class="post-signature grid--cell fl0">
+             <div class="user-info">
+              <div class="user-gravatar32">
+               <a href="/users/10267625/panda912">
+                <div class="gravatar-wrapper-32">
+                 <img alt="" class="bar-sm" height="32" src="https://www.gravatar.com/avatar/edd37d9fc0fd262b310f4a6be77804b5?s=32&amp;d=identicon&amp;r=PG" width="32"/>
+                </div>
+               </a>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <h2 class="bottom-notice" data-loc="1">
+         Not the answer you're looking for?                                Browse other questions tagged      or
+         <a href="/questions/ask">
+          ask your own question
+         </a>
+         .
+        </h2>
+       </div>
+      </div>
+      <div aria-label="sidebar" class="show-votes" id="sidebar" role="complementary">
+       <div class="s-sidebarwidget s-sidebarwidget__yellow s-anchors s-anchors__grayscale mb16" data-tracker="cb=1">
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         The Overflow Blog
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","The Overflow Blog","https://stackoverflow.blog/2020/03/17/podcast-219-time-postgres-guid-docker-razor-char/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 0 })" href="https://stackoverflow.blog/2020/03/17/podcast-219-time-postgres-guid-docker-razor-char/">
+            Podcast: Time Keeps on Slipping
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","The Overflow Blog","https://stackoverflow.blog/2020/03/18/how-to-develop-a-defensive-plan-for-your-open-source-software-project/",null,null]' data-gps-track="communitybulletin.click({ priority: 1, position: 1 })" href="https://stackoverflow.blog/2020/03/18/how-to-develop-a-defensive-plan-for-your-open-source-software-project/">
+            How to develop a defensive plan for your open-source software project
+           </a>
+          </div>
+         </li>
+        </ul>
+        <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+         Featured on Meta
+        </div>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 2 })" href="https://meta.stackexchange.com/questions/344178/the-q1-2020-community-roadmap-is-on-the-blog">
+            The Q1 2020 Community Roadmap is on the Blog
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 3 })" href="https://meta.stackexchange.com/questions/344491/an-update-on-creative-commons-licensing">
+            An Update On Creative Commons Licensing
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackexchange.com/questions/345032/community-and-moderator-guidelines-for-escalating-issues-via-new-response-proces",null,null]' data-gps-track="communitybulletin.click({ priority: 3, position: 4 })" href="https://meta.stackexchange.com/questions/345032/community-and-moderator-guidelines-for-escalating-issues-via-new-response-proces" title="Community and Moderator guidelines for escalating issues via new response process (March 2020)">
+            Community and Moderator guidelines for escalating issues via new response…
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/394498/triage-needs-to-be-fixed-urgently-and-users-need-to-be-notified-upon-receiving",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 5 })" href="https://meta.stackoverflow.com/questions/394498/triage-needs-to-be-fixed-urgently-and-users-need-to-be-notified-upon-receiving" title="Triage needs to be fixed urgently, and users need to be notified upon receiving a review ban!">
+            Triage needs to be fixed urgently, and users need to be notified upon…
+           </a>
+          </div>
+         </li>
+        </ul>
+        <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+         <li class="s-sidebarwidget--item grid">
+          <div class="grid--cell">
+           <a class="js-gps-track" data-ga='["community bulletin board","Featured on Meta","https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work",null,null]' data-gps-track="communitybulletin.click({ priority: 6, position: 6 })" href="https://meta.stackoverflow.com/questions/295650/how-does-the-triage-queue-work">
+            How does the Triage queue work?
+           </a>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="module sidebar-related">
+        <h4 id="h-related">
+         Related
+        </h4>
+        <div class="related js-gps-related-questions" data-tracker="rq=1">
+         <div class="spacer">
+          <a href="/q/89228" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            4758
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/89228/calling-an-external-command-from-python">
+           Calling an external command from Python
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/100003" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            5594
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/100003/what-are-metaclasses-in-python">
+           What are metaclasses in Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/176918" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            3038
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/176918/finding-the-index-of-an-item-in-a-list">
+           Finding the index of an item in a list
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/394809" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            5860
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/394809/does-python-have-a-ternary-conditional-operator">
+           Does Python have a ternary conditional operator?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/415511" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2763
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/415511/how-to-get-the-current-time-in-python">
+           How to get the current time in Python
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/466345" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2116
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/466345/converting-string-into-datetime">
+           Converting string into datetime
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/606191" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2159
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/606191/convert-bytes-to-a-string">
+           Convert bytes to a string
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/1912434" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted large">
+            973
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/1912434/how-do-i-parse-xml-in-python">
+           How do I parse XML in Python?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/3437059" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            3599
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3437059/does-python-have-a-string-contains-substring-method">
+           Does Python have a string 'contains' substring method?
+          </a>
+         </div>
+         <div class="spacer">
+          <a href="/q/3577641" title="Vote score (upvotes - downvotes)">
+           <div class="answer-votes answered-accepted extra-large">
+            2099
+           </div>
+          </a>
+          <a class="question-hyperlink" href="/questions/3577641/how-do-you-parse-and-process-html-xml-in-php">
+           How do you parse and process HTML/XML in PHP?
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="module tex2jax_ignore" id="hot-network-questions">
+        <h4>
+         <a class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })" href="https://stackexchange.com/questions?tab=hot">
+          Hot Network Questions
+         </a>
+        </h4>
+        <ul>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://salesforce.stackexchange.com/questions/298401/why-does-vs-codes-org-browser-retrieves-metadata-with-different-file-extensions">
+           Why does VS Code's Org Browser retrieves metadata with different file extensions than Metadata API and what are possible consequences of that?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://politics.stackexchange.com/questions/51038/why-do-western-countries-seem-to-be-less-efficient-than-asian-countries-in-fight">
+           Why do Western countries seem to be less efficient than Asian countries in fighting against COVID-19?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:591 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://economics.stackexchange.com/questions/34483/fixed-cost-of-a-firm">
+           Fixed cost of a firm
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://travel.stackexchange.com/questions/155022/how-do-you-self-isolate-in-a-hostel-dorm-room">
+           How do you 'self-isolate' in a hostel dorm room?
+          </a>
+         </li>
+         <li>
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://puzzling.stackexchange.com/questions/95108/shower-thoughts">
+           Shower thoughts
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://mathematica.stackexchange.com/questions/216519/extract-the-name-of-a-point-with-regular-expression">
+           Extract the name of a point with Regular Expression
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codereview.stackexchange.com/questions/239103/simple-text-based-game-in-c">
+           Simple text based game in C
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://softwareengineering.stackexchange.com/questions/406591/why-are-there-multiple-different-implementations-of-jvm">
+           Why are there multiple different implementations of JVM?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://diy.stackexchange.com/questions/186845/can-a-broken-prong-stuck-in-an-outlet-increase-electrical-consumption">
+           Can a broken prong stuck in an outlet increase electrical consumption?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://history.stackexchange.com/questions/57288/how-did-the-authorities-not-find-the-speakeasy-clubs-during-the-prohibition">
+           How did the authorities not find the speakeasy clubs during the prohibition?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:447 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://raspberrypi.stackexchange.com/questions/109399/does-the-ds18b20-1-wire-temperature-sensor-id-change-with-different-raspberry-pi">
+           Does the DS18B20 1-wire temperature sensor ID change with different Raspberry Pi's?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://codegolf.stackexchange.com/questions/201176/numbers-by-position">
+           Numbers by Position
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://scifi.stackexchange.com/questions/228734/why-did-kylo-ren-attack-quinn-in-this-scene">
+           Why did Kylo Ren attack Quinn in this scene?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://movies.stackexchange.com/questions/107274/what-is-this-golden-belt-that-is-given-to-chewbacca">
+           What is this golden belt that is given to Chewbacca?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://politics.stackexchange.com/questions/51012/are-there-oligarchs-in-western-countries">
+           Are there oligarchs in Western countries?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://bicycles.stackexchange.com/questions/66783/is-my-bike-any-good">
+           Is my bike any good?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://unix.stackexchange.com/questions/573508/what-is-the-difference-between-cc-and-cc">
+           What is the difference between $(CC) and $CC?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://workplace.stackexchange.com/questions/155115/how-to-address-dropping-out-of-grad-school">
+           How to address dropping out of grad school
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://workplace.stackexchange.com/questions/155095/are-there-significant-additional-risks-in-changing-jobs-during-the-covid-19-pand">
+           Are there significant additional risks in changing jobs during the COVID-19 pandemic?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://worldbuilding.stackexchange.com/questions/171570/how-would-a-species-be-unable-to-produce-steel">
+           How would a species be unable to produce steel?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://ell.stackexchange.com/questions/240845/meaning-of-protect-the-valley-something-something-something-something-alive">
+           Meaning of "Protect the valley something, something, something, something alive!"
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://rpg.stackexchange.com/questions/166522/can-prestidigitation-create-medical-gloves">
+           Can Prestidigitation create medical gloves?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:514 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://astronomy.stackexchange.com/questions/35513/which-of-the-planets-would-be-detected-if-they-were-exoplanets">
+           Which of the planets would be detected if they were exoplanets?
+          </a>
+         </li>
+         <li class="dno js-hidden">
+          <a class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })" href="https://academia.stackexchange.com/questions/145504/do-professors-get-an-education-allowance">
+           Do Professors Get An Education "Allowance"?
+          </a>
+         </li>
+        </ul>
+        <a class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })" href="#">
+         more hot questions
+        </a>
+       </div>
+       <div class="js-feed-link" id="feed-link">
+        <a href="/feeds/question/60418726" title="Feed of this question and its answers">
+         Question feed
+        </a>
+       </div>
+       <aside aria-describedby="feed-modal-description" aria-hidden="true" aria-labelledby="feed-modal-title" class="s-modal js-feed-link-modal" role="dialog" tabindex="-1">
+        <div class="s-modal--dialog js-modal-dialog wmx4" data-controller="se-draggable" role="document">
+         <h1 class="s-modal--header fw-bold js-first-tabbable" data-target="se-draggable.handle" id="feed-modal-title" tabindex="0">
+          Subscribe to RSS
+         </h1>
+         <div class="grid gs4 gsy fd-column">
+          <div class="grid--cell">
+           <label class="d-block s-label c-default" for="feed-url">
+            Question feed
+            <p class="s-description mt2" id="feed-modal-description">
+             To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+            </p>
+           </label>
+          </div>
+          <div class="grid ps-relative">
+           <input class="s-input" id="feed-url" name="feed-url" readonly="readonly" type="text" value="https://stackoverflow.com/feeds/question/60418726"/>
+          </div>
+         </div>
+        </div>
+       </aside>
+      </div>
+     </div>
+     <div id="prettify-lang" style="display:none">
+      default
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

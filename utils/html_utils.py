@@ -3,6 +3,7 @@ from utils import file_utils
 from pprint import PrettyPrinter as pp
 from pprint import pprint, pformat
 from difflib import SequenceMatcher
+from pathlib import Path
 
 #
 # Simple pretty print html code
@@ -16,14 +17,38 @@ def write_ppsoup(soup, file_out):
 #
 # make a soup from file or string
 #
-def make_a_soup(filename=None, html_doc_string=None, html_parser='html5lib'):
+def make_a_soup(filename=None, html_doc_string=None, html_parser='html5lib', warn=False):
     if filename:
-        valid_path = file_utils.validate_path(filename=filename)
+        if isinstance(filename, Path):
+            valid_path = filename
+        else:
+            valid_path = file_utils.validate_path(filename=filename)
         if valid_path:
             if valid_path.is_file():
-                print('Returning a soup from file: ' + str(valid_path))
-                with valid_path.open('r') as fi:
-                    return BeautifulSoup(fi, html_parser)
+                if warn:
+                    print('Returning a soup from file: ' + str(valid_path))
+                encodings = ['utf-8']  #, 'cp1252', 'latin-1', 'iso-8859-1', 'cp860']
+                tmp_soup = None
+                for enc in encodings:
+                    try:
+                        with valid_path.open('r', encoding=enc) as fi:
+                            tmp = fi.read()
+                        tmp_soup = BeautifulSoup(tmp, html_parser)
+                        if warn:
+                            print('File decoded with ' + enc + ': ' + str(filename))
+                        return tmp_soup
+                    except UnicodeDecodeError as e:
+                        pass
+
+                if not tmp_soup:
+                    try:
+                        print('Trying reading file by byte.')
+                        tmp = file_utils.return_string_read_file_by_byte(filename=valid_path, warn=False)
+                        tmp_soup = BeautifulSoup(tmp, html_parser)
+                        return tmp_soup
+                    except:
+                        print('File encoding error, returning FALSE: ' + str(filename))
+                        return False
             else:
                 print('Not a valid file: ' + str(filename) + ' POSIX filename: ' + str(valid_path))
                 return False
@@ -35,7 +60,11 @@ def make_a_soup(filename=None, html_doc_string=None, html_parser='html5lib'):
             print('No html doc provided, returning False')
             return False
         else:
-            return BeautifulSoup(html_doc_string, html_parser)
+            try:
+                tmp_soup = BeautifulSoup(html_doc_string, html_parser)
+            except UnicodeDecodeError as e:
+                tmp_soup = BeautifulSoup(html_doc_string, html_parser, from_encoding='860')
+            return tmp_soup
     else:
         print('Neither filename nor html_doc_string provided, returning False')        
         return False
@@ -43,7 +72,7 @@ def make_a_soup(filename=None, html_doc_string=None, html_parser='html5lib'):
 # recursive dif
 #
 def rec_soup(ss, ind, ind_max, ind_limit, tabs, ss_list):
-    
+    no_string = False
     ind += 1
     if ind > ind_max:
         ind_max = ind
@@ -58,22 +87,44 @@ def rec_soup(ss, ind, ind_max, ind_limit, tabs, ss_list):
             elif ss.contents[x].name == 'style':
                 ss_list.append(tabs + ss.contents[x].name)
             elif ss.contents[x].has_attr('class'):
-                if ss.contents[x].string:
-                    ss_string = ss.contents[x].string.strip().replace('\r', '').replace('\n','  ')
-                    # ss_list.append(tabs + ss.contents[x].name + '--' + ss_string)
-                    ss_list.append(tabs + ss.contents[x].name + '-c-' + ss.contents[x]['class'][0] + '-s-' + ''.join(ss_string))
+                class_len = len(ss.contents[x]['class'])
+                if no_string:
+                    if class_len < 1:
+                        ss_list.append(tabs + ss.contents[x].name + '-c-""')
+                    else:
+                        class_string = ' '.join(ss.contents[x]['class']).strip()
+                        # ss_list.append(tabs + ss.contents[x].name + '-c-' + ss.contents[x]['class'][0])
+                        ss_list.append(tabs + ss.contents[x].name + '-c-' + class_string)
                 else:
-                    ss_list.append(tabs + ss.contents[x].name + '-c-' + ss.contents[x]['class'][0])
+                    if ss.contents[x].string:
+                        ss_string = ss.contents[x].string.strip().replace('\r', '').replace('\n','  ')
+                        # ss_list.append(tabs + ss.contents[x].name + '--' + ss_string)
+                        if class_len < 1:
+                            ss_list.append(tabs + ss.contents[x].name + '-c-""' + '-s-' + ''.join(ss_string))
+                        else:
+                            class_string = ' '.join(ss.contents[x]['class']).strip()
+                            # ss_list.append(tabs + ss.contents[x].name + '-c-' + ss.contents[x]['class'][0] + '-s-' + ''.join(ss_string))
+                            ss_list.append(tabs + ss.contents[x].name + '-c-' + class_string + '-s-' + ''.join(ss_string))
+                    else:
+                        if class_len < 1:
+                            ss_list.append(tabs + ss.contents[x].name + '-c-""')
+                        else:
+                            class_string = ' '.join(ss.contents[x]['class']).strip()
+                            # ss_list.append(tabs + ss.contents[x].name + '-c-' + ss.contents[x]['class'][0])
+                            ss_list.append(tabs + ss.contents[x].name + '-c-' +  class_string)
             # elif ss.contents[x].string:
             #     ss_string = ss.contents[x].string.replace('\n', ' ').strip()
             #     ss_list.append(tabs + ss.contents[x].name + '--' + ss_string)
             else:
-                if ss.contents[x].string:
-                    ss_string = ss.contents[x].string.strip().replace('\r', '').replace('\n','  ')
-                    # ss_list.append(tabs + ss.contents[x].name + '--' + ss_string)
-                    ss_list.append(tabs + ss.contents[x].name + '-s-' + ''.join(ss_string))
-                else:
+                if no_string:
                     ss_list.append(tabs + ss.contents[x].name)
+                else:
+                    if ss.contents[x].string:
+                        ss_string = ss.contents[x].string.strip().replace('\r', '').replace('\n','  ')
+                        # ss_list.append(tabs + ss.contents[x].name + '--' + ss_string)
+                        ss_list.append(tabs + ss.contents[x].name + '-s-' + ''.join(ss_string))
+                    else:
+                        ss_list.append(tabs + ss.contents[x].name)
 
                 # ss_list.append(tabs + ss.contents[x].name)
             
@@ -131,6 +182,20 @@ def diff_a_list(l1, l2):
     seq = SequenceMatcher(s1, s2)
     seq_blocks = seq.get_matching_blocks()
     return seq_blocks
+#
+#
+#
+def make_a_string(filename=None):
+    """
+    returns a string made from the contents of the file
+    all line breaks are remove
+    all leading and training white space is remove
+    each line in the file is conatenated with a space in between each line
+    """
+    fn_list = file_utils.return_list(fn=filename)
+    str = ' '.join(line.strip() for line in fn_list) 
+    return str    
+
 
 
 # if __name__ == "__main__":
